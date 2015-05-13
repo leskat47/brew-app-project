@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-tree = ET.parse("hops.xml")
+tree = ET.parse("recipes.xml")
 root = tree.getroot()
 
 # for child in root:
@@ -9,8 +9,10 @@ root = tree.getroot()
 #     print "*" * 20
 
 for child in root:
-    name = child.find('NAME').text
-    print name
+    for subchild in child:
+        for hop in subchild:
+            print hop.find('HOP').text
+
 
 # for hop_name in root.iter('name'):
 #     print hop.text
