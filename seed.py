@@ -2,6 +2,8 @@ from model import Hop, Fermentable, Yeast, Recipe, Style, User, Misc, YeastIns, 
 from server import app
 import xml.etree.ElementTree as ET
 
+
+
 ###########################################################################
 # STYLES
 
@@ -165,14 +167,17 @@ def load_hops_ins():
     root = misc_tree.getroot()
     for child in root:
         recipe = child.find('NAME').text
+        recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
         for subchild in child:
             for hop in subchild.findall('HOP'):
                 name = hop.find('NAME').text
+                form = hop.find('FORM').text
+                hop_id = Hop.query.filter_by(name=name, form=form)[0].hop_id
                 amount = hop.find('AMOUNT').text
                 phase = hop.find('USE').text
                 time = hop.find('TIME').text
                 kind = hop.find('TYPE').text
-                new_inst_item = HopIns(recipe=recipe, name=name, amount=amount, phase=phase,
+                new_inst_item = HopIns(recipe_id=recipe_id, hop_id=hop_id, amount=amount, phase=phase,
                                        time=time, kind=kind)
                 db.session.add(new_inst_item)
     db.session.commit()
@@ -183,13 +188,15 @@ def load_ferm_ins():
     root = misc_tree.getroot()
     for child in root:
         recipe = child.find('NAME').text
+        recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
         for subchild in child:
             for fermentable in subchild.findall('FERMENTABLE'):
                 name = fermentable.find('NAME').text
+                ferm_id = Fermentable.query.filter_by(name=name)[0].id
                 amount = fermentable.find('AMOUNT').text
                 after_boil = fermentable.find('ADD_AFTER_BOIL').text
                 kind = fermentable.find('TYPE').text
-                new_ferm_item = FermIns(recipe=recipe, name=name, amount=amount,
+                new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount,
                                         after_boil=after_boil, kind=kind)
                 db.session.add(new_ferm_item)
     db.session.commit()
@@ -200,13 +207,15 @@ def load_misc_ins():
     root = misc_tree.getroot()
     for child in root:
         recipe = child.find('NAME').text
+        recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
         for subchild in child:
             for misc_item in subchild.findall('MISC'):
                 name = misc_item.find('NAME').text
+                misc_id = Misc.query.filter_by(name=name)[0].misc_id
                 phase = misc_item.find('USE').text
                 amount = misc_item.find('AMOUNT').text
                 kind = misc_item.find('TYPE').text
-                new_misc_item = MiscIns(recipe=recipe, name=name, amount=amount,
+                new_misc_item = MiscIns(recipe_id=recipe_id, misc_id=misc_id, amount=amount,
                                         phase=phase, kind=kind)
                 db.session.add(new_misc_item)
     db.session.commit()
@@ -217,12 +226,14 @@ def load_yeast_ins():
     root = misc_tree.getroot()
     for child in root:
         recipe = child.find('NAME').text
+        recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
         for subchild in child:
             for yeast in subchild.findall('YEAST'):
                 name = yeast.find('NAME').text
+                yeast_id = Yeast.query.filter_by(name=name)[0].yeast_id
                 amount = yeast.find('AMOUNT').text
                 phase = 'primary'
-                new_yeast = YeastIns(recipe=recipe, name=name, amount=amount,
+                new_yeast = YeastIns(recipe_id=recipe_id, yeast_id=yeast_id, amount=amount,
                                      phase=phase)
                 db.session.add(new_yeast)
     db.session.commit()

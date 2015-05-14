@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+# from SQLAlchemy import UniqueConstraint
 
 db = SQLAlchemy()
 
@@ -39,7 +40,7 @@ class Recipe(db.Model):
 
     __tablename__ = "recipes"
 
-    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    recipe_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String, nullable=False)
     source = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
@@ -70,6 +71,7 @@ class User(db.Model):
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     first_name = db.Column(db.String, nullable=False)
     last_name = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, nullable=False)
     handle = db.Column(db.String)
     password = db.Column(db.String)
 
@@ -82,10 +84,8 @@ class HopIns(db.Model):
     __tablename__ = "hopsins"
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    # recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'))
-    # hop_id = db.Column(db.Integer, db.ForeignKey('hops.hop_id'))
-    recipe = db.Column(db.String, db.ForeignKey('recipes.name'))
-    name = db.Column(db.String, db.ForeignKey('hops.name'))
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
+    hop_id = db.Column(db.Integer, db.ForeignKey('hops.hop_id'))
     amount = db.Column(db.Float)
     phase = db.Column(db.String)
     time = db.Column(db.Integer)
@@ -97,8 +97,8 @@ class FermIns(db.Model):
     __tablename__ = "fermsins"
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    recipe = db.Column(db.String, db.ForeignKey('recipes.name'))
-    name = db.Column(db.Integer, db.ForeignKey('ferms.name'))
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
+    ferm_id = db.Column(db.Integer, db.ForeignKey('ferms.id'))
     amount = db.Column(db.Float)
     after_boil = db.Column(db.String, nullable=False)
     kind = db.Column(db.String)
@@ -110,8 +110,8 @@ class MiscIns(db.Model):
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String)
-    recipe = db.Column(db.Integer, db.ForeignKey('recipes.name'))
-    misc_name = db.Column(db.Integer, db.ForeignKey('misc.name'))
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
+    misc_id = db.Column(db.Integer, db.ForeignKey('misc.misc_id'))
     kind = db.Column(db.String)
     phase = db.Column(db.String)
     amount = db.Column(db.Float)
@@ -123,8 +123,8 @@ class YeastIns(db.Model):
     __tablename__ = "yeastsins"
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    recipe = db.Column(db.Integer, db.ForeignKey('recipes.name'))
-    name = db.Column(db.Integer, db.ForeignKey('yeasts.name'))
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
+    yeast_id = db.Column(db.Integer, db.ForeignKey('yeasts.yeast_id'))
     amount = db.Column(db.Float)
     phase = db.Column(db.String, nullable=False)
 
@@ -144,6 +144,7 @@ class Hop(db.Model):
     form = db.Column(db.String)
     hsi = db.Column(db.Float)
     notes = db.Column(db.String)
+    # unicon = db.UniqueConstraint('name', 'form')
 
     def __repr__(self):
         return "Hop_id: %s, hop_name: %s" % (self.hop_id, self.hop_name)
