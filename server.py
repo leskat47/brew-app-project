@@ -50,9 +50,9 @@ def show_explore():
     return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
 
 
-@app.route('/explore/<int:recipe>')
+@app.route('/recipe/<string:recipe>')
 def get_recipes(recipe):
-    display_recipe = Recipe.query_by(name=recipe).one()
+    display_recipe = Recipe.query.filter_by(name=recipe).one()
     name = display_recipe.name
     source = display_recipe.source
     style = display_recipe.style_name
@@ -66,9 +66,10 @@ def get_recipes(recipe):
         hop_dict["form"] = ingredient.hop.form
         hop_dict["amount"] = ingredient.amount
         hop_dict["phase"] = ingredient.phase
-        hop_dict["time"] = ingredient.phase
+        hop_dict["time"] = ingredient.time
         hop_dict["kind"] = ingredient.kind
-        hop_steps.append(hop_dict)
+        hop_steps.append(hop_dict.copy())
+    print hop_dict
 
     ferms = display_recipe.fins
     ferm_dict = {}
@@ -77,8 +78,8 @@ def get_recipes(recipe):
         ferm_dict["name"] = ingredient.fermentable.name
         ferm_dict["kind"] = ingredient.fermentable.kind
         ferm_dict["amount"] = ingredient.amount
-        ferm_dict["phase"] = ingredient.phase
-        ferm_steps.append(ferm_dict)
+        ferm_dict["phase"] = "Primary"
+        ferm_steps.append(ferm_dict.copy())
 
     if display_recipe.mins:
         misc = display_recipe.mins
@@ -91,7 +92,7 @@ def get_recipes(recipe):
             misc_dict["amount"] = ingredient.amount
             misc_dict["phase"] = ingredient.phase
             misc_dict["time"] = ingredient.time
-            misc_steps.append(misc_dict)
+            misc_steps.append(misc_dict.copy())
 
     yeasts = display_recipe.yins
     yeast_dict = {}
@@ -101,7 +102,11 @@ def get_recipes(recipe):
         yeast_dict["amount"] = ingredient.amount
         yeast_dict["kind"] = ingredient.yeast.kind
         yeast_dict["form"] = ingredient.yeast.form
-        yeast_steps.append(yeast_dict)
+        yeast_steps.append(yeast_dict.copy())
+
+    return render_template("recipe.html", name=name, source=source, style=style,
+                            notes=notes, hop_steps=hop_steps, ferm_steps=ferm_steps,
+                            yeast_steps=yeast_steps)
 
 
 @app.route('/mybrews')

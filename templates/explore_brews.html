@@ -39,12 +39,12 @@
 			<h3>Recipes</h3>
 			<ul>
 			{% for recipe in list_recipes %}
-				<li><a href="/get_recipe/{{recipe}}">{{ recipe }}</a></li>
+				<li><a href="/recipe/{{ recipe }}">{{ recipe }}</a></li>
 			{% endfor %}
 			</ul>
 		{% endif %}
 		{% if name %}
-			<h4>{{ name }}</h4>
+			<h4><a href="/recipe/{{ name }}">{{ name }}</a></h4>
 		{% endif %}
 		</td>
 	</tr>
