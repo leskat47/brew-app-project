@@ -48,6 +48,10 @@ class Recipe(db.Model):
     style_name = db.Column(db.Integer, db.ForeignKey('styles.style_name'))
     notes = db.Column(db.String)
 
+    def __repr__(self):
+        return "Recipe_id: %s, recipe_name: %s" % (self.recipe_id, self.name)
+
+
 
 class Brew(db.Model):
 
@@ -72,8 +76,12 @@ class User(db.Model):
     first_name = db.Column(db.String, nullable=False)
     last_name = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False)
-    handle = db.Column(db.String)
+    username = db.Column(db.String)
     password = db.Column(db.String)
+
+    def __repr__(self):
+        return "user_id: %s, username: %s, password: %s" % (self.user_id, self.username, self.password)
+
 
 ###########################################################
 # INSTRUCTIONS
@@ -91,6 +99,9 @@ class HopIns(db.Model):
     time = db.Column(db.Integer)
     kind = db.Column(db.String)
 
+    recipe = db.relationship('Recipe', backref=db.backref('hins', order_by=id))
+    hop = db.relationship('Hop', backref=db.backref('hins', order_by=id))
+
 
 class FermIns(db.Model):
 
@@ -101,7 +112,9 @@ class FermIns(db.Model):
     ferm_id = db.Column(db.Integer, db.ForeignKey('ferms.id'))
     amount = db.Column(db.Float)
     after_boil = db.Column(db.String, nullable=False)
-    kind = db.Column(db.String)
+
+    recipe = db.relationship('Recipe', backref=db.backref('fins', order_by=id))
+    fermentable = db.relationship('Fermentable', backref=db.backref('fins', order_by=id))
 
 
 class MiscIns(db.Model):
@@ -112,10 +125,12 @@ class MiscIns(db.Model):
     name = db.Column(db.String)
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
     misc_id = db.Column(db.Integer, db.ForeignKey('misc.misc_id'))
-    kind = db.Column(db.String)
     phase = db.Column(db.String)
     amount = db.Column(db.Float)
     time = db.Column(db.Integer)
+
+    recipe = db.relationship('Recipe', backref=db.backref('mins', order_by=id))
+    misc = db.relationship('Misc', backref=db.backref('mins', order_by=id))
 
 
 class YeastIns(db.Model):
@@ -127,6 +142,10 @@ class YeastIns(db.Model):
     yeast_id = db.Column(db.Integer, db.ForeignKey('yeasts.yeast_id'))
     amount = db.Column(db.Float)
     phase = db.Column(db.String, nullable=False)
+    
+    recipe = db.relationship('Recipe', backref=db.backref('yins', order_by=id))
+    yeast = db.relationship('Yeast', backref=db.backref('yins', order_by=id))
+
 
 ###########################################################
 # INGREDIENTS
@@ -203,6 +222,9 @@ class Yeast(db.Model):
     attenuation = db.Column(db.Float, nullable=True)
     best_for = db.Column(db.String, nullable=True)
     notes = db.Column(db.String, nullable=True)
+
+
+####################################################################
 
 
 def connect_to_db(app):

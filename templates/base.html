@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Brew Day</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	</head>
+
+	<body>
+
+		<div class="container">
+			<table>
+			<tr>
+				<td width="500px">
+				<h1>Brew Day</h1>
+				</td>
+				<td>
+				
+				{% if session["username"] %}
+					<a href="/logout"><button style="float: right;">Logout</button></a> 
+				{% else %}
+					<a href="/login"><button style="float: right;">Log In</button></a> 
+				{% endif %}
+					<a href="/register"><button style="float: right;">Register</button></a>
+				</td>
+			</tr>
+			</table>
+	    	<div>
+    		<div style="margin-left: auto; margin-right: auto;">{% include 'navbar.html' %}</div>
+	    	{% with messages = get_flashed_messages() %}
+	            {% if messages %}
+	                <div class=flashes>
+	                {% for message in messages %}
+	                    {{ message }} <br>
+	                {% endfor %}
+	                </div>
+
+	            {% endif %}
+        	{% endwith %}
+
+
+
+      {% block content %}{% endblock %}
+	</body>
+
+</html>

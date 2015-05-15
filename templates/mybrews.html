@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Brews</h2>
+<table>
+	<tr>
+		<td>
+			<form action="GET">
+				<p>Search by:</p>
+				<p>
+					Beer Styles: <select>
+						<option value="">Beer Styles here</option>
+					</select>
+				</p>
+				<p>
+					Name: <select>
+						<option value="">Recipe Names</option>
+					</select>
+				</p>
+				<p>
+					<input type="submit" value="submit">
+				</p>
+				<p>
+					<button id="see_all">Show All Recipes</button>
+				</p>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		</td>
+	</tr>
+
+
+{% endblock %}

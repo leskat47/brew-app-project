@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Explore</h2>
+<table>
+	<tr>
+		<td>
+			<form action="/explore" method="POST">
+				<p>Search by:</p>
+				<p>
+					Beer Styles: <select name="style">
+						<option selected disabled>Select a style</option>
+						{% for style in selectlist_styles %}
+						<option value="{{ style }}">{{ style }}</option>
+						{% endfor %}
+					</select>
+					<input type="submit" value="submit">
+				</p>
+			</form>
+			<form action="/explore" method="POST">
+
+				<p>
+					Recipe Name: <select name="recipe">
+						<option selected disabled>Select a recipe</option>
+						{% for recipe in selectlist_recipes %}
+						<option value="{{ recipe }}">{{ recipe }}</option>
+						{% endfor %}
+					</select>
+					<input type="submit" value="submit">
+				</p>
+			</form>
+			<form action="/explore" method="POST">
+				<p>
+					<button id="see_all">Show All Recipes</button>
+				</p>
+			</form>
+		</td>
+		<td>
+		{% if list_recipes %}
+			<h3>Recipes</h3>
+			<ul>
+			{% for recipe in list_recipes %}
+				<li><a href="/get_recipe/{{recipe}}">{{ recipe }}</a></li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+		{% if name %}
+			<h4>{{ name }}</h4>
+		{% endif %}
+		</td>
+	</tr>
+	<tr>
+		<td>
+		</td>
+		<td>
+		</td>
+	</tr>
+
+
+{% endblock %}
