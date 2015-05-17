@@ -1,42 +1,57 @@
 from model import Hop, Fermentable, Yeast, Recipe, Style, User, Misc, YeastIns, HopIns, FermIns, MiscIns, connect_to_db, db
 from server import app
 import xml.etree.ElementTree as ET
-
+import re
 
 
 ###########################################################################
 # STYLES
 
-
 def load_styles():
-    tree = ET.parse("datasets/styles.xml")
+    tree = ET.parse("datasets/beerxml/styleguide.xml")
     root = tree.getroot()
-    for child in root:
-        style_name = child.find('NAME').text
-        category = child.find('CATEGORY').text
-        style_guide = child.find('STYLE_GUIDE').text
-        kind = child.find('TYPE').text
-        og_min = child.find('OG_MIN').text
-        og_max = child.find('OG_MAX').text
-        fg_min = child.find('FG_MIN').text
-        fg_max = child.find('FG_MAX').text
-        abv_min = child.find('ABV_MIN').text
-        abv_max = child.find('ABV_MAX').text
-        ibu_min = child.find('IBU_MIN').text
-        ibu_max = child.find('IBU_MAX').text
-        color_min = child.find('COLOR_MIN').text
-        color_max = child.find('COLOR_MAX').text
-        notes = child.find('NOTES').text
-        profile = child.find('PROFILE').text
-        ingredients = child.find('INGREDIENTS').text
-        examples = child.find('EXAMPLES').text
-        new_style = Style(style_name=style_name, category=category, style_guide=style_guide,
-                          kind=kind, og_min=og_min, og_max=og_max, fg_min=fg_min, fg_max=fg_max, abv_min=abv_min,
-                          abv_max=abv_max, ibu_min=ibu_min, ibu_max=ibu_max, color_min=color_min,
-                          color_max=color_max, profile=profile, ingredients=ingredients,
-                          examples=examples, notes=notes)
-        db.session.add(new_style)
-    db.session.commit()
+    for cls in root:
+        if (cls.attrib["type"] == "beer"):  # parse only the class of beer
+            for cat in cls:
+                category = cat.find('name').text
+                for subcat in cat:  # subcat is the same as the beer style
+                    if (subcat.tag == 'subcategory'):
+                        style_name = subcat.find('name').text
+                        aroma_node = subcat.find('aroma')
+                        aroma = all_text_fragments(aroma_node)
+                        appearance = subcat.find('appearance').text
+                        flavor = subcat.find('flavor').text
+                        mouthfeel = subcat.find('mouthfeel').text
+                        impression = subcat.find('impression').text
+                        comments = el_find_text(subcat, 'comments', "")
+                        ingredients = el_find_text(subcat, 'ingredients', "")
+                        examples = subcat.find('examples').text
+                        for reading in subcat:
+                            for limit in reading:
+                                og_min = el_find_text(limit, 'low', 0)
+                                og_max = el_find_text(limit, 'high', 99)
+                            for limit in reading:
+                                fg_min = el_find_text(limit, 'low', 0)
+                                fg_max = el_find_text(limit, 'high', 0)
+                            for limit in reading:
+                                ibu_min = el_find_text(limit, 'low', 0)
+                                ibu_max = el_find_text(limit, 'high', 0)
+                            for limit in reading:
+                                srm_min = el_find_text(limit, 'low', 0)
+                                srm_max = el_find_text(limit, 'high', 0)
+                            for limit in reading:
+                                abv_min = el_find_text(limit, 'low', 0)
+                                abv_max = el_find_text(limit, 'high', 0)
+
+                        new_style = Style(style_name=style_name, category=category, aroma=aroma,
+                                          appearance=appearance, flavor=flavor, mouthfeel=mouthfeel,
+                                          ingredients=ingredients, impression=impression, og_min=og_min,
+                                          examples=examples, comments=comments, og_max=og_max,
+                                          fg_min=fg_min, fg_max=fg_max, abv_min=abv_min, abv_max=abv_max,
+                                          srm_min=srm_min, srm_max=srm_max, ibu_min=ibu_min, ibu_max=ibu_max)
+                        db.session.add(new_style)
+                    db.session.commit()
+
 
 ###########################################################################
 # RECIPES
@@ -80,6 +95,22 @@ def load_hops():
     db.session.commit()
 
 
+def load_extracts():
+    ext_tree = ET.parse("datasets/beerxml/extracts.xml")
+    root = ext_tree.getroot()
+    for child in root:
+        name = child.find('NAME').text
+        supplier = child.find('SUPPLIER').text
+        origin = child.find('ORIGIN').text
+        kind = child.find('KIND').text
+        ex_yield = child.find('YIELD').text
+        notes = child.find('NOTES').text
+        new_ext = Extract(name=name, supplier=supplier, origin=origin, kind=kind,
+                          ex_yield=ex_yield, notes=notes)
+        db.session.add(new_ext)
+    db.session.commit
+
+
 def load_ferms():
     ferm_tree = ET.parse("datasets/grain.xml")
     root = ferm_tree.getroot()
@@ -121,18 +152,20 @@ def load_ferms():
 
 
 def load_misc():
-    misc_tree = ET.parse("datasets/miscs.xml")
-    root = misc_tree.getroot()
-    for child in root:
-        name = child.find('NAME').text
-        kind = child.find('TYPE').text
-        use = child.find('USE').text
-        amount_is_weight = child.find('AMOUNT_IS_WEIGHT').text
-        notes = child.find('NOTES').text
-        new_misc = Misc(name=name, kind=kind, use=use,
-                        amount_is_weight=amount_is_weight, notes=notes)
-        db.session.add(new_misc)
-    db.session.commit()
+    sources = ["datasets/beerxml/special.xml", "datasets/miscs.xml"]
+    for source in sources:
+        misc_tree = ET.parse(source)
+        root = misc_tree.getroot()
+        for child in root:
+            name = child.find('NAME').text
+            kind = child.find('TYPE').text
+            use = child.find('USE').text
+            # amount_is_weight = child.find('AMOUNT_IS_WEIGHT').text
+            notes = child.find('NOTES').text
+            new_misc = Misc(name=name, kind=kind, use=use,
+                            notes=notes)
+            db.session.add(new_misc)
+        db.session.commit()
 
 
 def load_yeasts():
@@ -195,9 +228,8 @@ def load_ferm_ins():
                 ferm_id = Fermentable.query.filter_by(name=name)[0].id
                 amount = fermentable.find('AMOUNT').text
                 after_boil = fermentable.find('ADD_AFTER_BOIL').text
-                kind = fermentable.find('TYPE').text
                 new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount,
-                                        after_boil=after_boil, kind=kind)
+                                        after_boil=after_boil)
                 db.session.add(new_ferm_item)
     db.session.commit()
 
@@ -214,9 +246,8 @@ def load_misc_ins():
                 misc_id = Misc.query.filter_by(name=name)[0].misc_id
                 phase = misc_item.find('USE').text
                 amount = misc_item.find('AMOUNT').text
-                kind = misc_item.find('TYPE').text
                 new_misc_item = MiscIns(recipe_id=recipe_id, misc_id=misc_id, amount=amount,
-                                        phase=phase, kind=kind)
+                                        phase=phase)
                 db.session.add(new_misc_item)
     db.session.commit()
 
@@ -238,6 +269,41 @@ def load_yeast_ins():
                 db.session.add(new_yeast)
     db.session.commit()
 
+########################################################################
+# Helper functions
+
+
+def el_find_text(el, tagstr, ifempty):
+    found_el = el.find(tagstr)
+    if (found_el is None):
+        return(ifempty)
+    else:
+        return(found_el.text)
+
+doublespace_patt = re.compile(r'\s{2}')
+endline_patt = re.compile(r'\n')
+
+def all_text_fragments(et):
+    ' Returns all fragments of text contained in a subtree, as a list of strings '
+    r = []
+    for e in et.getiterator():  # walks the subtree
+        if e.text is not None:
+            substr = (e.text)
+            r.append(substr)
+        if e.tail is not None:
+            tailstr = (e.tail)
+            r.append(e.tail)
+    alltext = ' '.join(r)
+
+    # Clean up the joined text fragments
+    # Remove any line endings
+    alltext = re.sub(endline_patt, "", alltext)
+    # Remove extra whitespace
+    alltext = re.sub(doublespace_patt, "", alltext)
+
+    return alltext
+
+
 if __name__ == "__main__":
     connect_to_db(app)
     db.create_all()
@@ -245,6 +311,7 @@ if __name__ == "__main__":
     load_styles()
     load_recipes()
     load_hops()
+    load_extracts
     load_misc()
     load_yeasts()
     load_ferms()

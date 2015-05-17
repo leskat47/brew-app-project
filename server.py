@@ -30,12 +30,15 @@ def show_explore():
     # For recipe selected, show recipe.
     if request.method == "POST":
         # Prevent an error if select is clicked with no value selected
-        try:
-            request.form.get("style")
-        except ValueError:
-            flash("Please make a selection first")
-            return redirect("/explore", selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
+        # try:
+        #     request.form.get("style")
+        # except ValueError:
+        #     flash("Please make a selection first")
+        #     return redirect("/explore", selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
         # Render either recipe list for style selection or recipe
+        # if request.form.get("style") == None:
+        #     flash("Please make a selection first")
+        #     return redirect("/explore", selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
         if request.form.get("style"):
             style = request.form.get("style")
             for recipe in Recipe.query.filter_by(style_name=style).all():
@@ -47,6 +50,13 @@ def show_explore():
             name = display_recipe.name
             return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes,
                                    selectlist_styles=selectlist_styles, name=name)
+        elif request.form.get("all"):
+            names = []
+            for recipe in Recipe.query.all():
+                names.append(recipe.name)
+            return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes,
+                                   selectlist_styles=selectlist_styles, names=names)
+
     return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
 
 
@@ -78,7 +88,7 @@ def get_recipes(recipe):
         ferm_dict["name"] = ingredient.fermentable.name
         ferm_dict["kind"] = ingredient.fermentable.kind
         ferm_dict["amount"] = ingredient.amount
-        ferm_dict["phase"] = "Primary"
+        ferm_dict["phase"] = "Steep"
         ferm_steps.append(ferm_dict.copy())
 
     if display_recipe.mins:
@@ -88,11 +98,12 @@ def get_recipes(recipe):
         for ingredient in misc:
             misc_dict["name"] = ingredient.misc.name
             misc_dict["kind"] = ingredient.misc.kind
-            misc_dict["use"] = ingredient.misc.use
+            misc_dict["phase"] = ingredient.misc.use
             misc_dict["amount"] = ingredient.amount
-            misc_dict["phase"] = ingredient.phase
             misc_dict["time"] = ingredient.time
             misc_steps.append(misc_dict.copy())
+    else:
+        misc_steps = None
 
     yeasts = display_recipe.yins
     yeast_dict = {}
@@ -106,7 +117,7 @@ def get_recipes(recipe):
 
     return render_template("recipe.html", name=name, source=source, style=style,
                             notes=notes, hop_steps=hop_steps, ferm_steps=ferm_steps,
-                            yeast_steps=yeast_steps)
+                            misc_steps=misc_steps, yeast_steps=yeast_steps)
 
 
 @app.route('/mybrews')

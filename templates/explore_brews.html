@@ -30,7 +30,7 @@
 			</form>
 			<form action="/explore" method="POST">
 				<p>
-					<button id="see_all">Show All Recipes</button>
+					<input type="submit" id="see_all" name="all" value="Show All Recipes">
 				</p>
 			</form>
 		</td>
@@ -46,6 +46,11 @@
 		{% if name %}
 			<h4><a href="/recipe/{{ name }}">{{ name }}</a></h4>
 		{% endif %}
+		{% if names %}
+			{% for name in names %}
+			<h4><a href="/recipe/{{ name }}">{{ name }}</a></h4>
+			{% endfor %}
+		{% endif %}		
 		</td>
 	</tr>
 	<tr>

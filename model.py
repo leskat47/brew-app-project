@@ -14,21 +14,23 @@ class Style(db.Model):
     style_id = db.Column(db.Integer, primary_key=True, nullable=False)
     style_name = db.Column(db.String)
     category = db.Column(db.String)
-    style_guide = db.Column(db.String)
-    kind = db.Column(db.String)
-    og_min = db.Column(db.Float)
-    og_max = db.Column(db.Float)
-    fg_min = db.Column(db.Float)
-    fg_max = db.Column(db.Float)
+    aroma = db.Column(db.String)
+    appearance = db.Column(db.String)
+    flavor = db.Column(db.String)
+    mouthfeel = db.Column(db.String)
+    impression = db.Column(db.String)
+    comments = db.Column(db.String)
+    ingredients = db.Column(db.String)
     abv_min = db.Column(db.Float)
     abv_max = db.Column(db.Float)
     ibu_min = db.Column(db.Float)
     ibu_max = db.Column(db.Float)
-    color_min = db.Column(db.Float)
-    color_max = db.Column(db.Float)
-    notes = db.Column(db.String)
-    profile = db.Column(db.String)
-    ingredients = db.Column(db.String)
+    og_min = db.Column(db.Float)
+    og_max = db.Column(db.Float)
+    fg_min = db.Column(db.Float)
+    fg_max = db.Column(db.Float)
+    srm_min = db.Column(db.Float)
+    srm_max = db.Column(db.Float)
     examples = db.Column(db.String)
 
 
@@ -60,7 +62,10 @@ class Brew(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     recipe = db.Column(db.String, db.ForeignKey('recipes.name'))
-    date = db.Column(db.Date)
+    og = db.Column(db.Float)
+    fg = db.Column(db.Float)
+    abv = db.Column(db.Float)
+    date = db.Column(db.Date, nullable=False)
     notes = db.Column(db.String)
 
 
@@ -112,7 +117,6 @@ class FermIns(db.Model):
     ferm_id = db.Column(db.Integer, db.ForeignKey('ferms.id'))
     amount = db.Column(db.Float)
     after_boil = db.Column(db.String, nullable=False)
-
     recipe = db.relationship('Recipe', backref=db.backref('fins', order_by=id))
     fermentable = db.relationship('Fermentable', backref=db.backref('fins', order_by=id))
 
@@ -128,7 +132,6 @@ class MiscIns(db.Model):
     phase = db.Column(db.String)
     amount = db.Column(db.Float)
     time = db.Column(db.Integer)
-
     recipe = db.relationship('Recipe', backref=db.backref('mins', order_by=id))
     misc = db.relationship('Misc', backref=db.backref('mins', order_by=id))
 
@@ -142,7 +145,6 @@ class YeastIns(db.Model):
     yeast_id = db.Column(db.Integer, db.ForeignKey('yeasts.yeast_id'))
     amount = db.Column(db.Float)
     phase = db.Column(db.String, nullable=False)
-    
     recipe = db.relationship('Recipe', backref=db.backref('yins', order_by=id))
     yeast = db.relationship('Yeast', backref=db.backref('yins', order_by=id))
 
@@ -167,6 +169,16 @@ class Hop(db.Model):
 
     def __repr__(self):
         return "Hop_id: %s, hop_name: %s" % (self.hop_id, self.hop_name)
+
+
+class Extract(db.Model):
+    extract_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    supplier = db.Column(db.String)
+    origin = db.Column(db.String)
+    notes = db.Column(db.String)
+    kind = db.Column(db.String)
+    ex_yield = db.Column(db.Float)
 
 
 class Fermentable(db.Model):
