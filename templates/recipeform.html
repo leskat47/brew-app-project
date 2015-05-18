@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+{% block content %}
+<script src="../static/recipeform.js">
+</script>
+<h2>Create a Recipe</h2>
+<table>
+	<tr>
+		<td>
+			<div class="form-group">
+			<form action="/addrecipe" method="POST" role="form">
+			<table cellspacing="10px">
+				<tr>
+					<td colspan="2">
+						Recipe name
+						<input type="text" name="name" class="form-control" >
+					</td>
+					<td colspan="2">
+						Source
+						<input type="text" name="source" class="form-control" >
+					</td>
+				<tr>
+					<td colspan="3">
+						<p>Style
+						<select name="style" class="form-control" >
+								<option selected disabled>Select a style</option>
+								{% for style in selectlist_styles %}
+								<option value="{{ style }}">{{ style }}</option>
+								{% endfor %}
+						</select>
+					</td>
+					<td>
+						Share this recipe?
+						<select name="share" class="form-control">
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+							</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						Batch Size: 
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<p><input type="number" name="batch_size" class="form-control">
+					</td>
+					<td>
+						<select name="units" class="form-control" >
+								<option value="grams">g</option>
+								<option value="ounces">L</option>
+						</select>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4"><br>Grains:
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<select name="grain" class="form-control" >
+							<option selected disabled>Grain</option>
+							{% for grain in grain_choice %}
+							<option value="{{ grain }}">{{ grain }}</option>
+							{% endfor %}
+						</select>
+					</td>
+					<td> <input type="number" name="grain_amount" class="form-control" placeholder="amount">
+					</td>
+					<td><select name="units" class="form-control" >
+						<option value="grams">g</option>
+						<option value="ounces">oz</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="moregrains">
+						</div>
+						<button id="add-grain" value="Add a grain" class="form-control">Add a grain</button>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="4"><br>Extracts:<br>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<select name="extract" class="form-control" >
+							<option selected disabled>Extract</option>
+							{% for extract in extract_choice %}
+							<option value="{{ extract }}">{{ extract }}</option>
+							{% endfor %}
+						</select>
+						
+					</td>
+					<td> <input type="number" name="extract_amount" class="form-control" placeholder="amount">
+					</td>
+					<td>
+						<select name="units" class="form-control" >
+							<option value="grams">g</option>
+							<option value="ounces">oz</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="moreextract">
+						</div>
+						<button id="add-extract" value="Add extract" class="form-control">Add extract</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4"><br>Hops:<br>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<select name="hop" class="form-control" >
+							<option selected disabled>Hops</option>
+							{% for hop in hop_choice %}
+							<option value="{{ hop }}">{{ hop }}</option>
+							{% endfor %}
+						</select>
+						
+					</td>
+					<td> <input type="number" name="hop_amount" class="form-control" placeholder="amount">
+					</td>
+					<td><select name="units" class="form-control" >
+							<option value="grams">g</option>
+							<option value="ounces">oz</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<select name="hop_phase" class="form-control">
+							<option selected disabled>phase</option>
+							<option value="boil">boil</option>
+							<option value="dry_hop">dry_hop</option>
+						</select>
+					</td>
+					<td>
+						<input type="number" name="hop_time" class="form-control" placeholder="time in boil">
+					</td>
+					<td>
+						<select name="kind" class="form-control">
+							<option selected disabled>kind</option>
+							<option value="aroma">aroma</option>
+							<option value="bittering">bittering</option>
+							<option value="both">both</option>
+						</select>
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+						<div id="morehops">
+						</div>
+						<button id="add-hop" value="Add a hop" class="form-control">Add hops</button>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="4"><br>Special Additions:<br>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<select name="misc" class="form-control" >
+							<option selected disabled>Special item</option>
+							{% for misc in misc_choice %}
+							<option value="{{ misc }}">{{ misc }}</option>
+							{% endfor %}
+						</select>
+						
+					</td>
+					<td> <input type="number" name="misc_amount" class="form-control" placeholder="amount">
+					</td>
+					<td><select name="units" class="form-control" >
+							<option value="grams">g</option>
+							<option value="ounces">oz</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<select name="misc_phase" class="form-control">
+							<option selected disabled>phase</option>
+							<option value="boil">boil</option>
+							<option value="primary">primary</option>
+							<option value="secondary">secondary</option>
+						</select>
+					</td>
+					<td colspan="2">
+						<input type="number" name="misc_time" class="form-control" placeholder="time in boil">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div id="moremisc">
+						</div>
+						<button id="add-misc" value="Add misc" class="form-control">Add special</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4"><br>Yeasts/Bacteria:<br>
+					</td>
+				</tr>				
+				<tr>
+					<td colspan="2">
+						<select name="yeast" class="form-control" >
+							<option selected disabled>Yeast/Bacteria</option>
+							{% for yeast in yeast_choice %}
+							<option value="{{ yeast }}">{{ yeast }}</option>
+							{% endfor %}
+						</select>
+						
+					</td>
+					<td> <input type="number" name="grain_amount" class="form-control" placeholder="amount">
+					</td>
+					<td><select name="units" class="form-control" >
+						<option value="grams">g</option>
+						<option value="ounces">oz</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="moreyeast">
+						</div>
+						<button id="add-yeast" value="Add a yeast" class="form-control">Add yeast</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4"><br>
+					Notes/Instructions:<br>
+					<p><textarea name="textarea" rows="10" cols="50"></textarea></p>
+					</td>
+				</tr>
+				<tr colspan="4">
+					<td><p><input type="submit" value="submit" class="form-control" ></p>
+					</td>
+				</tr>
+				</table>
+
+				
+
+	</td>
+	</tr>
+</table>
+
+
+{% endblock %}

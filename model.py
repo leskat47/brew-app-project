@@ -49,6 +49,7 @@ class Recipe(db.Model):
     public = db.Column(db.String)
     style_name = db.Column(db.Integer, db.ForeignKey('styles.style_name'))
     notes = db.Column(db.String)
+    batch_size = db.Column(db.Integer)
 
     def __repr__(self):
         return "Recipe_id: %s, recipe_name: %s" % (self.recipe_id, self.name)
@@ -103,6 +104,7 @@ class HopIns(db.Model):
     phase = db.Column(db.String)
     time = db.Column(db.Integer)
     kind = db.Column(db.String)
+    units = db.Column(db.String)
 
     recipe = db.relationship('Recipe', backref=db.backref('hins', order_by=id))
     hop = db.relationship('Hop', backref=db.backref('hins', order_by=id))
@@ -116,9 +118,9 @@ class FermIns(db.Model):
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
     ferm_id = db.Column(db.Integer, db.ForeignKey('ferms.id'))
     amount = db.Column(db.Float)
-    after_boil = db.Column(db.String, nullable=False)
     recipe = db.relationship('Recipe', backref=db.backref('fins', order_by=id))
     fermentable = db.relationship('Fermentable', backref=db.backref('fins', order_by=id))
+    units = db.Column(db.String)
 
 
 class MiscIns(db.Model):
@@ -134,6 +136,7 @@ class MiscIns(db.Model):
     time = db.Column(db.Integer)
     recipe = db.relationship('Recipe', backref=db.backref('mins', order_by=id))
     misc = db.relationship('Misc', backref=db.backref('mins', order_by=id))
+    units = db.Column(db.String)
 
 
 class YeastIns(db.Model):
@@ -147,6 +150,8 @@ class YeastIns(db.Model):
     phase = db.Column(db.String, nullable=False)
     recipe = db.relationship('Recipe', backref=db.backref('yins', order_by=id))
     yeast = db.relationship('Yeast', backref=db.backref('yins', order_by=id))
+    units = db.Column(db.String)
+
 
 
 ###########################################################

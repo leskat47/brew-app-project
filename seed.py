@@ -1,4 +1,4 @@
-from model import Hop, Fermentable, Yeast, Recipe, Style, User, Misc, YeastIns, HopIns, FermIns, MiscIns, connect_to_db, db
+from model import Hop, Fermentable, Yeast, Recipe, Style, User, Misc, Extract, YeastIns, HopIns, FermIns, MiscIns, connect_to_db, db
 from server import app
 import xml.etree.ElementTree as ET
 import re
@@ -102,7 +102,7 @@ def load_extracts():
         name = child.find('NAME').text
         supplier = child.find('SUPPLIER').text
         origin = child.find('ORIGIN').text
-        kind = child.find('KIND').text
+        kind = el_find_text(child, 'KIND', "")
         ex_yield = child.find('YIELD').text
         notes = child.find('NOTES').text
         new_ext = Extract(name=name, supplier=supplier, origin=origin, kind=kind,
@@ -227,9 +227,7 @@ def load_ferm_ins():
                 name = fermentable.find('NAME').text
                 ferm_id = Fermentable.query.filter_by(name=name)[0].id
                 amount = fermentable.find('AMOUNT').text
-                after_boil = fermentable.find('ADD_AFTER_BOIL').text
-                new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount,
-                                        after_boil=after_boil)
+                new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount)
                 db.session.add(new_ferm_item)
     db.session.commit()
 
@@ -311,7 +309,7 @@ if __name__ == "__main__":
     load_styles()
     load_recipes()
     load_hops()
-    load_extracts
+    load_extracts()
     load_misc()
     load_yeasts()
     load_ferms()

@@ -1,11 +1,11 @@
 from flask import Flask, render_template, redirect, request, flash, session
-from model import User, Recipe, Style, connect_to_db, db
+from model import User, Recipe, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, connect_to_db, db
+
 
 app = Flask(__name__)
 
 # Required to use Flask sessions and the debug toolbar
 app.secret_key = "ABC"
-
 
 
 @app.route('/')
@@ -35,10 +35,8 @@ def show_explore():
         # except ValueError:
         #     flash("Please make a selection first")
         #     return redirect("/explore", selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
+
         # Render either recipe list for style selection or recipe
-        # if request.form.get("style") == None:
-        #     flash("Please make a selection first")
-        #     return redirect("/explore", selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
         if request.form.get("style"):
             style = request.form.get("style")
             for recipe in Recipe.query.filter_by(style_name=style).all():
@@ -116,13 +114,73 @@ def get_recipes(recipe):
         yeast_steps.append(yeast_dict.copy())
 
     return render_template("recipe.html", name=name, source=source, style=style,
-                            notes=notes, hop_steps=hop_steps, ferm_steps=ferm_steps,
-                            misc_steps=misc_steps, yeast_steps=yeast_steps)
+                           notes=notes, hop_steps=hop_steps, ferm_steps=ferm_steps,
+                           misc_steps=misc_steps, yeast_steps=yeast_steps)
 
 
 @app.route('/mybrews')
 def show_mybrews():
     return render_template("mybrews.html")
+
+
+@app.route('/addrecipe', methods=['GET', 'POST'])
+def enter_recipe():
+    if request.method == "POST":
+
+        # Recipe values
+        name = request.form.get('name')
+        user_id = session["user_id"]
+        source = request.form.get('source')
+        public = request.form.get('share')
+        style_name = request.form.get('style')
+        notes = request.form.get('notes')
+        batch_size = request.form.get('batch_size')
+        new_recipe = Recipe(name=name, source=source, user_id=user_id, public=public,
+                            notes=notes, style_name=style_name, batch_size=batch_size)
+        db.session.add(new_recipe)
+        db.session.commit()
+
+        # Recipe_id will be used in all instructions uploads
+        recipe_id = Recipe.query.filter_by(name=name, user_id=user_id)[0].recipe_id
+
+        # Grain Instructions
+        # TODO: for grain in grain_list: TBD how to get ingredient data from form
+        grain_name = request.form.get('grain')
+        ferm_id = Fermentable.query.filter_by(name=grain_name)[0].id
+        grain_amount = request.form.get('grain_amount')
+        new_fermins = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=grain_amount, )
+        db.session.add(new_fermins)
+        db.session.commit()
+
+        # Hops Instructions
+        # TODO: for hop in hop_list: TBD how to get ingredient data from form
+        hop_name = request.form.get('hop')
+        hop_id = Hop.query.filter_by(name=hop_name)[0].hop_id
+        hop_amount = request.form.get('hop_amount')
+        hop_phase = request.form.get('hop_phase')
+        time = request.form.get('hop_time')
+        kind = request.form.get('kind')
+        new_hopsins = HopIns(recipe_id=recipe_id, hop_id=hop_id, amount=hop_amount, phase=hop_phase, time=time, kind=kind)
+        db.session.add(new_hopsins)
+        db.session.commit()
+
+        # Misc Instructions
+        # TODO: for misc in misc_list: TBD how to get multiple ingredient data from form
+
+        misc_name = request.form.get('misc')
+        misc_id = Misc.query.filter_by(name=misc_name)[0].misc_id
+        misc_phase = request.form.get('misc_phase')
+        misc_amount = request.form.get('misc_amount')
+        new_miscins = MiscIns(recipe_id=recipe_id, misc_id=misc_id, phase=misc_phase, amount=misc_amount)
+        db.session.add(new_miscins)
+        db.session.commit()
+
+ 
+    grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
+
+
+    return render_template("recipeform.html", selectlist_styles=selectlist_styles, grain_choice=grain_choice, hop_choice=hop_choice,
+                           extract_choice=extract_choice, misc_choice=misc_choice, yeast_choice=yeast_choice)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -172,7 +230,8 @@ def login():
                 session["username"] = username
                 session["password"] = password
                 user_id = User.query.filter_by(username=username).one().user_id
-                print session["username"]
+                session["user_id"] = user_id
+
                 flash("You were successfully logged in!")
                 return redirect("/")
             else:
@@ -191,8 +250,38 @@ def logout():
     flash("Logged you out!")
     return redirect("/")
     
-# @app.route('/getstarted')
-# 	pass
+def feed_recipe_form():
+    selectlist_styles = []
+    for style_obj in Style.query.all():
+        selectlist_styles.append(style_obj.style_name)
+    grains = Fermentable.query.all()
+    extracts = Extract.query.all()
+    hops = Hop.query.all()
+    miscs = Misc.query.all()
+    yeasts = Yeast.query.all()
+
+    grain_choice = []
+    for g in grains:
+        if g.name not in grain_choice:
+            grain_choice.append(g.name)
+    extract_choice = []
+    for e in extracts:
+        if e.name not in extract_choice:
+            extract_choice.append(e.name)
+    print extract_choice
+    hop_choice = []
+    for h in hops:
+        if h.name not in hop_choice:
+            hop_choice.append(h.name)
+    misc_choice = []
+    for m in miscs:
+        if m.name not in misc_choice:
+            misc_choice.append(m.name)
+    yeast_choice = []
+    for y in yeasts:
+        if y.name not in yeast_choice:
+            yeast_choice.append(y.name)
+    return grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles
 
 
 
