@@ -59,14 +59,14 @@
 		<td colspan="4">
 		<br>Grains:<br>
 		<div id="moregrains1" class="repeat-grain">
-			<select id="grain1" name="grain1" class="form-control" style="width: 40%; display: inline">
+			<select id="grain" name="grain" class="form-control" style="width: 40%; display: inline">
 				<option selected disabled>Grain</option>
 				{% for grain in grain_choice %}
 				<option value="{{ grain }}">{{ grain }}</option>
 				{% endfor %}
 			</select>
-			<input type="number" id = "grain_amount1" name="grain_amount1" class="form-control" placeholder="amount" style="width: 25%; display: inline">
-			<select id="grain_units1" name="grain_units1" class="form-control" style="width: 20%; display: inline">
+			<input type="number" id = "grain_amount" name="grain_amount" class="form-control" placeholder="amount" style="width: 25%; display: inline">
+			<select id="grain_units" name="grain_units" class="form-control" style="width: 20%; display: inline">
 				<option selected disabled>units</option>
 				<option value="grams">g</option>
 				<option value="ounces">oz</option>
@@ -99,7 +99,7 @@
 		<td colspan="4">
 			<br>Hops:<br>
 			<div id="morehops1" class="repeat-hops">
-			<select id="hop1" name="hop1" class="form-control" style="width: 40%; display: inline">
+			<select id="hop" name="hop" class="form-control" style="width: 40%; display: inline">
 				<option selected disabled>Hops</option>
 				{% for hop in hop_choice %}
 				<option value="{{ hop }}">{{ hop }}</option>
@@ -130,7 +130,7 @@
 	<tr>
 		<td colspan="4"><br>Special Additions:<br>
 			<div id="morespecial1" class="repeat-special">
-			<select id="misc1" name="misc1" class="form-control" style="width: 40%; display: inline">
+			<select id="misc" name="misc" class="form-control" style="width: 40%; display: inline">
 				<option selected disabled>Special item</option>
 				{% for misc in misc_choice %}
 				<option value="{{ misc }}">{{ misc }}</option>
@@ -156,7 +156,7 @@
 	<tr>
 		<td colspan="4"><br>Yeasts/Bacteria:<br>		
 			<div id="moreyeast1" class="repeat-yeast">
-			<select id="yeast1" name="yeast1" class="form-control" style="width: 40%; display: inline">
+			<select id="yeast" name="yeast" class="form-control" style="width: 40%; display: inline">
 				<option selected disabled>Yeast/Bacteria</option>
 				{% for yeast in yeast_choice %}
 				<option value="{{ yeast }}">{{ yeast }}</option>

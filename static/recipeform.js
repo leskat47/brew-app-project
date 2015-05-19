@@ -81,5 +81,20 @@ $("#add-misc").click(function(){
 	$("#morespecial" + num).after(newElement);
 });
 
+// $("#submit").click(function(){
+// 	var Data = $("ajaxform").serializeArray();
+// 	console.log(Data);
+// });
+// var AddRecipeForm = $("#ajaxform").serializeJSON():
+// console.log(MyForm);
+// $.ajax(
+// {
+// 	url: "/addrecipe",
+// 	type: "POST",
+// 	data: {valArray: AddRecipeForm},
+// 	success: function(maindta) {
+// 		alert(maindta);
+// 	}
+// }
 
 });

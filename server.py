@@ -77,7 +77,6 @@ def get_recipes(recipe):
         hop_dict["time"] = ingredient.time
         hop_dict["kind"] = ingredient.kind
         hop_steps.append(hop_dict.copy())
-    print hop_dict
 
     ferms = display_recipe.fins
     ferm_dict = {}
@@ -148,7 +147,9 @@ def enter_recipe():
         grain_name = request.form.get('grain')
         ferm_id = Fermentable.query.filter_by(name=grain_name)[0].id
         grain_amount = request.form.get('grain_amount')
-        new_fermins = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=grain_amount, )
+        grain_units = request.form.get('grain-units')
+      
+        new_fermins = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=grain_amount, units=grain_units, )
         db.session.add(new_fermins)
         db.session.commit()
 
@@ -268,7 +269,6 @@ def feed_recipe_form():
     for e in extracts:
         if e.name not in extract_choice:
             extract_choice.append(e.name)
-    print extract_choice
     hop_choice = []
     for h in hops:
         if h.name not in hop_choice:
