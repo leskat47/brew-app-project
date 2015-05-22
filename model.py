@@ -43,7 +43,7 @@ class Recipe(db.Model):
     __tablename__ = "recipes"
 
     recipe_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    name = db.Column(db.String, nullable=False)
+    name = db.Column(db.String, nullable=False, unique=True)
     source = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     public = db.Column(db.String)
@@ -55,14 +55,13 @@ class Recipe(db.Model):
         return "Recipe_id: %s, recipe_name: %s" % (self.recipe_id, self.name)
 
 
-
 class Brew(db.Model):
 
     __tablename__ = "brews"
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-    recipe = db.Column(db.String, db.ForeignKey('recipes.name'))
+    recipe = db.Column(db.String, db.ForeignKey('recipes.name'), unique=True)
     og = db.Column(db.Float)
     fg = db.Column(db.Float)
     abv = db.Column(db.Float)
@@ -81,7 +80,7 @@ class User(db.Model):
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     first_name = db.Column(db.String, nullable=False)
     last_name = db.Column(db.String, nullable=False)
-    email = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, nullable=False, unique=True)
     username = db.Column(db.String)
     password = db.Column(db.String)
 
@@ -118,17 +117,28 @@ class FermIns(db.Model):
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
     ferm_id = db.Column(db.Integer, db.ForeignKey('ferms.id'))
     amount = db.Column(db.Float)
+    units = db.Column(db.String)
     recipe = db.relationship('Recipe', backref=db.backref('fins', order_by=id))
     fermentable = db.relationship('Fermentable', backref=db.backref('fins', order_by=id))
-    units = db.Column(db.String)
 
+
+class ExtIns(db.Model):
+
+    __tablename__ = "extsins"
+
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
+    extract_id = db.Column(db.Integer, db.ForeignKey('extract.extract_id'), nullable=True)
+    amount = db.Column(db.Float)
+    units = db.Column(db.String)
+    recipe = db.relationship('Recipe', backref=db.backref('eins', order_by=id))
+    extract = db.relationship('Extract', backref=db.backref('eins', order_by=id))
 
 class MiscIns(db.Model):
 
     __tablename__ = "miscsins"
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    name = db.Column(db.String)
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
     misc_id = db.Column(db.Integer, db.ForeignKey('misc.misc_id'))
     phase = db.Column(db.String)
@@ -203,7 +213,7 @@ class Fermentable(db.Model):
     protein = db.Column(db.Float, nullable=True)
     max_in_batch = db.Column(db.Float, nullable=True)
     recommend_mash = db.Column(db.String, nullable=True)
-    ibu_gal_per_lb = db.Column(db.Float, nullable=True)
+    # ibu_gal_per_lb = db.Column(db.Float, nullable=True)
     potential = db.Column(db.Float, nullable=True)
     display_color = db.Column(db.String, nullable=True)
     extract_substitute = db.Column(db.String, nullable=True)

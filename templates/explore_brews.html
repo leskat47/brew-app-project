@@ -6,33 +6,41 @@
 		<td>
 			<form action="/explore" method="POST">
 				<p>Search by:</p>
-				<p>
-					Beer Styles: <select name="style">
+				<div>
+					Beer Styles: <select name="style" class="form-control">
 						<option selected disabled>Select a style</option>
 						{% for style in selectlist_styles %}
 						<option value="{{ style }}">{{ style }}</option>
 						{% endfor %}
 					</select>
 					<input type="submit" value="submit">
-				</p>
+				</div>
 			</form>
 			<form action="/explore" method="POST">
 
-				<p>
-					Recipe Name: <select name="recipe">
+				<div>
+					Recipe Name: <select name="recipe" class="form-control">
 						<option selected disabled>Select a recipe</option>
 						{% for recipe in selectlist_recipes %}
 						<option value="{{ recipe }}">{{ recipe }}</option>
 						{% endfor %}
 					</select>
 					<input type="submit" value="submit">
-				</p>
+				</div>
 			</form>
+			{% if session["user_id"] %}
 			<form action="/explore" method="POST">
-				<p>
-					<input type="submit" id="see_all" name="all" value="Show All Recipes">
-				</p>
+				<div>
+					My recipes: <select name="recipe" class="form-control">
+						<option selected disabled>Select a recipe</option>
+						{% for recipe in selectlist_recipes %}
+						<option value="{{ recipe }}">{{ recipe }}</option>
+						{% endfor %}
+					</select>
+					<input type="submit" value="submit">
+				</div>
 			</form>
+			{% endif %}
 		</td>
 		<td>
 		{% if list_recipes %}
@@ -50,15 +58,11 @@
 			{% for name in names %}
 			<h4><a href="/recipe/{{ name }}">{{ name }}</a></h4>
 			{% endfor %}
-		{% endif %}		
+		{% endif %}
+
 		</td>
 	</tr>
-	<tr>
-		<td>
-		</td>
-		<td>
-		</td>
-	</tr>
+
 
 
 {% endblock %}

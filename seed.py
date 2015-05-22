@@ -58,16 +58,16 @@ def load_styles():
 def load_recipes(user=1, public_use=True):
     tree = ET.parse("datasets/recipes.xml")
     root = tree.getroot()
-    for child in root:
-        name = child.find('NAME').text
-        if child.find('SOURCE') is not None:
-            source = child.find('SOURCE').text
-        else:
-            source = None
-        user_id = user
-        public = public_use
-        notes = child.find('NOTES').text
-        style_name = child.find('STYLE').find('NAME').text
+    for recipe in root:
+        name = recipe.find('NAME').text
+        source = el_find_text(recipe, 'SOURCE', "")
+        user_id = el_find_text(recipe, 'user_id', "user")
+        public = el_find_text(recipe, 'public', "yes")
+        if recipe.find('STYLE') is not None:
+            for style in recipe:
+                style_name = el_find_text(recipe, 'STYLE', "")
+        notes = el_find_text(recipe, 'NOTES', "")
+        batch_size = el_find_text(recipe, 'BATCH_SIZE', "")
         new_recipe = Recipe(name=name, source=source, user_id=user_id, public=public,
                             notes=notes, style_name=style_name)
         db.session.add(new_recipe)
@@ -112,7 +112,7 @@ def load_extracts():
 
 
 def load_ferms():
-    ferm_tree = ET.parse("datasets/grain.xml")
+    ferm_tree = ET.parse("datasets/beerxml/grains.xml")
     root = ferm_tree.getroot()
     for child in root:
         name = child.find('NAME').text
@@ -127,7 +127,6 @@ def load_ferms():
         protein = child.find('PROTEIN').text
         max_in_batch = child.find('MAX_IN_BATCH').text
         recommend_mash = child.find('RECOMMEND_MASH').text
-        ibu_gal_per_lb = child.find('IBU_GAL_PER_LB').text
         if child.find('POTENTIAL') is not None:
             potential = child.find('POTENTIAL').text
         else:
@@ -145,7 +144,7 @@ def load_ferms():
                                color=color, origin=origin, coarse_fine_diff=coarse_fine_diff,
                                moisture=moisture, diastatic_power=diastatic_power, protein=protein,
                                max_in_batch=max_in_batch, recommend_mash=recommend_mash,
-                               ibu_gal_per_lb=ibu_gal_per_lb, potential=potential, display_color=display_color,
+                               potential=potential, display_color=display_color,
                                extract_substitute=extract_substitute, notes=notes)
         db.session.add(new_ferm)
     db.session.commit()
@@ -225,7 +224,7 @@ def load_ferm_ins():
         for subchild in child:
             for fermentable in subchild.findall('FERMENTABLE'):
                 name = fermentable.find('NAME').text
-                ferm_id = Fermentable.query.filter_by(name=name)[0].id
+                ferm_id = Fermentable.query.filter_by(name=name).first().id
                 amount = fermentable.find('AMOUNT').text
                 new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount)
                 db.session.add(new_ferm_item)

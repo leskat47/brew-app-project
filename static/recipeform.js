@@ -1,100 +1,161 @@
 $(document).ready(function () {
     "use strict";
 
+//  *********************************************
+//  Ingredient add/delete-a-row functions 
+//  *********************************************
+// TODO: 
 
-// $("#add-grain").click(function(){
-// 	var containerClass = ".repeat-grain"
-// 	var containerId = $(".repeat-grain").attr('id');
-// 	addRow(containerId, containerClass)
-// });
+$("#hidden").hide();
 
-// function addRow(containerId, containerClass){
-// 	var ingredientId = $(containerClass).children().attr("id");
-// 	var ingredientName = $(containerClass).children(":first").name;
-// 	var amountId = $(containerClass).children(":nth-child(2)").id;
-// 	var amountName = $(containerClass).children(":nth-child(2)").name;
-// 	var unitId = $(containerClass).children(":last-child").id;
-// 	var unitName = $(containerClass).children(":last-child").name;
-
-// 	var num = $(containerClass).length;
-// 	var newNum = new Number(num + 1);
-// 	var newElement = $(containerId + num).clone().attr('id', containerClass + newNum);
-// 	newElement.children(":first").attr('id', ingredientId + newNum).attr('name', ingredientName + newNum);
-// 	newElement.children(":nth-child(2)").attr('id', amountId + newNum).attr('name', amountName + newNum);
-// 	newElement.children(":last-child").attr('id', unitId +  newNum).attr('name', unitName + newNum);
-// 	$(containerId + num).after(newElement);
-// }
-
-$("#add-grain").click(function(){
+$('.del-grain').prop('disabled', true);
+$('#moregrains1').hide();
+$("#add-grain").click(function() {
 	var num = $(".repeat-grain").length;
-	var newNum = new Number(num + 1);
-	var newElement = $("#moregrains" + num).clone().attr('id', 'moregrains' + newNum);
-	newElement.children(":first").attr('id', 'grain' + newNum).attr('name', 'grain' + newNum);
-	newElement.children(":nth-child(2)").attr('id', 'grain_amount' + newNum).attr('name', 'grain_amount' + newNum);
-	newElement.children(":last-child").attr('id', 'grain_units' +  newNum).attr('name', 'grain_units' + newNum);
-	$("#moregrains" + num).after(newElement);
+	var newNum = num + 1;
+	if (num > 0) {
+		$('.del-grain').prop('disabled', false);	
+	}	
+	var newElement = $("#moregrains1").clone(true).attr('id', 'moregrains' + newNum).show();
+	$("#add-grain").before(newElement);
 });
 
-$("#add-extract").click(function(){
+$('.del-grain').click(function () {
+    $(this).parent('div').remove(); 
+    if ($('.repeat-grain').length === 2) {
+    	$('.del-grain').prop('disabled', true);
+	} 
+    });
+
+$('.del-extract').prop('disabled', true);
+$("#moreextract1").hide();
+$("#add-extract").click(function() {
 	var num = $(".repeat-extract").length;
-	var newNum = new Number(num + 1);
-	var newElement = $("#moreextract" + num).clone().attr('id', 'moreextract' + newNum);
-	console.log(newElement)
-	newElement.children(":first").attr('id', 'extract' + newNum).attr('name', 'extract' + newNum);
-	newElement.children(":nth-child(2)").attr('id', 'extract_amount' + newNum).attr('name', 'extract_amount' + newNum);
-	newElement.children(":last-child").attr('id', 'extract_units' +  newNum).attr('name', 'extract_units' + newNum);
-	$("#moreextract" + num).after(newElement);
+	var newNum = num + 1;
+	if (num > 0) {
+		$('.del-extract').prop('disabled', false);	
+	}
+	var newElement = $("#moreextract1").clone(true).attr('id', 'moreextract' + newNum).show();
+	$("#add-extract").before(newElement);
 });
 
-$("#add-hop").click(function(){
+$('.del-extract').click(function () {
+    $(this).parent('div').remove();  
+    if ($('.repeat-extract').length === 2) {
+    	$('.del-extract').prop('disabled', true);
+	} 
+    });
+
+$('.del-hop').prop('disabled', true);
+$("#morehops1").hide();
+$("#add-hop").click(function() {
 	var num = $(".repeat-hops").length;
-	var newNum = new Number(num + 1);
-	var newElement = $("#morehops" + num).clone().attr('id', 'morehops' + newNum);
-	newElement.children(":first").attr('id', 'hop' + newNum).attr('name', 'hop' + newNum);
-	newElement.children(":nth-child(2)").attr('id', 'hop_amount' + newNum).attr('name', 'hop_amount' + newNum);
-	newElement.children(":nth-child(3)").attr('id', 'hop_units' +  newNum).attr('name', 'hop_units' + newNum);
-	newElement.children(":nth-child(4)").attr('id', 'hop_phase' + newNum).attr('name', 'hop_phase' + newNum);
-	newElement.children(":nth-child(5)").attr('id', 'hop_time' + newNum).attr('name', 'hop_time' + newNum);
-	newElement.children(":last-child").attr('id', 'hop_kind' + newNum).attr('name', 'hop_kind', + newNum);
-	$("#morehops" + num).after(newElement);
+	var newNum = num + 1;
+	if (num > 0) {
+		$('.del-hop').prop('disabled', false);	
+	}
+	var newElement = $("#morehops1").clone(true).attr('id', 'morehops' + newNum).show();
+	$("#add-hop").before(newElement);
 });
+$('.del-hop').click(function () {
+    $(this).parent('div').remove();  
+    console.log($('.repeat-hops').length); 
+    if ($('.repeat-hops').length === 2) {
+    	$('.del-hop').prop('disabled', true);
+	} 
+    });
 
-$("#add-yeast").click(function(){
+
+$("#moremisc1").hide();
+$("#add-misc").click(function() {
+	var num = $(".repeat-misc").length;
+	var newNum = num + 1;
+	if (num > 0) {
+		$('.del-misc').prop('disabled', false);	
+	}
+	var newElement = $("#moremisc1").clone(true).attr('id', 'moremisc' + newNum).show();
+	$("#add-misc").before(newElement);
+});
+$('.del-misc').click(function () {
+    $(this).parent('div').remove();  
+    });
+
+
+$('.del-yeast').prop('disabled', true);
+$("#moreyeast1").hide();
+$("#add-yeast").click(function() {
 	var num = $(".repeat-yeast").length;
-	var newNum = new Number(num + 1);
-	var newElement = $("#moreyeast" + num).clone().attr('id', 'moreyeast' + newNum);
-	newElement.children(":first").attr('id', 'yeast' + newNum).attr('name', 'yeast' + newNum);
-	newElement.children(":nth-child(2)").attr('id', 'yeast_amount' + newNum).attr('name', 'yeast_amount' + newNum);
-	newElement.children(":last-child").attr('id', 'yeast_units' +  newNum).attr('name', 'yeast_units' + newNum);
-	$("#moreyeast" + num).after(newElement);
+	var newNum = num + 1;
+	if (num > 0) {
+		$('.del-yeast').prop('disabled', false);	
+	}
+	var newElement = $("#moreyeast1").clone(true).attr('id', 'moreyeast' + newNum).show();
+	$("#add-yeast").before(newElement);
+});
+$('.del-yeast').click(function () {
+    $(this).parent('div').remove();  
+    if ($('.repeat-yeast').length === 2) {
+    	$('.del-yeast').prop('disabled', true);
+	} 
+    });
+
+$("#name").change(function () {
+	checkName();
 });
 
-$("#add-misc").click(function(){
-	var num = $(".repeat-special").length;
-	var newNum = new Number(num + 1);
-	var newElement = $("#morespecial" + num).clone().attr('id', 'morespecial' + newNum);
-	newElement.children(":first").attr('id', 'misc' + newNum).attr('name', 'misc' + newNum);
-	newElement.children(":nth-child(2)").attr('id', 'misc_amount' + newNum).attr('name', 'misc_amount' + newNum);
-	newElement.children(":nth-child(3)").attr('id', 'misc_units' +  newNum).attr('name', 'misc_units' + newNum);
-	newElement.children(":nth-child(4)").attr('id', 'misc_phase' + newNum).attr('name', 'misc_phase' + newNum);
-	newElement.children(":last-child").attr('id', 'misc_time' + newNum).attr('name', 'misc_time' + newNum);
-	$("#morespecial" + num).after(newElement);
+function checkName (){
+	$.post("/check_recipe_name",
+	"name="+$("#name").val(),
+	function(result) { 
+		if (result === "nope") {
+		$("#nameWarning").text('Sorry that recipe name is taken, please try a different name.');
+		}
+	});
+}
+
+//  *********************************************
+//  Create objects to convert to JSON
+
+var postparams = {}
+
+$("#submit").click(function (event){
+	if ($("#nameWarning").text !== "") {
+  	event.preventDefault();
+	} else {
+
+	$(".form :input").each (function() {
+		if($(this).val() === "")
+  		event.preventDefault();
+		alert("Empty Fields!!");
+
+	});
+	}
+
+
+	postparams.name = $("#name :input").serialize();
+	postparams.source = $("#source :input").serialize();
+	postparams.style = $("#style :input").serialize();
+	postparams.share = $("#share :input").serialize();
+	postparams.batch_size = $("#batch_size :input").serialize();
+	postparams.units = $("#units :input").serialize();
+	postparams.notes = $("#notes :input").serialize();
+	postparams.grains = $('.repeat-grain :input').serializeArray();
+	postparams.hops = $('.repeat-hops :input').serializeArray();
+	postparams.extracts = $('.repeat-extract :input').serializeArray();
+	postparams.miscs = $('.repeat-special :input').serializeArray();
+	postparams.yeasts = $('.repeat-yeast').serializeArray();
+
+	// TODO: find a way to sort ingredients so name is the key for each input
+
+//  *********************************************
+//  Send data to server
+	$.ajax({url: "/addrecipe", 
+		type: "POST",
+		data:JSON.stringify(postparams),
+		contentType: "application/json; charset=utf-8",});
+});
 });
 
-// $("#submit").click(function(){
-// 	var Data = $("ajaxform").serializeArray();
-// 	console.log(Data);
-// });
-// var AddRecipeForm = $("#ajaxform").serializeJSON():
-// console.log(MyForm);
-// $.ajax(
-// {
-// 	url: "/addrecipe",
-// 	type: "POST",
-// 	data: {valArray: AddRecipeForm},
-// 	success: function(maindta) {
-// 		alert(maindta);
-// 	}
-// }
 
-});
+
+
