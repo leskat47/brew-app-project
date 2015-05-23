@@ -109,6 +109,9 @@ function checkName (){
 	function(result) { 
 		if (result === "nope") {
 		$("#nameWarning").text('Sorry that recipe name is taken, please try a different name.');
+		$("#name").val('');
+		} else {
+		$("#nameWarning").empty()
 		}
 	});
 }
@@ -118,19 +121,7 @@ function checkName (){
 
 var postparams = {}
 
-$("#submit").click(function (event){
-	if ($("#nameWarning").text !== "") {
-  	event.preventDefault();
-	} else {
-
-	$(".form :input").each (function() {
-		if($(this).val() === "")
-  		event.preventDefault();
-		alert("Empty Fields!!");
-
-	});
-	}
-
+$("#submit").click(function (event){	
 
 	postparams.name = $("#name :input").serialize();
 	postparams.source = $("#source :input").serialize();

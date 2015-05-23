@@ -1,12 +1,23 @@
-from flask import Flask, render_template, redirect, request, flash, session
+from flask import Flask, render_template, redirect, request, flash, session, url_for, send_from_directory
 from model import User, Recipe, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
+from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
+import xml.etree.ElementTree as ET
+import os
+from werkzeug import secure_filename
 import json
-from itertools import izip_longest, chain, repeat
 
 app = Flask(__name__)
 
 # Required to use Flask sessions and the debug toolbar
 app.secret_key = "ABC"
+
+app.config['UPLOAD_FOLDER'] = '/tmp/uploads/'
+app.config['ALLOWED_EXTENSIONS'] = set(['xml'])
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
 
 
 @app.route('/')
@@ -72,6 +83,7 @@ def get_recipes(recipe):
     name = display_recipe.name
     source = display_recipe.source
     style = display_recipe.style_name
+    print "style: ", style
     notes = display_recipe.notes
 
     hops = display_recipe.hins
@@ -227,10 +239,6 @@ def enter_recipe():
                            extract_choice=extract_choice, misc_choice=misc_choice, yeast_choice=yeast_choice)
 
 
-@app.route('/formrows')
-def formsource():
-    return render_template('formsource.html')
-
 
 @app.route('/check_recipe_name', methods=["POST"])
 def check_name():
@@ -242,8 +250,43 @@ def check_name():
     else:
         return "nope"
 
-# @app.route('/uploadrecipe')
-# def upload():
+
+@app.route('/uploadrecipe', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        files = []
+        recipes = []
+        files.append(request.files['file-input1'])
+        files.append(request.files['file-input2'])
+        files.append(request.files['file-input3'])
+        files.append(request.files['file-input4'])
+        files.append(request.files['file-input5'])
+
+        def save_files(newfile):
+            if newfile and allowed_file(newfile.filename):
+                filename = secure_filename(newfile.filename)
+
+                newfile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                filepath = "/tmp/uploads/" + filename
+                print filepath
+
+                name = load_recipes(filepath, session["user_id"])
+                load_ferm_ins(filepath)
+                load_ext_ins(filepath)
+                load_hops_ins(filepath)
+                load_misc_ins(filepath)
+                load_yeast_ins(filepath)
+                recipes.append(name)
+
+
+        for newfile in files:
+            save_files(newfile)
+
+        notice = "Files successfully uploaded"
+
+        return render_template("uploadrecipe.html", notice=notice, recipes=recipes)
+
+    return render_template("uploadrecipe.html")
 
 
 # @app.route('/editrecipe/<string:recipe>')

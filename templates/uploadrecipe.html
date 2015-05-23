@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<script>
+$("#text-input").change(function(){
+	$("#filename").text()
+
+});
+
+</script>
+<table style="width: 100%">
+<tr><td style="width: 50%"><a href="/addrecipe"><h2>Create a Recipe</h2></a></td style="width: 50%"><td><h2>Upload a Recipe</h2></td></tr>
+<tr>
+	<td colspan="2">
+		<p>Have recipes from another brew app? Upload recipes in beerxml format here. </p>
+	</td>
+</tr>
+<form action="/uploadrecipe" method="post" enctype="multipart/form-data">
+<tr>
+	<td>
+		<p>Upload recipes:</p>
+		<input type="file" id="file-input1" name="file-input1" class="form-control">
+		<input type="file" id="file-input2" name="file-input2" class="form-control">
+		<input type="file" id="file-input3" name="file-input3" class="form-control">
+		<input type="file" id="file-input4" name="file-input4" class="form-control">
+		<input type="file" id="file-input5" name="file-input5" class="form-control">
+		<input type="submit" value="Submit" class="form-control">
+	</td>
+	<td>
+	{% if notice %}
+		<p><strong>{{ notice }}</strong><p>
+	{% endif %}
+	{% if recipes %}
+		{% for recipe in recipes %}
+			{{ recipe }} <a href="/recipe/{{recipe}}"><button type="button" class="form-control" value="view_recipe" style="width: 150px" display="inline">View Recipe</button></a><br>
+		{% endfor %}
+	{% endif %}
+	</td>
+</form>
+</table>
+{% endblock %}

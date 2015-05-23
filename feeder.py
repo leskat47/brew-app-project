@@ -1,70 +1,16 @@
 from model import Hop, Fermentable, Yeast, Recipe, Style, User, Misc, Extract, YeastIns, HopIns, FermIns, MiscIns, connect_to_db, db
-from server import app
 import xml.etree.ElementTree as ET
-import re
 
 
-###########################################################################
-# STYLES
 
-def load_styles():
-    tree = ET.parse("datasets/beerxml/styleguide.xml")
-    root = tree.getroot()
-    for cls in root:
-        if (cls.attrib["type"] == "beer"):  # parse only the class of beer
-            for cat in cls:
-                category = cat.find('name').text
-                for subcat in cat:  # subcat is the same as the beer style
-                    if (subcat.tag == 'subcategory'):
-                        style_name = subcat.find('name').text
-                        aroma_node = subcat.find('aroma')
-                        aroma = all_text_fragments(aroma_node)
-                        appearance = subcat.find('appearance').text
-                        flavor = subcat.find('flavor').text
-                        mouthfeel = subcat.find('mouthfeel').text
-                        impression = subcat.find('impression').text
-                        comments = el_find_text(subcat, 'comments', "")
-                        ingredients = el_find_text(subcat, 'ingredients', "")
-                        examples = subcat.find('examples').text
-                        for reading in subcat:
-                            for limit in reading:
-                                og_min = el_find_text(limit, 'low', 0)
-                                og_max = el_find_text(limit, 'high', 99)
-                            for limit in reading:
-                                fg_min = el_find_text(limit, 'low', 0)
-                                fg_max = el_find_text(limit, 'high', 0)
-                            for limit in reading:
-                                ibu_min = el_find_text(limit, 'low', 0)
-                                ibu_max = el_find_text(limit, 'high', 0)
-                            for limit in reading:
-                                srm_min = el_find_text(limit, 'low', 0)
-                                srm_max = el_find_text(limit, 'high', 0)
-                            for limit in reading:
-                                abv_min = el_find_text(limit, 'low', 0)
-                                abv_max = el_find_text(limit, 'high', 0)
-
-                        new_style = Style(style_name=style_name, category=category, aroma=aroma,
-                                          appearance=appearance, flavor=flavor, mouthfeel=mouthfeel,
-                                          ingredients=ingredients, impression=impression, og_min=og_min,
-                                          examples=examples, comments=comments, og_max=og_max,
-                                          fg_min=fg_min, fg_max=fg_max, abv_min=abv_min, abv_max=abv_max,
-                                          srm_min=srm_min, srm_max=srm_max, ibu_min=ibu_min, ibu_max=ibu_max)
-                        db.session.add(new_style)
-                    db.session.commit()
-
-
-###########################################################################
-# RECIPES
-
-filename = "datasets/recipes.xml"
-
-def load_recipes(filename, user=1, public_use=True):
-    tree = ET.parse(filename)
+def load_recipes(filepath, user):
+    print filepath
+    tree = ET.parse(filepath)
     root = tree.getroot()
     for recipe in root:
         name = recipe.find('NAME').text
         source = el_find_text(recipe, 'SOURCE', "")
-        user_id = el_find_text(recipe, 'user_id', "user")
+        user_id = user
         public = el_find_text(recipe, 'public', "yes")
         style = [elem.find('NAME').text for elem in recipe.iter() if elem.tag == "STYLE"]
         style_name = style[0]
@@ -73,6 +19,8 @@ def load_recipes(filename, user=1, public_use=True):
         new_recipe = Recipe(name=name, source=source, user_id=user_id, public=public,
                             notes=notes, style_name=style_name)
         db.session.add(new_recipe)
+        print "SUCCESS", name
+        return name
     db.session.commit()
 
 
@@ -283,8 +231,6 @@ def load_yeast_ins(filepath):
                 db.session.add(new_yeast)
     db.session.commit()
 
-########################################################################
-# Helper functions
 
 
 def el_find_text(el, tagstr, ifempty):
@@ -293,44 +239,3 @@ def el_find_text(el, tagstr, ifempty):
         return(ifempty)
     else:
         return(found_el.text)
-
-doublespace_patt = re.compile(r'\s{2}')
-endline_patt = re.compile(r'\n')
-
-def all_text_fragments(et):
-    ' Returns all fragments of text contained in a subtree, as a list of strings '
-    r = []
-    for e in et.getiterator():  # walks the subtree
-        if e.text is not None:
-            substr = (e.text)
-            r.append(substr)
-        if e.tail is not None:
-            tailstr = (e.tail)
-            r.append(e.tail)
-    alltext = ' '.join(r)
-
-    # Clean up the joined text fragments
-    # Remove any line endings
-    alltext = re.sub(endline_patt, "", alltext)
-    # Remove extra whitespace
-    alltext = re.sub(doublespace_patt, "", alltext)
-
-    return alltext
-
-
-if __name__ == "__main__":
-    connect_to_db(app)
-    db.create_all()
-
-    load_styles()
-    load_recipes(filename)
-    load_hops()
-    load_extracts()
-    load_misc()
-    load_yeasts()
-    load_ferms()
-    load_hops_ins(filename)
-    load_ferm_ins(filename)
-    load_misc_ins(filename)
-    load_yeast_ins(filename)
-
