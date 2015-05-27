@@ -70,8 +70,9 @@ def load_recipes(filename, user=1, public_use=True):
         style_name = style[0]
         notes = el_find_text(recipe, 'NOTES', "")
         batch_size = el_find_text(recipe, 'BATCH_SIZE', "")
+        batch_units = el_find_text(recipe, 'BATCH_UNITS', "L")
         new_recipe = Recipe(name=name, source=source, user_id=user_id, public=public,
-                            notes=notes, style_name=style_name)
+                            notes=notes, batch_size=batch_size, batch_units=batch_units, style_name=style_name)
         db.session.add(new_recipe)
     db.session.commit()
 
@@ -107,6 +108,7 @@ def load_extracts():
         kind = el_find_text(child, 'KIND', "")
         ex_yield = child.find('YIELD').text
         notes = child.find('NOTES').text
+        phase = "boil"
         new_ext = Extract(name=name, supplier=supplier, origin=origin, kind=kind,
                           ex_yield=ex_yield, notes=notes)
         db.session.add(new_ext)
@@ -208,10 +210,11 @@ def load_hops_ins(filepath):
                 form = hop.find('FORM').text
                 hop_id = Hop.query.filter_by(name=name, form=form)[0].hop_id
                 amount = hop.find('AMOUNT').text
+                units = "kg"
                 phase = hop.find('USE').text
                 time = hop.find('TIME').text
                 kind = hop.find('TYPE').text
-                new_inst_item = HopIns(recipe_id=recipe_id, hop_id=hop_id, amount=amount, phase=phase,
+                new_inst_item = HopIns(recipe_id=recipe_id, hop_id=hop_id, amount=amount, units=units, phase=phase,
                                        time=time, kind=kind)
                 db.session.add(new_inst_item)
     db.session.commit()

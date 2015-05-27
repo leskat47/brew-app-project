@@ -50,6 +50,7 @@ class Recipe(db.Model):
     style_name = db.Column(db.Integer, db.ForeignKey('styles.style_name'))
     notes = db.Column(db.String)
     batch_size = db.Column(db.Integer)
+    batch_units = db.Column(db.String)
 
     def __repr__(self):
         return "Recipe_id: %s, recipe_name: %s" % (self.recipe_id, self.name)
@@ -61,12 +62,17 @@ class Brew(db.Model):
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-    recipe = db.Column(db.String, db.ForeignKey('recipes.name'), unique=True)
-    og = db.Column(db.Float)
-    fg = db.Column(db.Float)
-    abv = db.Column(db.Float)
+    recipe = db.Column(db.String, db.ForeignKey('recipes.name'))
+    og = db.Column(db.Float, nullable=True)
+    fg = db.Column(db.Float, nullable=True)
+    abv = db.Column(db.Float, nullable=True)
     date = db.Column(db.Date, nullable=False)
-    notes = db.Column(db.String)
+    notes = db.Column(db.String, nullable=True)
+    results_notes = db.Column(db.String, nullable=True)
+    end_date = db.Column(db.Date, nullable=True)
+    rating = db.Column(db.Integer, nullable=True)
+
+    # recipe = db.relationship('Recipe', backref=db.backref('brews', order_by=id))
 
 
 ###########################################################
@@ -180,10 +186,10 @@ class Hop(db.Model):
     form = db.Column(db.String)
     hsi = db.Column(db.Float)
     notes = db.Column(db.String)
-    # unicon = db.UniqueConstraint('name', 'form')
+    __table_args__ = (UniqueConstraint('name', 'form'))
 
     def __repr__(self):
-        return "Hop_id: %s, hop_name: %s" % (self.hop_id, self.hop_name)
+        return "Hop_id: %s, hop_name:" % (self.hop_id, self.name)
 
 
 class Extract(db.Model):
@@ -193,6 +199,7 @@ class Extract(db.Model):
     origin = db.Column(db.String)
     notes = db.Column(db.String)
     kind = db.Column(db.String)
+    phase = db.Column(db.String)
     ex_yield = db.Column(db.Float)
 
 

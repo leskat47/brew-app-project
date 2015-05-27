@@ -1,34 +1,75 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>My Brews</h2>
-<table>
+<table width="80%">
 	<tr>
 		<td>
 			<form action="GET">
 				<p>Search by:</p>
 				<p>
 					Beer Styles: <select>
-						<option value="">Beer Styles here</option>
+						<option selected disabled>Search by Style</option>
+						{% for style in sel_user_styles %}
+						<option value="{{ style }}">{{ style }}</option>
+						{% endfor %}
 					</select>
 				</p>
 				<p>
-					Name: <select>
-						<option value="">Recipe Names</option>
+					<button type="button" id="style">Select</button>
+				</p>
+				<div>
+					My recipes: <select name="recipe" class="form-control">
+						<option selected disabled>Select a recipe</option>
+						{% for recipe in selectlist_user %}
+						<option value="{{ recipe }}">{{ recipe }}</option>
+						{% endfor %}
 					</select>
-				</p>
-				<p>
-					<input type="submit" value="submit">
-				</p>
-				<p>
-					<button id="see_all">Show All Recipes</button>
-				</p>
+					<button type="button" id="recipe">Select</button>
+				</div>
+
 			</form>
 		</td>
 	</tr>
 	<tr>
 		<td>
-		</td>
+			{% for brew in brewlist %}
+			<table class="table">
+			<tr>
+				<td>{{ brew.name }}</td>
+				<td>{{ brew.date }}</td>
+				<td>{% if brew.finished %}
+					Completed: {{ brew.finished }}
+					{% else %}
+					In Progress
+					{% endif %}
+				</td>
+				<td><a href="/brew/{{ brew.id }}"><button type="button" name="brew">Edit</button></a><a href="/delete_brew/{{ brew.id }}"><button type="button" name="delete_brew">Delete this brew</button></a>
+			</td>
+			</tr>
+			<tr>
+				<td>Notes: <br></td>
+				<td colspan="3">{{ brew.notes }}</td>
+			</tr>
+			<tr>
+				<td>Results notes:</td>
+				<td colspan="3">{{ brew.results_notes }}<br></td>
+			</tr>
+			<tr>
+				<td>Original gravity: {{ og }}</td>
+				<td>Final gravity: {{ fg }}</td>
+				<td>ABV: {{ abv }}</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td colspan="4">Rating: {{ brew.rating }}
+				</td>
+			</tr>
+		</table>
+			{% endfor %}
+	</td>
 	</tr>
+</table>
 
 
 {% endblock %}

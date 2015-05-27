@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <h3>{{ name }}</h3>
+<form action="/addbrew/{{ name }}">
 <input type="submit" name="makerecipe" value="Brew this now!">
+</form>
+<form action="/editrecipe/{{ name }}">
+<input type="submit" name="editrecipe" value="Make a Version">
+</form>
 <div>
 	<h4>Style:</h4> {{ style }}<br>
 	{% if source %}
@@ -51,6 +56,9 @@
 		Amount: {{ yeast.amount }}<br>
 		{{ yeast.form }}<br>
 		{{ yeast.kind }}<br>
+
+	<h4>Notes</h4>
+	{{ notes }}
 
 	{% endfor %}
 </div>

@@ -8,7 +8,7 @@ $(document).ready(function () {
 
 $("#hidden").hide();
 
-$('.del-grain').prop('disabled', true);
+// $('.del-grain').prop('disabled', true);
 $('#moregrains1').hide();
 $("#add-grain").click(function() {
 	var num = $(".repeat-grain").length;
@@ -27,7 +27,7 @@ $('.del-grain').click(function () {
 	} 
     });
 
-$('.del-extract').prop('disabled', true);
+// $('.del-extract').prop('disabled', true);
 $("#moreextract1").hide();
 $("#add-extract").click(function() {
 	var num = $(".repeat-extract").length;
@@ -46,7 +46,7 @@ $('.del-extract').click(function () {
 	} 
     });
 
-$('.del-hop').prop('disabled', true);
+// $('.del-hop').prop('disabled', true);
 $("#morehops1").hide();
 $("#add-hop").click(function() {
 	var num = $(".repeat-hops").length;
@@ -81,7 +81,7 @@ $('.del-misc').click(function () {
     });
 
 
-$('.del-yeast').prop('disabled', true);
+// $('.del-yeast').prop('disabled', true);
 $("#moreyeast1").hide();
 $("#add-yeast").click(function() {
 	var num = $(".repeat-yeast").length;

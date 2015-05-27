@@ -1,10 +1,11 @@
 from flask import Flask, render_template, redirect, request, flash, session, url_for, send_from_directory
-from model import User, Recipe, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
+from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
 from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
 import xml.etree.ElementTree as ET
 import os
 from werkzeug import secure_filename
 import json
+import datetime
 
 app = Flask(__name__)
 
@@ -28,26 +29,12 @@ def index():
 
 @app.route('/explore', methods=['GET', 'POST'])
 def show_explore():
-    # Create lists of recipes and styles which will show in the dropdown selections. list_recipes will
-    # hold a list of recipes within a style when style type is selected.
 
-    selectlist_recipes = []
-    selectlist_styles = []
-    list_recipes = []
-    for recipe_obj in Recipe.query.all():
-        selectlist_recipes.append(recipe_obj.name)
-    for style_obj in Style.query.all():
-        selectlist_styles.append(style_obj.style_name)
-
-    selectlist_recipes = sorted(selectlist_recipes)
-    selectlist_styles = sorted(selectlist_styles)
-    # for brew_obj in Style.query.filter_by(userid=session["user_id"]):
-    #     selectlist_userrecipes.append(brew_obj.)
+    selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists()
 
     # If a submit button is clicked, post request is called. For selected style, show recipe list.
     # For recipe selected, show recipe.
     if request.method == "POST":
-        print ("POST HAPPENED")
         # Prevent an error if select is clicked with no value selected
         # try:
         #     request.form.get("style")
@@ -57,13 +44,11 @@ def show_explore():
 
         # Render either recipe list for style selection or recipe
         if request.form.get("style"):
-            print("STYLE RAN")
             style = request.form.get("style")
             for recipe in Recipe.query.filter_by(style_name=style).all():
                 list_recipes.append(recipe.name)
             return render_template("explore_brews.html", list_recipes=list_recipes, selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
         elif request.form.get("recipe"):
-            print("RECIPE RAN")
             recipe = request.form.get("recipe")
             display_recipe = Recipe.query.filter_by(name=recipe).one()
             name = display_recipe.name
@@ -73,73 +58,279 @@ def show_explore():
         #     recipe = request.form.get("recipe")
         #     display_recipe = Recipe.
 
+    return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes,
+                           selectlist_styles=selectlist_styles, selectlisrt_user=selectlist_user,
+                           sel_user_styles=sel_user_styles)
 
-    return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
+
+def get_selectlists():
+    # Create lists of recipes and styles which will show in the dropdown selections. list_recipes will
+    # hold a list of recipes within a style when style type is selected.
+
+    selectlist_recipes = []
+    selectlist_styles = []
+    selectlist_user = []
+    selectlist_user_styles = []
+    for recipe_obj in Recipe.query.filter_by(public="yes"):
+        selectlist_recipes.append(recipe_obj.name)
+    for style_obj in Style.query.all():
+        selectlist_styles.append(style_obj.style_name)
+    for brew_obj in Brew.query.filter_by(user_id=session["user_id"]):
+        selectlist_user.append(brew_obj.recipe)
+        for obj in Recipe.query.filter_by(name=brew_obj.recipe).all():
+            selectlist_user_styles.append(obj.style_name)
+
+    selectlist_recipes = sorted(selectlist_recipes)
+    selectlist_styles = sorted(selectlist_styles)
+    selectlist_user = sorted(selectlist_user)
+    selectlist_user_styles = sorted(selectlist_user_styles)
+
+    return (selectlist_recipes, selectlist_styles, selectlist_user, selectlist_user_styles)
 
 
 @app.route('/recipe/<string:recipe>')
 def get_recipes(recipe):
-    display_recipe = Recipe.query.filter_by(name=recipe).one()
-    name = display_recipe.name
-    source = display_recipe.source
-    style = display_recipe.style_name
-    print "style: ", style
-    notes = display_recipe.notes
-
-    hops = display_recipe.hins
-    hop_dict = {}
-    hop_steps = []
-    for ingredient in hops:
-        hop_dict["name"] = ingredient.hop.name
-        hop_dict["form"] = ingredient.hop.form
-        hop_dict["amount"] = ingredient.amount
-        hop_dict["phase"] = ingredient.phase
-        hop_dict["time"] = ingredient.time
-        hop_dict["kind"] = ingredient.kind
-        hop_steps.append(hop_dict.copy())
-
-    ferms = display_recipe.fins
-    ferm_dict = {}
-    ferm_steps = []
-    for ingredient in ferms:
-        ferm_dict["name"] = ingredient.fermentable.name
-        ferm_dict["kind"] = ingredient.fermentable.kind
-        ferm_dict["amount"] = ingredient.amount
-        ferm_dict["phase"] = "Steep"
-        ferm_steps.append(ferm_dict.copy())
-
-    if display_recipe.mins:
-        misc = display_recipe.mins
-        misc_dict = {}
-        misc_steps = []
-        for ingredient in misc:
-            misc_dict["name"] = ingredient.misc.name
-            misc_dict["kind"] = ingredient.misc.kind
-            misc_dict["phase"] = ingredient.misc.use
-            misc_dict["amount"] = ingredient.amount
-            misc_dict["time"] = ingredient.time
-            misc_steps.append(misc_dict.copy())
-    else:
-        misc_steps = None
-
-    yeasts = display_recipe.yins
-    yeast_dict = {}
-    yeast_steps = []
-    for ingredient in yeasts:
-        yeast_dict["name"] = ingredient.yeast.name
-        yeast_dict["amount"] = ingredient.amount
-        yeast_dict["kind"] = ingredient.yeast.kind
-        yeast_dict["form"] = ingredient.yeast.form
-        yeast_steps.append(yeast_dict.copy())
+    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps = get_recipe_info(recipe)
 
     return render_template("recipe.html", name=name, source=source, style=style,
-                           notes=notes, hop_steps=hop_steps, ferm_steps=ferm_steps,
+                           notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
                            misc_steps=misc_steps, yeast_steps=yeast_steps)
 
 
 @app.route('/mybrews')
 def show_mybrews():
-    return render_template("mybrews.html")
+
+    selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists()
+    all_brews = Brew.query.filter_by(user_id=session["user_id"]).all()
+    if request.method == "POST":
+        # if request.form.get("style"):
+        #     style = request.form.get("style")
+        #     for recipe in Recipe.query.filter_by(style_name=style).all():
+        #         list_recipes.append(recipe.name)
+        #     return render_template("explore_brews.html", list_recipes=list_recipes, selectlist_recipes=selectlist_recipes, selectlist_styles=selectlist_styles)
+        if request.form.get("recipe"):
+            recipe = request.form.get("recipe")
+            display_recipe = Brew.query.filter_by(recipe=recipe).one()
+            name = display_recipe.name
+        return render_template("mybrews.html", selectlist_recipes=selectlist_recipes)
+    else:
+        brewlist = []
+        for brew in all_brews:
+            newbrew = {}
+            newbrew["id"] = brew.id
+            newbrew["name"] = brew.recipe
+            newbrew["date"] = brew.date
+            newbrew["notes"] = brew.notes
+            if brew.end_date:
+                newbrew["finished"] = brew.end_date
+                newbrew["open_brew"] = True
+            else:
+                newbrew["finished"] = ""
+                newbrew["open_brew"] = False
+            newbrew["results_notes"] = brew.results_notes
+            newbrew["rating"] = brew.rating
+            newbrew["og"] = brew.og
+            newbrew["fg"] = brew.fg
+            newbrew["abv"] = brew.abv
+            brewlist.append(newbrew)
+
+        return render_template("mybrews.html", brewlist=brewlist, selectlist_styles=selectlist_styles,
+                               selectlist_user=selectlist_user, sel_user_styles=sel_user_styles)
+
+
+@app.route('/addbrew/<string:recipe>')
+def add_brew(recipe):
+    user_id = session["user_id"]
+    date = datetime.date.today()
+    new_brew = Brew(user_id=user_id, recipe=recipe, date=date)
+
+    if len(Brew.query.filter_by(user_id=user_id, recipe=recipe, date=date) >= 1):
+        flash ("The database already shows a brew for this recipe today. Adding another for you.")
+
+    db.session.add(new_brew)
+    db.session.commit()
+
+    brew_id = new_brew.id
+
+    brew_id = str(brew_id)
+    return redirect('/brew/' + brew_id)
+
+
+@app.route('/brew/<int:brew_id>', methods=['GET', 'POST'])
+def brew_process(brew_id):
+    brew = Brew.query.filter_by(id=brew_id).one()
+    recipe = brew.recipe
+    if request.method == "POST":
+        brew_update = update_brew(brew)
+        return redirect("/explore")
+    else:
+        recipe, batch_size, batch_units, times, boiltime, steep, yeast, secondary, extracts, og_min, og_max, notes, = show_brew_recipe(recipe)
+
+
+        return render_template("brew.html", brew=brew, recipe=recipe, batch_size=batch_size, batch_units=batch_units,
+                           times=times, boiltime=boiltime, steep=steep, yeast=yeast, secondary=secondary,
+                           extracts=extracts, og_min=og_min, og_max=og_max, notes=notes)
+
+
+def update_brew(brew):
+
+    brew.user_id = session["user_id"]
+    date_get = request.form.get('brew_date')
+    brew.date = datetime.datetime.strptime(date_get, "%Y-%m-%d").date()
+    brew.og = float(request.form.get('orig_gravity'))
+    if request.form.get('final_gravity'):
+        brew.fg = float(request.form.get('final_gravity'))
+        brew.og = float(brew.og)
+        brew.abv = (brew.fg - brew.og) * 131
+    else:
+        brew.fg = 0
+        brew.abv = 0
+    end_date_get = request.form.get('finished')
+    brew.end_date = datetime.datetime.strptime(end_date_get, "%Y-%m-%d").date()
+    brew.notes = request.form.get('brew_notes')
+    brew.results_notes = request.form.get('results_notes')
+    brew.rating = request.form.get('rating')
+
+    db.session.commit()
+
+    brew_update = "Brew successfully updated"
+
+    return brew_update
+
+
+def show_brew_recipe(recipe):
+    record = Recipe.query.filter_by(name=recipe).one()
+    recipe_id = record.recipe_id
+    if record.notes == "":
+        notes = "No notes for this recipe"
+    else:
+        notes = record.notes
+
+    style_name = record.style_name
+    style_record = Style.query.filter_by(style_name=style_name).one()
+    og_min = style_record.og_min
+    og_max = style_record.og_max
+
+    if record.batch_size == "":
+        batch_size = 5
+        batch_units = "gallons"
+    else:
+        batch_size = record.batch_size
+        batch_units = record.batch_units
+
+    # Boil list: This should only exist for hops and special ingredients.
+    boil = []
+    times = []
+    boiltime = {}
+    # Make a list of times in instructions. Prevent duplicates and sort descending.
+    boil = HopIns.query.filter_by(phase="Boil", recipe_id=recipe_id).all() + MiscIns.query.filter_by(phase="Boil", recipe_id=recipe_id).all()
+    for add in boil:
+        if add.time not in times:
+            times.append(add.time)
+    sorted(times, reverse=True)
+    for time in times:
+        boiltime[time] = []
+        # iter = 1
+        # boiltime[time]["nextdiff"] = time - times[iter]
+        # iter += 1
+        for add in boil:
+            new_ing = {}
+            if (add.time == time) and (hasattr(add, 'hop_id')):
+                ingredient = Hop.query.filter_by(hop_id=add.hop_id).one()
+                new_ing["name"] = ingredient.name
+                new_ing["amount"] = add.amount
+                new_ing["units"] = add.units
+            elif (add.time == time) and (hasattr(add, 'misc_id')):
+                ingredient = Misc.query.filter_by(misc_id=add.misc_id).one()
+                new_ing["name"] = ingredient.name
+                new_ing["amount"] = add.amount
+                new_ing["units"] = add.units
+            boiltime[time].append(new_ing)
+
+    # def collect_instructions(list_name, cls_name, cls_ins_name, id):
+    #     instructions = cls_ins_name.query.filter_by(recipe_id=recipe_id).all()
+
+    #     list_name = []
+
+    #     for add in instructions:
+    #         add_dict = {}
+    #         add_dict["name"] = cls_name.query.filter_by(id=add.id).one().name
+    #         add_dict["amount"] = add.amount
+    #         if add.units is not None:
+    #             add_dict["units"] = add.units
+    #         else:
+    #             add_dict["units"] = "ounces"
+
+    #         list_name.append(add_dict)
+    #         print "*******************************************************", list_name
+    #         return list_name
+    # steep = collect_instructions("grains", Fermentable, FermIns, ferm_id)
+    # extracts = collect_instructions("extract", Extract, ExtIns, "extract_id")
+    # YeastIns.query.filter_by(phase="Primary", recipe_id=recipe_id).all()
+    # yeast = collect_instructions("yeasts", Yeast, YeastIns, "yeast_id")
+
+    # Make a list of dicts for grain info
+    grains = FermIns.query.filter_by(recipe_id=recipe_id).all()
+    steep = []
+    for add in grains:
+        add_dict = {}
+        add_dict["name"] = Fermentable.query.filter_by(id=add.ferm_id).one().name
+        add_dict["amount"] = add.amount
+        if add.units is not None:
+            add_dict["units"] = add.units
+        else:
+            add_dict["units"] = "ounces"
+
+        steep.append(add_dict)
+    # Make a list of dicts for extract info
+    extract = ExtIns.query.filter_by(recipe_id=recipe_id).all()
+    extracts = []
+    if extract != []:
+        for add in extract:
+            add_dict = {}
+            add_dict["name"] = Extract.query.filter_by(extract_id=add.extract_id).one().name
+            add_dict["amount"] = add.amount
+            if add.units is not None:
+                add_dict["units"] = add.units
+            else:
+                add_dict["units"] = "ounces"
+
+            extracts.append(add_dict)
+    # Make a list of dicts for yeast info sorted by stage: primary or secondary
+    yeasts = YeastIns.query.filter_by(recipe_id=recipe_id).all()
+    yeast = []
+    secondary = []
+    for add in yeasts:
+        if add.phase == "primary":
+            add_dict = {}
+            add_dict["name"] = Yeast.query.filter_by(yeast_id=add.yeast_id).one().name
+            add_dict["amount"] = add.amount
+            if add.units is not None:
+                add_dict["units"] = add.units
+            else:
+                add_dict["units"] = "ounces"
+            yeast.append(add_dict)
+
+        elif add.phase == "secondary":
+            add_dict = {}
+            add_dict["name"] = Yeast.query.filter_by(yeast_id=add.yeast_id).one().name
+            add_dict["amount"] = add.amount
+            if add.units is not None:
+                add_dict["units"] = add.units
+            else:
+                add_dict["units"] = "ounces"
+
+            secondary.append(add_dict)
+
+    return (recipe, batch_size, batch_units, times, boiltime, steep, yeast, secondary,
+            extracts, og_min, og_max, notes)
+
+@app.route('/delete_brew/<int:brew_id>')
+def delete_brew(brew_id):
+    Brew.query.filter_by(id=brew_id).delete()
+    db.session.commit()
+    flash ("Your brew was deleted")
+    return redirect("/mybrews")
 
 
 @app.route('/addrecipe', methods=['GET', 'POST'])
@@ -222,12 +413,13 @@ def enter_recipe():
             db.session.commit()
 
         # Yeast Instructions
-        for i in range(0, len(data['yeasts']), 3):
+        for i in range(0, len(data['yeasts']), 4):
             yeast_name = yeasts[i]["value"]
             yeast_id = Yeast.query.filter_by(name=yeast_name)[0].yeast_id
             yeast_amount = yeasts[i+1]["value"]
             yeast_units = yeast[i+2]["value"]
-            new_yeastins = YeastIns(recipe_id=recipe_id, id=yeast_id, amount=yeast_amount, units=yeast_units)
+            yeast_phase = yeast[i+3]["value"]
+            new_yeastins = YeastIns(recipe_id=recipe_id, id=yeast_id, amount=yeast_amount, units=yeast_units, phase=yeast_phase)
             db.session.add(new_yeastins)
             db.session.commit
 
@@ -239,7 +431,7 @@ def enter_recipe():
                            extract_choice=extract_choice, misc_choice=misc_choice, yeast_choice=yeast_choice)
 
 
-
+# Called from recipe form js to check for duplicate recipe names
 @app.route('/check_recipe_name', methods=["POST"])
 def check_name():
     print request.form
@@ -265,10 +457,8 @@ def upload_file():
         def save_files(newfile):
             if newfile and allowed_file(newfile.filename):
                 filename = secure_filename(newfile.filename)
-
                 newfile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 filepath = "/tmp/uploads/" + filename
-                print filepath
 
                 name = load_recipes(filepath, session["user_id"])
                 load_ferm_ins(filepath)
@@ -277,7 +467,6 @@ def upload_file():
                 load_misc_ins(filepath)
                 load_yeast_ins(filepath)
                 recipes.append(name)
-
 
         for newfile in files:
             save_files(newfile)
@@ -289,9 +478,17 @@ def upload_file():
     return render_template("uploadrecipe.html")
 
 
-# @app.route('/editrecipe/<string:recipe>')
-# def editrecipe():
-#     pass
+@app.route('/editrecipe/<string:recipe>')
+def editrecipe(recipe):
+    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps = get_recipe_info(recipe)
+    grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
+    print "hop unit: ", hop_steps
+    public = Recipe.query.filter_by(name=recipe).one().public
+    return render_template("editrecipe.html", name=name, source=source, style=style, batch_size=batch_size, batch_units=batch_units,
+                           public=public, notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
+                           misc_steps=misc_steps, yeast_steps=yeast_steps, grain_choice=grain_choice,
+                           extract_choice=extract_choice, hop_choice=hop_choice,
+                           misc_choice=misc_choice, yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -363,6 +560,7 @@ def logout():
     return redirect("/")
 
 
+# Build lists for recipe form drop downs
 def feed_recipe_form():
     selectlist_styles = []
     for style_obj in Style.query.all():
@@ -403,6 +601,81 @@ def feed_recipe_form():
 
     return grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles
 
+
+def get_recipe_info(recipe):
+    display_recipe = Recipe.query.filter_by(name=recipe).one()
+    name = display_recipe.name
+    source = display_recipe.source
+    style = display_recipe.style_name
+    batch_size = display_recipe.batch_size
+    batch_units = display_recipe.batch_units
+    if display_recipe.notes == "":
+        notes = "There are no notes for this recipe."
+    else:
+        notes = display_recipe.notes
+
+    hops = display_recipe.hins
+    hop_dict = {}
+    hop_steps = []
+    for ingredient in hops:
+        hop_dict["name"] = ingredient.hop.name
+        hop_dict["form"] = ingredient.hop.form
+        hop_dict["amount"] = ingredient.amount
+        hop_dict["units"] = ingredient.units
+        hop_dict["phase"] = ingredient.phase
+        hop_dict["time"] = ingredient.time
+        hop_dict["kind"] = ingredient.kind
+        hop_steps.append(hop_dict.copy())
+
+    extracts = display_recipe.eins
+    ext_dict = {}
+    ext_steps = []
+    for ingredient in extracts:
+        ext_dict["name"] = ingredient.extract.name
+        ext_dict["kind"] = ingredient.extract.kind
+        ext_dict["amount"] = ingredient.amount
+        ext_dict["units"] = ingredient.units
+        ext_dict["phase"] = "Boil"
+        ext_steps.append(ext_dict.copy())
+
+    ferms = display_recipe.fins
+    ferm_dict = {}
+    ferm_steps = []
+    for ingredient in ferms:
+        ferm_dict["name"] = ingredient.fermentable.name
+        ferm_dict["kind"] = ingredient.fermentable.kind
+        ferm_dict["amount"] = ingredient.amount
+        ferm_dict["units"] = ingredient.units
+        ferm_dict["phase"] = "Steep"
+        ferm_steps.append(ferm_dict.copy())
+
+    if display_recipe.mins:
+        misc = display_recipe.mins
+        misc_dict = {}
+        misc_steps = []
+        for ingredient in misc:
+            misc_dict["name"] = ingredient.misc.name
+            misc_dict["kind"] = ingredient.misc.kind
+            misc_dict["phase"] = ingredient.misc.use
+            misc_dict["amount"] = ingredient.amount
+            misc_dict["units"] = ingredient.units
+            misc_dict["time"] = ingredient.time
+            misc_steps.append(misc_dict.copy())
+    else:
+        misc_steps = None
+
+    yeasts = display_recipe.yins
+    yeast_dict = {}
+    yeast_steps = []
+    for ingredient in yeasts:
+        yeast_dict["name"] = ingredient.yeast.name
+        yeast_dict["amount"] = ingredient.amount
+        yeast_dict["kind"] = ingredient.yeast.kind
+        yeast_dict["form"] = ingredient.yeast.form
+        yeast_dict["units"] = ingredient.units
+        yeast_steps.append(yeast_dict.copy())
+
+    return (name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps)
 
 if __name__ == "__main__":
 

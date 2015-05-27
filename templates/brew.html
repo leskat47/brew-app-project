@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>{{ recipe }}</h2>
+<table>
+<form action="/brew/{{ brew.id }}" method="post">
+<tr>
+<td>
+Brew Date: <input type="date" name="brew_date" id="brew_date" class="form-control" style="width: 200px" value={{ brew.date }}>
+
+<h2>1. Steep</h2>
+	<div id="steep-instructions">
+		<p>Bring {{ batch_size }} {{ batch_units }} to a 165 degrees. </p>
+		<p>Prepare the following grains for steeping:
+			<ul>
+			{% for grain in steep %}
+				<li>{{ grain.name }} - {{ grain.amount }} {{ grain.units }}</li>
+			{% endfor %}
+			</ul>
+			</p>
+		<p>Steep for <span class="timer" id="steep">30 minutes</span>.</p> 
+	</div>
+<h2>2. Boil</h2> 
+	<div id="boil-instructions">
+	<p>Bring water to a boil. Turn off flame and add sugars:</p>
+		<ul>
+		{% for extract in extracts %}
+			<li>{{ extract.name }} - {{ extract.amount }} {{ extract.units }} </li>
+		{% endfor %}
+		</ul>
+	<p>Return to boil. Start boil time: <input type="time" name-"boil_start"></p>
+		{% for time in times %}
+		At {{ time }} minutes:
+			{% for ingredient in boiltime[time] %}
+			{{ ingredient["amount"] }} {{ ingredient["units"] }} {{ ingredient["name"] }}
+			{% endfor %}
+			<button type="button" class="timer form-control" value="timer" style="width: 100px">Timer</button><br>
+		{% endfor %}
+	</div>
+<h2>3. Cool</h2>
+
+<h2>4. Primary</h2> 
+	<div id="transfer-instructions">
+		<p>Transfer to primary. </p>
+		<p>Original gravity: <input type="float" name="orig_gravity" id="orig_gravity" class="form-control" style="width: 100px; display: inline" value="{{ brew.og }}"></p>
+		<p>Original gravity range for this style: {{ og_min }} - {{ og_max }}</p>
+		<p>Add yeast: 
+		{% for item in yeast %} 
+			{{ item.name }} {{ item.amount }} {{ item.units }} 
+		{% endfor %}
+		</p>
+	</div>
+
+<h2>5. Secondary</h2>
+	<div id="secondary-instructions">
+	{% if secondary %}
+	<p>Add:
+		{% for item in secondary %}
+			{{ item }}
+		{% endfor %}
+	{% else %}
+	</p>
+		<p>"There are no secondary steps for this beer."</p>
+	
+	{% endif %}
+
+
+	</div>
+	Date finished: <input type="date" id="finished" name="finished" class="form-control" style="width: 200px; display: inline" value="{{ brew.end_date }}">
+	Final gravity: <input type="text" id="final_gravity" name="final_gravity" class="form-control" style="width: 100px; display: inline" value="{{ brew.fg }}"><br><br>
+
+
+
+<p><input type="submit" value="Brew is done" class="form-control"></p>
+</td>
+<td style="vertical-align: top">
+<br>
+<input type="submit" value="Save and Return Later" class="form-control">
+
+<h2>Recipe Notes:</h2>
+{{ notes }}<br>
+<h2>My notes:</h2>
+<input type="textbox" name="brew_notes" id="brew_notes" style="width: 300px; height: 300px" value="{{ brew.notes }}">
+<h2>Results</h2>
+<input type="textbox" name="results_notes" id="results_notes" style="width: 300px; height: 300px" value="{{ brew.results_notes }}">
+<h2>Rating:</h2>
+<div class="rating">
+
+    <span><input type="radio" name="rating" id="str5" value="1" {% if brew.rating == 1 %} checked {% endif %}><label for="str1"></label></span>
+    <span><input type="radio" name="rating" id="str4" value="2" {% if brew.rating == 2 %} checked {% endif %}><label for="str2"></label></span>
+    <span><input type="radio" name="rating" id="str3" value="3" {% if brew.rating == 3 %} checked {% endif %}><label for="str3"></label></span>
+    <span><input type="radio" name="rating" id="str2" value="4"{% if brew.rating == 4 %} checked {% endif %}><label for="str4"></label></span>
+    <span><input type="radio" name="rating" id="str1" value="5" {% if brew.rating == 5 %} checked {% endif %}><label for="str5"></label></span>
+
+</div>
+
+</div>
+</td>
+</tr>
+</form>
+</table>
+{% endblock %}
