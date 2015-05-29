@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <h2>My Brews</h2>
+{% if brewlist == [] %}
+<table width="80%" style="display: hidden">
+	<tr>
+		<td>
+			 <div>
+			 	<p>You haven't added any brews yet! Get started:</p>
+			 	<a href="/explore"><button type="button" name="Browse recipes">Browse Recipes</button></a>
+		</td>
+	</tr>
+</table>
+{% endif %}
+{% if brewlist != [] %}
 <table width="80%">
 	<tr>
 		<td>
@@ -71,5 +84,7 @@
 	</tr>
 </table>
 
-
+{% endif %}
 {% endblock %}
+
+

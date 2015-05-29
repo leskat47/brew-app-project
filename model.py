@@ -62,8 +62,10 @@ class Brew(db.Model):
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-    recipe = db.Column(db.String, db.ForeignKey('recipes.name'))
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
     og = db.Column(db.Float, nullable=True)
+    cg = db.Column(db.Float, nullable=True)
+    cg_date = db.Column(db.Float, nullable=True)
     fg = db.Column(db.Float, nullable=True)
     abv = db.Column(db.Float, nullable=True)
     date = db.Column(db.Date, nullable=False)
@@ -72,7 +74,7 @@ class Brew(db.Model):
     end_date = db.Column(db.Date, nullable=True)
     rating = db.Column(db.Integer, nullable=True)
 
-    # recipe = db.relationship('Recipe', backref=db.backref('brews', order_by=id))
+    recipe = db.relationship('Recipe', backref=db.backref('brews', order_by=id))
 
 
 ###########################################################
@@ -186,7 +188,7 @@ class Hop(db.Model):
     form = db.Column(db.String)
     hsi = db.Column(db.Float)
     notes = db.Column(db.String)
-    __table_args__ = (UniqueConstraint('name', 'form'))
+    # __table_args__ = (UniqueConstraint('name', 'form'))
 
     def __repr__(self):
         return "Hop_id: %s, hop_name:" % (self.hop_id, self.name)
