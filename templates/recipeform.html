@@ -119,12 +119,12 @@
 	<tr>
 		<td colspan="2">
 			Recipe name
-			<input type="text" id="name" name="name" class="form-control" required>
+			<div id="name"><input type="text" name="name" class="form-control" required></div>
 			
 		</td>
 		<td colspan="2">
 			Source
-			<input type="text" id="source" name="source" class="form-control" required>
+			<div id="source"><input type="text" id="source" name="source" class="form-control" required></div>
 		</td>
 	</tr>
 	<tr>
@@ -135,19 +135,19 @@
 	<tr>
 		<td colspan="3">
 			<p>Style
-			<select id-"style" name="style" class="form-control" required>
+			<div id="style"><select name="style" class="form-control" required>
 					<option selected disabled>Select a style</option>
 					{% for style in selectlist_styles %}
 					<option value="{{ style }}">{{ style }}</option>
 					{% endfor %}
-			</select>
+			</select></div>
 		</td>
 		<td>
 			Share this recipe?
-			<select id="share" name="share" class="form-control" required>
+			<div id="share"><select name="share" class="form-control" required>
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
-				</select>
+				</select></div>
 		</td>
 	</tr>
 	<tr>
@@ -157,14 +157,14 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-		<input type="number" id="batch_size" name="batch_size" class="form-control" required>
+		<div id="batch_size"><input type="number" id="batch_size" name="batch_size" class="form-control" required></div>
 		</td>
 		<td>
-			<select id="units" name="units" class="form-control" required>
+			<div id="units"><select id="units" name="units" class="form-control" required>
 					<option selected disabled>units</option>
 					<option value="grams">g</option>
 					<option value="ounces">L</option>
-			</select>
+			</select></div></td>
 		</td>
 		<td>
 		</td>
@@ -303,11 +303,11 @@
 	<tr>
 		<td colspan="4"><br>
 		Notes/Instructions:<br>
-		<p><textarea id="note" name="note" rows="10" cols="50"></textarea></p>
+		<p><div id="notes"><textarea name="note" rows="10" cols="50"></textarea></div></p>
 		</td>
 	</tr>
 	<tr colspan="4">
-		<td><p><input type="submit"  value="submit" id="submit" class="form-control" ></p>
+		<td><p><input type="button"  value="submit" id="submit" class="form-control" ></p>
 		</td>
 	</tr>
 	<!-- </form> -->

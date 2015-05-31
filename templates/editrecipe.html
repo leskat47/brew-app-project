@@ -115,28 +115,28 @@
 	<tr>
 		<td colspan="2">
 			Recipe name - Change to your own fresh recipe name!
-			<input type="text" name="name" class="form-control" placeholder="{{ name }}">
+			<div id="recipename"><input type="text" id="name" name="name" class="name form-control" placeholder="{{ name }}"></div>
 		</td>
 		<td colspan="2">
 			Source
-			<input type="text" name="source" class="form-control" value="{{ source }}">
+			<div id="source"><input type="text" name="source" class="source form-control" value="{{ source }}"></div>
 		</td>
 	<tr>
 		<td colspan="3">
 			<p>Style
-			<select name="style" class="form-control" >
+			<div id="style"><select name="style" class="form-control" >
 					<option value="{{ style }}"selected="selected">{{ style }}</option>
 					{% for item in selectlist_styles %}
 					<option value="{{ item }}">{{ item }}</option>
 					{% endfor %}
-			</select>
+			</select></div>
 		</td>
 		<td>
 			Share this recipe?
-			<select name="share" class="form-control">
+			<div id="share"><select name="share" class="form-control">
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
-				</select>
+				</select></div>
 		</td>
 	</tr>
 	<tr>
@@ -146,10 +146,10 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-		<p><input type="number" name="batch_size" class="form-control" value="{{ batch_size }}">
+		<div id="batch_size"><input type="number" name="batch_size" class="form-control" value="{{ batch_size }}"></div>
 		</td>
 		<td>
-			<select name="units" class="form-control" >
+			<div id="units"><select name="units" class="form-control" >
 			{% if batch_units == g %}
 					<option value="grams" selected="selected">g</option>
 					<option value="ounces">L</option>
@@ -158,7 +158,7 @@
 					<option value="liters" selected="selected">L</option>
 			{% endif %}
 
-			</select>
+			</select></div>
 		</td>
 		<td>
 		</td>
@@ -313,11 +313,11 @@
 	<tr>
 		<td colspan="4"><br>
 		Notes/Instructions:<br>
-		<p><textarea name="textarea" rows="10" cols="50" value="{{ notes }}"></textarea></p>
+		<p><div id="notes"><textarea name="textarea" rows="10" cols="50" value="{{ notes }}"></textarea></div></p>
 		</td>
 	</tr>
 	<tr colspan="4">
-		<td><p><input type="submit" value="submit" id="submit" class="form-control" ></p>
+		<td><p><button type="button" value="submit" id="submit" class="form-control" >Submit</button></p>
 		</td>
 	</tr>
 	</table>

@@ -123,19 +123,20 @@ var postparams = {}
 
 $("#submit").click(function (event){	
 
-	postparams.name = $("#name :input").serialize();
-	postparams.source = $("#source :input").serialize();
-	postparams.style = $("#style :input").serialize();
-	postparams.share = $("#share :input").serialize();
-	postparams.batch_size = $("#batch_size :input").serialize();
-	postparams.units = $("#units :input").serialize();
-	postparams.notes = $("#notes :input").serialize();
+	postparams.name = $("#name input").serialize();
+	postparams.source = $("#source input").serialize();
+	postparams.style = $("#style select").serialize();
+	postparams.share = $("#share select").serialize();
+	postparams.batch_size = $("#batch_size input").serialize();
+	postparams.units = $("#units select").serialize();
+	postparams.notes = $("#notes textarea").serialize();
 	postparams.grains = $('.repeat-grain :input').serializeArray();
 	postparams.hops = $('.repeat-hops :input').serializeArray();
 	postparams.extracts = $('.repeat-extract :input').serializeArray();
 	postparams.miscs = $('.repeat-special :input').serializeArray();
-	postparams.yeasts = $('.repeat-yeast').serializeArray();
+	postparams.yeasts = $('.repeat-yeast :input	').serializeArray();
 
+	console.log(postparams);
 	// TODO: find a way to sort ingredients so name is the key for each input
 
 //  *********************************************
