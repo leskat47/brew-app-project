@@ -1,36 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
+<script src="/static/recipe.js"></script>
 <h2>Explore</h2>
-<table>
+<table class="table">
 	<tr>
 		<td>
 			<form action="/explore" method="POST">
 				<p>Search by:</p>
 				<div>
-					Beer Styles: <select name="style" id="style_list" class="form-control">
+					Beer Styles: <select id="style" name="style" id="style_list" class="form-control">
 						<option selected disabled>Select a style</option>
 						{% for style in selectlist_styles %}
 						<option value="{{ style }}">{{ style }}</option>
 						{% endfor %}
 					</select>
-					<input type="submit" value="submit">
 				</div>
 			</form>
 			<form action="/explore" method="POST">
 
 				<div>
-					Recipe Name: <select name="recipe" class="form-control">
+					Recipe Name: <select id="recipe" name="recipe" class="form-control">
 						<option selected disabled>Select a recipe</option>
 						{% for recipe in selectlist_recipes %}
 						<option value="{{ recipe }}">{{ recipe }}</option>
 						{% endfor %}
 					</select>
-					<input type="submit" value="submit">
 				</div>
 			</form>
 
 		</td>
 		<td>
+
 		{% if list_recipes %}
 			<h3>Recipes</h3>
 			<ul>
@@ -40,13 +40,65 @@
 			</ul>
 		{% endif %}
 		{% if name %}
-			<h4><a href="/recipe/{{ name }}">{{ name }}</a></h4>
-		{% endif %}
-		{% if names %}
-			{% for name in names %}
-			<h4><a href="/recipe/{{ name }}">{{ name }}</a></h4>
+			<div>
+			<h3>{{ name }}</h3> <input type="button" id="makerecipe" name="{{ name }}" value="Brew this now!">
+				<form action="/editrecipe/{{ name }}">
+				<input type="submit" name="editrecipe" value="Make a Version">
+				</form>
+			<h4>Style:</h4> {{ style }}<br>
+			{% if source %}
+				<h4>Source:</h4> {{ source }}<br>
+			{% endif %}
+			<h4>Steep:</h4>
+			{% for ferm in ferm_steps %}
+		<!-- 		{% if ferm.kind == "Grain" %} -->
+					<strong>{{ ferm.name }}</strong>
+					Amount: {{ ferm.amount }}<br>
+		<!-- 		{% endif %} -->
 			{% endfor %}
+
+			<h4>Boil:</h4>
+		<!-- 
+			{% for ferm in ferm_steps %}
+				{% if ferm.kind != "Grain" %}
+					<strong>Sugars:</strong>
+					{{ ferm.name }}
+					Amount: {{ ferm.amount }}
+				{% endif %}
+			{% endfor %} -->
+			{% if misc_steps%}
+				{% for misc in misc_steps %}
+					{% if misc.phase == "Boil" %}
+					<strong>{{ misc.name }}</strong>
+					Amount: {{misc.amount }}
+					Type: {{ misc.kind }}
+					Time: {{ misc.time }}
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+			{% for hop in hop_steps %}
+				{% if hop.phase == "Boil" %}
+				<p>
+					<strong>{{ hop.name }}</strong><br>
+					Form: {{ hop.form }}<br>
+					Amount: {{ hop.amount }}<br>
+					Type: {{ hop.kind }}<br>
+					Time: {{ hop.time }}<br>
+				</p>
+				{% endif %}
+			{% endfor %}
+			<h4>Yeast</h4>
+			{% for yeast in yeast_steps %}
+				<strong>{{ yeast.name }}</strong><br>
+				Amount: {{ yeast.amount }}<br>
+				{{ yeast.form }}<br>
+				{{ yeast.kind }}<br>
+			{% endfor %}
+			<h4>Notes</h4>
+			{{ notes }}
+			</div>
 		{% endif %}
+
 
 		</td>
 	</tr>
