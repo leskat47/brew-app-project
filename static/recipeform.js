@@ -105,7 +105,7 @@ $("#name").change(function () {
 
 function checkName (){
 	$.post("/check_recipe_name",
-	"name="+$("#name").val(),
+	"name=" + $("#name").val(),
 	function(result) { 
 		if (result === "nope") {
 		$("#nameWarning").text('Sorry that recipe name is taken, please try a different name.');
@@ -123,7 +123,7 @@ var postparams = {}
 
 $("#submit").click(function (event){	
 
-	postparams.name = $("#name input").serialize();
+	postparams.name = $("#recipename input").serialize();
 	postparams.source = $("#source input").serialize();
 	postparams.style = $("#style select").serialize();
 	postparams.share = $("#share select").serialize();
