@@ -115,28 +115,28 @@
 	<tr>
 		<td colspan="2">
 			Recipe name - Change to your own fresh recipe name!
-			<div id="recipename"><input type="text" id="name" name="name" class="name form-control" placeholder="{{ name }}"></div>
+			<input type="text" id="name" name="name" class="name form-control" placeholder="{{ name }}">
 		</td>
 		<td colspan="2">
 			Source
-			<div id="source"><input type="text" name="source" class="source form-control" value="{{ source }}"></div>
+			<input id="source"type="text" name="source" class="source form-control" value="{{ source }}">
 		</td>
 	<tr>
 		<td colspan="3">
 			<p>Style
-			<div id="style"><select name="style" class="form-control" >
+			<select id="style" name="style" class="form-control" >
 					<option value="{{ style }}"selected="selected">{{ style }}</option>
 					{% for item in selectlist_styles %}
 					<option value="{{ item }}">{{ item }}</option>
 					{% endfor %}
-			</select></div>
+			</select>
 		</td>
 		<td>
 			Share this recipe?
-			<div id="share"><select name="share" class="form-control">
+			<select id="share" name="share" class="form-control">
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
-				</select></div>
+				</select>
 		</td>
 	</tr>
 	<tr>
@@ -146,7 +146,7 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-		<div id="batch_size"><input type="number" name="batch_size" class="form-control" value="{{ batch_size }}"></div>
+		<input type="number" id="batch_size" name="batch_size" class="form-control" value="{{ batch_size }}">
 		</td>
 		<td>
 			<div id="units"><select name="units" class="form-control" >
@@ -301,6 +301,15 @@
 					<option value="ounces" selected="selected">oz</option>
 			{% endif %}			</select>
 			</select>
+			{% if y.phase == primary %}
+			<select id="yeast_phase" name="yeast_phase" class="form-control" style="width: 20%; display: inline" required>
+				<option value="primary" selected="selected">primary</option>
+				<option value="secondary">secondary</option>
+			{% else %}
+				<option value="primary">primary</option>
+				<option value="secondary" selected="selected">secondary</option>
+			{% endif %}
+			</select>			
 			<input type="button" id= "del-yeast" name="1" value="Remove yeast" class="form-control del-yeast" style="width: 15%; display: inline">
 			</div>
 		{% endfor %}
@@ -313,7 +322,7 @@
 	<tr>
 		<td colspan="4"><br>
 		Notes/Instructions:<br>
-		<p><div id="notes"><textarea name="textarea" rows="10" cols="50" value="{{ notes }}"></textarea></div></p>
+		<p><textarea id="notes" name="textarea" rows="10" cols="50" value="{{ notes }}"></textarea></p>
 		</td>
 	</tr>
 	<tr colspan="4">

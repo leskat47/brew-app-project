@@ -59,7 +59,6 @@ $("#add-hop").click(function() {
 });
 $('.del-hop').click(function () {
     $(this).parent('div').remove();  
-    console.log($('.repeat-hops').length); 
     if ($('.repeat-hops').length === 2) {
     	$('.del-hop').prop('disabled', true);
 	} 
@@ -123,18 +122,18 @@ var postparams = {}
 
 $("#submit").click(function (event){	
 
-	postparams.name = $("#recipename input").serialize();
-	postparams.source = $("#source input").serialize();
-	postparams.style = $("#style select").serialize();
-	postparams.share = $("#share select").serialize();
-	postparams.batch_size = $("#batch_size input").serialize();
-	postparams.units = $("#units select").serialize();
-	postparams.notes = $("#notes textarea").serialize();
-	postparams.grains = $('.repeat-grain :input').serializeArray();
-	postparams.hops = $('.repeat-hops :input').serializeArray();
-	postparams.extracts = $('.repeat-extract :input').serializeArray();
-	postparams.miscs = $('.repeat-special :input').serializeArray();
-	postparams.yeasts = $('.repeat-yeast :input	').serializeArray();
+	postparams.name = ($("form #name").val());
+	postparams.source = ($("form #source").val());
+	postparams.style = ($("form #style").val());
+	postparams.share = ($("form #share").val());
+	postparams.batch_size = ($("form #batch_size").val());
+	postparams.units = ($("form #units").val());
+	postparams.notes = ($("form #notes").val());
+	postparams.grains = $('form .repeat-grain :input').serializeArray();
+	postparams.hops = $('form .repeat-hops :input').serializeArray();
+	postparams.extracts = $('form .repeat-extract :input').serializeArray();
+	postparams.miscs = $('form .repeat-special :input').serializeArray();
+	postparams.yeasts = $('form .repeat-yeast :input').serializeArray();
 
 	console.log(postparams);
 	// TODO: find a way to sort ingredients so name is the key for each input
