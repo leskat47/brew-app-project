@@ -8,7 +8,7 @@
 			<form action="/explore" method="POST">
 				<p>Search by:</p>
 				<div>
-					Beer Styles: <select id="style" name="style" id="style_list" class="form-control">
+					<label for="beerstyles">Beer Styles:</label> <select id="style" name="style" class="form-control">
 						<option selected disabled>Select a style</option>
 						{% for style in selectlist_styles %}
 						<option value="{{ style }}">{{ style }}</option>
@@ -19,7 +19,7 @@
 			<form action="/explore" method="POST">
 
 				<div>
-					Recipe Name: <select id="recipe" name="recipe" class="form-control">
+					<label for="recipename">Recipe Name:</label> <select id="recipe" name="recipe" class="form-control">
 						<option selected disabled>Select a recipe</option>
 						{% for recipe in selectlist_recipes %}
 						<option value="{{ recipe }}">{{ recipe }}</option>
@@ -30,7 +30,9 @@
 
 		</td>
 		<td>
-
+		{% if new %}
+			Select a recipe or a style of beer. 
+		{% endif %}
 		{% if list_recipes %}
 			<h3>Recipes</h3>
 			<ul>
@@ -49,11 +51,12 @@
 			{% if source %}
 				<h4>Source:</h4> {{ source }}<br>
 			{% endif %}
+			<h4>Batch size:</h4> {{ batch_size }} gallons<br>
 			<h4>Steep:</h4>
 			{% for ferm in ferm_steps %}
 		<!-- 		{% if ferm.kind == "Grain" %} -->
 					<strong>{{ ferm.name }}</strong>
-					Amount: {{ ferm.amount }}<br>
+					Amount: {{ ferm.amount }} oz<br>
 		<!-- 		{% endif %} -->
 			{% endfor %}
 
@@ -81,13 +84,13 @@
 				<p>
 					<strong>{{ hop.name }}</strong><br>
 					Form: {{ hop.form }}<br>
-					Amount: {{ hop.amount }}<br>
+					Amount: {{ hop.amount }} oz<br>
 					Type: {{ hop.kind }}<br>
 					Time: {{ hop.time }}<br>
 				</p>
 				{% endif %}
 			{% endfor %}
-			<h4>Yeast</h4>
+			<h4>Yeast:</h4>
 			{% for yeast in yeast_steps %}
 				<strong>{{ yeast.name }}</strong><br>
 				Amount: {{ yeast.amount }}<br>

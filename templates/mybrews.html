@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
+<script>
+$(document).ready(function() {
+$("#style").change(function(){
+	console.log("style change")
+	this.form.submit();
+});
 
+$("#recipe").change(function(){
+	console.log("recipe change")
+	this.form.submit();
+});
+$("#inprogress").click(function(){
+	$(".completed").toggle()
+})
+$("#completed").click(function(){
+	$(".inprogress").toggle()
+})
+});
+</script>
 <h2>My Brews</h2>
 {% if brewlist == [] %}
 <table width="80%" style="display: hidden">
@@ -17,35 +35,36 @@
 <table width="80%">
 	<tr>
 		<td>
-			<form action="GET">
+			<form action="/mybrews" method="POST">
 				<p>Search by:</p>
 				<p>
-					Beer Styles: <select>
+					Beer Styles: <select id="style" name="style" class="form-control">
 						<option selected disabled>Search by Style</option>
 						{% for style in sel_user_styles %}
 						<option value="{{ style }}">{{ style }}</option>
 						{% endfor %}
 					</select>
 				</p>
-				<p>
-					<button type="button" id="style">Select</button>
-				</p>
+
+			</form>
+			<form action="/mybrews" method="POST">
 				<div>
-					My recipes: <select name="recipe" class="form-control">
+					My recipes: <select id="recipe" name="recipe" class="form-control">
 						<option selected disabled>Select a recipe</option>
 						{% for recipe in selectlist_user %}
 						<option value="{{ recipe }}">{{ recipe }}</option>
 						{% endfor %}
 					</select>
-					<button type="button" id="recipe">Select</button>
 				</div>
-
 			</form>
+			<p>Show only brews that are: <button type="button" id="completed" class="form-control" style="display: inline; width: 200px" value="Completed">Completed</button>
+			<button type="button" id="inprogress" class="form-control" value="In Progress" style="display: inline; width: 200px" >In Progress</button>
 		</td>
 	</tr>
 	<tr>
 		<td>
 			{% for brew in brewlist %}
+			<div class="{% if brew.finished %}complete{% else %}inprogress{% endif %}">
 			<table class="table">
 			<tr>
 				<td>{{ brew.name }}</td>
@@ -79,6 +98,7 @@
 				</td>
 			</tr>
 		</table>
+		</div>
 			{% endfor %}
 	</td>
 	</tr>
