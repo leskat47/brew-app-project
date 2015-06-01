@@ -231,6 +231,7 @@ def load_ferm_ins(filepath):
                 name = fermentable.find('NAME').text
                 ferm_id = Fermentable.query.filter_by(name=name).first().id
                 amount = fermentable.find('AMOUNT').text
+                units = 'kg'
                 new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount)
                 db.session.add(new_ferm_item)
     db.session.commit()
@@ -247,6 +248,7 @@ def load_ext_ins(filepath):
                 name = fermentable.find('NAME').text
                 ferm_id = Fermentable.query.filter_by(name=name).first().id
                 amount = fermentable.find('AMOUNT').text
+                amount = 'kg'
                 new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount)
                 db.session.add(new_ferm_item)
     db.session.commit()
@@ -263,6 +265,12 @@ def load_misc_ins(filepath):
                 misc_id = Misc.query.filter_by(name=name)[0].misc_id
                 phase = misc_item.find('USE').text
                 amount = misc_item.find('AMOUNT').text
+                print misc_item.find('TIME').text
+                if misc_item.find('TIME').text is None:
+                    time = 0
+                else:
+                    time = misc_item.find('TIME').text
+
                 new_misc_item = MiscIns(recipe_id=recipe_id, misc_id=misc_id, amount=amount,
                                         phase=phase)
                 db.session.add(new_misc_item)
@@ -280,6 +288,7 @@ def load_yeast_ins(filepath):
                 name = yeast.find('NAME').text
                 yeast_id = Yeast.query.filter_by(name=name)[0].yeast_id
                 amount = yeast.find('AMOUNT').text
+                units = kg
                 phase = 'primary'
                 new_yeast = YeastIns(recipe_id=recipe_id, yeast_id=yeast_id, amount=amount,
                                      phase=phase)

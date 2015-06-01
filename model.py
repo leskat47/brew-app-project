@@ -44,13 +44,14 @@ class Recipe(db.Model):
 
     recipe_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String, nullable=False, unique=True)
-    source = db.Column(db.String)
+    source = db.Column(db.String, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-    public = db.Column(db.String)
+    public = db.Column(db.String, nullable=False)
     style_name = db.Column(db.Integer, db.ForeignKey('styles.style_name'))
-    notes = db.Column(db.String)
-    batch_size = db.Column(db.Integer)
-    batch_units = db.Column(db.String)
+    boil_start = db.Column(db.Time, nullable=True)
+    notes = db.Column(db.String, nullable=True)
+    batch_size = db.Column(db.Integer, nullable=False)
+    batch_units = db.Column(db.String, nullable=False)
 
     def __repr__(self):
         return "Recipe_id: %s, recipe_name: %s" % (self.recipe_id, self.name)
