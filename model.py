@@ -48,7 +48,6 @@ class Recipe(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     public = db.Column(db.String, nullable=False)
     style_name = db.Column(db.Integer, db.ForeignKey('styles.style_name'))
-    boil_start = db.Column(db.Time, nullable=True)
     notes = db.Column(db.String, nullable=True)
     batch_size = db.Column(db.Integer, nullable=False)
     batch_units = db.Column(db.String, nullable=False)
@@ -70,6 +69,7 @@ class Brew(db.Model):
     fg = db.Column(db.Float, nullable=True)
     abv = db.Column(db.Float, nullable=True)
     date = db.Column(db.Date, nullable=False)
+    boil_start = db.Column(db.Time, nullable=True)
     notes = db.Column(db.String, nullable=True)
     results_notes = db.Column(db.String, nullable=True)
     end_date = db.Column(db.Date, nullable=True)
@@ -252,12 +252,10 @@ class Yeast(db.Model):
     form = db.Column(db.String, nullable=True)
     lab = db.Column(db.String, nullable=True)
     product_id = db.Column(db.String, nullable=True)
-    amount_is_weight = db.Column(db.String, nullable=True)
     min_temperature = db.Column(db.Float, nullable=True)
     max_temperature = db.Column(db.Float, nullable=True)
     flocculation = db.Column(db.String, nullable=True)
     attenuation = db.Column(db.Float, nullable=True)
-    best_for = db.Column(db.String, nullable=True)
     notes = db.Column(db.String, nullable=True)
 
 

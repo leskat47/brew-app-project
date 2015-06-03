@@ -56,7 +56,7 @@ def load_styles():
 ###########################################################################
 # RECIPES
 
-filename = "datasets/recipes.xml"
+# filename = "datasets/recipes.xml"
 
 def load_recipes(filename, user=1, public_use=True):
     tree = ET.parse(filename)
@@ -82,7 +82,7 @@ def load_recipes(filename, user=1, public_use=True):
 
 
 def load_hops():
-    hop_tree = ET.parse("datasets/hops.xml")
+    hop_tree = ET.parse("datasets/beerxml/hops.xml")
     root = hop_tree.getroot()
     for child in root:
         name = child.find('NAME').text
@@ -155,7 +155,7 @@ def load_ferms():
 
 
 def load_misc():
-    sources = ["datasets/beerxml/special.xml", "datasets/miscs.xml"]
+    sources = ["datasets/beerxml/special.xml"]
     for source in sources:
         misc_tree = ET.parse(source)
         root = misc_tree.getroot()
@@ -172,7 +172,7 @@ def load_misc():
 
 
 def load_yeasts():
-    misc_tree = ET.parse("datasets/yeast.xml")
+    misc_tree = ET.parse("datasets/beerxml/yeast.xml")
     root = misc_tree.getroot()
     for child in root:
         name = child.find('NAME').text
@@ -180,24 +180,21 @@ def load_yeasts():
         form = child.find('FORM').text
         lab = child.find('LABORATORY').text
         product_id = child.find('PRODUCT_ID').text
-        amount_is_weight = child.find('AMOUNT_IS_WEIGHT').text
+        # amount_is_weight = child.find('AMOUNT_IS_WEIGHT').text
         min_temperature = child.find('MIN_TEMPERATURE').text
         max_temperature = child.find('MAX_TEMPERATURE').text
         flocculation = child.find('FLOCCULATION').text
         attenuation = child.find('ATTENUATION').text
-        best_for = child.find('BEST_FOR').text
         notes = child.find('NOTES').text
         new_yeast = Yeast(name=name, kind=kind, form=form, lab=lab, product_id=product_id,
-                          amount_is_weight=amount_is_weight, min_temperature=min_temperature,
-                          flocculation=flocculation, attenuation=attenuation, best_for=best_for,
-                          notes=notes)
+                          min_temperature=min_temperature, flocculation=flocculation,
+                          attenuation=attenuation, notes=notes)
         db.session.add(new_yeast)
     db.session.commit()
 
 ###########################################################################
 # INSTRUCTIONS
 
-filepath = "datasets/recipes.xml"
 def load_hops_ins(filepath):
     misc_tree = ET.parse(filepath)
     root = misc_tree.getroot()
@@ -228,12 +225,14 @@ def load_ferm_ins(filepath):
         recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
         for subchild in child:
             for fermentable in subchild.findall('FERMENTABLE'):
-                name = fermentable.find('NAME').text
-                ferm_id = Fermentable.query.filter_by(name=name).first().id
-                amount = fermentable.find('AMOUNT').text
-                units = 'kg'
-                new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount)
-                db.session.add(new_ferm_item)
+                print "Find result: ", fermentable.find('TYPE').text
+                if fermentable.find('TYPE').text == "Grain":
+                    name = fermentable.find('NAME').text
+                    ferm_id = Fermentable.query.filter_by(name=name).first().id
+                    amount = fermentable.find('AMOUNT').text
+                    units = 'kg'
+                    new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount)
+                    db.session.add(new_ferm_item)
     db.session.commit()
 
 
@@ -245,12 +244,13 @@ def load_ext_ins(filepath):
         recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
         for subchild in child:
             for fermentable in subchild.findall('FERMENTABLE'):
-                name = fermentable.find('NAME').text
-                ferm_id = Fermentable.query.filter_by(name=name).first().id
-                amount = fermentable.find('AMOUNT').text
-                amount = 'kg'
-                new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount)
-                db.session.add(new_ferm_item)
+                if fermentable.find('TYPE').text == "Extract" or fermentable.find('TYPE').text == "Adjunct":
+                    name = fermentable.find('NAME').text
+                    ferm_id = Fermentable.query.filter_by(name=name).first().id
+                    amount = fermentable.find('AMOUNT').text
+                    amount = 'kg'
+                    new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id, amount=amount)
+                    db.session.add(new_ferm_item)
     db.session.commit()
 
 def load_misc_ins(filepath):
@@ -265,7 +265,6 @@ def load_misc_ins(filepath):
                 misc_id = Misc.query.filter_by(name=name)[0].misc_id
                 phase = misc_item.find('USE').text
                 amount = misc_item.find('AMOUNT').text
-                print misc_item.find('TIME').text
                 if misc_item.find('TIME').text is None:
                     time = 0
                 else:
@@ -288,7 +287,7 @@ def load_yeast_ins(filepath):
                 name = yeast.find('NAME').text
                 yeast_id = Yeast.query.filter_by(name=name)[0].yeast_id
                 amount = yeast.find('AMOUNT').text
-                units = kg
+                units = 'kg'
                 phase = 'primary'
                 new_yeast = YeastIns(recipe_id=recipe_id, yeast_id=yeast_id, amount=amount,
                                      phase=phase)
@@ -334,15 +333,17 @@ if __name__ == "__main__":
     connect_to_db(app)
     db.create_all()
 
+    filepath = "datasets/beerxml/recipe.xml"
+
     load_styles()
-    load_recipes(filename)
+    load_recipes(filepath)
     load_hops()
     load_extracts()
     load_misc()
     load_yeasts()
     load_ferms()
-    load_hops_ins(filename)
-    load_ferm_ins(filename)
-    load_misc_ins(filename)
-    load_yeast_ins(filename)
+    load_hops_ins(filepath)
+    load_ferm_ins(filepath)
+    load_misc_ins(filepath)
+    load_yeast_ins(filepath)
 

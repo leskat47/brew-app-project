@@ -43,7 +43,6 @@ def show_explore():
 
     selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
     new = True
-    # If a submit button is clicked, post request is called. For selected style, show recipe list.
     # For recipe selected, show recipe.
     if request.method == "POST":
         # Render either recipe list for style selection or recipe
@@ -66,11 +65,23 @@ def show_explore():
                                    notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
                                    misc_steps=misc_steps, yeast_steps=yeast_steps)
 
-
     return render_template("explore_brews.html", new=new, selectlist_recipes=selectlist_recipes,
                            selectlist_styles=selectlist_styles, selectlisrt_user=selectlist_user,
                            sel_user_styles=sel_user_styles)
 
+@app.route('/myrecipes')
+def get_my_recipes():
+    print "SERVER"
+    selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
+    recipe_list = Recipe.query.filter_by(user_id=session["user_id"]).all()
+    recipes = []
+    for recipe in recipe_list:
+        recipes.append(recipe.name)
+    print recipes
+
+    return render_template("explore_brews.html", recipes=recipes, selectlist_recipes=selectlist_recipes,
+                           selectlist_styles=selectlist_styles, selectlisrt_user=selectlist_user,
+                           sel_user_styles=sel_user_styles)
 
 @app.route('/recipe/<string:recipe>')
 def get_recipes(recipe):
@@ -93,17 +104,18 @@ def show_mybrews():
     brewlist = []
     if request.method == "POST":
         filtered_brews = []
-        print "posted"
         # Recipe search:
         if request.form.get("recipe"):
-            print "recipe"
+
             recipe = request.form.get("recipe")
             recipe_id = Recipe.query.filter_by(name=recipe).one().recipe_id
             for obj in all_brews:
                 if obj.recipe_id == recipe_id:
                     filtered_brews.append(obj)
             brewlist = get_brewlist(filtered_brews)
-            return render_template("mybrews.html", brewlist=brewlist, selectlist_user=selectlist_user,
+            filtered = "Brews of " + recipe + ":"
+
+            return render_template("mybrews.html", filtered=filtered, brewlist=brewlist, selectlist_user=selectlist_user,
                                    sel_user_styles=sel_user_styles)
 
         # Style search:
@@ -117,9 +129,10 @@ def show_mybrews():
                     if obj.recipe_id == recipe.recipe_id:
                         filtered_brews.append(obj)
             brewlist = get_brewlist(filtered_brews)
-            print filtered_brews
+            filtered = style + " Style Brews:"
+            print filtered
 
-            return render_template("mybrews.html", brewlist=brewlist, selectlist_user=selectlist_user,
+            return render_template("mybrews.html", filtered=filtered, brewlist=brewlist, selectlist_user=selectlist_user,
                                    sel_user_styles=sel_user_styles)
     else:
         brewlist = get_brewlist(all_brews)
@@ -164,8 +177,8 @@ def brew_process(brew_id):
         brew_update = update_brew(brew)
         return redirect("/mybrews")
     else:
-        recipe, batch_size, batch_units, boil_start, times, timerset, boiltime, steep, yeast, secondary, extracts, og_min, og_max, notes, = show_brew_recipe(recipe)
-        return render_template("brew.html", brew=brew, recipe=recipe, batch_size=batch_size, batch_units=batch_units, boil_start=boil_start,
+        recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary, extracts, og_min, og_max, notes, = show_brew_recipe(recipe)
+        return render_template("brew.html", brew=brew, recipe=recipe, batch_size=batch_size, batch_units=batch_units,
                                times=times, timerset=timerset, boiltime=boiltime, steep=steep, yeast=yeast, secondary=secondary,
                                extracts=extracts, og_min=og_min, og_max=og_max, notes=notes)
 
@@ -213,7 +226,6 @@ def show_brew_recipe(recipe):
         notes = "No notes for this recipe"
     else:
         notes = record.notes
-    boil_start = record.boil_start
 
     style_name = record.style_name
     style_record = Style.query.filter_by(style_name=style_name).one()
@@ -236,15 +248,16 @@ def show_brew_recipe(recipe):
     for add in boil:
         if add.time not in times:
             times.append(add.time)
-        # if add.time not in times and add.time < 1:
+        # if add.time not in times and add.time is None:
         #     times.append(0)
+    print times
     sorted(times, reverse=True)
     iter = 0
     timerset = {}
     for time in times:
         boiltime[time] = []
 
-        if iter < (len(times) - 2):
+        if iter < (len(times) - 1):
             timerset[time] = times[iter] - times[iter + 1]
         else:
             timerset[time] = time
@@ -269,6 +282,7 @@ def show_brew_recipe(recipe):
                 new_ing["units"] = add.units
             boiltime[time].append(new_ing)
 
+    print timerset
 
     def collect_instructions(list_name, cls_name, cls_ins_name, theid):
         instructions = cls_ins_name.query.filter_by(recipe_id=recipe_id).all()
@@ -320,7 +334,7 @@ def show_brew_recipe(recipe):
 
             secondary.append(add_dict)
 
-    return (recipe, batch_size, batch_units, boil_start, times, timerset, boiltime, steep, yeast, secondary,
+    return (recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary,
             extracts, og_min, og_max, notes)
 
 @app.route('/delete_brew/<int:brew_id>')
@@ -335,7 +349,7 @@ def delete_brew(brew_id):
 def enter_recipe():
     if request.method == "POST":
         data = request.get_json()
-        # print "*****************************************************", data
+        print "*****************************************************", data
         grains = data['grains']
         extracts = data['extracts']
         hops = data['hops']
@@ -350,8 +364,10 @@ def enter_recipe():
         style_name = data["style"]
         notes = data["notes"]
         batch_size = data["batch_size"]
+        batch_units = data["units"]
         new_recipe = Recipe(name=name, source=source, user_id=user_id, public=public,
-                            notes=notes, style_name=style_name, batch_size=batch_size)
+                            notes=notes, style_name=style_name, batch_size=batch_size,
+                            batch_units=batch_units)
 
         db.session.add(new_recipe)
         db.session.commit()
@@ -423,7 +439,8 @@ def enter_recipe():
             db.session.add(new_yeastins)
             db.session.commit
 
-        return redirect("/recipe/%s" % name)
+        flash("Your recipe has been added.")
+        return redirect("/")
 
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
 
