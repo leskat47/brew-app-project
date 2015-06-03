@@ -12,14 +12,21 @@ $("#recipe").change(function(){
 	this.form.submit();
 });
 $("#inprogress").click(function(){
-	$(".completed").toggle()
-})
+	$(".completed").hide();
+	$(".inprogress").show()
+});
 $("#completed").click(function(){
-	$(".inprogress").toggle()
+	$(".inprogress").hide();
+	$(".completed").show();
+});
+$("#showall").click(function(){
+	$(".inprogress").show();
+	$(".completed").show();
 })
 });
 </script>
 <h2>My Brews</h2>
+<hr>
 {% if brewlist == [] %}
 <table width="80%" style="display: hidden">
 	<tr>
@@ -38,7 +45,7 @@ $("#completed").click(function(){
 			<form action="/mybrews" method="POST">
 				<p>Search by:</p>
 				<p>
-					Beer Styles: <select id="style" name="style" class="form-control">
+					<label for="beerstyles">Beer Styles:</label> <select id="style" name="style" class="form-control">
 						<option selected disabled>Search by Style</option>
 						{% for style in sel_user_styles %}
 						<option value="{{ style }}">{{ style }}</option>
@@ -49,7 +56,7 @@ $("#completed").click(function(){
 			</form>
 			<form action="/mybrews" method="POST">
 				<div>
-					My recipes: <select id="recipe" name="recipe" class="form-control">
+					<label for="myrecipes">My recipes:</label> <select id="recipe" name="recipe" class="form-control">
 						<option selected disabled>Select a recipe</option>
 						{% for recipe in selectlist_user %}
 						<option value="{{ recipe }}">{{ recipe }}</option>
@@ -57,12 +64,17 @@ $("#completed").click(function(){
 					</select>
 				</div>
 			</form>
+			<a href="/mybrews"><button type="button" id="reset">Reset</button></a>
 			<p>Show only brews that are: <button type="button" id="completed" class="form-control" style="display: inline; width: 200px" value="Completed">Completed</button>
-			<button type="button" id="inprogress" class="form-control" value="In Progress" style="display: inline; width: 200px" >In Progress</button>
+			<button type="button" id="inprogress" class="form-control" value="InProgress" style="display: inline; width: 200px" >In Progress</button>
+			<button type="button" id="showall" class="form-control" value="ShowAll" style="display: inline; width: 200px">Show All</button>
 		</td>
 	</tr>
 	<tr>
 		<td>
+			{% if filtered %}
+			<h4>{{ filtered }}</h4>
+			{% endif %}
 			{% for brew in brewlist %}
 			<div class="{% if brew.finished %}complete{% else %}inprogress{% endif %}">
 			<table class="table">

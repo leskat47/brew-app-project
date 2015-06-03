@@ -118,12 +118,12 @@
 	<div id="recipeinput-basic">
 	<tr>
 		<td colspan="2">
-			Recipe name
+			<label for="name">Recipe name</label>
 			<div id="recipename"><input type="text" id="name" name="name" class="form-control" required></div>
 			
 		</td>
 		<td colspan="2">
-			Source
+			<label for="source">Source</label>
 			<div id="source"><input type="text" id="source" name="source" class="form-control" required></div>
 		</td>
 	</tr>
@@ -134,7 +134,7 @@
 	</tr>
 	<tr>
 		<td colspan="3">
-			<p>Style
+			<p><label for="style">Style</label>
 			<div id="style"><select name="style" class="form-control" required>
 					<option selected disabled>Select a style</option>
 					{% for style in selectlist_styles %}
@@ -143,7 +143,7 @@
 			</select></div>
 		</td>
 		<td>
-			Share this recipe?
+			<label for="share">Share this recipe?</label>
 			<div id="share"><select name="share" class="form-control" required>
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
@@ -157,14 +157,16 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-		<div id="batch_size"><input type="number" id="batch_size" name="batch_size" class="form-control" required></div>
+		<div id="batch_size"><input type="number" id="batch_size" name="batch_size" class="form-control" required>
 		</td>
 		<td>
-			<div id="units"><select id="units" name="units" class="form-control" required>
+			<div id="units">
+			<select id="units" name="units" class="form-control" required>
 					<option selected disabled>units</option>
 					<option value="grams">g</option>
 					<option value="ounces">L</option>
-			</select></div></td>
+			</select>
+			</div>
 		</td>
 		<td>
 		</td>
@@ -255,7 +257,7 @@
 				<option value="{{ misc }}">{{ misc }}</option>
 				{% endfor %}
 			</select>
-			<input type="number" id="misc_amount" name="misc_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
+  			<input type="number" id="misc_amount" name="misc_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
 			<select id=="misc-units" name="misc-units" class="form-control" style="width: 20%; display: inline" required>
 				<option selected disabled>units</option>
 				<option value="grams">g</option>
@@ -268,7 +270,7 @@
 				<option value="secondary">secondary</option>
 			</select>
 			<input type="number" id="misc_time" name="misc_time" class="form-control" placeholder="time in boil" style="width: 25%; display: inline" required>
-			<input type="button" id= "del-misc" name="1" value="Remove special" class="form-control del-misc" style="width: 15%; display: inline">	
+			<input type="button" id= "del-misc" name="1" value="Remove special" class="form-control del-misc" style="width: 15%; display: inline">
 			</div>
 			<button type="button" id="add-misc" value="Add misc" class="form-control" style="width: 20%">Add special</button>
 		</td>
@@ -292,6 +294,7 @@
 				<option selected disabled>phase</option>
 				<option value="primary">primary</option>
 				<option value="secondary">secondary</option>
+				</select>
 			<input type="button" id= "del-yeast" name="1" value="Remove yeast" class="form-control del-yeast" style="width: 15%; display: inline">
 			</div>
 			<button type="button" id="add-yeast" value="Add a yeast" class="form-control" style="width: 20%">Add yeast</button>
@@ -302,7 +305,7 @@
 
 	<tr>
 		<td colspan="4"><br>
-		Notes/Instructions:<br>
+		<label for="notes">Notes/Instructions:</label><br>
 		<p><div id="notes"><textarea name="note" rows="10" cols="50"></textarea></div></p>
 		</td>
 	</tr>
