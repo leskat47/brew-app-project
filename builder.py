@@ -37,6 +37,7 @@ def feed_recipe_form():
     grain_choice = sorted(grain_choice)
     extract_choice = sorted(extract_choice)
     hop_choice = sorted(hop_choice)
+    print "Hop choice ", hop_choice
     misc_choice = sorted(misc_choice)
     yeast_choice = sorted(yeast_choice)
     selectlist_styles = sorted(selectlist_styles)
@@ -51,11 +52,11 @@ def get_selectlists(user_id):
     selectlist_styles = []
     selectlist_user = []
     selectlist_user_styles = []
-    for recipe_obj in Recipe.query.filter_by(public="yes"):
+    for recipe_obj in Recipe.query.filter_by(public="yes").all():
         selectlist_recipes.append(recipe_obj.name)
     for style_obj in Style.query.all():
         selectlist_styles.append(style_obj.style_name)
-    for brew_obj in Brew.query.filter_by(user_id=user_id):
+    for brew_obj in Brew.query.filter_by(user_id=user_id).all():
         recipe = Recipe.query.filter_by(recipe_id=brew_obj.recipe_id).one()
         if recipe.name not in selectlist_user:
             selectlist_user.append(recipe.name)
@@ -68,6 +69,7 @@ def get_selectlists(user_id):
     selectlist_user_styles = sorted(selectlist_user_styles)
 
     return (selectlist_recipes, selectlist_styles, selectlist_user, selectlist_user_styles)
+
 
 
 def get_brewlist(all_brews):
@@ -114,6 +116,7 @@ def get_recipe_info(recipe):
     hop_steps = []
     for ingredient in hops:
         hop_dict["name"] = ingredient.hop.name
+        print "hop_steps ", hop_dict["name"]
         hop_dict["form"] = ingredient.hop.form
         hop_dict["amount"] = ingredient.amount
         hop_dict["units"] = ingredient.units
@@ -160,7 +163,11 @@ def get_recipe_info(recipe):
             misc_dict["phase"] = ingredient.misc.use
             misc_dict["amount"] = ingredient.amount
             misc_dict["units"] = ingredient.units
-            misc_dict["time"] = ingredient.time
+            if ingredient.time is None:
+                misc_dict["time"] = 0
+            else:
+                misc_dict["time"] = ingredient.time
+            print misc_dict["time"]
             misc_steps.append(misc_dict.copy())
     else:
         misc_steps = None

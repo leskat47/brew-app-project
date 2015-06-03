@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
+<script src="/static/recipe.js"></script>
+
 <h3>{{ name }}</h3>
-<form action="/addbrew/{{ name }}">
-<input type="button" name="makerecipe" value="Brew this now!">
-</form>
+
+<input type="button" id="makerecipe" name="{{ name }}" value="Brew this now!">
+
 <form action="/editrecipe/{{ name }}">
 <input type="submit" name="editrecipe" value="Make a Version">
 </form>

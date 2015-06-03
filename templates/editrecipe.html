@@ -4,29 +4,29 @@
 </script>
 <div class="hidden">
 		<div id="moregrains1" class="repeat-grain" name="graindiv">
-			<select id="grain" name="grain" class="form-control" style="width: 40%; display: inline" required>
+			<label for="grain"><select id="grain" name="grain" class="form-control" style="width: 40%; display: inline" required>
 				<option selected disabled>Grain</option>
 				{% for grain in grain_choice %}
 				<option value="{{ grain }}">{{ grain }}</option>
 				{% endfor %}
-			</select>
-			<input type="number" id = "grain_amount" name="grain_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
-			<select id="grain_units" name="grain_units" class="form-control" style="width: 20%; display: inline" required>
+			</select></label>
+			<label for="grain_amount"><input type="number" id="grain_amount" name="grain_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required></label>
+			<label for="grain_units"><select id="grain_units" name="grain_units" class="form-control" style="width: 20%; display: inline" required>
 				<option selected disabled>units</option>
 				<option value="grams">g</option>
 				<option value="ounces">oz</option>
-			</select>
+			</select></label>
 			<input type="button" id="del-grain" class="form-control del-grain" value="Remove grain" style="width: 15%; display: inline" required>
 		</div>
 			<div id="moreextract1" class="repeat-extract" name="extractdiv">
-			<select id="extract" name="extract" class="form-control" style="width: 40%; display: inline" required>
+			<label for="extract"><select id="extract" name="extract" class="form-control" style="width: 40%; display: inline" required>
 				<option selected disabled>Extract</option>
 				{% for extract in extract_choice %}
 				<option value="{{ extract }}">{{ extract }}</option>
 				{% endfor %}
-			</select>
-			<input type="number" id="extract_amount" name="extract_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
-			<select id="extract_units" name="extract_units" class="form-control" style="width: 20%; display: inline">
+			</select></label>
+			<label for="extract_amount"><input type="number" id="extract_amount" name="extract_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required></label>
+			<label for="extract_units"><select id="extract_units" name="extract_units" class="form-control" style="width: 20%; display: inline"></select>
 				<option selected disabled>units</option>
 				<option value="grams">g</option>
 				<option value="ounces">oz</option>
@@ -114,16 +114,16 @@
 <table cellspacing="10px">
 	<tr>
 		<td colspan="2">
-			Recipe name - Change to your own fresh recipe name!
+			<label for="name">Recipe name</label> - Change to your own fresh recipe name!
 			<input type="text" id="name" name="name" class="name form-control" placeholder="{{ name }}">
 		</td>
 		<td colspan="2">
-			Source
-			<input id="source"type="text" name="source" class="source form-control" value="{{ source }}">
+			<label for="source">Source</label>
+			<input id="source" type="text" name="source" class="source form-control" value="{{ source }}">
 		</td>
 	<tr>
 		<td colspan="3">
-			<p>Style
+			<p><label for="style">Style</label>
 			<select id="style" name="style" class="form-control" >
 					<option value="{{ style }}"selected="selected">{{ style }}</option>
 					{% for item in selectlist_styles %}
@@ -132,33 +132,30 @@
 			</select>
 		</td>
 		<td>
-			Share this recipe?
+			<label for="share">Share this recipe?</label>
 			<select id="share" name="share" class="form-control">
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
 				</select>
 		</td>
-	</tr>
-	<tr>
-		<td colspan="4">
-			Batch Size: 
-		</td>
-	</tr>
+	</tr> 
+
 	<tr>
 		<td colspan="2">
+		<p><label for="batch_size">Batch Size:</label></p>
 		<input type="number" id="batch_size" name="batch_size" class="form-control" value="{{ batch_size }}">
 		</td>
 		<td>
-			<div id="units"><select name="units" class="form-control" >
-			{% if batch_units == g %}
-					<option value="grams" selected="selected">g</option>
-					<option value="ounces">L</option>
+			<select id="units" name="units" class="form-control" >
+			{% if batch_units == L %}
+					<option value="gallons">gal</option>
+					<option value="Liters" selected="selected">L</option>
 			{% else %}
-					<option value="grams">g</option>
-					<option value="liters" selected="selected">L</option>
+					<option value="gallons" selected="selected">gal</option>
+					<option value="Liters">L</option>
 			{% endif %}
 
-			</select></div>
+			</select>
 		</td>
 		<td>
 		</td>
@@ -174,7 +171,7 @@
 				<option value="{{ grain }}">{{ grain }}</option>
 				{% endfor %}
 			</select>
-			<input type="number" id="grain_amount" name="grain_amount" class="form-control" placeholder="amount" style="width: 25%; display: inline" value={{ ferm.amount }}>
+			<input type="number" id="grain_amount" name="grain_amount" class="form-control" placeholder="amount" style="width: 25%; display: inline" value="{{ ferm.amount }}">
 			<select id="grain_units" name="grain_units" class="form-control" style="width: 20%; display: inline">
 			{% if ferm.units == g %}
 					<option value="grams" selected="selected">g</option>
@@ -183,7 +180,7 @@
 					<option value="grams">g</option>
 					<option value="ounces" selected="selected">oz</option>
 			{% endif %}
-			</select>
+			</select></label>
 			<input type="button" id="del-grain" class="form-control del-grain" value="Remove grain" style="width: 15%; display: inline">
 		</div>
 		{% endfor %}
@@ -222,7 +219,7 @@
 			{% for h in hop_steps %}
 			<div id="morehops1" class="repeat-hops">
 			<select id="hop" name="hop" class="form-control" style="width: 40%; display: inline">
-				<option value={{ h.name }}>{{ h.name }}</option>
+				<option value="{{ h.name }}">{{ h.name }}</option>
 				{% for hop in hop_choice %}
 				<option value="{{ hop }}">{{ hop }}</option>
 				{% endfor %}
@@ -258,7 +255,7 @@
 		{% for m in misc_steps %}
 			<div id="morespecial1" class="repeat-special">
 			<select id="misc" name="misc" class="form-control" style="width: 40%; display: inline">
-				<option value={{ m.name }}>{{ m.name }}</option>
+				<option value="{{ m.name }}">{{ m.name }}</option>
 				{% for misc in misc_choice %}
 				<option value="{{ misc }}">{{ misc }}</option>
 				{% endfor %}
@@ -272,7 +269,7 @@
 				<option value="secondary">secondary</option>
 			</select>
 			<input type="number" name="misc_time" class="form-control" placeholder="time in boil" style="width: 25%; display: inline" value="{{ m.time }}">
-			<input type="button" id= "del-misc" name="1" value="Remove special" class="form-control del-misc" style="width: 150px; display: inline">	
+			<input type="button" id= "del-misc" name="1" value="Remove special" class="form-control del-misc" style="width: 150px; display: inline">
 			</div>
 		{% endfor %}
 		{% endif %}
@@ -309,7 +306,7 @@
 				<option value="primary">primary</option>
 				<option value="secondary" selected="selected">secondary</option>
 			{% endif %}
-			</select>			
+			</select>		
 			<input type="button" id= "del-yeast" name="1" value="Remove yeast" class="form-control del-yeast" style="width: 15%; display: inline">
 			</div>
 		{% endfor %}
@@ -321,7 +318,7 @@
 
 	<tr>
 		<td colspan="4"><br>
-		Notes/Instructions:<br>
+		<label for="notes">Notes/Instructions:</label><br>
 		<p><textarea id="notes" name="textarea" rows="10" cols="50" value="{{ notes }}"></textarea></p>
 		</td>
 	</tr>
