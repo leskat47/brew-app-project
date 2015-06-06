@@ -51,6 +51,7 @@ class Recipe(db.Model):
     notes = db.Column(db.String, nullable=True)
     batch_size = db.Column(db.Integer, nullable=False)
     batch_units = db.Column(db.String, nullable=False)
+    srm = db.Column(db.Integer, nullable=True)
 
     def __repr__(self):
         return "Recipe_id: %s, recipe_name: %s" % (self.recipe_id, self.name)
@@ -137,11 +138,12 @@ class ExtIns(db.Model):
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
-    extract_id = db.Column(db.Integer, db.ForeignKey('extract.extract_id'), nullable=True)
+    extract_id = db.Column(db.Integer, db.ForeignKey('extracts.id'))
     amount = db.Column(db.Float)
     units = db.Column(db.String)
     recipe = db.relationship('Recipe', backref=db.backref('eins', order_by=id))
     extract = db.relationship('Extract', backref=db.backref('eins', order_by=id))
+
 
 class MiscIns(db.Model):
 
@@ -196,14 +198,19 @@ class Hop(db.Model):
 
 
 class Extract(db.Model):
-    extract_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+
+    __tablename__ = "extracts"
+
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String, nullable=False)
     supplier = db.Column(db.String)
     origin = db.Column(db.String)
     notes = db.Column(db.String)
+    color = db.Column(db.Float)
     kind = db.Column(db.String)
     phase = db.Column(db.String)
     ex_yield = db.Column(db.Float)
+    color = db.Column(db.Float)
 
 
 class Fermentable(db.Model):
