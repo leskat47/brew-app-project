@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request, flash, session, url_for, send_from_directory
 from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
-from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
-from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist
+from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins, calc_color
+from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist, show_brew_recipe, color_conversion
 import xml.etree.ElementTree as ET
 import os
 from werkzeug import secure_filename
@@ -12,11 +12,19 @@ app = Flask(__name__)
 
 # Required to use Flask sessions and the debug toolbar
 app.secret_key = "ABC"
+
 app.config['UPLOAD_FOLDER'] = '/tmp/uploads/'
 app.config['ALLOWED_EXTENSIONS'] = set(['xml'])
 
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
+
 # ROUTES:
 # /explore      -> populate dropdown searches. On post, return recipe names
+# /myrecipes
+# /recipe/recipenamr
 # /mybrews      -> collect brews associated with user, show table of selected brew info,
 #               populate dropdowns, return search results
 # /addbrew      -> Passthrough route from recipe page that adds a brew and produces new brew_id
@@ -27,16 +35,15 @@ app.config['ALLOWED_EXTENSIONS'] = set(['xml'])
 # /uploadrecipe -> Uploaded file saved to uploads folder, parsed and committed through feeder.py function
 # /editrecipe   -> Get data for given recipe. Populate menus. Display form.
 
-
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
-
+# ***************************************************************************************
+# Home page
 
 @app.route('/')
 def index():
     return render_template("homepage.html")
 
+# ***************************************************************************************
+# Explore recipes selections
 
 @app.route('/explore', methods=['GET', 'POST'])
 def show_explore():
@@ -56,44 +63,101 @@ def show_explore():
                                    selectlist_styles=selectlist_styles)
         elif request.form.get("recipe"):
             recipe = request.form.get("recipe")
-            # display_recipe = Recipe.query.filter_by(name=recipe).one()
-            # name = display_recipe.name
-            name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps = get_recipe_info(recipe)
-
+            name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
+            color = color_conversion(srm_color)
+            if Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
+                deleteable = True
             return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, batch_size=batch_size,
-                                   selectlist_styles=selectlist_styles, name=name, source=source, style=style,
+                                   selectlist_styles=selectlist_styles, name=name, source=source, color=color, style=style,
                                    notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
-                                   misc_steps=misc_steps, yeast_steps=yeast_steps)
+                                   misc_steps=misc_steps, yeast_steps=yeast_steps, deleteable=deleteable)
 
     return render_template("explore_brews.html", new=new, selectlist_recipes=selectlist_recipes,
                            selectlist_styles=selectlist_styles, selectlisrt_user=selectlist_user,
                            sel_user_styles=sel_user_styles)
 
+# ***************************************************************************************
+# Explore Recipes right panel displays
+
+
+# List user's recipes
 @app.route('/myrecipes')
 def get_my_recipes():
-    print "SERVER"
     selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
     recipe_list = Recipe.query.filter_by(user_id=session["user_id"]).all()
     recipes = []
     for recipe in recipe_list:
         recipes.append(recipe.name)
-    print recipes
 
     return render_template("explore_brews.html", recipes=recipes, selectlist_recipes=selectlist_recipes,
                            selectlist_styles=selectlist_styles, selectlisrt_user=selectlist_user,
                            sel_user_styles=sel_user_styles)
 
+
+#  Show details of a single recipe
 @app.route('/recipe/<string:recipe>')
 def get_recipes(recipe):
     selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
-
-    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps = get_recipe_info(recipe)
-
+    deleteable = False
+    if Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
+        deleteable = True
+    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
+    color = color_conversion(srm_color)
     return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes,
-                           selectlist_styles=selectlist_styles, name=name, source=source, style=style,
+                           selectlist_styles=selectlist_styles, name=name, source=source, color=color, style=style,
                            notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
-                           misc_steps=misc_steps, yeast_steps=yeast_steps)
+                           misc_steps=misc_steps, yeast_steps=yeast_steps, deleteable=deleteable)
 
+
+# Ajax called - Check for duplicate brew
+@app.route('/check_brew', methods=['GET', 'POST'])
+def check_brew():
+    recipe = request.form.get("name")
+    user_id = session["user_id"]
+    date = datetime.date.today()
+
+    recipe_id = Recipe.query.filter_by(name=recipe).one().recipe_id
+    if Brew.query.filter_by(user_id=user_id, recipe_id=recipe_id, date=date).first():
+        return "duplicate"
+    else:
+        return "not duplicate"
+
+
+# Add new brew with today's date and route to brew page
+@app.route('/addbrew/<string:recipe>')
+def add_brew(recipe):
+    user_id = session["user_id"]
+    date = datetime.date.today()
+    recipe_id = Recipe.query.filter_by(name=recipe).one().recipe_id
+    new_brew = Brew(user_id=user_id, recipe_id=recipe_id, date=date)
+    db.session.add(new_brew)
+    db.session.commit()
+
+    brew_id = str(new_brew.id)
+
+    return redirect('/brew/' + brew_id)
+
+
+# Delete recipe from database and delete associated instructions
+@app.route("/deleterecipe/<string:recipe>")
+def delete_recipe(recipe):
+    recipe_obj = Recipe.query.filter_by(name=recipe).one()
+    print "recipe to delete", recipe_obj
+    print "hop", HopIns.query.filter_by(recipe_id=recipe_obj.recipe_id).all()
+    HopIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
+    FermIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
+    ExtIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
+    MiscIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
+    YeastIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
+    Recipe.query.filter_by(name=recipe).delete()
+    db.session.commit()
+
+    flash("Recipe deleted")
+    return redirect("/explore")
+
+
+# ***************************************************************************************
+# My Brews display and response to selections
 
 @app.route('/mybrews', methods=['GET', 'POST'])
 def show_mybrews():
@@ -117,57 +181,38 @@ def show_mybrews():
 
             return render_template("mybrews.html", filtered=filtered, brewlist=brewlist, selectlist_user=selectlist_user,
                                    sel_user_styles=sel_user_styles)
-
         # Style search:
         if request.form.get("style"):
             style = request.form.get("style")
             recipes = Recipe.query.filter_by(style_name=style).all()
             # Get brews from all brews where the recipe is in recipes
-            print "style", style, "recipes ", recipes
             for obj in all_brews:
                 for recipe in recipes:
                     if obj.recipe_id == recipe.recipe_id:
                         filtered_brews.append(obj)
             brewlist = get_brewlist(filtered_brews)
             filtered = style + " Style Brews:"
-            print filtered
 
             return render_template("mybrews.html", filtered=filtered, brewlist=brewlist, selectlist_user=selectlist_user,
                                    sel_user_styles=sel_user_styles)
     else:
         brewlist = get_brewlist(all_brews)
+        print brewlist
         return render_template("mybrews.html", brewlist=brewlist,
                                selectlist_user=selectlist_user, sel_user_styles=sel_user_styles)
 
 
-@app.route('/check_brew', methods=['GET', 'POST'])
-def check_brew():
-    recipe = request.form.get("name")
-    user_id = session["user_id"]
-    date = datetime.date.today()
-    print (date)
-
-    recipe_id = Recipe.query.filter_by(name=recipe).one().recipe_id
-    if Brew.query.filter_by(user_id=user_id, recipe_id=recipe_id, date=date).all():
-        return "duplicate"
-    else:
-        return redirect('/addbrew/' + recipe)
-
-
-@app.route('/addbrew/<string:recipe>')
-def add_brew(recipe):
-    user_id = session["user_id"]
-    date = datetime.date.today()
-    recipe_id = Recipe.query.filter_by(name=recipe).one().recipe_id
-    new_brew = Brew(user_id=user_id, recipe_id=recipe_id, date=date)
-
-    db.session.add(new_brew)
+# Delete brew from database
+@app.route('/delete_brew/<int:brew_id>')
+def delete_brew(brew_id):
+    Brew.query.filter_by(id=brew_id).delete()
     db.session.commit()
+    flash("Your brew was deleted")
+    return redirect("/mybrews")
 
-    brew_id = str(new_brew.id)
 
-    return redirect('/brew/' + brew_id)
-
+# ***************************************************************************************
+# Brew page
 
 @app.route('/brew/<int:brew_id>', methods=['GET', 'POST'])
 def brew_process(brew_id):
@@ -177,23 +222,37 @@ def brew_process(brew_id):
         brew_update = update_brew(brew)
         return redirect("/mybrews")
     else:
-        recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary, extracts, og_min, og_max, notes, = show_brew_recipe(recipe)
+        recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary, extracts, og_min, og_max, notes, srm_color = show_brew_recipe(recipe)
+
+        print boiltime
+        color = color_conversion(srm_color)
+
         return render_template("brew.html", brew=brew, recipe=recipe, batch_size=batch_size, batch_units=batch_units,
                                times=times, timerset=timerset, boiltime=boiltime, steep=steep, yeast=yeast, secondary=secondary,
-                               extracts=extracts, og_min=og_min, og_max=og_max, notes=notes)
-
-# @app.route('/boil', methods=["POST"])
-# def note_boil_time():
-#     boil_start = request.form.get("boil_start")
-    # brew_id = request.form("brew_id")
+                               extracts=extracts, og_min=og_min, og_max=og_max, notes=notes, color=color)
 
 
+# Ajax called -Store boil start time on change
+@app.route('/boil', methods=["POST"])
+def note_boil_time():
+    boil_start = request.form.get("boil_start")
+    brew_id = request.form.get("brew_id")
+    print boil_start
+    startformat = '%H:%M'
 
+    boil_start = datetime.datetime.strptime(boil_start, startformat).time()
+    print boil_start
+    Brew.query.filter_by(id=brew_id).one().boil_start = boil_start
+    db.session.commit()
+    return "hello"
+
+
+# Save brew data to database
 def update_brew(brew):
     brew.user_id = session["user_id"]
     date_get = request.form.get('brew_date')
     brew.date = datetime.datetime.strptime(date_get, "%Y-%m-%d").date()
-    # print "reached update brew"
+    print "Brew date: ", brew.date
     # if request.form.get('boil_start'):
     time_get = request.form.get("boil_start")
     # brew.boil_start = datetime.datetime.strptime(time_get, "%I-%M-%p").boil_start()
@@ -205,9 +264,11 @@ def update_brew(brew):
         brew.og = float(brew.og)
         brew.abv = (brew.og - brew.fg) * 131
 
-    end_date_get = request.form.get('finished')
-    if request.form.get("brew.end_date"):
+
+    if request.form.get("finished"):
+        end_date_get = request.form.get('finished')
         brew.end_date = datetime.datetime.strptime(end_date_get, "%Y-%m-%d").date()
+    print "Brew end date: ", brew.end_date
     brew.notes = request.form.get('brew_notes')
     brew.results_notes = request.form.get('results_notes')
     brew.rating = request.form.get('rating')
@@ -219,137 +280,14 @@ def update_brew(brew):
     return brew_update
 
 
-def show_brew_recipe(recipe):
-    record = Recipe.query.filter_by(name=recipe).one()
-    recipe_id = record.recipe_id
-    if record.notes == "":
-        notes = "No notes for this recipe"
-    else:
-        notes = record.notes
-
-    style_name = record.style_name
-    style_record = Style.query.filter_by(style_name=style_name).one()
-    og_min = style_record.og_min
-    og_max = style_record.og_max
-
-    if record.batch_size == "":
-        batch_size = 5
-        batch_units = "gallons"
-    elif record.batch_units == "L":
-        batch_size = round((record.batch_size * 0.26417), 2)
-        batch_units = "gallons"
-
-    # Boil list: This should only exist for hops and special ingredients.
-    boil = []
-    times = []
-    boiltime = {}
-    # Make a list of times in instructions. Prevent duplicates and sort descending.
-    boil = HopIns.query.filter_by(phase="Boil", recipe_id=recipe_id).all() + MiscIns.query.filter_by(phase="Boil", recipe_id=recipe_id).all()
-    for add in boil:
-        if add.time not in times:
-            times.append(add.time)
-        # if add.time not in times and add.time is None:
-        #     times.append(0)
-    print times
-    sorted(times, reverse=True)
-    iter = 0
-    timerset = {}
-    for time in times:
-        boiltime[time] = []
-
-        if iter < (len(times) - 1):
-            timerset[time] = times[iter] - times[iter + 1]
-        else:
-            timerset[time] = time
-        iter += 1
-
-
-
-        for add in boil:
-            new_ing = {}
-            if (add.time == time) and (hasattr(add, 'hop_id')):
-                ingredient = Hop.query.filter_by(hop_id=add.hop_id).one()
-                new_ing["name"] = ingredient.name
-                new_ing["amount"] = add.amount
-                if add.units == 'kg' or add.units is None:
-                    new_ing['amount'] = round((new_ing['amount'] * 35.274), 2)
-                    new_ing['units'] = "oz"
-
-            elif (add.time == time) and (hasattr(add, 'misc_id')):
-                ingredient = Misc.query.filter_by(misc_id=add.misc_id).one()
-                new_ing["name"] = ingredient.name
-                new_ing["amount"] = add.amount
-                new_ing["units"] = add.units
-            boiltime[time].append(new_ing)
-
-    print timerset
-
-    def collect_instructions(list_name, cls_name, cls_ins_name, theid):
-        instructions = cls_ins_name.query.filter_by(recipe_id=recipe_id).all()
-
-        list_name = []
-
-        for add in instructions:
-            add_dict = {}
-            add_dict["name"] = cls_name.query.filter_by(id=getattr(add, theid)).one().name
-            add_dict["amount"] = add.amount
-            if add.units == 'kg' or add.units is None:
-                add_dict["amount"] = round((add_dict['amount'] * 35.274), 2)
-                add_dict['units'] = "oz"
-            else:
-                add_dict["units"] = add.units
-
-            list_name.append(add_dict)
-            return list_name
-
-    # Make a list of dicts for grain info
-    steep = collect_instructions("grains", Fermentable, FermIns, "ferm_id")
-
-    # Make a list of dicts for extract info
-    extracts = collect_instructions("extract", Extract, ExtIns, "extract_id")
-
-    # Make a list of dicts for yeast info sorted by stage: primary or secondary
-    yeasts = YeastIns.query.filter_by(recipe_id=recipe_id).all()
-    yeast = []
-    secondary = []
-    for add in yeasts:
-        if add.phase == "primary":
-            add_dict = {}
-            add_dict["name"] = Yeast.query.filter_by(yeast_id=add.yeast_id).one().name
-            add_dict["amount"] = add.amount
-            if add.units is not None:
-                add_dict["units"] = add.units
-            else:
-                add_dict["units"] = "ounces"
-            yeast.append(add_dict)
-
-        elif add.phase == "secondary":
-            add_dict = {}
-            add_dict["name"] = Yeast.query.filter_by(yeast_id=add.yeast_id).one().name
-            add_dict["amount"] = add.amount
-            if add.units is not None:
-                add_dict["units"] = add.units
-            else:
-                add_dict["units"] = "ounces"
-
-            secondary.append(add_dict)
-
-    return (recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary,
-            extracts, og_min, og_max, notes)
-
-@app.route('/delete_brew/<int:brew_id>')
-def delete_brew(brew_id):
-    Brew.query.filter_by(id=brew_id).delete()
-    db.session.commit()
-    flash("Your brew was deleted")
-    return redirect("/mybrews")
-
+# ***************************************************************************************
+# Add new recipes
 
 @app.route('/addrecipe', methods=['GET', 'POST'])
 def enter_recipe():
     if request.method == "POST":
         data = request.get_json()
-        print "*****************************************************", data
+        # print "*****************************************************", data
         grains = data['grains']
         extracts = data['extracts']
         hops = data['hops']
@@ -390,7 +328,7 @@ def enter_recipe():
         if extracts:
             for i in range(0, len(data['extracts']), 3):
                 extract_name = extracts[i]["value"]
-                extract_id = Extract.query.filter_by(name=extract_name)[0].extract_id
+                extract_id = Extract.query.filter_by(name=extract_name)[0].id
                 extract_amount = extracts[i+1]["value"]
                 extract_units = extracts[i+2]["value"]
 
@@ -435,12 +373,15 @@ def enter_recipe():
             yeast_amount = yeasts[i+1]["value"]
             yeast_units = yeasts[i+2]["value"]
             yeast_phase = yeasts[i+3]["value"]
-            new_yeastins = YeastIns(recipe_id=recipe_id, id=yeast_id, amount=yeast_amount, units=yeast_units, phase=yeast_phase)
+            new_yeastins = YeastIns(recipe_id=recipe_id, yeast_id=yeast_id, amount=yeast_amount, units=yeast_units, phase=yeast_phase)
             db.session.add(new_yeastins)
             db.session.commit
 
-        flash("Your recipe has been added.")
-        return redirect("/")
+        calc_color(recipe_id, batch_size, batch_units)
+        print "recipe added"
+
+        message = "Your recipe has been added."
+        return message
 
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
 
@@ -448,7 +389,45 @@ def enter_recipe():
                            extract_choice=extract_choice, misc_choice=misc_choice, yeast_choice=yeast_choice)
 
 
-# Called from recipe form js to check for duplicate recipe names
+@app.route('/colorcalc', methods=['GET', 'POST'])
+def calculate_color():
+    data = request.get_json()
+    grains = data['grains']
+    extracts = data['extracts']
+    batch_size = float(data["batch_size"])
+    batch_units = data["units"]
+    if batch_units not in ["gallon", "gallons", "Gallons", "g"]:
+        batch_size = float(batch_size) * 0.26417    # Convert to pounds
+
+    def get_each_srm(cls, ingredient_list, batch_size):
+        srm_color = 0
+        for i in range(0, len(ingredient_list), 3):
+            name = grains[i]["value"]
+            color = Fermentable.query.filter_by(name=name)[0].color
+            amount = float(grains[i+1]["value"])
+            units = grains[i+2]["value"]
+            # Convert amount to pounds
+            if units in ["oz", "ounces"]:
+                amount = amount * 0.062500
+            elif units in ["g", "grams"]:
+                amount = amount * 0.0022046
+            else:
+                amount = amount * 2.20462
+            print "color", color, "amount ", amount, "batch_size ", batch_size
+            mcu = (color * amount) / batch_size
+            print mcu
+            srm_color += 1.4922 * (mcu ** .6859)
+
+        srm_color = int(round(srm_color))
+        print "srm", srm_color
+        return srm_color
+    srm = get_each_srm(Fermentable, grains, batch_size)
+    color = color_conversion(srm)
+    print color
+    return color
+
+
+# Ajax called - Check for duplicate recipe names
 @app.route('/check_recipe_name', methods=["POST"])
 def check_name():
     test_name = request.form.get("name")
@@ -461,6 +440,7 @@ def check_name():
 @app.route('/uploadrecipe', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
+        share = request.form.get('share')
         files = []
         recipes = []
         files.append(request.files['file-input1'])
@@ -475,28 +455,39 @@ def upload_file():
                 newfile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 filepath = "/tmp/uploads/" + filename
 
-                name = load_recipes(filepath, session["user_id"])
-                load_ferm_ins(filepath)
-                load_ext_ins(filepath)
-                load_hops_ins(filepath)
-                load_misc_ins(filepath)
-                load_yeast_ins(filepath)
-                recipes.append(name)
+                status, name = load_recipes(filepath, session["user_id"], share)
+                if status == "error":
+                    error_names.append(name)
+                else:
+                    recipes.append(name)
+
+        error_names = []
+        session['error_list'] = []
 
         for newfile in files:
             save_files(newfile)
 
-        notice = "Files successfully uploaded"
 
-        return render_template("uploadrecipe.html", notice=notice, recipes=recipes)
+        if error_names != []:
+            session['error_list'] = error_names
+            return redirect("/upload_error")
+        else:
+            notice = "Recipe(s) successfully added!"
+            return render_template("uploadrecipe.html", notice=notice, recipes=recipes)
 
     return render_template("uploadrecipe.html")
 
 
+@app.route('/upload_error')
+def displayerror():
+    return render_template("uploaderror.html")
+
+
 @app.route('/editrecipe/<string:recipe>')
 def editrecipe(recipe):
-    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps = get_recipe_info(recipe)
+    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
+
     public = Recipe.query.filter_by(name=recipe).one().public
     return render_template("editrecipe.html", name=name, source=source, style=style, batch_size=batch_size, batch_units=batch_units,
                            public=public, notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
@@ -504,6 +495,9 @@ def editrecipe(recipe):
                            extract_choice=extract_choice, hop_choice=hop_choice, misc_choice=misc_choice,
                            yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
 
+
+# ***************************************************************************************
+# Register and Log In
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -530,7 +524,7 @@ def register():
             db.session.commit()
 
             flash("You were successfully registered!")
-            return redirect("/")
+            return redirect("/login")
 
     return render_template("registration.html")
 
@@ -572,7 +566,7 @@ def logout():
     flash("Logged you out!")
     return redirect("/")
 
-
+# ***************************************************************************************
 
 if __name__ == "__main__":
 
