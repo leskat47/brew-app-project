@@ -43,12 +43,12 @@
 			<p>Sorry, we don't have any recipes in that style yet.</p>
 		{% else %}
 
-				{% if recipes %}
+				{% if recipes  or list_recipes %}
 				<h3>Recipes</h3>
 
 					<ul>
 					{% for myrecipe in recipes %}
-						<li>{{ myrecipe }}</li><br>
+						<li><a href="/recipe/{{ myrecipe }}">{{ myrecipe }}</a></li><br>
 					{% endfor %}
 					</ul>
 				{% endif %}
@@ -64,37 +64,27 @@
 						<form action="/editrecipe/{{ name }}">
 						<input type="submit" name="editrecipe" value="Make a Version">
 						</form>
+						{% if deleteable %}<a href="/deleterecipe/{{ name }}"><input type="button" id="deleterecipe" value="Delete this Recipe"></a>{% endif %}
+					<p><div style="width: 100%; height: 10px; background-color: {{ color }}"></div></p>
 					<h4>Style:</h4> {{ style }}<br>
 					{% if source %}
 						<h4>Source:</h4> {{ source }}<br>
 					{% endif %}
+					<h4 style="display: inline">Color: </h4><div style="display: inline; width: 50px; height: 20px; background-color: {{ color }}">&nbsp; &nbsp;</div>
 					<h4>Batch size:</h4> {{ batch_size }} gallons<br>
 					<h4>Steep:</h4>
 					{% for ferm in ferm_steps %}
-				<!-- 		{% if ferm.kind == "Grain" %} -->
 							<strong>{{ ferm.name }}</strong>
 							Amount: {{ ferm.amount }} oz<br>
-				<!-- 		{% endif %} -->
 					{% endfor %}
 
 					<h4>Boil:</h4>
-				<!-- 
-					{% for ferm in ferm_steps %}
-						{% if ferm.kind != "Grain" %}
-							<strong>Sugars:</strong>
-							{{ ferm.name }}
-							Amount: {{ ferm.amount }}
-						{% endif %}
-					{% endfor %} -->
-					{% if misc_steps%}
-						{% for misc in misc_steps %}
-							{% if misc.phase == "Boil" %}
-							<strong>{{ misc.name }}</strong>
-							Amount: {{misc.amount }}
-							Type: {{ misc.kind }}
-							Time: {{ misc.time }}
-							{% endif %}
-						{% endfor %}
+					<p><strong>Sugars:</strong><br>
+					{% for ext in ext_steps %}
+							{{ ext.name }}
+							Amount: {{ ext.amount }}<br>
+					{% endfor %}</p>
+
 					{% endif %}
 					{% for hop in hop_steps %}
 						{% if hop.phase == "Boil" %}
@@ -107,6 +97,16 @@
 						</p>
 						{% endif %}
 					{% endfor %}
+					<p>{% if misc_steps%}
+						{% for misc in misc_steps %}
+							{% if misc.phase == "Boil" %}
+							<strong>{{ misc.name }}</strong><br>
+							Amount: {{misc.amount }}<br>
+							Type: {{ misc.kind }}<br>
+							Time: {{ misc.time }}<br>
+							{% endif %}
+						{% endfor %}
+					</p>
 					<h4>Yeast:</h4>
 					{% for yeast in yeast_steps %}
 						<strong>{{ yeast.name }}</strong><br>

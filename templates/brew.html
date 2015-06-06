@@ -8,13 +8,27 @@
 
 <h2>{{ recipe }}</h2>
 
+<script>
+   var brew_id = {{ brew.id }};
+</script>
+
 <table>
 	<form action="/brew/{{ brew.id }}" method="post" id="{{ brew.id }}">
 		<tr>
 			<td valign="top">
-				Brew Date: <input type="date" name="brew_date" id="brew_date" class="form-control" style="width: 200px" value={{ brew.date }}>
-				<div class="accordion" id="accordion2">
-  					
+				<p><div style="width: 90%; height: 10px; background-color: {{ color }}"></div></p>
+				<p>Target color: <div style="width: 25px; height: 25px; background-color: {{ color }};"></div>
+				</p>
+					<div id="timergoodies" style="float: right">
+							<div id="popUpDiv" style="border: solid gray; width: 210px; height: 100px; border-radius: 5px; padding: 5px; text-align: center;">
+									<strong>Timer</strong>
+									<p><input class="clock" id="clock" style="width: 180px;"> </p>
+									<button type="button" class="stop form-control" style="display: inline; width: 80px">Pause</button>
+									<button type="button" class="clos form-control" style="display: inline; width: 80px">Hide</button>
+								</div>
+							<button type="button" id="showtimer" class="form-control">Show timer</button>
+					</div>
+				Brew Date: <input type="date" name="brew_date" id="brew_date" class="form-control" style="width: 200px" value={{ brew.date }}>  					
 					<a data-toggle="collapse" href="#steep-instructions" aria-expanded="false" aria-controls="collapseExample"<h3 style="display: inline">
 						<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 						<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style="display: none"></span>
@@ -30,7 +44,9 @@
 							</ul>
 							</p>
 						<p>Steep for <span class="timer" id="steep">30 minutes</span>.</p> 
+						<button type="button" class="timer form-control" id="timer" style="width: 150px; display: inline;" value="30">Start a Timer</button>
 					</div></blockquote>
+
 					
 
 				<a data-toggle="collapse" href="#boil-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">2. Boil</h2> 
@@ -44,8 +60,7 @@
 						{% else %}
 							<p>&nbsp; -- There are no sugars for this recipe. -- </p>
 						{% endif %}
-						<p>Return to boil. Start boil time: <input id="boil_start" type="time" name-"boil_start" {% if boil_start %}value="{{ boil_start }}"{% endif %}>{{ boil_start }}</p>
-
+						<p>Return to boil. Start boil time: <input id="boil_start" type="time" name-"boil_start" {% if brew.boil_start %}value="{{ brew.boil_start }}"{% endif %}></p>
 						{% for time in times %}
 						<p><strong>At {{ time }} minutes:</strong>
 							{% for ingredient in boiltime[time] %}
@@ -56,17 +71,9 @@
 							{% endif %}
 						</p>
 						{% endfor %}
-							<div id="timergoodies">
-								<div id="popUpDiv" style="border: solid gray; width: 150px;">
-									<input class="clock" id="clock" style="width: 120px;"> <br>
-									<button type="button" class="start">Start</button>
-									<button type="button" class="stop">Stop</button>
-									<button type="button" class="clos">Close</button>
-								</div>
-								<button type="button" id="showtimer">Show timer</button>
-							</div>
+							
 					</div></blockquote>
-				<a data-toggle="collapse" href="#cool" aria-expanded="false" aria-controls="collapseExample"<h3 style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">3. Cool</h2>
+				<a data-toggle="collapse" href="#cool" aria-expanded="false" aria-controls="collapseExample" style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">3. Cool</h2>
 					<blockquote><div id="cool" class="collapse in">
 					<p> Bring temperature down to 68&deg; to 70&deg; F. 
 					</p>
@@ -128,7 +135,7 @@
 						{% endfor %}
 					{% else %}
 					</p>
-						<p>"There are no secondary steps for this beer."</p>
+						<p>There are no secondary steps for this beer.</p>
 					
 					{% endif %}
 
@@ -139,7 +146,8 @@
 			</div>
 					<p>
 					<label for="finished">Date finished:</label> <input type="date" id="finished" name="finished" class="form-control" style="width: 200px; display: inline" value="{% if brew.end_date %}{{ brew.end_date }}{% endif %}">
-					<label for="final_gravity">Final gravity:</label> <input type="text" id="final_gravity" name="final_gravity" class="form-control" style="width: 100px; display: inline" value="{% if brew.fg %}{{ brew.fg }}{% endif %}"><span id="abv"></span><span id="abv_val"></span></p><br><br>
+					<label for="final_gravity">Final gravity:</label> <input type="text" id="final_gravity" name="final_gravity" class="form-control" style="width: 100px; display: inline" value="{% if brew.fg %}{{ brew.fg }}{% endif %}">
+					ABV: <span id="abv">{% if brew.abv %}{{ brew.abv }}{% endif %}</span></p><br><br>
 					
 
 				<p><input type="submit" value="Save Brew" class="form-control"></p>
@@ -150,9 +158,9 @@
 
 				<h2>Recipe Notes:</h2>
 				{% if notes %}{{ notes }}{% else %}There are no notes for this recipe.{% endif %}<br>
-				<h2><label for="brew_notes">My notes:</label></h2>
+				<h2>My notes:</h2>
 					<input type="textbox" name="brew_notes" id="brew_notes" style="width: 300px; height: 200px" value="{% if brew.notes %}{{ brew.notes }}{% endif %}">
-				<h2><label for="results_notes">Results</label></h2>
+				<h2>Results</h2>
 					<input type="textbox" name="results_notes" id="results_notes" style="width: 300px; height: 200px" value="{% if brew.results_notes %}{{ brew.results_notes }}{% endif %}">
 				<h2>Rating:</h2>
 					<div id="rating" class="rating">

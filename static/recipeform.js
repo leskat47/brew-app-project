@@ -79,8 +79,6 @@ $('.del-misc').click(function () {
     $(this).parent('div').remove();  
     });
 
-
-// $('.del-yeast').prop('disabled', true);
 $("#moreyeast1").hide();
 $("#add-yeast").click(function() {
 	var num = $(".repeat-yeast").length;
@@ -97,6 +95,32 @@ $('.del-yeast').click(function () {
     	$('.del-yeast').prop('disabled', true);
 	} 
     });
+
+// ***********************************************
+// Get current color for recipe
+
+
+
+$("#colorcalc").click(function () {
+	var ing = {}
+	ing.batch_size = ($("form #batch_size").val());
+	ing.units = ($("form #units").val());
+	ing.grains = $('form .repeat-grain :input').serializeArray();
+	ing.extracts = $('form .repeat-extract :input').serializeArray();
+
+	$.ajax({url: "/colorcalc",
+	type: "POST",
+	data: JSON.stringify(ing),
+	contentType: "application/json; charset=utf-8",
+	success: function(result){
+		console.log(result)
+		$("#color").css('background-color', result)
+	}
+});
+});
+
+// ***********************************************
+// Check recipe name for database and deny duplicates
 
 $("#name").change(function () {
 	checkName();
@@ -115,6 +139,7 @@ function checkName (){
 	});
 }
 
+
 //  *********************************************
 //  Create objects to convert to JSON
 
@@ -122,13 +147,13 @@ var postparams = {}
 
 $("#submit").click(function (event){	
 
-	postparams.name = ($("form #name").val());
-	postparams.source = ($("form #source").val());
-	postparams.style = ($("form #style").val());
-	postparams.share = ($("form #share").val());
-	postparams.batch_size = ($("form #batch_size").val());
-	postparams.units = ($("form #units").val());
-	postparams.notes = ($("form #notes").val());
+	postparams.name = ($("#name").val());
+	postparams.source = ($("#source").val());
+	postparams.style = ($("#style").val());
+	postparams.share = ($("#share").val());
+	postparams.batch_size = ($("#batch_size").val());
+	postparams.units = ($("#units").val());
+	postparams.notes = ($("#notes").val());
 	postparams.grains = $('form .repeat-grain :input').serializeArray();
 	postparams.hops = $('form .repeat-hops :input').serializeArray();
 	postparams.extracts = $('form .repeat-extract :input').serializeArray();
@@ -143,7 +168,14 @@ $("#submit").click(function (event){
 	$.ajax({url: "/addrecipe", 
 		type: "POST",
 		data:JSON.stringify(postparams),
-		contentType: "application/json; charset=utf-8",});
+		contentType: "application/json; charset=utf-8",
+		success: function(result){
+			console.log(result)
+			alert("Recipe added!")
+			var url = "/recipe/" + postparams.name;
+			$(location).attr('href',url);
+		}
+	});
 });
 });
 

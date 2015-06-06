@@ -23,7 +23,9 @@ $("#showall").click(function(){
 	$(".inprogress").show();
 	$(".completed").show();
 })
-});
+	beerColor = $(".beercolor").attr("#id")
+	$(".beerColor").css('background-color', beerColor)
+	});
 </script>
 <h2>My Brews</h2>
 <hr>
@@ -65,9 +67,9 @@ $("#showall").click(function(){
 				</div>
 			</form>
 			<a href="/mybrews"><button type="button" id="reset">Reset</button></a>
-			<p>Show only brews that are: <button type="button" id="completed" class="form-control" style="display: inline; width: 200px" value="Completed">Completed</button>
-			<button type="button" id="inprogress" class="form-control" value="InProgress" style="display: inline; width: 200px" >In Progress</button>
-			<button type="button" id="showall" class="form-control" value="ShowAll" style="display: inline; width: 200px">Show All</button>
+			<p>Show only brews that are: <button type="button" id="completed" class="form-control" style="display: inline; width: 150px" value="Completed">Completed</button>
+			<button type="button" id="inprogress" class="form-control" value="InProgress" style="display: inline; width: 150px" >In Progress</button>
+			<button type="button" id="showall" class="form-control" value="ShowAll" style="display: inline; width: 150px">Show All</button>
 		</td>
 	</tr>
 	<tr>
@@ -79,6 +81,7 @@ $("#showall").click(function(){
 			<div class="{% if brew.finished %}complete{% else %}inprogress{% endif %}">
 			<table class="table">
 			<tr>
+				<td rowspan="5" style="width: 5px; background-color: {{ brew.color }};"></td>
 				<td>{{ brew.name }}</td>
 				<td>{{ brew.date }}</td>
 				<td>{% if brew.finished %}
@@ -99,14 +102,15 @@ $("#showall").click(function(){
 				<td colspan="3">{{ brew.results_notes }}<br></td>
 			</tr>
 			<tr>
-				<td>Original gravity: {{ og }}</td>
-				<td>Final gravity: {{ fg }}</td>
-				<td>ABV: {{ abv }}</td>
+				<td>Original gravity: {% if brew.og %}{{ brew.og }}{% endif %}</td>
+				<td>Final gravity: {% if brew.fg %}{{ brew.fg }}{% endif %}</td>
+				<td>ABV: {% if brew.abv %}{{ brew.abv }}{% endif %}</td>
 				<td></td>
 
 			</tr>
 			<tr>
-				<td colspan="4">Rating: {{ brew.rating }}
+				<td>Rating: {{ brew.rating }} </td>
+				<td  colspan="3">Color: <span style="background-color: {{ brew.color }}";>&nbsp;&nbsp;&nbsp;</div>
 				</td>
 			</tr>
 		</table>

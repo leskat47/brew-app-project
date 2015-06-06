@@ -124,7 +124,7 @@
 		</td>
 		<td colspan="2">
 			<label for="source">Source</label>
-			<div id="source"><input type="text" id="source" name="source" class="form-control" required></div>
+			<input id="source" type="text" id="source" name="source" class="form-control" required>
 		</td>
 	</tr>
 	<tr>
@@ -135,19 +135,19 @@
 	<tr>
 		<td colspan="3">
 			<p><label for="style">Style</label>
-			<div id="style"><select name="style" class="form-control" required>
+			<select id="style" name="style" class="form-control" required>
 					<option selected disabled>Select a style</option>
 					{% for style in selectlist_styles %}
 					<option value="{{ style }}">{{ style }}</option>
 					{% endfor %}
-			</select></div>
+			</select>
 		</td>
 		<td>
 			<label for="share">Share this recipe?</label>
-			<div id="share"><select name="share" class="form-control" required>
+			<select id="share"name="share" class="form-control" required>
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
-				</select></div>
+				</select>
 		</td>
 	</tr>
 	<tr>
@@ -157,16 +157,16 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-		<div id="batch_size"><input type="number" id="batch_size" name="batch_size" class="form-control" required>
+		<input id="batch_size" type="number" name="batch_size" class="form-control" required>
 		</td>
 		<td>
-			<div id="units">
+
 			<select id="units" name="units" class="form-control" required>
 					<option selected disabled>units</option>
-					<option value="grams">g</option>
+					<option value="gallons">g</option>
 					<option value="ounces">L</option>
 			</select>
-			</div>
+
 		</td>
 		<td>
 		</td>
@@ -213,6 +213,7 @@
 			<input type="button" id="del-extract" value="Remove extract" class="form-control del-extract" style="width: 15%; display: inline">
 			</div>
 			<button type="button" id="add-extract" value="Add extract" class="form-control" style="width: 20%" required>Add extract</button>	
+			<div><button type="button" id="colorcalc">Estimate color</button><div id="color" style="width: 100%; height: 25px">&nbsp;</div>
 		</td>
 	</tr>
 	<tr>
@@ -306,7 +307,7 @@
 	<tr>
 		<td colspan="4"><br>
 		<label for="notes">Notes/Instructions:</label><br>
-		<p><div id="notes"><textarea name="note" rows="10" cols="50"></textarea></div></p>
+		<p><textarea id="notes" name="note" rows="10" cols="50"></textarea></p>
 		</td>
 	</tr>
 	<tr colspan="4">
