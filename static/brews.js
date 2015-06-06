@@ -10,24 +10,36 @@ $(document).ready(function() {
 		$('.collapse').collapse();
 	});
 
-// $('#boil_start').change(function(){
-// 	$.post('/boil',
-// 	{ boil_start: $('#boil_start').val(), brew_id: $('#brew_id').val()}
-// 	console.log("Boil time saved."));
-// });
+// *******************************************
+// Save the boil start time
 
+
+$('#boil_start').change(function(){
+	boil_start = ($('#boil_start').val());
+
+	$.post('/boil',
+	{boil_start: boil_start, brew_id: brew_id},
+	console.log("Boil time saved."));
+
+});
+
+
+// ********************************************
 // timer functionality
 
 // TIMER:
 // timer box toggle and drag:
 	$(".timer").click(function(evt){
-		console.log($(this).val());
 		timer.start($(this).val() * 60000);
 	});
+	$("#showtimer").hide();
 	$(".clos").click(function(){
 		$(this).parent().toggle();
+		$("#showtimer").show();
+
 	$("#showtimer").click(function(){
-		$("#popUpDiv").show()
+		$("#popUpDiv").show();
+		$("#showtimer").hide();
 	})
 
 	});
@@ -37,10 +49,8 @@ var timer = new Tock({
 	  	countdown: true,
 	  	interval: 10,
 	  	callback: function(timer) {
-	  		console.log(timer.msToTimecode(timer.lap()));
 		    var current_time = timer.msToTimecode(timer.lap());
 		    $("#clock").val(current_time);
-		    console.log('running');
 		},
 	  	complete: function () {
 		  	alarmBell.play();
@@ -53,19 +63,9 @@ var timer = new Tock({
 		}
 	});
 
-// $(".start").on('click', function(evt) {
-// 	timer.start($(evt.currentTarget).val());
-// 	});
-
 $(".stop").on('click', function() {
-	timer.stop();
+	timer.pause();
 	});
-
-// function startTimer () {
-
-// $.each($(".popUpDiv"), function(index , value){
-// 	console.log(index + ": " + value);
-// 	console.log($(this))
 
 
 // CALENDAR:
@@ -136,9 +136,9 @@ $(".stop").on('click', function() {
 		var fg = parseFloat($("#final_gravity").val());
 		if ($("#orig_gravity").val() > 0) {
 			var og = parseFloat($("#orig_gravity").val());
-			var abv  = (fg - og) * 131;
-			$("#abv").text(" ABV: ");
-			$("#abv_val").html(abv);
+			var abv  = round(((og - fg) * 131), 2);
+			$("#abv").text(abv);
+			$("#abv").html(abv);
 		}
 	});
 
