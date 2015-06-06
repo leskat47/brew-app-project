@@ -8,28 +8,36 @@ $("#recipe").change(function(){
 	this.form.submit();
 })
 
-$("#makerecipe").click(function (){
+$("#makerecipe").click(function(){
 	name = $("#makerecipe").attr("name");
+	console.log("clicked")
 	checkBrew(name);
 });
 
-function checkBrew (name){
+// beerColor = $(".beerColor").attr("#id")
+// $(".beerColor").css('background-color', beerColor)
+
+
+function checkBrew(name){
 	$.post("/check_brew",
 	"name=" + name,
 	function(result) { 
-		var loadBrew = false
 		if (result === "duplicate") {
-			loadBrew = confirm("You already have a brew for this recipe today. Start another?");
+			var loadBrew = confirm("You already have a brew for this recipe today. Start another?");
 			if (loadBrew == true) {
-				// var url = "/addbrew/" + name;    
-				// $(location).attr('href',url);
-			} else {
+				console.log("Go to the next page")
+				var url = "/addbrew/" + name;    
+				$(location).attr('href',url);
+			} else if (loadBrew == false) {
 				console.log("Stay on this page.");
 			}
-		// } else {
-		// 	var url = "/addbrew/" + name;    
-		// 		$(location).attr('href',url);
+		} else {
+			console.log("Go to the next page")
+			var url = "/addbrew/";    
+			console.log(url)
+			$(location).attr('href',url);
 		}
+
 		}
 	)
 }
