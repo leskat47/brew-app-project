@@ -23,7 +23,14 @@ $("#text-input").change(function(){
 		<input type="file" id="file-input3" name="file-input3" class="form-control">
 		<input type="file" id="file-input4" name="file-input4" class="form-control">
 		<input type="file" id="file-input5" name="file-input5" class="form-control">
+		<p>Would you like to share these recipes? 
+		<select name="share" id="share" class="form-control" style="display: inline; width: 50%">
+				<option value="yes">Yes</option>
+				<option value="no">No</option>
+		</select></p>
 		<input type="submit" value="Submit" class="form-control">
+
+
 	</td>
 	<td>
 	{% if notice %}

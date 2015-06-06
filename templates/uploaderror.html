@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+
+<p>Sorry, there was a problem with some of your files. The following were already in our database: </p>
+<ul>
+	{% for name in session.pop('error_list') %}
+		<li><a href="/recipe/{{ name }}">{{ name }}</a></li>
+	{% endfor %}
+</ul>
+
+{% endblock%}
