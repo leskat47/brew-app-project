@@ -2,16 +2,24 @@
 	<head>
 		<title>Brew Day</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
 		<link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/1.2.0/jquery.serializeJSON.min.js"></script>
+
+
+
+	    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
-		 <script src="../static/tock.js"></script>
-		<style>
-		[draggable=true] {
-		    cursor: move;
-		}
-		</style>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/1.2.0/jquery.serializeJSON.min.js"></script>
+		<!-- <script src="..static/jquery.serializejson.min.js"></script> <!-- Version 2.3.1 -->
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="../static/myscript.js"></script>
+		<script src="../static/buzz.min.js"></script>
+		<script src="../static/tock.js"></script>
+		<style rel="style" type="text/css" hef="mystyles.css">	</style>
 
 	</head>
 
@@ -38,7 +46,7 @@
     		<div style="margin-left: auto; margin-right: auto;">{% include 'navbar.html' %}</div>
 	    	{% with messages = get_flashed_messages() %}
 	            {% if messages %}
-	                <div class=flashes>
+	                <div class="flashes">
 	                {% for message in messages %}
 	                    {{ message }} <br>
 	                {% endfor %}

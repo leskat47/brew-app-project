@@ -14,9 +14,6 @@ $("#makerecipe").click(function(){
 	checkBrew(name);
 });
 
-// beerColor = $(".beerColor").attr("#id")
-// $(".beerColor").css('background-color', beerColor)
-
 
 function checkBrew(name){
 	$.post("/check_brew",
@@ -33,7 +30,7 @@ function checkBrew(name){
 			}
 		} else {
 			console.log("Go to the next page")
-			var url = "/addbrew/";    
+			var url = "/addbrew/" + name;    
 			console.log(url)
 			$(location).attr('href',url);
 		}

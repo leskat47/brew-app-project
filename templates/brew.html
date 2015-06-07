@@ -54,7 +54,7 @@
 						<p>Bring water to a boil. Turn off flame and add sugars:</p>
 						{% if extracts %}<ul>
 						{% for extract in extracts %}
-							<li>{{ extract.name }} - {{ extract.amount }} {{ extract.units }} </li>
+							<li>{{ extract.amount }} {{ extract.units }} {{ extract.name }}</li>
 						{% endfor %}
 						</ul>
 						{% else %}

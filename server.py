@@ -23,17 +23,24 @@ def allowed_file(filename):
 
 # ROUTES:
 # /explore      -> populate dropdown searches. On post, return recipe names
-# /myrecipes
-# /recipe/recipenamr
-# /mybrews      -> collect brews associated with user, show table of selected brew info,
-#               populate dropdowns, return search results
+# /myrecipes    -> populate list of user recipes
+# /recipe/recipename -> display recipe
+# /check_brew   -> Check for duplicate brew
 # /addbrew      -> Passthrough route from recipe page that adds a brew and produces new brew_id
-# /brew/brewid  -> populate brew page with associated brew data, display page. On post, route to update
+# /delete_recipe-> Delete recipe and connected instructions
+
+# /mybrews      -> collect brews for user, show table of selected brew info, build dropdowns, return search results
 # /deletebrew/brewid -> Ajax accessed to remove a brew from user's list
+# /boil         -> add boil (on change) to brew table in db
+
+# /brew/brewid  -> populate brew page with associated brew data, display page. On post, route to update
+
 # /addrecipe    -> populate menus and display form. On post, prep inputs for database and commit to database.
-# /check_recipename -> Ajax accessed to check whether recipe name entered in form is duplicated in db.
-# /uploadrecipe -> Uploaded file saved to uploads folder, parsed and committed through feeder.py function
 # /editrecipe   -> Get data for given recipe. Populate menus. Display form.
+# /uploadrecipe -> Uploaded file saved to uploads folder, parsed and committed through feeder.py function
+# /check_recipename -> Ajax accessed to check whether recipe name entered in form is duplicated in db.
+# /colorcalc    -> Ajax accessed to calculate beer color
+
 
 # ***************************************************************************************
 # Home page
@@ -65,6 +72,7 @@ def show_explore():
             recipe = request.form.get("recipe")
             name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
             color = color_conversion(srm_color)
+            deleteable = False
             if Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
                 deleteable = True
             return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, batch_size=batch_size,
@@ -252,11 +260,8 @@ def update_brew(brew):
     brew.user_id = session["user_id"]
     date_get = request.form.get('brew_date')
     brew.date = datetime.datetime.strptime(date_get, "%Y-%m-%d").date()
-    print "Brew date: ", brew.date
-    # if request.form.get('boil_start'):
     time_get = request.form.get("boil_start")
-    # brew.boil_start = datetime.datetime.strptime(time_get, "%I-%M-%p").boil_start()
-    # boil_start = None
+
     if (request.form.get('orig_gravity')):
         brew.og = float(request.form.get('orig_gravity'))
     if request.form.get('final_gravity'):
@@ -283,6 +288,7 @@ def update_brew(brew):
 # ***************************************************************************************
 # Add new recipes
 
+# Get  - display add recipe. Post - Add recipe and edit recipe pages info routed here for processing and uploading to db
 @app.route('/addrecipe', methods=['GET', 'POST'])
 def enter_recipe():
     if request.method == "POST":
@@ -389,54 +395,21 @@ def enter_recipe():
                            extract_choice=extract_choice, misc_choice=misc_choice, yeast_choice=yeast_choice)
 
 
-@app.route('/colorcalc', methods=['GET', 'POST'])
-def calculate_color():
-    data = request.get_json()
-    grains = data['grains']
-    extracts = data['extracts']
-    batch_size = float(data["batch_size"])
-    batch_units = data["units"]
-    if batch_units not in ["gallon", "gallons", "Gallons", "g"]:
-        batch_size = float(batch_size) * 0.26417    # Convert to pounds
+# Display edit recipe page
+@app.route('/editrecipe/<string:recipe>')
+def editrecipe(recipe):
+    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
+    grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
 
-    def get_each_srm(cls, ingredient_list, batch_size):
-        srm_color = 0
-        for i in range(0, len(ingredient_list), 3):
-            name = grains[i]["value"]
-            color = Fermentable.query.filter_by(name=name)[0].color
-            amount = float(grains[i+1]["value"])
-            units = grains[i+2]["value"]
-            # Convert amount to pounds
-            if units in ["oz", "ounces"]:
-                amount = amount * 0.062500
-            elif units in ["g", "grams"]:
-                amount = amount * 0.0022046
-            else:
-                amount = amount * 2.20462
-            print "color", color, "amount ", amount, "batch_size ", batch_size
-            mcu = (color * amount) / batch_size
-            print mcu
-            srm_color += 1.4922 * (mcu ** .6859)
-
-        srm_color = int(round(srm_color))
-        print "srm", srm_color
-        return srm_color
-    srm = get_each_srm(Fermentable, grains, batch_size)
-    color = color_conversion(srm)
-    print color
-    return color
+    public = Recipe.query.filter_by(name=recipe).one().public
+    return render_template("editrecipe.html", name=name, source=source, style=style, batch_size=batch_size, batch_units=batch_units,
+                           public=public, notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
+                           misc_steps=misc_steps, yeast_steps=yeast_steps, grain_choice=grain_choice,
+                           extract_choice=extract_choice, hop_choice=hop_choice, misc_choice=misc_choice,
+                           yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
 
 
-# Ajax called - Check for duplicate recipe names
-@app.route('/check_recipe_name', methods=["POST"])
-def check_name():
-    test_name = request.form.get("name")
-    if Recipe.query.filter_by(name=test_name).all() == []:
-        return "okay"
-    else:
-        return "nope"
-
-
+# Display page for recipe upload and process uploaded recipe. Return either error page or recipe page.
 @app.route('/uploadrecipe', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
@@ -467,10 +440,9 @@ def upload_file():
         for newfile in files:
             save_files(newfile)
 
-
         if error_names != []:
             session['error_list'] = error_names
-            return redirect("/upload_error")
+            return render_template("upload_error.html")
         else:
             notice = "Recipe(s) successfully added!"
             return render_template("uploadrecipe.html", notice=notice, recipes=recipes)
@@ -478,22 +450,51 @@ def upload_file():
     return render_template("uploadrecipe.html")
 
 
-@app.route('/upload_error')
-def displayerror():
-    return render_template("uploaderror.html")
+# Ajax called - Check for duplicate recipe names
+@app.route('/check_recipe_name', methods=["POST"])
+def check_name():
+    test_name = request.form.get("name")
+    if Recipe.query.filter_by(name=test_name).all() == []:
+        return "okay"
+    else:
+        return "nope"
 
 
-@app.route('/editrecipe/<string:recipe>')
-def editrecipe(recipe):
-    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
-    grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
+# Ajax called -Calculate color for recipe
+@app.route('/colorcalc', methods=['GET', 'POST'])
+def calculate_color():
+    data = request.get_json()
+    grains = data['grains']
+    extracts = data['extracts']
+    batch_size = float(data["batch_size"])
+    batch_units = data["units"]
+    if batch_units not in ["gallon", "gallons", "Gallons", "g"]:
+        batch_size = float(batch_size) * 0.26417    # Convert to pounds
 
-    public = Recipe.query.filter_by(name=recipe).one().public
-    return render_template("editrecipe.html", name=name, source=source, style=style, batch_size=batch_size, batch_units=batch_units,
-                           public=public, notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
-                           misc_steps=misc_steps, yeast_steps=yeast_steps, grain_choice=grain_choice,
-                           extract_choice=extract_choice, hop_choice=hop_choice, misc_choice=misc_choice,
-                           yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
+    def get_each_srm(cls, ingredient_list, batch_size):
+        srm_color = 0
+        for i in range(0, len(ingredient_list), 3):
+            name = grains[i]["value"]
+            color = Fermentable.query.filter_by(name=name)[0].color
+            amount = float(grains[i+1]["value"])
+            units = grains[i+2]["value"]
+            # Convert amount to pounds
+            if units in ["oz", "ounces"]:
+                amount = amount * 0.062500
+            elif units in ["g", "grams"]:
+                amount = amount * 0.0022046
+            else:
+                amount = amount * 2.20462
+            print "color", color, "amount ", amount, "batch_size ", batch_size
+            mcu = (color * amount) / batch_size
+            print mcu
+            srm_color += 1.4922 * (mcu ** .6859)
+
+        srm_color = int(round(srm_color))
+        return srm_color
+    srm = get_each_srm(Fermentable, grains, batch_size)
+    color = color_conversion(srm)
+    return color
 
 
 # ***************************************************************************************

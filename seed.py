@@ -1,4 +1,5 @@
 from model import Hop, Fermentable, Yeast, Recipe, Style, User, Misc, Extract, YeastIns, HopIns, ExtIns, FermIns, MiscIns, connect_to_db, db
+from feeder import calc_color, load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
 from server import app
 import xml.etree.ElementTree as ET
 import re
@@ -53,68 +54,7 @@ def load_styles(datafile):
 
 
 ###########################################################################
-# RECIPES
-
-def load_recipes(filename, user=999, share="yes"):
-    tree = ET.parse(filename)
-    root = tree.getroot()
-    for recipe in root:
-        name = recipe.find('NAME').text
-        source = el_find_text(recipe, 'SOURCE', "")
-        user_id = user
-        public = share
-        style = [elem.find('NAME').text for elem in recipe.iter() if elem.tag == "STYLE"]
-        style_name = style[0]
-        notes = el_find_text(recipe, 'NOTES', "")
-        batch_size = el_find_text(recipe, 'BATCH_SIZE', "")
-        batch_units = el_find_text(recipe, 'BATCH_UNITS', "L")
-        srm = 0
-        new_recipe = Recipe(name=name, source=source, user_id=user_id, public=public,
-                            notes=notes, batch_size=batch_size, batch_units=batch_units,
-                            style_name=style_name, srm=srm)
-        db.session.add(new_recipe)
-    db.session.commit()
-    load_hops_ins(filepath)
-    load_ferm_ins(filepath)
-    load_ext_ins(filepath)
-    load_misc_ins(filepath)
-    load_yeast_ins(filepath)
-
-    recipe_id = Recipe.query.filter_by(name=name).one().recipe_id
-    calc_color(recipe_id, batch_size, batch_units)
-
-
-def calc_color(recipe_id, batch_size, batch_units):
-    fermins = FermIns.query.filter_by(recipe_id=recipe_id).all()
-    extins = ExtIns.query.filter_by(recipe_id=recipe_id).all()
-
-    if batch_units not in ["gallons", "Gallons", "g"]:
-        batch_size = float(batch_size) * 0.26417
-
-    srm_color = 0
-    for ins in fermins:
-        amount_in_lbs = ins.amount * 2.2046
-        ferm_id = ins.ferm_id
-        color = Fermentable.query.filter_by(id=ferm_id).one().color
-        mcu = (color * amount_in_lbs) / batch_size
-        srm_color += 1.4922 * (mcu ** .6859)
-
-    for ins in extins:
-        amount_in_lbs = ins.amount * 2.2046
-        extract_id = ins.extract_id
-        color = Extract.query.filter_by(id=extract_id).one().color
-        print color, amount_in_lbs, batch_size
-        mcu = (color * amount_in_lbs) / batch_size
-        srm_color += 1.4922 * (mcu ** .6859)
-
-    color = int(round(srm_color))
-
-    Recipe.query.filter_by(recipe_id=recipe_id).one().srm=color
-    db.session.commit()
-
-###########################################################################
 # INGREDIENTS
-
 
 def load_hops(datafile):
     hop_tree = ET.parse(datafile)
@@ -150,22 +90,23 @@ def load_extracts(datafile):
         db.session.add(new_ext)
     db.session.commit
 
-# def load_adjuncts(datafile):
-#     ext_tree = ET.parse(datafile)
-#     root = ext_tree.getroot()
-#     for child in root:
-#         name = child.find('NAME').text
-#         supplier = child.find('SUPPLIER').text
-#         origin = child.find('ORIGIN').text
-#         kind = el_find_text(child, 'KIND', "")
-#         ex_yield = child.find('YIELD').text
-#         notes = child.find('NOTES').text
-#         phase = "boil"
-#         print "Extract: ", name
-#         new_ext = Extract(name=name, supplier=supplier, origin=origin, kind=kind,
-#                           ex_yield=ex_yield, notes=notes, phase=phase)
-#         db.session.add(new_ext)
-#     db.session.commit
+
+def load_adjuncts(datafile):
+    ext_tree = ET.parse(datafile)
+    root = ext_tree.getroot()
+    for child in root:
+        name = child.find('NAME').text
+        supplier = child.find('SUPPLIER').text
+        origin = child.find('ORIGIN').text
+        kind = el_find_text(child, 'KIND', "")
+        ex_yield = child.find('YIELD').text
+        notes = child.find('NOTES').text
+        phase = "boil"
+        print "Extract: ", name
+        new_ext = Extract(name=name, supplier=supplier, origin=origin, kind=kind,
+                          ex_yield=ex_yield, notes=notes, phase=phase)
+        db.session.add(new_ext)
+    db.session.commit
 
 
 def load_ferms(datafile):
@@ -243,119 +184,6 @@ def load_yeasts(datafile):
         db.session.add(new_yeast)
     db.session.commit()
 
-###########################################################################
-# INSTRUCTIONS
-
-def load_hops_ins(filepath):
-    misc_tree = ET.parse(filepath)
-    root = misc_tree.getroot()
-    for child in root:
-        recipe = child.find('NAME').text
-        recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
-        for subchild in child:
-            for hop in subchild.findall('HOP'):
-                name = hop.find('NAME').text
-                form = hop.find('FORM').text
-                hop_id = Hop.query.filter_by(name=name, form=form)[0].hop_id
-                amount = hop.find('AMOUNT').text
-                units = "kg"
-                phase = hop.find('USE').text
-                time = hop.find('TIME').text
-                kind = hop.find('TYPE').text
-                new_inst_item = HopIns(recipe_id=recipe_id, hop_id=hop_id, amount=amount,
-                                       units=units, phase=phase, time=time, kind=kind)
-                db.session.add(new_inst_item)
-    db.session.commit()
-
-
-def load_ferm_ins(filepath):
-    misc_tree = ET.parse(filepath)
-    root = misc_tree.getroot()
-    for child in root:
-        recipe = child.find('NAME').text
-        recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
-        for subchild in child:
-            for fermentable in subchild.findall('FERMENTABLE'):
-                if fermentable.find('TYPE').text == "Grain":
-                    name = fermentable.find('NAME').text
-                    ferm_id = Fermentable.query.filter_by(name=name).first().id
-                    amount = fermentable.find('AMOUNT').text
-                    units = 'kg'
-                    print "to be uploaded: ", recipe_id, ferm_id, amount, units
-                    new_ferm_item = FermIns(recipe_id=recipe_id, ferm_id=ferm_id,
-                                            amount=amount, units=units)
-                    db.session.add(new_ferm_item)
-    db.session.commit()
-
-
-def load_ext_ins(filepath):
-    misc_tree = ET.parse(filepath)
-    root = misc_tree.getroot()
-    for child in root:
-        recipe = child.find('NAME').text
-        recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
-        for subchild in child:
-            for fermentable in subchild.findall('FERMENTABLE'):
-                ext_types = ['Sugar', 'Extract', 'Dry Extract', 'Adjunct']
-                if fermentable.find('TYPE').text in ext_types:
-                    name = fermentable.find('NAME').text
-                    extract_id = Extract.query.filter_by(name=name).first().id
-                    amount = fermentable.find('AMOUNT').text
-                    units = 'kg'
-                    new_ferm_item = ExtIns(recipe_id=recipe_id, extract_id=extract_id, amount=amount,
-                                           units=units)
-                    db.session.add(new_ferm_item)
-    db.session.commit()
-
-def load_misc_ins(filepath):
-    misc_tree = ET.parse(filepath)
-    root = misc_tree.getroot()
-    for child in root:
-        recipe = child.find('NAME').text
-        recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
-        for subchild in child:
-            for misc_item in subchild.findall('MISC'):
-                name = misc_item.find('NAME').text
-
-                if Misc.query.filter_by(name=name).all() == []: # Check to see if the item is in DB
-                    kind = misc_item.find('TYPE').text          # If not in DB, add to DB first
-                    use = misc_item.find('USE').text
-                    notes = el_find_text(misc_item, 'NOTES', "")
-                    new_misc = Misc(name=name, kind=kind, use=use,
-                                    notes=notes)
-                    db.session.add(new_misc)
-                    db.session.commit()
-
-                misc_id = Misc.query.filter_by(name=name)[0].misc_id
-                phase = misc_item.find('USE').text
-                amount = misc_item.find('AMOUNT').text
-                if misc_item.find('TIME').text is None:
-                    time = 0
-                else:
-                    time = misc_item.find('TIME').text
-                new_misc_item = MiscIns(recipe_id=recipe_id, misc_id=misc_id, amount=amount,
-                                        phase=phase)
-                db.session.add(new_misc_item)
-    db.session.commit()
-
-
-def load_yeast_ins(filepath):
-    misc_tree = ET.parse(filepath)
-    root = misc_tree.getroot()
-    for child in root:
-        recipe = child.find('NAME').text
-        recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
-        for subchild in child:
-            for yeast in subchild.findall('YEAST'):
-                name = yeast.find('NAME').text
-                yeast_id = Yeast.query.filter_by(name=name)[0].yeast_id
-                amount = yeast.find('AMOUNT').text
-                units = 'kg'
-                phase = 'primary'
-                new_yeast = YeastIns(recipe_id=recipe_id, yeast_id=yeast_id, amount=amount,
-                                     phase=phase)
-                db.session.add(new_yeast)
-    db.session.commit()
 
 ########################################################################
 # Helper functions
@@ -391,12 +219,11 @@ def all_text_fragments(et):
 
     return alltext
 
+########################################################################
 
 if __name__ == "__main__":
     connect_to_db(app)
     db.create_all()
-
-    filepath = "datasets/beerxml/recipe.xml"
 
     load_styles("datasets/beerxml/styleguide.xml")
     load_hops("datasets/beerxml/hops.xml")
@@ -405,4 +232,4 @@ if __name__ == "__main__":
     load_misc("datasets/beerxml/special.xml")
     load_yeasts("datasets/beerxml/yeast.xml")
     load_ferms("datasets/beerxml/grains.xml")
-    load_recipes(filepath)
+    load_recipes("datasets/beerxml/recipe.xml")

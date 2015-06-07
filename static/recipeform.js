@@ -3,8 +3,6 @@ $(document).ready(function () {
 
 //  *********************************************
 //  Ingredient add/delete-a-row functions 
-//  *********************************************
-// TODO: 
 
 $("#hidden").hide();
 
@@ -64,7 +62,6 @@ $('.del-hop').click(function () {
 	} 
     });
 
-
 $("#moremisc1").hide();
 $("#add-misc").click(function() {
 	var num = $(".repeat-misc").length;
@@ -96,10 +93,9 @@ $('.del-yeast').click(function () {
 	} 
     });
 
+
 // ***********************************************
 // Get current color for recipe
-
-
 
 $("#colorcalc").click(function () {
 	var ing = {}
@@ -118,6 +114,7 @@ $("#colorcalc").click(function () {
 	}
 });
 });
+
 
 // ***********************************************
 // Check recipe name for database and deny duplicates
@@ -161,7 +158,6 @@ $("#submit").click(function (event){
 	postparams.yeasts = $('form .repeat-yeast :input').serializeArray();
 
 	console.log(postparams);
-	// TODO: find a way to sort ingredients so name is the key for each input
 
 //  *********************************************
 //  Send data to server

@@ -45,9 +45,9 @@ def feed_recipe_form():
     return grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles
 
 
+# Create lists of recipes and styles which will show in the dropdown selections. list_recipes will
+# hold a list of recipes within a style when style type is selected.
 def get_selectlists(user_id):
-    # Create lists of recipes and styles which will show in the dropdown selections. list_recipes will
-    # hold a list of recipes within a style when style type is selected.
 
     selectlist_recipes = []
     selectlist_styles = []
@@ -72,6 +72,7 @@ def get_selectlists(user_id):
     return (selectlist_recipes, selectlist_styles, selectlist_user, selectlist_user_styles)
 
 
+# Get list of brew dictionaries based on brew objects provided
 def get_brewlist(all_brews):
     brewlist = []
     for brew in all_brews:
@@ -98,6 +99,8 @@ def get_brewlist(all_brews):
 
     return brewlist
 
+
+# Convert srm color to a hexidecimal value
 def color_conversion(srm):
     color_ref = {1: "#F3F993", 2: "#F5F75C", 3: "#F6F513", 4: "#EAE615", 5: "#E0D01B",
                  6: "#D5BC26", 7: "#CDAA37", 8: "#C1963C", 9: "#BE8C3A", 10: "#BE823A",
@@ -114,6 +117,8 @@ def color_conversion(srm):
         color = "#050b0a"
     return color
 
+
+# Collect data values for a single recipe name
 def get_recipe_info(recipe):
     display_recipe = Recipe.query.filter_by(name=recipe).one()
     name = display_recipe.name
@@ -207,6 +212,7 @@ def get_recipe_info(recipe):
     return (name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color)
 
 
+# Collect recipe information to display as a brew
 def show_brew_recipe(recipe):
     record = Recipe.query.filter_by(name=recipe).one()
     recipe_id = record.recipe_id
@@ -229,10 +235,17 @@ def show_brew_recipe(recipe):
         batch_size = round((record.batch_size * 0.26417), 2)
         batch_units = "gallons"
 
-    # Boil list: This should only exist for hops and special ingredients.
+    # Boil list -> Hops and special ingredients that go in the boil.
     boil = []
+    #  times -> Each time event in the boil
     times = []
+    # boiltime -> List of dictionaries of instructions data
     boiltime = {}
+    # iter -> iterator for building timerset
+    iter = 0
+    # timerset -> Dictionary of time event and delta to next event
+    timerset = {}
+
     boil = HopIns.query.filter_by(phase="Boil", recipe_id=recipe_id).all() + MiscIns.query.filter_by(phase="Boil", recipe_id=recipe_id).all()
 
     # Make a list of times in instructions. Prevent duplicates and sort descending.
@@ -241,13 +254,13 @@ def show_brew_recipe(recipe):
             times.append(add.time)
         if add.time is None and 0 not in times:
             times.append(0)
-    print times
     sorted(times, reverse=True)
-    iter = 0
-    timerset = {}
+
+    # For each time instruction, collect ingredient details as a dictionary, and add to boiltime
     for time in times:
         boiltime[time] = []
 
+        # Find delta between boil times for timers
         if iter < (len(times) - 1):
             timerset[time] = times[iter] - times[iter + 1]
         else:
@@ -271,29 +284,7 @@ def show_brew_recipe(recipe):
                 new_ing["units"] = add.units
             boiltime[time].append(new_ing)
 
-    print timerset
-
-    def collect_instructions(list_name, cls_name, cls_ins_name, theid):
-        instructions = cls_ins_name.query.filter_by(recipe_id=recipe_id).all()
-
-        list_name = []
-
-        for add in instructions:
-            add_dict = {}
-            add_dict["name"] = cls_name.query.filter_by(id=getattr(add, theid)).one().name
-            add_dict["amount"] = add.amount
-            lbs_weight = add.amount * 2.2046
-            if add.units == 'kg' or add.units is None:
-                add_dict["amount"] = round((add_dict['amount'] * 35.274), 2)
-                add_dict['units'] = "oz"
-            else:
-                add_dict["units"] = add.units
-
-            list_name.append(add_dict)
-            return list_name
-
     # Make a list of dicts for grain info
-    # steep = collect_instructions("grains", Fermentable, FermIns, "ferm_id")
     instructions = FermIns.query.filter_by(recipe_id=recipe_id).all()
     steep = []
 
@@ -301,7 +292,6 @@ def show_brew_recipe(recipe):
         add_dict = {}
         add_dict["name"] = Fermentable.query.filter_by(id=add.ferm_id).one().name
         add_dict["amount"] = add.amount
-        lbs_weight = add.amount * 2.2046
         if add.units == 'kg' or add.units is None:
             add_dict["amount"] = round((add_dict['amount'] * 35.274), 2)
             add_dict['units'] = "oz"
@@ -310,7 +300,21 @@ def show_brew_recipe(recipe):
         steep.append(add_dict)
 
     # Make a list of dicts for extract info
-    extracts = collect_instructions("extract", Extract, ExtIns, "extract_id")
+    # extracts = collect_instructions("extract", Extract, ExtIns, "extract_id")
+    extracts = ExtIns.query.filter_by(recipe_id=recipe_id).all()
+    extract = []
+
+    for add in extracts:
+        add_dict = {}
+        add_dict["name"] = Extract.query.filter_by(id=add.extract_id).one().name
+        add_dict["amount"] = add.amount
+        if add.units == 'kg' or add.units is None:
+            add_dict["amount"] = round((add_dict['amount'] * 35.274), 2)
+            add_dict['units'] = "oz"
+        else:
+            add_dict["units"] = add.units
+
+        extract.append(add_dict)
 
     # Make a list of dicts for yeast info sorted by stage: primary or secondary
     yeasts = YeastIns.query.filter_by(recipe_id=recipe_id).all()
@@ -339,4 +343,4 @@ def show_brew_recipe(recipe):
             secondary.append(add_dict)
 
     return (recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary,
-            extracts, og_min, og_max, notes, srm_color)
+            extract, og_min, og_max, notes, srm_color)

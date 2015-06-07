@@ -169,10 +169,9 @@ class YeastIns(db.Model):
     yeast_id = db.Column(db.Integer, db.ForeignKey('yeasts.yeast_id'))
     amount = db.Column(db.Float)
     phase = db.Column(db.String, nullable=False)
+    units = db.Column(db.String)
     recipe = db.relationship('Recipe', backref=db.backref('yins', order_by=id))
     yeast = db.relationship('Yeast', backref=db.backref('yins', order_by=id))
-    units = db.Column(db.String)
-
 
 
 ###########################################################
