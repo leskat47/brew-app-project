@@ -1,8 +1,9 @@
 <h4>
-<ul style="list-style-type: none;">
-<li style="padding: 20px 50px 0px 60px; display: inline"><a href="/">Home</a></li>
-<li style="padding: 20px 50px 0px 40px; display: inline"><a href="/explore">Explore Brews</a></li>
-{% if session["user_id"] %}<li style="padding: 20px 50px 0px 40px; display: inline"><a href="/mybrews">My Brews</a></li>
-<li style="padding: 20px 50px 0px 40px; display: inline"><a href="/addrecipe">Add a Recipe</a></li>{% endif %}
-</ul>
+
+		<ul class="nav nav-tabs nav-justified">
+			<li><a href="/" style="color: black; font-size: 18pt">Home</a></li>
+			<li><a href="/explore" style="color: black; font-size: 18pt">Explore Brews</a></li>
+			<li {% if not session["user_id"] %} class="disabled"{% endif %}><a href="/mybrews" style="color: black; font-size: 18pt">My Brews</a></li>
+			<li {% if not session["user_id"] %} class="disabled"{% endif %}><a href="/addrecipe" style="color: black; font-size: 18pt">Add a Recipe</a></li>
+		</ul>
 </h4>

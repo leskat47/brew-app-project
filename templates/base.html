@@ -6,58 +6,47 @@
 
 		<link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
 
-
-
 	    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/1.2.0/jquery.serializeJSON.min.js"></script>
-		<!-- <script src="..static/jquery.serializejson.min.js"></script> <!-- Version 2.3.1 -->
+		<!-- <script src="..static/jquery.serializejson.min.js"></script> Version 2.3.1 -->
 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		<script src="../static/myscript.js"></script>
-		<script src="../static/buzz.min.js"></script>
-		<script src="../static/tock.js"></script>
-		<style rel="style" type="text/css" hef="mystyles.css">	</style>
+		<script src="/static/myscript.js"></script>
+		<script src="/static/buzz.min.js"></script>
+		<script src="/static/tock.js"></script>
+		<link rel="stylesheet" type="text/css" hef="../static/mystyles.css">	
 
 	</head>
 
 	<body>
-
+		
 		<div class="container">
-			<table>
-			<tr>
-				<td width="500px">
-				<h1>Brew Day</h1>
-				</td>
-				<td>
-				
-				{% if session["username"] %}
-					<a href="/logout"><button style="float: right;">Logout</button></a> 
-				{% else %}
-					<a href="/login"><button style="float: right;">Log In</button></a> 
-				{% endif %}
-					<a href="/register"><button style="float: right;">Register</button></a>
-				</td>
-			</tr>
-			</table>
-	    	<div>
-    		<div style="margin-left: auto; margin-right: auto;">{% include 'navbar.html' %}</div>
-	    	{% with messages = get_flashed_messages() %}
-	            {% if messages %}
-	                <div class="flashes">
-	                {% for message in messages %}
-	                    {{ message }} <br>
-	                {% endfor %}
-	                </div>
+		<div style="background-image: url(/static/header.jpg); background-repeat: no-repeat; margin-bottom: 0px; padding-bottom: 0px;">
+				<br><br><br>
+				<form class="navbar-form navbar-right">
+				<div class="form-group"
+					{% if session["username"] %}
+						<a href="/logout"><button class="form-control">Logout</button></a>
+					{% else %}
+						<a href="/login" class="form-control"><button>Log In</button></a>
+					{% endif %}
+						<a href="/register"><button class="form-control" style="margin-right: 20px; margin-bottom: 0px">Register</button></a>
+				</div>
+				</form>
 
-	            {% endif %}
-        	{% endwith %}
+				<br>
+    		<div>{% include 'navbar.html' %}</div>
+    		<br>
+    	</div>
+
 
 
 
       {% block content %}{% endblock %}
+      </div>
 	</body>
 
 </html>

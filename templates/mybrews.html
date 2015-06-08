@@ -27,98 +27,131 @@ $("#showall").click(function(){
 	$(".beerColor").css('background-color', beerColor)
 	});
 </script>
-<h2>My Brews</h2>
-<hr>
-{% if brewlist == [] %}
-<table width="80%" style="display: hidden">
-	<tr>
-		<td>
-			 <div>
-			 	<p>You haven't added any brews yet! Get started:</p>
-			 	<a href="/explore"><button type="button" name="Browse recipes">Browse Recipes</button></a>
-		</td>
-	</tr>
-</table>
-{% endif %}
-{% if brewlist != [] %}
-<table width="80%">
-	<tr>
-		<td>
-			<form action="/mybrews" method="POST">
-				<p>Search by:</p>
-				<p>
-					<label for="beerstyles">Beer Styles:</label> <select id="style" name="style" class="form-control">
-						<option selected disabled>Search by Style</option>
-						{% for style in sel_user_styles %}
-						<option value="{{ style }}">{{ style }}</option>
-						{% endfor %}
-					</select>
-				</p>
+<div style="background-image: url(../static/malt.jpg); background-repeat: no-repeat; margin-top: 0px;">
+<div class="row">
+	<div class="col-sm-1 col-md-2">
+	</div>
+	<div class="col-sm-10 col-md-8" style="background-color: white;">
+		<div>
+			    	{% with messages = get_flashed_messages() %}
+		            {% if messages %}
+		                <div class="flashes">
+		                {% for message in messages %}
+		                    {{ message }} <br>
+		                {% endfor %}
+		                </div>
 
-			</form>
-			<form action="/mybrews" method="POST">
-				<div>
-					<label for="myrecipes">My recipes:</label> <select id="recipe" name="recipe" class="form-control">
-						<option selected disabled>Select a recipe</option>
-						{% for recipe in selectlist_user %}
-						<option value="{{ recipe }}">{{ recipe }}</option>
-						{% endfor %}
-					</select>
-				</div>
-			</form>
-			<a href="/mybrews"><button type="button" id="reset">Reset</button></a>
-			<p>Show only brews that are: <button type="button" id="completed" class="form-control" style="display: inline; width: 150px" value="Completed">Completed</button>
-			<button type="button" id="inprogress" class="form-control" value="InProgress" style="display: inline; width: 150px" >In Progress</button>
-			<button type="button" id="showall" class="form-control" value="ShowAll" style="display: inline; width: 150px">Show All</button>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			{% if filtered %}
-			<h4>{{ filtered }}</h4>
-			{% endif %}
-			{% for brew in brewlist %}
-			<div class="{% if brew.finished %}complete{% else %}inprogress{% endif %}">
-			<table class="table">
-			<tr>
-				<td rowspan="5" style="width: 5px; background-color: {{ brew.color }};"></td>
-				<td>{{ brew.name }}</td>
-				<td>{{ brew.date }}</td>
-				<td>{% if brew.finished %}
-					Completed: {{ brew.finished }}
-					{% else %}
-					In Progress
-					{% endif %}
-				</td>
-				<td><a href="/brew/{{ brew.id }}"><button type="button" name="brew">Edit</button></a><a href="/delete_brew/{{ brew.id }}"><button type="button" name="delete_brew">Delete this brew</button></a>
-			</td>
-			</tr>
-			<tr>
-				<td>Notes: <br></td>
-				<td colspan="3">{{ brew.notes }}</td>
-			</tr>
-			<tr>
-				<td>Results notes:</td>
-				<td colspan="3">{{ brew.results_notes }}<br></td>
-			</tr>
-			<tr>
-				<td>Original gravity: {% if brew.og %}{{ brew.og }}{% endif %}</td>
-				<td>Final gravity: {% if brew.fg %}{{ brew.fg }}{% endif %}</td>
-				<td>ABV: {% if brew.abv %}{{ brew.abv }}{% endif %}</td>
-				<td></td>
+		            {% endif %}
+	        	{% endwith %}
+	    </div>
+	<h2>My Brews</h2>
+	<hr>
+	</div>
+	<div class="col-sm-1 col-md-2">
+	</div>
 
-			</tr>
+</div>
+<div class="row">
+		<div class="col-sm-1 col-md-2">
+		</div>
+		<div class="col-sm-10 col-md-8" style="background-color: white; height: 100%; padding-left: 25px">
+		{% if brewlist == [] %}
+		<table width="80%" style="display: hidden">
 			<tr>
-				<td>Rating: {{ brew.rating }} </td>
-				<td  colspan="3">Color: <span style="background-color: {{ brew.color }}";>&nbsp;&nbsp;&nbsp;</div>
+				<td>
+					 <div>
+					 	<p>You haven't added any brews yet! Get started:</p>
+					 	<a href="/explore"><button type="button" name="Browse recipes">Browse Recipes</button></a>
 				</td>
 			</tr>
 		</table>
+		{% endif %}
+		{% if brewlist != [] %}
+		<table width="80%">
+			<tr>
+				<td>
+					<form action="/mybrews" method="POST">
+						<p>Search by:</p>
+						<p>
+							<label for="beerstyles">Beer Styles:</label> <select id="style" name="style" class="form-control">
+								<option selected disabled>Search by Style</option>
+								{% for style in sel_user_styles %}
+								<option value="{{ style }}">{{ style }}</option>
+								{% endfor %}
+							</select>
+						</p>
+
+					</form>
+					<form action="/mybrews" method="POST">
+						<div>
+							<label for="myrecipes">My recipes:</label> <select id="recipe" name="recipe" class="form-control">
+								<option selected disabled>Select a recipe</option>
+								{% for recipe in selectlist_user %}
+								<option value="{{ recipe }}">{{ recipe }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</form>
+
+					<p><a class="btn btn-warning" role="button" href="/mybrews">Reset</a></p>
+					<ul class="nav nav-tabs nav-justified">
+						<li><button type="button" id="completed" class="form-control" style="display: inline;" value="Completed">Completed</button></li>
+						<li><button type="button" id="inprogress" class="form-control" value="InProgress" style="display: inline;" >In Progress</button></li>
+						<li><button type="button" id="showall" class="form-control" value="ShowAll" style="display: inline; ">Show All</button></li>
+						</p>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					{% if filtered %}
+					<h4>{{ filtered }}</h4>
+					{% endif %}
+					{% for brew in brewlist %}
+					<div class="{% if brew.finished %}complete{% else %}inprogress{% endif %}">
+					<table class="table">
+					<tr>
+						<td rowspan="5" style="width: 5px; background-color: {{ brew.color }};"></td>
+						<td>{{ brew.name }}</td>
+						<td>{{ brew.date }}</td>
+						<td>{% if brew.finished %}
+							Completed: {{ brew.finished }}
+							{% else %}
+							In Progress
+							{% endif %}
+						</td>
+						<td><a class="btn btn-default" role="button" href="/brew/{{ brew.id }}">Edit</a><a class="btn btn-default" role="button" href="/delete_brew/{{ brew.id }}">Delete this brew</a>
+					</td>
+					</tr>
+					<tr>
+						<td>Notes: <br></td>
+						<td colspan="3">{{ brew.notes }}</td>
+					</tr>
+					<tr>
+						<td>Results notes:</td>
+						<td colspan="3">{{ brew.results_notes }}<br></td>
+					</tr>
+					<tr>
+						<td>Original gravity: {% if brew.og %}{{ brew.og }}{% endif %}</td>
+						<td>Final gravity: {% if brew.fg %}{{ brew.fg }}{% endif %}</td>
+						<td>ABV: {% if brew.abv %}{{ brew.abv }}{% endif %}</td>
+						<td></td>
+
+					</tr>
+					<tr>
+						<td>Rating: {{ brew.rating }} </td>
+						<td  colspan="3">Color: <span style="background-color: {{ brew.color }}";>&nbsp;&nbsp;&nbsp;</span>
+						</td>
+					</tr>
+				</table>
+				</div>
+					{% endfor %}
+			</td>
+			</tr>
+		</table>
 		</div>
-			{% endfor %}
-	</td>
-	</tr>
-</table>
+		<div class="col-sm-1 col-md-2">
+		</div>
 
 {% endif %}
 {% endblock %}

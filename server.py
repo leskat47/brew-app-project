@@ -49,6 +49,7 @@ def allowed_file(filename):
 def index():
     return render_template("homepage.html")
 
+
 # ***************************************************************************************
 # Explore recipes selections
 
@@ -84,9 +85,9 @@ def show_explore():
                            selectlist_styles=selectlist_styles, selectlisrt_user=selectlist_user,
                            sel_user_styles=sel_user_styles)
 
+
 # ***************************************************************************************
 # Explore Recipes right panel displays
-
 
 # List user's recipes
 @app.route('/myrecipes')
@@ -150,8 +151,6 @@ def add_brew(recipe):
 @app.route("/deleterecipe/<string:recipe>")
 def delete_recipe(recipe):
     recipe_obj = Recipe.query.filter_by(name=recipe).one()
-    print "recipe to delete", recipe_obj
-    print "hop", HopIns.query.filter_by(recipe_id=recipe_obj.recipe_id).all()
     HopIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
     FermIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
     ExtIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
@@ -205,7 +204,6 @@ def show_mybrews():
                                    sel_user_styles=sel_user_styles)
     else:
         brewlist = get_brewlist(all_brews)
-        print brewlist
         return render_template("mybrews.html", brewlist=brewlist,
                                selectlist_user=selectlist_user, sel_user_styles=sel_user_styles)
 
@@ -232,7 +230,6 @@ def brew_process(brew_id):
     else:
         recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary, extracts, og_min, og_max, notes, srm_color = show_brew_recipe(recipe)
 
-        print boiltime
         color = color_conversion(srm_color)
 
         return render_template("brew.html", brew=brew, recipe=recipe, batch_size=batch_size, batch_units=batch_units,
@@ -245,14 +242,11 @@ def brew_process(brew_id):
 def note_boil_time():
     boil_start = request.form.get("boil_start")
     brew_id = request.form.get("brew_id")
-    print boil_start
     startformat = '%H:%M'
 
     boil_start = datetime.datetime.strptime(boil_start, startformat).time()
-    print boil_start
     Brew.query.filter_by(id=brew_id).one().boil_start = boil_start
     db.session.commit()
-    return "hello"
 
 
 # Save brew data to database
@@ -269,11 +263,9 @@ def update_brew(brew):
         brew.og = float(brew.og)
         brew.abv = (brew.og - brew.fg) * 131
 
-
     if request.form.get("finished"):
         end_date_get = request.form.get('finished')
         brew.end_date = datetime.datetime.strptime(end_date_get, "%Y-%m-%d").date()
-    print "Brew end date: ", brew.end_date
     brew.notes = request.form.get('brew_notes')
     brew.results_notes = request.form.get('results_notes')
     brew.rating = request.form.get('rating')
@@ -442,7 +434,7 @@ def upload_file():
 
         if error_names != []:
             session['error_list'] = error_names
-            return render_template("upload_error.html")
+            return render_template("uploaderror.html")
         else:
             notice = "Recipe(s) successfully added!"
             return render_template("uploadrecipe.html", notice=notice, recipes=recipes)
@@ -463,6 +455,7 @@ def check_name():
 # Ajax called -Calculate color for recipe
 @app.route('/colorcalc', methods=['GET', 'POST'])
 def calculate_color():
+    print "COLOR AJAX"
     data = request.get_json()
     grains = data['grains']
     extracts = data['extracts']

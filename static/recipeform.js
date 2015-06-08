@@ -40,7 +40,7 @@ $("#add-extract").click(function() {
 $('.del-extract').click(function () {
     $(this).parent('div').remove();  
     if ($('.repeat-extract').length === 2) {
-    	$('.del-extract').prop('disabled', true);
+    	// $('.del-extract').prop('disabled', true);
 	} 
     });
 

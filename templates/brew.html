@@ -7,34 +7,41 @@
 
 
 <h2>{{ recipe }}</h2>
+<button type="submit" value="Save and Return Later" class="btn btn-default">Save and Return Later</button>
 
 <script>
    var brew_id = {{ brew.id }};
 </script>
 
-<table>
+
 	<form action="/brew/{{ brew.id }}" method="post" id="{{ brew.id }}">
-		<tr>
-			<td valign="top">
-				<p><div style="width: 90%; height: 10px; background-color: {{ color }}"></div></p>
-				<p>Target color: <div style="width: 25px; height: 25px; background-color: {{ color }};"></div>
-				</p>
-					<div id="timergoodies" style="float: right">
-							<div id="popUpDiv" style="border: solid gray; width: 210px; height: 100px; border-radius: 5px; padding: 5px; text-align: center;">
-									<strong>Timer</strong>
-									<p><input class="clock" id="clock" style="width: 180px;"> </p>
-									<button type="button" class="stop form-control" style="display: inline; width: 80px">Pause</button>
-									<button type="button" class="clos form-control" style="display: inline; width: 80px">Hide</button>
-								</div>
-							<button type="button" id="showtimer" class="form-control">Show timer</button>
-					</div>
-				Brew Date: <input type="date" name="brew_date" id="brew_date" class="form-control" style="width: 200px" value={{ brew.date }}>  					
-					<a data-toggle="collapse" href="#steep-instructions" aria-expanded="false" aria-controls="collapseExample"<h3 style="display: inline">
-						<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-						<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style="display: none"></span>
-					</a>
-					<h2 style="display: inline">1. Steep</h2>
-						<blockquote><div class="collapse in" id="steep-instructions">
+<div class="row">
+	<div class="col-sm-12 col-md-6" valign="top">
+			<p>
+				<div style="width: 90%; height: 10px; background-color: {{ color }}">
+				</div>
+			</p>
+			<p>Target color: 
+				<div style="width: 25px; height: 25px; background-color: {{ color }};">
+				</div>
+			</p>
+				<div id="timergoodies" style="float: right">
+						<div id="popUpDiv" style="border: solid gray; width: 210px; height: 100px; border-radius: 5px; padding: 5px; text-align: center;">
+								<strong>Timer</strong>
+								<p><input class="clock" id="clock" style="width: 180px;"> </p>
+								<button type="button" class="stop form-control" style="display: inline; width: 80px">Pause</button>
+								<button type="button" class="clos form-control" style="display: inline; width: 80px">Hide</button>
+							</div>
+						<button type="button" id="showtimer" class="form-control">Show timer</button>
+				</div>
+			Brew Date: <input type="date" name="brew_date" id="brew_date" class="form-control" style="width: 200px" value={{ brew.date }}>  					
+				<a data-toggle="collapse" href="#steep-instructions" aria-expanded="false" aria-controls="collapseExample"<h3 style="display: inline">
+					<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" style="display: none"></span>
+				</a>
+				<h2 style="display: inline">1. Steep</h2>
+					<blockquote>
+						<div class="collapse in" id="steep-instructions">
 						<p>Bring {{ batch_size }} {{ batch_units }} to 165&deg; F. </p>
 						<p>Prepare the following grains for steeping:
 							<ul>
@@ -45,12 +52,13 @@
 							</p>
 						<p>Steep for <span class="timer" id="steep">30 minutes</span>.</p> 
 						<button type="button" class="timer form-control" id="timer" style="width: 150px; display: inline;" value="30">Start a Timer</button>
-					</div></blockquote>
+						</div>
+					</blockquote>
 
-					
 
-				<a data-toggle="collapse" href="#boil-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">2. Boil</h2> 
-					<blockquote><div class="collapse in" id="boil-instructions">
+			<a data-toggle="collapse" href="#boil-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">2. Boil</h2> 
+				<blockquote>
+					<div class="collapse in" id="boil-instructions">
 						<p>Bring water to a boil. Turn off flame and add sugars:</p>
 						{% if extracts %}<ul>
 						{% for extract in extracts %}
@@ -70,17 +78,18 @@
 							<button type="button" class="timer form-control" id="timer" style="width: 150px; display: inline;" value="{{ timerset[time] }}">Start a Timer</button>
 							{% endif %}
 						</p>
-						{% endfor %}
-							
-					</div></blockquote>
-				<a data-toggle="collapse" href="#cool" aria-expanded="false" aria-controls="collapseExample" style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">3. Cool</h2>
-					<blockquote><div id="cool" class="collapse in">
+						{% endfor %}	
+					</div>
+				</blockquote>
+			<a data-toggle="collapse" href="#cool" aria-expanded="false" aria-controls="collapseExample" style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">3. Cool</h2>
+				<blockquote>
+					<div id="cool" class="collapse in">
 					<p> Bring temperature down to 68&deg; to 70&deg; F. 
 					</p>
-					</blockquote>
+				</blockquote>
 
-				<a data-toggle="collapse" href="#transfer-instructions" aria-expanded="false" aria-controls="collapseExample"<h3 style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">4. Primary</h2>
-					<blockquote>
+			<a data-toggle="collapse" href="#transfer-instructions" aria-expanded="false" aria-controls="collapseExample"<h3 style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">4. Primary</h2>
+				<blockquote>
 					<div id="transfer-instructions" class="collapse in">
 						<p>Transfer to primary. </p>
 
@@ -98,35 +107,38 @@
 						</div>
 						<p>
 						<h3>Add a reminder</h3>
-						<p><label for="c-days">Schedule the next gravity check in</label> <input type="number" name="c-days" id="c-days" class="form-control" style="width: 100px; display: inline"> days.
-						<span class="addtocalendar atc-style-blue" id="g-days">
-	        				<var class="atc_event">
-				            <var class="atc_date_start" id="date_start"></var>
-				            <var class="atc_date_end" id="date_end"></var>
-				            <var class="atc_timezone">Pacific/Midway</var>
-				            <var class="atc_title">Gravity Check</var>
-				            <var class="atc_description">Check gravity for {{ recipe }}</var>
-				            <var class="atc_location">At your brew</var>
-					        </var>
-					    </span>
+						<p>
+							<label for="c-days">Schedule the next gravity check in</label> <input type="number" name="c-days" id="c-days" class="form-control" style="width: 100px; display: inline"> days.
+							<span class="addtocalendar atc-style-blue" id="g-days">
+		        				<var class="atc_event">
+						            <var class="atc_date_start" id="date_start"></var>
+						            <var class="atc_date_end" id="date_end"></var>
+						            <var class="atc_timezone">Pacific/Midway</var>
+						            <var class="atc_title">Gravity Check</var>
+						            <var class="atc_description">Check gravity for {{ recipe }}</var>
+						            <var class="atc_location">At your brew</var>
+						        </var>
+						    </span>
 
 						</p>
-						<p><label for="reminder">Other next step:</label> <input type="text" name="reminder" id="reminder" class="form-control">
-						Set reminder for <input type="number" name="weeks" id="r-days" class="form-control" style="width: 100px; display: inline"> days.</p>	
+					<p>
+						<label for="reminder">Other next step:</label> <input type="text" name="reminder" id="reminder" class="form-control">
+						Set reminder for <input type="number" name="weeks" id="r-days" class="form-control" style="width: 100px; display: inline"> days.
+					</p>	
 						<span class="addtocalendar atc-style-blue" id="cal-reminder">
         					<var class="atc_event">
-				            <var class="atc_date_start" id="r_date_start"></var>
-				            <var class="atc_date_end" id="r_date_end"></var>
-				            <var class="atc_timezone">Pacific/Midway</var>
-				            <var class="atc_title" id="cal_title"></var>
-				            <var class="atc_description" id="cal_desc"></var>
-				            <var class="atc_location">At your brew</var>
-				        </var>
+					            <var class="atc_date_start" id="r_date_start"></var>
+					            <var class="atc_date_end" id="r_date_end"></var>
+					            <var class="atc_timezone">Pacific/Midway</var>
+					            <var class="atc_title" id="cal_title"></var>
+					            <var class="atc_description" id="cal_desc"></var>
+					            <var class="atc_location">At your brew</var>
+				        	</var>
 				    	</span>
 					</div>
-					</blockquote>
-				<a data-toggle="collapse" href="#secondary-instructions" aria-expanded="false" aria-controls="collapseExample"<h3 style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">5. Secondary</h2>
-					<blockquote>
+				</blockquote>
+			<a data-toggle="collapse" href="#secondary-instructions" aria-expanded="false" aria-controls="collapseExample"<h3 style="display: inline"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a><h2 style="display: inline">5. Secondary</h2>
+				<blockquote>
 					<div id="secondary-instructions" class="collapse in">
 					{% if secondary %}
 					<p>Add:
@@ -139,23 +151,22 @@
 					
 					{% endif %}
 
-
-					</div></blockquote>
-			</div>
-  			</div>
-			</div>
-					<p>
+					</div>
+				</blockquote>
+				
+				<p>
 					<label for="finished">Date finished:</label> <input type="date" id="finished" name="finished" class="form-control" style="width: 200px; display: inline" value="{% if brew.end_date %}{{ brew.end_date }}{% endif %}">
 					<label for="final_gravity">Final gravity:</label> <input type="text" id="final_gravity" name="final_gravity" class="form-control" style="width: 100px; display: inline" value="{% if brew.fg %}{{ brew.fg }}{% endif %}">
-					ABV: <span id="abv">{% if brew.abv %}{{ brew.abv }}{% endif %}</span></p><br><br>
-					
+					ABV: <span id="abv">{% if brew.abv %}{{ brew.abv }}{% endif %}</span>
+				</p><br><br>
+				
 
-				<p><input type="submit" value="Save Brew" class="form-control"></p>
-			</td>
-			<td style="vertical-align: top">
+			<p><input type="submit" value="Save Brew" class="form-control">
+			</p>
+		</p>
+	</div>
+	<div class="col-sm-12 col-md-6" valign="top">
 				<br>
-				<input type="submit" value="Save and Return Later" class="form-control">
-
 				<h2>Recipe Notes:</h2>
 				{% if notes %}{{ notes }}{% else %}There are no notes for this recipe.{% endif %}<br>
 				<h2>My notes:</h2>
@@ -170,8 +181,7 @@
 					    <span><input type="radio" name="rating" id="str2" value="4"{% if brew.rating == 4 %} checked {% endif %}><label for="str4"></label></span>
 					    <span><input type="radio" name="rating" id="str1" value="5" {% if brew.rating == 5 %} checked {% endif %}><label for="str5"></label></span>
 					</div>
-			</td>
-		</tr>
-	</form>
+	</div>
+</div>
 </table>
 {% endblock %}
