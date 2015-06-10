@@ -112,7 +112,7 @@ def get_recipes(recipe):
         deleteable = True
     name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
     color = color_conversion(srm_color)
-    return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes,
+    return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, batch_size=batch_size,
                            selectlist_styles=selectlist_styles, name=name, source=source, color=color, style=style,
                            notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
                            misc_steps=misc_steps, yeast_steps=yeast_steps, deleteable=deleteable)
@@ -229,12 +229,12 @@ def brew_process(brew_id):
         return redirect("/mybrews")
     else:
         recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary, extracts, og_min, og_max, notes, srm_color = show_brew_recipe(recipe)
-
+        rating = brew.rating
         color = color_conversion(srm_color)
 
         return render_template("brew.html", brew=brew, recipe=recipe, batch_size=batch_size, batch_units=batch_units,
                                times=times, timerset=timerset, boiltime=boiltime, steep=steep, yeast=yeast, secondary=secondary,
-                               extracts=extracts, og_min=og_min, og_max=og_max, notes=notes, color=color)
+                               extracts=extracts, og_min=og_min, og_max=og_max, notes=notes, color=color, rating=rating)
 
 
 # Ajax called -Store boil start time on change
@@ -455,9 +455,9 @@ def check_name():
 # Ajax called -Calculate color for recipe
 @app.route('/colorcalc', methods=['GET', 'POST'])
 def calculate_color():
-    print "COLOR AJAX"
     data = request.get_json()
     grains = data['grains']
+    print grains
     extracts = data['extracts']
     batch_size = float(data["batch_size"])
     batch_units = data["units"]
@@ -485,7 +485,8 @@ def calculate_color():
 
         srm_color = int(round(srm_color))
         return srm_color
-    srm = get_each_srm(Fermentable, grains, batch_size)
+    srm = get_each_srm(Fermentable, grains, batch_size) + get_each_srm(Fermentable, grains, batch_size)
+    print srm
     color = color_conversion(srm)
     return color
 
@@ -564,7 +565,7 @@ def logout():
 
 if __name__ == "__main__":
 
-    app.debug = True
+    app.debug = False
 
     connect_to_db(app)
 

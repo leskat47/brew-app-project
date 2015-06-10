@@ -1,14 +1,106 @@
+
 body {
-	background-image: url("../static/hops.jpg");
-	color: green;
+	background-color: #FCE3A7;
+	font-family: 'Maven Pro', sans-serif;
+	font-size: 12pt;
+
 }
-table {
-    display:table-cell;
-    vertical-align: top;
+h1, h2, .nav	{
+	font-family: 'Roboto Slab', serif;
+}
+
+a 	{
+	color: #89be5e;
+}
+.row {
+	padding: 0px;
+	margin: 0px;
+}
+
+.header {
+	background-image: url(/static/header.jpg); 
+	background-repeat: no-repeat; 
+	margin-bottom: 0px; 
+	padding-bottom: 0px;
+}
+
+/* Main text content area*/
+ .maincontent {
+ 	background-color: white; 
+ 	padding-left: 25px;
+ 	vertical-align: top;
+ 	min-height: 600px;
+ 	overflow: hidden;
  }
 
+ /* Background photos */
+.hop {
+	background-image: url(/static/hops2.jpg);
+	background-repeat: repeat-y;
+	/*height: 100%;*/
+	padding: 0px;
+}
+.beercolor {
+	background-image: url(/static/beercolor.jpg); 
+	background-repeat: repeat-y; 
+	margin-top: 0px;
+}
+.grain {
+	background-image: url(/static/malt.jpg); 
+	background-repeat: repeat-y; 
+	margin-top: 0px;
+}
+
+/* Form buttons */
+.del-grain
+.del-hop
+.del-extract
+.del-misc
+.del-yeast {
+	width: 20%;
+	display: inline;
+}
+
+.add-grain
+.add-hop
+.add-extract
+.add-misc
+.add-yeast {
+	width: 20%;
+}
+
+/* Timer */
 [draggable=true] {
 	cursor: move;
+}
+
+#popUpDiv 	{
+	float: right;
+}
+
+/*Calendar Reminders*/
+.reminders {
+	border: 2px solid #89be5e;;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+	background-color: #bdd385;
+}
+#brew_notes 
+#results_notes {
+	vertical-align: top;
+	width: 300px; 
+	height: 200px;
+}
+
+/*Buttons*/
+.btn-add 	{
+	background-color: #89be5e;
+	color: black;
+}
+.btn-del 	{
+	background-color: #a4d3cf;
+	color: black;
 }
 
 
@@ -17,7 +109,6 @@ table {
 .rating {
     float:left;
 }
-
 /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
    follow these rules. Every browser that supports :checked also supports :not(), so
    it doesn’t make the test unnecessarily selective */
@@ -30,11 +121,10 @@ table {
 .rating:not(:checked) > label {
     float:right;
     width:1em;
-    padding:0 .1em;
     overflow:hidden;
     white-space:nowrap;
     cursor:pointer;
-    font-size:200%;
+    font-size:150%;
     line-height:1.2;
     color:#ddd;
     text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
@@ -46,7 +136,6 @@ table {
 
 .rating > input:checked ~ label {
     color: #f70;
-    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
 }
 
 .rating:not(:checked) > label:hover,
@@ -68,4 +157,33 @@ table {
     position:relative;
     top:2px;
     left:2px;
+}
+.rating1::after{
+	content: attr(val) '★ ';
+    font-size:150%;
+	color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+.rating2::after{
+	content: attr(val) '★ ★ ';
+ 
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+.rating3::after{
+	content: attr(val) '★ ★ ★ ';
+
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+.rating4::after{
+	content: attr(val) '★ ★ ★ ★ ';
+
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+.rating5::after{
+	content: attr(val) '★ ★ ★ ★ ★ ';
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
 }

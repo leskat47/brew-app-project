@@ -3,29 +3,31 @@
 		<title>Brew Day</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300|Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
+
+<!-- 		<link rel="stylesheet" type="text/css" href="../static/mystyles.css"> -->
 
 		<link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
 
 	    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
-
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/1.2.0/jquery.serializeJSON.min.js"></script>
-		<!-- <script src="..static/jquery.serializejson.min.js"></script> Version 2.3.1 -->
 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="/static/myscript.js"></script>
 		<script src="/static/buzz.min.js"></script>
 		<script src="/static/tock.js"></script>
-		<link rel="stylesheet" type="text/css" hef="../static/mystyles.css">	
+		<link rel="stylesheet" type="text/css" href="/static/mystyles.css">
+		<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
 
 	</head>
 
 	<body>
 		
 		<div class="container">
-		<div style="background-image: url(/static/header.jpg); background-repeat: no-repeat; margin-bottom: 0px; padding-bottom: 0px;">
-				<br><br><br>
+		<div class="header">
+		<div>
+				<br><br>
 				<form class="navbar-form navbar-right">
 				<div class="form-group"
 					{% if session["username"] %}
@@ -37,7 +39,7 @@
 				</div>
 				</form>
 
-				<br>
+				<br><br>
     		<div>{% include 'navbar.html' %}</div>
     		<br>
     	</div>
@@ -46,6 +48,7 @@
 
 
       {% block content %}{% endblock %}
+      </div>
       </div>
 	</body>
 

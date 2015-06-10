@@ -13,7 +13,7 @@ $("#recipe").change(function(){
 });
 $("#inprogress").click(function(){
 	$(".completed").hide();
-	$(".inprogress").show()
+	$(".inprogress").show();
 });
 $("#completed").click(function(){
 	$(".inprogress").hide();
@@ -27,11 +27,11 @@ $("#showall").click(function(){
 	$(".beerColor").css('background-color', beerColor)
 	});
 </script>
-<div style="background-image: url(../static/malt.jpg); background-repeat: no-repeat; margin-top: 0px;">
+<div class="grain">
 <div class="row">
 	<div class="col-sm-1 col-md-2">
 	</div>
-	<div class="col-sm-10 col-md-8" style="background-color: white;">
+	<div class="col-sm-10 col-md-8" style="background-color: white">
 		<div>
 			    	{% with messages = get_flashed_messages() %}
 		            {% if messages %}
@@ -67,7 +67,7 @@ $("#showall").click(function(){
 		</table>
 		{% endif %}
 		{% if brewlist != [] %}
-		<table width="80%">
+		<table width="95%">
 			<tr>
 				<td>
 					<form action="/mybrews" method="POST">
@@ -108,42 +108,42 @@ $("#showall").click(function(){
 					<h4>{{ filtered }}</h4>
 					{% endif %}
 					{% for brew in brewlist %}
-					<div class="{% if brew.finished %}complete{% else %}inprogress{% endif %}">
-					<table class="table">
-					<tr>
-						<td rowspan="5" style="width: 5px; background-color: {{ brew.color }};"></td>
-						<td>{{ brew.name }}</td>
-						<td>{{ brew.date }}</td>
-						<td>{% if brew.finished %}
-							Completed: {{ brew.finished }}
-							{% else %}
-							In Progress
-							{% endif %}
+					<div class="{% if brew.finished %}completed{% else %}inprogress{% endif %}">
+						<table class="table">
+						<tr>
+							<td rowspan="5" style="width: 5px; background-color: {{ brew.color }};"></td>
+							<td width="200px">{{ brew.name }}</td>
+							<td>{{ brew.date }}</td>
+							<td>{% if brew.finished %}
+								Completed: <br>{{ brew.finished }}
+								{% else %}
+								In Progress
+								{% endif %}
+							</td>
+							<td><a class="btn btn-default" role="button" href="/brew/{{ brew.id }}">Edit</a><a class="btn btn-default" role="button" href="/delete_brew/{{ brew.id }}">Delete this brew</a>
 						</td>
-						<td><a class="btn btn-default" role="button" href="/brew/{{ brew.id }}">Edit</a><a class="btn btn-default" role="button" href="/delete_brew/{{ brew.id }}">Delete this brew</a>
-					</td>
-					</tr>
-					<tr>
-						<td>Notes: <br></td>
-						<td colspan="3">{{ brew.notes }}</td>
-					</tr>
-					<tr>
-						<td>Results notes:</td>
-						<td colspan="3">{{ brew.results_notes }}<br></td>
-					</tr>
-					<tr>
-						<td>Original gravity: {% if brew.og %}{{ brew.og }}{% endif %}</td>
-						<td>Final gravity: {% if brew.fg %}{{ brew.fg }}{% endif %}</td>
-						<td>ABV: {% if brew.abv %}{{ brew.abv }}{% endif %}</td>
-						<td></td>
+						</tr>
+						<tr>
+							<td>Notes: <br></td>
+							<td colspan="3">{{ brew.notes }}</td>
+						</tr>
+						<tr>
+							<td>Results notes:</td>
+							<td colspan="3">{{ brew.results_notes }}<br></td>
+						</tr>
+						<tr>
+							<td>Original gravity: {% if brew.og %}{{ brew.og }}{% endif %}</td>
+							<td>Final gravity: {% if brew.fg %}{{ brew.fg }}{% endif %}</td>
+							<td>ABV: {% if brew.abv %}{{ brew.abv }}{% endif %}</td>
+							<td></td>
 
-					</tr>
-					<tr>
-						<td>Rating: {{ brew.rating }} </td>
-						<td  colspan="3">Color: <span style="background-color: {{ brew.color }}";>&nbsp;&nbsp;&nbsp;</span>
-						</td>
-					</tr>
-				</table>
+						</tr>
+						<tr>
+							<td>Rating: <span class="rating{{ brew.rating }}" value="{{ brew.rating }}"></span></td>
+							<td  colspan="3">Color: <span style="background-color: {{ brew.color }}";>&nbsp;&nbsp;&nbsp;</span>
+							</td>
+						</tr>
+					</table>
 				</div>
 					{% endfor %}
 			</td>

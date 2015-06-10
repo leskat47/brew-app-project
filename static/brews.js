@@ -24,6 +24,14 @@ $('#boil_start').change(function(){
 });
 
 
+$('.glyphicon').click(function(){
+	$(this).toggle();
+	$(this).siblings($('.glyphicon')).toggle();
+
+})
+
+
+
 // ********************************************
 // timer functionality
 
@@ -43,7 +51,10 @@ $('#boil_start').change(function(){
 	})
 
 	});
-	$('#timergoodies').draggable();
+	$('#timergoodies').draggable({
+		containment: '.brew',
+    	stack: ".draggable"
+	});
 
 var timer = new Tock({
 	  	countdown: true,

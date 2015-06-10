@@ -16,7 +16,7 @@
 				<option value="grams">g</option>
 				<option value="ounces">oz</option>
 			</select>
-			<input type="button" id="del-grain" class="form-control del-grain btn btn-info" value="Remove grain" style="width: 20%; display: inline" required>
+			<input type="button" id="del-grain" class="del-grain btn btn-del" value="Remove grain" style="width: 20%; display: inline" required>
 		</div>
 			<div id="moreextract1" class="repeat-extract" name="extractdiv">
 			<select id="extract" name="extract" class="form-control" style="width: 40%; display: inline" required>
@@ -31,7 +31,7 @@
 				<option value="grams">g</option>
 				<option value="ounces">oz</option>
 			</select>
-				<input type="button" id="del-extract" value="Remove extract" class="form-control del-extract btn btn-info" style="width: 20%; display: inline;" required>
+				<input type="button" id="del-extract" value="Remove extract" class="del-extract btn btn-del" style="width: 20%; display: inline;" required>
 			</div>
 
 			<div id="morehops1" class="repeat-hops" style="padding-bottom: 10px">
@@ -59,7 +59,7 @@
 				<option value="bittering">bittering</option>
 				<option value="both">both</option>
 			</select>
-				<input type="button" id= "del-hop" name="1" value="Remove hop" class="form-control del-hop btn btn-info" style="width: 20%; display: inline">
+				<input type="button" id= "del-hop" name="1" value="Remove hop" class="del-hop btn btn-del" style="width: 20%; display: inline">
 			</div>
 
 		<div id="moremisc1" class="repeat-misc" style="padding-bottom: 5px">
@@ -83,7 +83,7 @@
 				<option value="secondary">secondary</option>
 			</select>
 			<input type="number" id="misc_time" name="misc_time" class="form-control" placeholder="time in boil" style="width: 20%; display: inline" required>
-				<input type="button" id= "del-misc" name="1" value="Remove special" class="form-control del-misc btn btn-info" style="width: 20%; display: inline">	
+				<input type="button" id= "del-misc" name="1" value="Remove special" class="del-misc btn btn-del" style="width: 20%; display: inline">	
 			</div>
 
 		<div id="moreyeast1" class="repeat-yeast">
@@ -104,16 +104,15 @@
 				<option value="primary">primary</option>
 				<option value="secondary">secondary</option>
 			</select>
-				<input type="button" id= "del-yeast" name="1" value="Remove yeast" class="form-control del-yeast btn btn-info" style="width: 15%; display: inline" required>
+				<input type="button" id= "del-yeast" name="1" value="Remove yeast" class="del-yeast btn btn-del" style="width: 15%; display: inline" required>
 			</div>
 	</div>
 
-<div style="background-image: url(static/beercolor.jpg); background-repeat: no-repeat; margin-top: 0px;">
-<div class="row">
+<div class="row beercolor">
 	<div class="col-sm-1 col-md-2">
 	</div>
 
-	<div class="col-sm-10 col-md-8" style="background-color: white; padding-left: 25px">
+	<div class="col-sm-10 col-md-8 mainContent">
 	<table style="width: 100%">
 	<tr><td style="width: 50%"><h2>Create a Recipe</h2></td style="width: 50%"><td><a href="/uploadrecipe"><h2>Upload a Recipe</h2></a></td></tr>
 	</table><br>
@@ -134,6 +133,7 @@
 					<input id="source" type="text" id="source" name="source" class="form-control" required>
 				</td>
 			</tr>
+
 			<tr>
 				<td colspan="4">
 				<div id="nameWarning" class="bg-danger"></div>
@@ -148,6 +148,7 @@
 							<option value="{{ style }}">{{ style }}</option>
 							{% endfor %}
 					</select>
+					</p>
 				</td>
 				<td>
 					<label for="share">Share this recipe?</label>
@@ -195,9 +196,9 @@
 						<option value="grams">g</option>
 						<option value="ounces">oz</option>
 					</select>
-					<input type="button" id="del-grain" class="form-control del-grain btn btn-info" value="Remove grain" style="width: 20%; display: inline">
+					<input type="button" id="del-grain" class="form-control del-grain btn btn-del" value="Remove grain" style="width: 20%; display: inline">
 				</div>
-				<button type="button" id="add-grain" value="Add a grain" class="form-control btn btn-success" style="width: 150px; display: inline">Add a grain</button>
+				<button type="button" id="add-grain" value="Add a grain" class="add-grain btn btn-add" style="width: 150px; display: inline">Add a grain</button>
 				
 				</td>
 			</tr>
@@ -217,10 +218,10 @@
 						<option value="grams">g</option>
 						<option value="ounces">oz</option>
 					</select>
-					<input type="button" id="del-extract " value="Remove extract" class="form-control del-extract btn btn-info" style="width: 20%; display: inline">
+					<input type="button" id="del-extract " value="Remove extract" class="form-control del-extract btn btn-del" style="width: 20%; display: inline">
 					</div>
-					<button type="button" id="add-extract" value="Add extract" class="form-control btn btn-success" style="width: 150px" required>Add extract</button><br>
-					<div class="form-group"><button type="button" id="colorcalc" class="form-control btn btn-warning" style="width: 150px; display: inline">Estimate color</button><div id="color" style="width: 150px; height: 25px; display: inline;">&nbsp;&nbsp;</div></div>
+					<button type="button" id="add-extract" value="Add extract" class="add-extract btn btn-add">Add extract</button><br>
+					<div class="form-group"><button type="button" id="colorcalc" class="btn btn-warning" style="width: 20%; display: inline">Estimate color</button><div id="color" style="width: 150px; height: 25px; display: inline;">&nbsp;&nbsp;</div></div>
 				</td>
 			</tr>
 			<tr>
@@ -251,9 +252,9 @@
 						<option value="bittering">bittering</option>
 						<option value="both">both</option>
 					</select>
-					<input type="button" id= "del-hop" name="1" value="Remove hop" class="form-control del-hopbtn btn-info" style="width: 20%; display: inline">
+					<input type="button" id= "del-hop" name="1" value="Remove hop" class="del-hop btn btn-del" style="width: 20%; display: inline">
 					</div>
-					<button type="button" id="add-hop" value="Add a hop" class="form-control btn btn-success" style="width: 20%">Add hops</button>
+					<button type="button" id="add-hop" value="Add a hop" class="add-hop btn btn-add" style="width: 20%">Add hops</button>
 				</td>
 			</tr>
 			<tr>
@@ -278,9 +279,9 @@
 						<option value="secondary">secondary</option>
 					</select>
 					<input type="number" id="misc_time" name="misc_time" class="form-control" placeholder="time in boil" style="width: 20%; display: inline" required>
-					<input type="button" id= "del-misc" name="1" value="Remove special" class="form-control del-misc btn btn-info" style="width: 20%; display: inline">
+					<input type="button" id= "del-misc" name="1" value="Remove special" class="del-misc btn btn-del" style="width: 20%; display: inline">
 					</div>
-					<button type="button" id="add-misc" value="Add misc" class="form-control btn btn-success" style="width: 20%">Add special</button>
+					<button type="button" id="add-misc" value="Add misc" class="add-misc btn btn-add" style="width: 20%">Add special</button>
 				</td>
 			</tr>			
 			<tr>
@@ -303,14 +304,12 @@
 						<option value="primary">primary</option>
 						<option value="secondary">secondary</option>
 						</select>
-					<input type="button" id= "del-yeast" name="1" value="Remove yeast" class="form-control del-yeast btn btn-info" style="width: 150px; display: inline">
+					<input type="button" id= "del-yeast" name="1" value="Remove yeast" class="del-yeast btn btn-del" style="width: 150px; display: inline">
 					</div>
-					<button type="button" id="add-yeast" value="Add a yeast" class="form-control btn btn-success" style="width: 20%">Add yeast</button>
+					<button type="button" id="add-yeast" value="Add a yeast" class="add-yeast btn btn-add" style="width: 20%">Add yeast</button>
 
 				</td>
 			</tr>
-
-
 			<tr>
 				<td colspan="4"><br>
 				<label for="notes">Notes/Instructions:</label><br>
@@ -318,11 +317,12 @@
 				</td>
 			</tr>
 			<tr colspan="4">
-				<td><p><input type="button"  value="submit" id="submit" class="form-control" ></p>
+				<td><p><input type="button" class="btn btn-warning" value="submit" id="submit" style="width: 50%"></p>
 				</td>
 			</tr>
 			</form>
 		</table>
+		</div>
 	<div class="col-sm-1 col-md-2">
 	</div>
 </div>

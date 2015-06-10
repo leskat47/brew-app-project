@@ -41,24 +41,36 @@ def load_recipes(filepath, user=999, share="yes"):
 def calc_color(recipe_id, batch_size, batch_units):
     fermins = FermIns.query.filter_by(recipe_id=recipe_id).all()
     extins = ExtIns.query.filter_by(recipe_id=recipe_id).all()
-
+    print fermins
     srm_color = 0
     if batch_units not in ["gallons", "Gallons", "g"]:
         batch_size = float(batch_size) * 0.26417
     else:
         batch_size = float(batch_size)
 
+
+    ext_color = 0
     def sum_srm(inslist, cls, batch_size):
+        srm_color = 0
         for ins in fermins:
-            srm_color = 0
             amount_in_lbs = ins.amount * 2.2046
             ferm_id = ins.ferm_id
             color = Fermentable.query.filter_by(id=ferm_id).one().color
+            print "color", color, " amount, ", amount_in_lbs, " batch ", batch_size
             mcu = (color * amount_in_lbs) / batch_size
+            print mcu
             srm_color += 1.4922 * (mcu ** .6859)
-            return srm_color
+        return srm_color
 
-    srm_color = int(round(sum_srm(fermins, Fermentable, batch_size) + sum_srm(extins, Fermentable, batch_size)))
+    for ins in extins:
+        amount_in_lbs = ins.amount * 2.2046
+        ext_id = ins.extract_id
+        color = Fermentable.query.filter_by(id=ext_id).one().color
+        mcu = (color * amount_in_lbs) / batch_size
+        ext_color += 1.4922 * (mcu ** .6859)
+
+    srm_color = int(round(sum_srm(fermins, Fermentable, batch_size) + ext_color))
+    print "feeder ", srm_color
 
     Recipe.query.filter_by(recipe_id=recipe_id).one().srm = srm_color
     db.session.commit()
