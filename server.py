@@ -72,6 +72,7 @@ def show_explore():
         elif request.form.get("recipe"):
             recipe = request.form.get("recipe")
             name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
+            print "SERVER SRM ", srm_color
             color = color_conversion(srm_color)
             deleteable = False
             if Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
@@ -231,7 +232,7 @@ def brew_process(brew_id):
         recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary, extracts, og_min, og_max, notes, srm_color = show_brew_recipe(recipe)
         rating = brew.rating
         color = color_conversion(srm_color)
-
+        
         return render_template("brew.html", brew=brew, recipe=recipe, batch_size=batch_size, batch_units=batch_units,
                                times=times, timerset=timerset, boiltime=boiltime, steep=steep, yeast=yeast, secondary=secondary,
                                extracts=extracts, og_min=og_min, og_max=og_max, notes=notes, color=color, rating=rating)
@@ -565,7 +566,7 @@ def logout():
 
 if __name__ == "__main__":
 
-    app.debug = False
+    app.debug = True
 
     connect_to_db(app)
 

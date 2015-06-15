@@ -7,6 +7,7 @@ import re
 ###########################################################################
 # STYLES
 
+
 def load_styles(datafile):
     tree = ET.parse(datafile)
     root = tree.getroot()

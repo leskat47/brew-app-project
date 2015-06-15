@@ -102,19 +102,19 @@ def get_brewlist(all_brews):
 
 # Convert srm color to a hexidecimal value
 def color_conversion(srm):
-    color_ref = {1: "#F3F993", 2: "#F5F75C", 3: "#F6F513", 4: "#EAE615", 5: "#E0D01B",
-                 6: "#D5BC26", 7: "#CDAA37", 8: "#C1963C", 9: "#BE8C3A", 10: "#BE823A",
-                 11: "#C17A37", 12: "#BF7138", 13: "#BC6733", 14: "#B26033", 15: "#A85839",
-                 16: "#985336", 17: "#8D4C32", 18: "#7C452D", 19: "#6B3A1E", 20: "#5D341A",
-                 21: "#4E2A0C", 23: "#361F1B", 24: "#261716", 25: "#231716", 26: "#19100F",
-                 27: "#16100F", 28: "#120D0C", 29: "#100B0A", 30: "#050B0A", 31: "5AOAO2",
-                 32: "#560A05", 33: "#520907", 34: "#4C0505", 35: "#470606", 36: "#440607",
-                 37: "#3F0708", 38: "#3B0607", 39: "#3A070B", 40: "#36080A"}
-    print type(srm)
+    color_ref = {1: "#ffe699", 2: "#ffd878", 3: "#ffca5a", 4: "#ffbf42", 5: "#fbb123",
+                 6: "#f8a600", 7: "#f39c00", 8: "#ea8f00", 9: "#e58500", 10: "#de7c00",
+                 11: "#d77200", 12: "#cf6900", 13: "#cb6200", 14: "#c35900", 15: "#bb5100",
+                 16: "#b54c00", 17: "#b04500", 18: "#a63e00", 19: "#a13700", 20: "#9b3200",
+                 21: "#952d00", 22: "#8e2900", 23: "#882300", 24: "#821e00", 25: "#7b1a00",
+                 26: "#771900", 27: "#701400", 28: "#6a0e00", 29: "#660d00", 30: "#5e0b00",
+                 31: "#5a0a02", 32: "#600903", 33: "#520907", 34: "#4c0505", 35: "#470606",
+                 36: "#440607", 37: "#3f0708", 38: "#3b0607", 39: "#3a070b", 40: "#36080a"}
+
     if srm <= 40:
         color = color_ref[srm]
     else:
-        color = "#050b0a"
+        color = "#200406"
     return color
 
 
@@ -127,7 +127,7 @@ def get_recipe_info(recipe):
     batch_size = display_recipe.batch_size
     batch_units = display_recipe.batch_units
     srm_color = display_recipe.srm
-    # print "SRM", srm_color
+    print "SRM", srm_color
     if batch_units == "L" or batch_units is None:
         batch_size = round((batch_size * 0.26417), 2)
         batch_units = "gallons"
@@ -269,6 +269,8 @@ def show_brew_recipe(recipe):
 
         for add in boil:
             new_ing = {}
+            if add.time is None:
+                add.time == 0
             if ((add.time == time) or add.time is None) and (hasattr(add, 'hop_id')):
                 ingredient = Hop.query.filter_by(hop_id=add.hop_id).one()
                 new_ing["name"] = ingredient.name
@@ -341,6 +343,7 @@ def show_brew_recipe(recipe):
                 add_dict["units"] = "ounces"
 
             secondary.append(add_dict)
+
 
     return (recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary,
             extract, og_min, og_max, notes, srm_color)

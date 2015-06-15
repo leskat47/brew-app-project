@@ -41,15 +41,14 @@ def load_recipes(filepath, user=999, share="yes"):
 def calc_color(recipe_id, batch_size, batch_units):
     fermins = FermIns.query.filter_by(recipe_id=recipe_id).all()
     extins = ExtIns.query.filter_by(recipe_id=recipe_id).all()
-    print fermins
     srm_color = 0
     if batch_units not in ["gallons", "Gallons", "g"]:
         batch_size = float(batch_size) * 0.26417
     else:
         batch_size = float(batch_size)
 
-
     ext_color = 0
+
     def sum_srm(inslist, cls, batch_size):
         srm_color = 0
         for ins in fermins:
@@ -65,7 +64,9 @@ def calc_color(recipe_id, batch_size, batch_units):
     for ins in extins:
         amount_in_lbs = ins.amount * 2.2046
         ext_id = ins.extract_id
-        color = Fermentable.query.filter_by(id=ext_id).one().color
+        print ext_id
+        color = Extract.query.filter_by(id=ext_id).one().color
+        print "color", color, " amount, ", amount_in_lbs, " batch ", batch_size
         mcu = (color * amount_in_lbs) / batch_size
         ext_color += 1.4922 * (mcu ** .6859)
 
@@ -80,8 +81,8 @@ def calc_color(recipe_id, batch_size, batch_units):
 # INSTRUCTIONS
 
 def load_hops_ins(filepath):
-    misc_tree = ET.parse(filepath)
-    root = misc_tree.getroot()
+    hop_tree = ET.parse(filepath)
+    root = hop_tree.getroot()
     for child in root:
         recipe = child.find('NAME').text
         recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
@@ -102,8 +103,8 @@ def load_hops_ins(filepath):
 
 
 def load_ferm_ins(filepath):
-    misc_tree = ET.parse(filepath)
-    root = misc_tree.getroot()
+    ferm_tree = ET.parse(filepath)
+    root = ferm_tree.getroot()
     for child in root:
         recipe = child.find('NAME').text
         recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
@@ -121,8 +122,8 @@ def load_ferm_ins(filepath):
 
 
 def load_ext_ins(filepath):
-    misc_tree = ET.parse(filepath)
-    root = misc_tree.getroot()
+    ext_tree = ET.parse(filepath)
+    root = ext_tree.getroot()
     for child in root:
         recipe = child.find('NAME').text
         recipe_id = Recipe.query.filter_by(name=recipe)[0].recipe_id
@@ -166,8 +167,14 @@ def load_misc_ins(filepath):
                     time = 0
                 else:
                     time = misc_item.find('TIME').text
+                if name == "Whirlfloc Tablets (Irish moss)":
+                    units = "tablets"
+                    if amount == "0" or amount == "0.0049289":
+                        amount = int(1)
+                else:
+                    units = "units"
                 new_misc_item = MiscIns(recipe_id=recipe_id, misc_id=misc_id, amount=amount,
-                                        phase=phase)
+                                        phase=phase, time=time, units=units)
                 db.session.add(new_misc_item)
     db.session.commit()
 
