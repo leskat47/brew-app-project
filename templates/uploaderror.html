@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
-<br>
 
-<p>Sorry, there was a problem with some of your files. The following were already in our database: </p>
-<ul>
-	{% for name in session.pop('error_list') %}
-		<li><a href="/recipe/{{ name }}">{{ name }}</a></li>
-	{% endfor %}
-</ul>
+<div class="hop">
+<div class="row">
+	<div class="col-sm-1 col-md-2">
+	</div>
+	
+		<div class="col-sm-10 col-md-8" style="background-color: white; height: 800px">
+		<br>
 
+		<p>Sorry, there was a problem with some of your files. The following were already in our database: </p>
+		<ul>
+			{% for name in session.pop('error_list') %}
+				<li><a href="/recipe/{{ name }}">{{ name }}</a></li>
+			{% endfor %}
+		</ul>
+		</div>
+	<div class="col-sm-1 col-md-2">
+	</div>
+</div>
+</div>
 {% endblock%}
