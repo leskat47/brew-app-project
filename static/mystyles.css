@@ -69,6 +69,10 @@ a 	{
 	width: 20%;
 }
 
+.glyphicon {
+	text-decoration: none;
+} 
+
 /* Timer */
 [draggable=true] {
 	cursor: move;
@@ -76,16 +80,34 @@ a 	{
 
 #popUpDiv 	{
 	float: right;
+	border: solid #9fbf4d;
+	background-color: #e5f4c0;
+	width: 210px; 
+	height: 110px; 
+	border-radius: 5px; 
+	padding: 5px; 
+	text-align: center;
 }
 
 /*Calendar Reminders*/
 .reminders {
 	border: 2px solid #89be5e;;
 	border-radius: 5px;
-	padding: 5px;
 	margin: 5px;
 	background-color: #bdd385;
 }
+#get-inst {
+	width: 100%;
+}
+
+.rem-select {
+	border-right: thin solid #ffffff;
+	padding-right: 5px;
+}
+.rem-radio {
+	line-height: 150%;
+}
+
 #brew_notes 
 #results_notes {
 	vertical-align: top;
@@ -97,6 +119,7 @@ a 	{
 .btn-add 	{
 	background-color: #89be5e;
 	color: black;
+	width: 20%;
 }
 .btn-del 	{
 	background-color: #a4d3cf;
