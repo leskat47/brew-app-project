@@ -37,7 +37,6 @@ a 	{
 .hop {
 	background-image: url(/static/hops2.jpg);
 	background-repeat: repeat-y;
-	/*height: 100%;*/
 	padding: 0px;
 }
 .beercolor {
