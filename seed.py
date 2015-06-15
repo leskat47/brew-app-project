@@ -200,6 +200,7 @@ def el_find_text(el, tagstr, ifempty):
 doublespace_patt = re.compile(r'\s{2}')
 endline_patt = re.compile(r'\n')
 
+
 def all_text_fragments(et):
     ' Returns all fragments of text contained in a subtree, as a list of strings '
     r = []
