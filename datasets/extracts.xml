@@ -1,0 +1,1166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FERMENTABLES>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Amber</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Amber is used predominantly in the production of medium-colored beers such as pale ales, IPAs, and bitters.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Irek's</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>21.3</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Amber</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>For ales and bitters.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>John Bull</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>32.2</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Amber Dry</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Can be used in making Amber, India Pale Ale, Munich style, Marzen, and Bock beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Northwestern</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>24.7</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Amber Dry</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Highest quality malt extract powder. Does not contain any proteins.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Brewferm</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>9.137056</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.97</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Amber Liquid</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Amber is used predominantly in the production of medium-colored beers such as pale ales, IPAs, and bitters.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Alexanders</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>14.4</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.7324</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Bamberg Rauch (LIMITED EDITION)</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Weyermann Bamberg Rauch Extract produces the authentic Bamberg &quot;Rauchbeer&quot;.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Weyermann</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>17.7665</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.776</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Bavarian Dunkel</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Weyermann Bavarian Dunkel Extract produces typical Bavarian Dunkel, Festival Beers, Schwarz Beers, Dark Bock Beers and Smooth Stouts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Weyermann</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>35.53299</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.776</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Bavarian Hefeweizen</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Weyermann Bavarian Hefeweizen Extract produces typical Bavarian Weizen Beers, Ales and Weizen Bock Beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Weyermann</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>11.42132</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.776</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Bavarian Maibock (LIMITED EDITION)</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Weyermann Bavarian Maibock Extract produces typical Bavarian &quot;Maibock&quot;, an authentic Bavarian Beer Specialty and other German Style Bockbeers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Weyermann</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>11.42132</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.776</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Bavarian Pilsner</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Weyermann Bavarian Pilsner Extract produces typical Bavarian Style Pils and Helles Lager beers as well as Light Maerzen, Oktober Beers and Bock Beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Weyermann</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>8.375635</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.776</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Black Dry</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Highest quality malt extract powder. Does not contain any proteins.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Brewferm</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>48.22335</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.97</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Blond Dry</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Highest quality malt extract powder. Does not contain any proteins.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Brewferm</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4.060914</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.97</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Blond Liquid</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Highly concentrated (80 %) liquid, unhopped extract of barley malt. Made from the best malts. 1,5 litre can.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Brewferm</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>5.076142</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.8</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>BriesSweet™ White Sorghum Syrup 45DE High Maltose</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>BriesSweetTM White Sorghum Syrup 45DE High Maltose is a concentrated wort made from 100% white sorghum grain. Produced in a state-of-the-art, five-vessel brewhouse using an all natural, enzyme-based brewing process. As a grain-based syrup, it provides proteins and amino acids necessary for yeast nutrition, head retention and body along with color and flavor. Gluten free, hypo allergenic, non-GMO. Functions as a 1:1 substitute for LME for 100% extract brewing to produce gluten free beer. Its unique flavor is quite mild, allowing it to be used in any recipe as a unique liquid adjunct to boost initial gravities while increasing overall brewing capacity. Use with concentrated worts to produce almost any beer style.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4.6</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.801455</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Bavarian Wheat Liquid (Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Neutral, malty flavor. Characteristics &amp; Applications: • CBW® Bavarian Wheat is a liquid, 100% pure malted barley extract made from a blend of base and wheat malts. • CBW® Bavarian Wheat can be used in the production of extract wheat beers, and in the production of all grain beers to adjust color, flavor and gravity of wheat and other styles of beer. • Advantages of using extract in a brewhouse include: o Extends the brew size by adding malt solids to the wort. o Adds wheat characteristics without the added inventory of bags of grain, additional handling and processing, etc. o Adds wheat characteristics without slowing the lauter. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. Applications: • All wheat beers, and to adjust the flavor of other styles of beer. • Use in the production of extract wheat beers, and to adjust the flavor of wheat and other styles of all grain brews.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7314</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Bavarian Wheat Powder (Dry Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Neutral, malty flavor. Characteristics &amp; Applications: • CBW® Bavarian Wheat (Powder) is a dry, 1000% pure malted barley extract made from a blend of base and wheat malts. • CBW® Bavarian Wheat can be used in the production of extract wheat beers, and in the production of all grain beers to adjust color, flavor and gravity of wheat and other styles of beer. • Advantages of using extract in a brewhouse include: o Extends the brew size by adding malt solids to the wort. o Adds wheat characteristics without the added inventory of bags of grain, additional handling and processing, etc. o Adds wheat characteristics without slowing the lauter. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. Applications: • All wheat beers, and to adjust the flavor of other styles of beer. • Use in the production of extract wheat beers, and to adjust the flavor of wheat and other styles of all grain brews.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>8</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.8924</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Golden Light Liquid (Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Malty flavor. Characteristics &amp; Applications: • CBW® Golden Light is a liquid, 100% pure malted barley extract made from 100% Briess malt and water. • CBW® Golden Light can be used in the production of all extract beer styles and to adjust the color, flavor and gravity of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. Applications: • All styles of extract beer, and to adjust the color, flavor and gravity of all grain beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7314</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Golden Light Powder (Dry Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Malty flavor. Characteristics &amp; Applications: • CBW® Golden Light (Powder) is a dry, 100% pure malted barley extract made from 100% Briess malts and water. • CBW® Golden Light can be used in the production of all extract beer styles and to adjust the color, flavor and gravity of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. • All styles of extract beer, and to adjust the color, flavor and gravity of all grain beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.8924</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Munich Liquid (Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>CBW® Munich (liquid malt extract) is 100% pure malted barley extract made from 100% malt and water. This specialty malt extract is made using a traditional multiple step mashing process to achieve higher levels of fermentability. It is made from 50% Munich Malt and 50% Base Malt to produce a very rich, malty, amber colored extract. CBW® Munich can be used in the production of all extract beer styles and to adjust the color, flavor and gravity of all grain beers. Use alone for styles such as Oktoberfest, Marzen or Bock beers. Use with a blend of extracts or grains to add rich malty character and reddish hues to any beer style.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>9.1</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.79</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Pilsen Light Liquid (Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Neutral to subtle flavor. Characteristics &amp; Applications: • CBW® Pilsen Light is a liquid, 100% pure malted barley extract made from 100% Briess malts and water. It is the lightest pure malted barley extract available and produces a very crisp, clear wort. • CBW® Pilsen Light can be used in the production of all extract beer styles and to adjust the color, flavor and gravity of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>2.25</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7314</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Pilsen Light Powder (Dry Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Neutral to subtle flavor. Characteristics &amp; Applications: • CBW® Pilsen Light is a liquid, 100% pure malted barley extract made from 100% Briess malts and water. It is the lightest pure malted barley extract available and produces a very crisp, clear wort. • CBW® Pilsen Light can be used in the production of all extract beer styles and to adjust the color, flavor and gravity of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>2</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.97</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Porter Liquid (Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Sweet malty chocolate flavor. Characteristics &amp; Applications: • CBW® Porter is a liquid malt extract that can be used in the production of extract beers and to adjust the color and flavor of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. • Extract brews and to adjust the color and flavor of all grain beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>135</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7314</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Rye Liquid (Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>CBW® Rye extract is 100% pure malt extract made from 100% malt and water. CBW® Rye Extract is used in the production of Roggenbier and other styles of Rye Beer. CBW® Rye Extract is specially formulated to develop an appealing malty, caramel flavor with subtle spicy rye notes. Use alone, with other extracts or with specialty grains to suit your brewing pleasure. Or use in small quantities to add interest and complexity to just about any beer style, from Pale Ales to Stouts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>10.9</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.79</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Sparkling Amber Liquid (Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Sweet, malty, caramel flavor. Characteristics &amp; Applications: • CBW® Sparkling Amber is a liquid, 100% pure malted barley extract made from a blend of 100% Briess malts and water. • CBW® Sparkling Amber can be used in the production of all extract beer styles and to adjust the color, flavor and gravity of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. • All styles of extract beer, and to adjust the color, flavor and gravity of all grain beers. • Use in the production of Pale Ales, Red and Amber Ales, Munich Style Beers, Bock and Oktoberfest Beers, Scottish Ales, and darker beers including Stouts and Porters.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>10.5</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7314</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Sparkling Amber Powder (Dry Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Sweet, malty, caramel flavor. Characteristics &amp; Applications: • CBW® Sparkling Amber (Powder) is a dry, 100% pure malted barley extract made from a blend of 100% Briess malts and water. • CBW® Sparkling Amber can be used in the production of all extract beer styles and to adjust the color, flavor and gravity of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. • All styles of extract beer, and to adjust the color, flavor and gravity of all grain beers. • Use in the production of Pale Ales, Red and Amber Ales, Munich Style Beers, Bock and Oktoberfest Beers, Scottish Ales, and darker beers including Stouts and Porters</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>10.5</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.8924</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Traditional Dark Liquid (Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Sweet, intense malty flavor. Characteristics &amp; Applications: • CBW® Traditional Dark is a liquid, 100% pure malted barley extract made from a blend of 100% Briess malts and water. • CBW® Traditional Dark can be used in the production of many extract beer styles and to adjust the color, flavor and gravity of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. • Many styles of extract beer, and to adjust the color, flavor and gravity of all grain beers. • Use in the production of Red and Amber Beers, Oktoberfest, Bock beer, Doppelbock, brown ales and other dark colored beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>35</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7314</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>CBW® Traditional Dark Powder (Dry Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Sweet, intense malty flavor. Characteristics &amp; Applications: • CBW® Traditional Dark (Powder) is a dry, 100% pure malted barley extract made from a blend of 100% Briess malts and water. • CBW® Traditional Dark can be used in the production of many extract beer styles and to adjust the color, flavor and gravity of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. • Many styles of extract beer, and to adjust the color, flavor and gravity of all grain beers. • Use in the production of Red and Amber Beers, Oktoberfest, Bock beer, Doppelbock, brown ales and other dark colored beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>34.5</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.8924</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Crystal</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>A blend of ale and crystal malt. Excellent for brewing strong ales, porters and stouts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>John Bull</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>309.31</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dark</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Colored using roasted malt to give a rich mocha flavor and aroma bringing individuality to mild, porter, and stout brews.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>John Bull</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>547.79</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dark Dry</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Generally, for dark beer, oktoberfest, bock, doppelbock, brown ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Northwestern</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>54.5</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dark Dry</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Highest quality malt extract powder. Does not contain any proteins.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Brewferm</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>28.93401</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.97</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dark Liquid</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Colored using roasted malt to give a rich mocha flavor and aroma bringing individuality to mild, porter, and stout brews.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Alexanders</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>24.4</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.7324</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dark Liquid</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Highly concentrated (80 %) liquid, unhopped extract of barley malt. Made from the best malts. 1,5 litre can.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Brewferm</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>27.91878</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.8</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Amber</NAME>
+		<ORIGIN>Great Britian</ORIGIN>
+		<NOTES>Used predominantly in the production of medium-colored beers such as pale ales, IPAs, and bitters.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>10</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Amber Extract</NAME>
+		<ORIGIN>Generic</ORIGIN>
+		<NOTES>Cream-colored and full-flavored; will produce amber colored beers such as pale ales, IPAs, and bitters. Made of pale and crystal malts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>10</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Dark</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Used predominantly in the production of dark beers such as milds, browns, porters, and stouts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>30.5</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Dark Extract</NAME>
+		<ORIGIN>Generic</ORIGIN>
+		<NOTES>Used predominantly in the production of dark beers such as milds, browns, porters, and stouts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>30</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Extra Light</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Contains no colored malts or unmalted products; the light color of this product is achieved by using low processing temperatures and low-colored raw materials.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>3.5</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Extra Light Extract</NAME>
+		<ORIGIN>Generic</ORIGIN>
+		<NOTES>For making very pale ales and lagers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>2.5</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Light</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Used as the base for a wide variety of styles of beers, including lager, pale ales, bitters, and export bitters. Contains no colored malts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>5</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Light Extract</NAME>
+		<ORIGIN>Generic</ORIGIN>
+		<NOTES>White color, mild flavor. Will produce lagers and Pilseners and can also be used to produce darker beers when used in conjunction with colored malts. Made of pale malt.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>3.5</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Medium</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Rich malt flavour, ideal for bitters. Boosts the beers' natural body and results in a more rounded, mellow note to the final brew.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>17.25888</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.945</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dry Wheat</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Made with a preponderance of wheat malt (55%) for the production of wheat or Weiss beers. Contains no colored malts or hops.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>8</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.947826</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>English Light Extract (MoreBeer)</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Made to our specifications from 100% imported English Maris Otter malt (the premier English malt variety). Absolutely perfect for use as the base malt extract for any English style ales, from Pale Ale to Stouts. Has a drier(less residual sugar) finish than the ME10 extract with a classic, crisp English flavor profile. This malt replaces the John Bull that we used to carry. We recommend customer's to store there extract in the refrigerator if they do not plan on using it after 3-4 weeks. Make sure you thaw out your extract a week before you brew. Cheers!</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Alexanders</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>3</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7681655</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Extra Pale</NAME>
+		<ORIGIN>Australia</ORIGIN>
+		<NOTES>For making very pale ales and lagers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Morgans</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>2.32</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Gold Dry</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Can be used in making Pilsner, Pale Ale, Dortmunder, Marzen and other Lagers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Northwestern</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>12.2</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.99</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Light</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Will impart rich flavor compounds, ensure an excellent fermentation, and improve the clarity.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Irek's</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>10</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.754</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Light</NAME>
+		<ORIGIN>Ireland</ORIGIN>
+		<NOTES>Mountmellick Light Lager is made from 100% Irish 2 row spring barley and the finest European hops. It will create a full-bodied golden Irish Lager Style Beer.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Mountmellick</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>7.5</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.754</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Light</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Made from Lager malt, it will add body and character to any light brew. Light malt extract will impart rich flavor compounds, ensure an excellent fermentation, and improve the clarity.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>John Bull</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>5.14</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Amber</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Made from a blend of pale and crystal malts this product provides the ideal building block for Ale and Bitter style beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>9.137056</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.81</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Amber Extract</NAME>
+		<ORIGIN>Generic</ORIGIN>
+		<NOTES>Amber is used predominantly in the production of medium-colored beers such as pale ales, IPAs, and bitters.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>10</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.754</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Dark</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Chocolate malt, crystal malt and pale malt is used in the manufacture of Muntons dark malt extract. Ideal for recipes designed to brew Milds, porters and Stouts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>27.91878</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.81</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Dark Extract</NAME>
+		<ORIGIN>Generic</ORIGIN>
+		<NOTES>Used predominantly in the production of dark beers such as milds, browns, porters, and stouts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>30</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.754</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Extra Light</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Made from the lightest available lager malt, processed carefully with the gentlest heat necessary to ensure that the resultant extract is the lightest possible from 100% malt.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>2.791878</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.81</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Light</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Selected English lager malt is used to produce this fine consistent light malt extract.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>5.076142</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.81</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Light Extract</NAME>
+		<ORIGIN>Generic</ORIGIN>
+		<NOTES>A brewer can create any beer style with this extract when used as a base in conjunction with colored malts and selected hops. Contains no colored malts or hops.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>3.5</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.754</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Wheat</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>English wheat malt and barley malt are blended in the ratio 55% wheat malt and 45% barley malt to produce this fine product. Use in recipes for wheat beer or as an interesting variation to other beer styles.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Muntons</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>5.076142</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.81</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Wheat Extract</NAME>
+		<ORIGIN>Generic</ORIGIN>
+		<NOTES>Made with a preponderance of wheat malt (55%) for the production of wheat or Weiss beers. Contains no colored malts or hops.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>8</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.79704</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Maltoferm® 10000 Organic Liquid (Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Characteristics &amp; Applications: • Maltoferm® 10000 Organic is a liquid, 100% pure malted barley extract made from 100% Briess malt and water. • Maltoferm® 10000 Organic can be used in the production of all extract beer styles and to adjust the color, flavor and gravity of all grain beers. • Advantages of using extract in a brewhouse include: o Save time. o Increase capacity/boost productivity. o Extends the brew size by adding malt solids to the wort. o Boost gravity. o Adjust color. o Improve body and head retention. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. • All styles of extract beer, and to adjust the color, flavor and gravity of all grain beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7314</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Maltoferm® A-6000 Liquid (Black Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Characteristics &amp; Applications: • Maltoferm® A-6000 is a liquid malt extract made from 100% Briess malt and water. It is almost black in color, making it a perfect colorant for beer. • Add A-6000 to the kettle for minor color adjustment. • It can be added in post fermentation/pre-filtration to finished beer for minor to major color adjustment. Sterilize first. o A-6000 can be used to change beer styles from standard to amber or very dark. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. • For minor color adjustment use 1.3 – 1.5 ounce per bbl to increase the color 1 oLovibond per bbl. • Add at 1 ounce increments per bbl until desired color is achieved.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4000</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7314</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Maltoferm® A-6001 Dry (Black Malt Extract)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Characteristics &amp; Applications: • Maltoferm® A-6001 is a dry malt extract made from 100% Briess malts and water. It is almost black in color, making it a perfect colorant for beer. • Add A-6001 to the kettle for minor color adjustment. • It can be added in post fermentation/pre-filtration to finished beer for minor to major color adjustment. Sterilize first. o A-6000 can be used to change beer styles from standard to amber or very dark. • Briess Malt &amp; Ingredients Company is the only vertically integrated malting company in North America. That means we make our pure malt extracts from our own malt so you are assured of receiving only the fullest flavored, freshest, pure malt extracts for top brewhouse performance. • For minor color adjustment, use 1 ounce per bbl. • For major color adjustment, use up to 1 pound per bbl. There may be a slight flavor contribution at this usage level.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4000</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.8832</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Medium Liquid</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Highly concentrated (80 %) liquid, unhopped extract of barley malt. Made from the best malts. 1,5 litre can.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Brewferm</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>9.137056</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.8</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Munich Amber</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Weyermann Munich Amber Extract produces typical Munich Beers, Maerzen, Festival Beers and Bock Beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Weyermann</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>12.69036</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.776</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Munich Liquid</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Often used in belgian specialty ales, Dusseldorf Altbier, and Northern German Altbier.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Alexanders</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>5.2</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.7324</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Munich Oktober Beer (LIMITED EDITION)</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Weyermann Munich Oktoberbeer Extract produces the authentic Munich &quot;Oktober Beer&quot; - like in the famous Beer Metropolis Munich.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Weyermann</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>20.30457</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.776</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Pale Liquid</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Reportedly lightest colored malt extract available.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Alexanders</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4.8</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.7324</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Premier Gold Liquid</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>A light- to medium-bodied lager or ale of yellow to gold color.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>9.7</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Premier Light Dry</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>a light- to medium-bodied lager or ale of yellow to gold color.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>10</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.99</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Premier Wheat Liquid</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>A true brewer's wheat offering a golden appearance with a mild clove aroma and creamy head.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>8.1</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.79704</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rice Extract</NAME>
+		<ORIGIN>Australia</ORIGIN>
+		<NOTES>Rice syrup has no flavor impact in beer. Rich in fermentable sugar, light in color and body with crisp, dry taste.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Morgans</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>1.43</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rice Syrup</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Rice syrup has no flavor impact in beer. Rich in fermentable sugar, light in color and body with crisp, dry taste.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>1.43</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Roasted</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Mocha flavor and aroma, roasted richness with a smoky bitter finish.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>John Bull</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>999.99</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Ultralight Extract (MoreBeer)</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>By the pound. Made for MoreBeer! by Alexanders this extract is 100% made from Great Western 2-row malt. It is the lightest malt extract available. This is the malt extract that we use as a base for most of our ingredient kits, from Pilsner to Imperial Stout. It is made locally in California's Central Valley and is often only a few days old when we receive it. It never lasts longer than a few weeks in our shop, where we package it in nitrogen flushed jars. Does fresh extract make a difference... decide for yourself! We recommend customer's to store there extract in the refrigerator if they do not plan on using it after 3-4 weeks. Make sure you thaw out your extract a week before you brew. Cheers!</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Alexanders</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>2.2</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.76816</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Unhopped Plain Amber</NAME>
+		<ORIGIN>Australia</ORIGIN>
+		<NOTES/>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Coopers</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>16.4</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.79968</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Unhopped Plain Dark</NAME>
+		<ORIGIN>Australia</ORIGIN>
+		<NOTES/>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Coopers</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>65.9</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7889</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Unhopped Plain Light</NAME>
+		<ORIGIN>Australia</ORIGIN>
+		<NOTES/>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Coopers</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>3.4</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7987</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Unhopped Wheat</NAME>
+		<ORIGIN>Australia</ORIGIN>
+		<NOTES/>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Coopers</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4.5</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.7889</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Vienna Red</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Red brown, unhopped extract with a high concentration, produced from Weyermann Vienna Malt, Weyermann Melanoidin Malt and Weyermann Pilsner Malt.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Weyermann</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>22.84264</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.776</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Wheat</NAME>
+		<ORIGIN>Great Britain</ORIGIN>
+		<NOTES>Golden &amp; highly flavorsome. Lager malt extract &amp; wheat syrup.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>John Bull</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>5.14</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.77552</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Wheat Dry</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Highest quality malt extract powder. Does not contain any proteins.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Dry Extract</TYPE>
+		<SUPPLIER>Brewferm</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4.060914</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.97</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Wheat Liquid</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Can be used in making Wheat Beer, Bavarian Weizen, Berliner Weiss, and Dunkel Weizen.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Northwestern</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>8</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.79704</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Wheat Liquid</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>American-made malt extract which is famous for its very light color. The light color of this malt extract makes it ideal for brewing many American and German style beers. 60% wheat &amp; 40% 2 row barley, great base for wheat beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Alexanders</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4.3</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>0.7324</YIELD>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Wheat Liquid</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Highly concentrated (80 %) liquid, unhopped extract of barley malt. Made from the best malts. 1,5 litre can.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Extract</TYPE>
+		<SUPPLIER>Brewferm</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>4.060914</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0.8</YIELD>
+	</FERMENTABLE>
+</FERMENTABLES>

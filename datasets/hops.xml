@@ -1,2814 +1,2344 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <HOPS>
-<HOP>
- <NAME>Amarillo</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>U.S.</ORIGIN>
- <ALPHA>9.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES></NOTES>
- <TYPE>Bittering</TYPE>
- <FORM>Pellet</FORM>
- <BETA>3.00</BETA>
- <HSI>25.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Cascade</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>US</ORIGIN>
- <ALPHA>6.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Use For: American ales and lagers
-Aroma: Strong spicy, floral, grapefriut character
-Substitutes: Centennial
-Examples: Sierra Nevade Pale Ale, Anchor Liberty Ale
-A hops with Northern Brewers Heritage</NOTES>
- <TYPE>Both</TYPE>
- <FORM>Pellet</FORM>
- <BETA>6.00</BETA>
- <HSI>50.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Centennial</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>US</ORIGIN>
- <ALPHA>9.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Use for: General purpose bittering, aroma in American ales and Wheats
-Aroma: Floral, citrus aroma, spicy, clean bittering flavor
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Celebration Ale, Sierra Nevada Bigfoot</NOTES>
- <TYPE>Bittering</TYPE>
- <FORM>Pellet</FORM>
- <BETA>4.00</BETA>
- <HSI>40.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Chinook</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>US</ORIGIN>
- <ALPHA>13.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Use for: Strong versitile bittering hop for ales, porters, stouts
-Aroma: Heavy and spicy aroma
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Stout, Sierra Nevada Celebration Ale</NOTES>
- <TYPE>Bittering</TYPE>
- <FORM>Pellet</FORM>
- <BETA>3.60</BETA>
- <HSI>20.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Citra</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>US</ORIGIN>
- <ALPHA>13.40</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES></NOTES>
- <TYPE>Bittering</TYPE>
- <FORM>Pellet</FORM>
- <BETA>7.50</BETA>
- <HSI>25.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Columbia</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>United Kingdom</ORIGIN>
- <ALPHA>5.50</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Sibling of Williamette hops.
-Used for: All English Ales
-Aroma: Close to fuggles
-Substitutes: Fuggles, Williamette</NOTES>
- <TYPE>Bittering</TYPE>
- <FORM>Pellet</FORM>
- <BETA>3.00</BETA>
- <HSI>35.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Fuggles</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>United Kingdom</ORIGIN>
- <ALPHA>4.50</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Used For: General purpose bittering/aroma for English Ales, Dark Lagers
-Aroma: Mild, soft, grassy, floral aroma
-Substitute: East Kent Goldings, Williamette
-Examples: Samuel Smith&apos;s Pale Ale, Old Peculiar, Thomas Hardy&apos;s Ale</NOTES>
- <TYPE>Aroma</TYPE>
- <FORM>Pellet</FORM>
- <BETA>2.00</BETA>
- <HSI>35.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Goldings, East Kent</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>United Kingdom</ORIGIN>
- <ALPHA>5.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Used For: General purpose hops for bittering/finishing all British Ales
-Aroma: Floral, aromatic, earthy, slightly sweet spicy flavor
-Substitutes: Fuggles, BC Goldings
-Examples: Bass Pale Ale, Fullers ESB, Samual Smith&apos;s Pale Ale
-</NOTES>
- <TYPE>Aroma</TYPE>
- <FORM>Pellet</FORM>
- <BETA>3.50</BETA>
- <HSI>35.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Hallertauer Hersbrucker</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>German</ORIGIN>
- <ALPHA>4.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Use for: German style lagers and wheat beers
-Aroma: Noble, pleasant, clean flavor
-Substitutes: Mt. Hood, Liberty, Hallertauer, Mittelfrueh
-Examples: Wheathook Wheaten Ale</NOTES>
- <TYPE>Aroma</TYPE>
- <FORM>Pellet</FORM>
- <BETA>6.00</BETA>
- <HSI>25.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Hallertauer Mittelfrueh</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>Germany</ORIGIN>
- <ALPHA>4.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Used for: Continental Lagers, German Ales/Lagers, US Lagers
-Aroma: Pleasant, assertive, mild herbal aroma
-Substitutes: Hallertauer, Mt. Hood, Liberty, Crystal
-Examples: Sam Adams Boston Lager, Sam Adams Boston Lightship</NOTES>
- <TYPE>Aroma</TYPE>
- <FORM>Pellet</FORM>
- <BETA>4.60</BETA>
- <HSI>45.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Horizon</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>U.S.</ORIGIN>
- <ALPHA>12.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Good dual purpose hops derived from Nugget hops in Oregon (1970)
-Use for: All purpose Ales, Lagers
-Aroma: Pleasant, Hoppy
-Substitutions: Magnum or other high alpha hops</NOTES>
- <TYPE>Bittering</TYPE>
- <FORM>Pellet</FORM>
- <BETA>7.50</BETA>
- <HSI>30.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Liberty</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>US</ORIGIN>
- <ALPHA>4.30</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Use for: German style lagers
-Aroma: Fine, mild, slightly spicy flavor
-Substitutes: Hallertau, Mt hood, Crystal
-Examples: Pete&apos;s Wicked Lager</NOTES>
- <TYPE>Aroma</TYPE>
- <FORM>Pellet</FORM>
- <BETA>3.50</BETA>
- <HSI>50.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Northern Brewer</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>Germany</ORIGIN>
- <ALPHA>6.50</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Also called Hallertauer Northern Brewers
-Use for: Bittering and finishing both ales and lagers of all kinds
-Aroma: Fine, dry, clean bittering hop.  Unique flavor.
-Substitute: Hallertauer Mittelfrueh, Hallertauer
-Examples: Anchor Steam, Old Peculiar, </NOTES>
- <TYPE>Both</TYPE>
- <FORM>Pellet</FORM>
- <BETA>4.00</BETA>
- <HSI>35.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Simcoe</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>U.S.</ORIGIN>
- <ALPHA>13.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>High alpha bitterng hops with good aroma characteristics. Citrus aroma.
-Best for: IPAs
-Substitutes: N/A</NOTES>
- <TYPE>Bittering</TYPE>
- <FORM>Pellet</FORM>
- <BETA>4.50</BETA>
- <HSI>18.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Sorachi Ace</NAME>
- <VERSION>1</VERSION>
- <ORIGIN></ORIGIN>
- <ALPHA>16.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES></NOTES>
- <TYPE>Bittering</TYPE>
- <FORM>Pellet</FORM>
- <BETA>3.00</BETA>
- <HSI>25.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Styrian Goldings</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>Slovenia</ORIGIN>
- <ALPHA>5.40</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>A seedless version of Fuggles grown in Slovenia
-Use for: Bittering, finishing for a wide variety of European Beers.
-   Popular in Europe and the United Kingdom
-Aroma: Similar to Fuggles: Mild, soft, grassy, floral aroma
-Substitutes: Fuggles Williamet</NOTES>
- <TYPE>Aroma</TYPE>
- <FORM>Pellet</FORM>
- <BETA>2.90</BETA>
- <HSI>30.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Tettnang</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>Germany</ORIGIN>
- <ALPHA>4.50</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Use for: German ales, lagers and wheat beer
-Aroma: Noble, mild, fine, slightly spicy
-Substitutes: Saaz, Spalt
-Examples: Sam Adams Octoberfest, Anderson Valley ESB</NOTES>
- <TYPE>Aroma</TYPE>
- <FORM>Pellet</FORM>
- <BETA>3.50</BETA>
- <HSI>40.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Warrior</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>U.S.</ORIGIN>
- <ALPHA>15.00</ALPHA>
- <AMOUNT>0.0000000</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>High alpha hops from Yakima Chief Ranches. Also called YCR-5.
-Best for: Ales, Stouts
-Substitutes: Nugget</NOTES>
- <TYPE>Both</TYPE>
- <FORM>Pellet</FORM>
- <BETA>6.00</BETA>
- <HSI>20.0</HSI>
- <DISPLAY_AMOUNT>0.00 gm</DISPLAY_AMOUNT>
- <INVENTORY>0.00 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
- <NAME>Williamette</NAME>
- <VERSION>1</VERSION>
- <ORIGIN>US</ORIGIN>
- <ALPHA>5.50</ALPHA>
- <AMOUNT>0.0121900</AMOUNT>
- <USE>Boil</USE>
- <TIME>0.000</TIME>
- <NOTES>Use for: Finishing American and British Ales
-Aroma: Mild, grassy, floral, slightly spicy
-Substitutes: Fuggles, E.K. Goldings
-Examples: Sierra Nevada Porter, Ballard Bitter
-</NOTES>
- <TYPE>Aroma</TYPE>
- <FORM>Pellet</FORM>
- <BETA>3.50</BETA>
- <HSI>40.0</HSI>
- <DISPLAY_AMOUNT>12.19 gm</DISPLAY_AMOUNT>
- <INVENTORY>12.19 gm</INVENTORY>
- <DISPLAY_TIME>0</DISPLAY_TIME>
-</HOP>
-<HOP>
-<ALPHA>14.6</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Admiral</NAME>
-<NOTES>Alpha 13 - 16.2%
-Beta 4.8 - 6.1%
-
-Subs: Target
-
-Considered to have a pleasing, less harsh bitterness.</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Ahtanum</NAME>
-<NOTES>Alpha 5.7 - 6.3%
-Beta 5 - 6.5%
-
-Subs:  Amarillo, Cascade
-
-Distinctive somewhat Cascade-like aroma and moderate bittering.</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>3.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Amarillo</NAME>
-<NOTES>Citrus and floral notes, with a somewhat Cascade like character, but more bitterness.
-
-Subs:  Cascade, Centennial</NOTES>
-<ORIGIN>U.S.</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.02835</AMOUNT>
-<BETA>3.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Amarillo</NAME>
-<NOTES></NOTES>
-<ORIGIN>U.S.</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>10080</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Dry Hop</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>3.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Amarillo</NAME>
-<NOTES>Citrus and floral notes, with a somewhat Cascade like character, but more bitterness.
-
-Subs:  Cascade, Centennial</NOTES>
-<ORIGIN>U.S.</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Dry Hop</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Bramling</NAME>
-<NOTES>Alpha 5 - 7%
-Beta 2.3 - 3.2%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.4</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Bramling Cross</NAME>
-<NOTES>Provides fruity, blackcurrant and lemon notes.  Very interesting if dry hopped.  Also good for bittering.
-
-Alpha 5 - 7.8%
-Beta 2.2 - 3.2%
-
-Subs:  Whitbread Goldings Variety, Progress, East Kent Goldings</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>15.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Bravo</NAME>
-<NOTES>Alpha 14 - 17%
-Beta 3 - 4%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Brewer's Gold</NAME>
-<NOTES>Alpha 5.5 - 6.5%
-Beta 2.5 - 3.5%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.021262142325</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Brewer's Gold</NAME>
-<NOTES>Alpha 5.5 - 6.5%
-Beta 2.5 - 3.5%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>10</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Brewer's Gold (American)</NAME>
-<NOTES>Alpha 8 - 10%
-Beta 3.5 - 4.5%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>British Columbia Golding</NAME>
-<NOTES>Alpha 4 - 7%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>7.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Bullion</NAME>
-<NOTES>Alpha 6 - 9%
-Beta 3.2 - 6.0%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>6.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>50.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Cascade</NAME>
-<NOTES>Use For: American ales and lagers
-Aroma: Strong spicy, floral, grapefriut character
-Substitutes: Centennial
-Examples: Sierra Nevade Pale Ale, Anchor Liberty Ale
-A hops with Northern Brewers Heritage</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>7.5</ALPHA>
-<AMOUNT>0.007</AMOUNT>
-<BETA>6.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>50.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Cascade</NAME>
-<NOTES>Use For: American ales and lagers
-Aroma: Strong spicy, floral, grapefriut character
-Substitutes: Centennial
-Examples: Sierra Nevade Pale Ale, Anchor Liberty Ale
-A hops with Northern Brewers Heritage</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>30</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.02835</AMOUNT>
-<BETA>6.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>50.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Cascade</NAME>
-<NOTES>Use For: American ales and lagers
-Aroma: Strong spicy, floral, grapefriut character
-Substitutes: Centennial
-Examples: Sierra Nevade Pale Ale, Anchor Liberty Ale
-A hops with Northern Brewers Heritage</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>10</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.02835</AMOUNT>
-<BETA>6.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>50.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Cascade</NAME>
-<NOTES>Use For: American ales and lagers
-Aroma: Strong spicy, floral, grapefriut character
-Substitutes: Centennial
-Examples: Sierra Nevade Pale Ale, Anchor Liberty Ale
-A hops with Northern Brewers Heritage</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>6.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>50.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Cascade</NAME>
-<NOTES>Use For: American ales and lagers
-Aroma: Strong spicy, floral, grapefriut character
-Substitutes: Centennial
-Examples: Sierra Nevade Pale Ale, Anchor Liberty Ale
-A hops with Northern Brewers Heritage</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Dry Hop</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>6.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>50.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Cascade</NAME>
-<NOTES>Use For: American ales and lagers
-Aroma: Strong spicy, floral, grapefriut character
-Substitutes: Centennial
-Examples: Sierra Nevade Pale Ale, Anchor Liberty Ale
-A hops with Northern Brewers Heritage</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Dry Hop</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Centennial</NAME>
-<NOTES>Use for: General purpose bittering, aroma in American ales and Wheats
-Aroma: Floral, citrus aroma, spicy, clean bittering flavor
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Celebration Ale, Sierra Nevada Bigfoot</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>10.0</ALPHA>
-<AMOUNT>0.02835</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Centennial</NAME>
-<NOTES>Use for: General purpose bittering, aroma in American ales and Wheats
-Aroma: Floral, citrus aroma, spicy, clean bittering flavor
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Celebration Ale, Sierra Nevada Bigfoot</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>1</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.02835</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Centennial</NAME>
-<NOTES>Use for: General purpose bittering, aroma in American ales and Wheats
-Aroma: Floral, citrus aroma, spicy, clean bittering flavor
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Celebration Ale, Sierra Nevada Bigfoot</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>10</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.02835</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Centennial</NAME>
-<NOTES>Use for: General purpose bittering, aroma in American ales and Wheats
-Aroma: Floral, citrus aroma, spicy, clean bittering flavor
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Celebration Ale, Sierra Nevada Bigfoot</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Centennial</NAME>
-<NOTES>Use for: General purpose bittering, aroma in American ales and Wheats
-Aroma: Floral, citrus aroma, spicy, clean bittering flavor
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Celebration Ale, Sierra Nevada Bigfoot</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Centennial</NAME>
-<NOTES>Use for: General purpose bittering, aroma in American ales and Wheats
-Aroma: Floral, citrus aroma, spicy, clean bittering flavor
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Celebration Ale, Sierra Nevada Bigfoot</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Dry Hop</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Centennial</NAME>
-<NOTES>Use for: General purpose bittering, aroma in American ales and Wheats
-Aroma: Floral, citrus aroma, spicy, clean bittering flavor
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Celebration Ale, Sierra Nevada Bigfoot</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>7.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Challenger</NAME>
-<NOTES>Alpha 6.5 - 8.5%
-Beta 4 - 4.5%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>3.6</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>20.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Chinook</NAME>
-<NOTES>Use for: Strong versitile bittering hop for ales, porters, stouts
-Aroma: Heavy and spicy aroma
-Substitutes: Galena, Eroica, Nugget, Bullion
-Examples: Sierra Nevada Stout, Sierra Nevada Celebration Ale</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.4</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>7.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Citra</NAME>
-<NOTES></NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.4</ALPHA>
-<AMOUNT>0.02835</AMOUNT>
-<BETA>7.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Citra</NAME>
-<NOTES></NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>60</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Mash</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.4</ALPHA>
-<AMOUNT>0.02835</AMOUNT>
-<BETA>7.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Citra</NAME>
-<NOTES></NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>15</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.4</ALPHA>
-<AMOUNT>0.02835</AMOUNT>
-<BETA>7.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Citra</NAME>
-<NOTES></NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>10</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>3.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>35.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Columbia</NAME>
-<NOTES>Sibling of Williamette hops.
-Used for: All English Ales
-Aroma: Close to fuggles
-Substitutes: Fuggles, Williamette</NOTES>
-<ORIGIN>United Kingdom</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>16.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Columbus</NAME>
-<NOTES></NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>16.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Columbus</NAME>
-<NOTES></NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>11.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Comet</NAME>
-<NOTES>Alpha 9.5 - 12.5%
-Beta 3 - 6%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.75</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Crystal</NAME>
-<NOTES></NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.75</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Crystal</NAME>
-<NOTES></NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Dry Hop</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>East Kent Golding</NAME>
-<NOTES>Alpha 4-7%
-Beta 1.9-2.8%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>East Kent Golding</NAME>
-<NOTES>Alpha 4-7%
-Beta 1.9-2.8%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Dry Hop</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>12.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Eroica</NAME>
-<NOTES>Alpha 11 - 14%
-Beta 4 - 5.5%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.65</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>First Gold</NAME>
-<NOTES>Alpha 4.0 - 9.3%
-Beta 2.3 - 4.1%
-
-Subs:
-East Kent Golding, Fuggle, Crystal, Perle, Galena, Northern Brewer</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>2.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>35.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Fuggles</NAME>
-<NOTES>Used For: General purpose bittering/aroma for English Ales, Dark Lagers
-Aroma: Mild, soft, grassy, floral aroma
-Substitute: East Kent Goldings, Williamette
-Examples: Samuel Smith's Pale Ale, Old Peculiar, Thomas Hardy's Ale</NOTES>
-<ORIGIN>United Kingdom</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.9</ALPHA>
-<AMOUNT>0.035437</AMOUNT>
-<BETA>3.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>35.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Fuggles</NAME>
-<NOTES>Used For: General purpose hops for bittering/finishing all British Ales
-Aroma: Floral, aromatic, earthy, slightly sweet spicy flavor
-Substitutes: Fuggles, BC Goldings
-Examples: Bass Pale Ale, Fullers ESB, Samual Smith's Pale Ale
-</NOTES>
-<ORIGIN>United Kingdom</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>60</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.0</ALPHA>
-<AMOUNT>0.020138</AMOUNT>
-<BETA>7.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>15.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Galena</NAME>
-<NOTES>Use for: General bittering hops for all beers
-Aroma: Strong, clean, balanced bittering
-Substitute: Eroica, Northern Brewer, Cluster, Chinook
-Examples: Catamount Porter</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>90</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>12.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Galena</NAME>
-<NOTES>Alpha 11 - 14%
-Beta 7 - 9%
-
-Subs:  Bullion</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Glacier</NAME>
-<NOTES>Alpha 3.3 - 9.7%
-Beta 5.4 - 9.5%
-
-Subs: Willamette, Golding, Magnum</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>3.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>35.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Goldings, East Kent</NAME>
-<NOTES>Used For: General purpose hops for bittering/finishing all British Ales
-Aroma: Floral, aromatic, earthy, slightly sweet spicy flavor
-Substitutes: Fuggles, BC Goldings
-Examples: Bass Pale Ale, Fullers ESB, Samual Smith's Pale Ale
-</NOTES>
-<ORIGIN>United Kingdom</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>11.75</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Green Bullet</NAME>
-<NOTES>Alpha 9 - 14.5%
-Beta 6.5 - 7.5%
-
-Subs: Pride of Ringwood</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>8.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Hallertau Northern Brewer</NAME>
-<NOTES>Alpha 7 - 10%
-Beta 3 - 5%
-
-Subs: Perle, Northern Brewer</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>8.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Hallertau Northern Brewer</NAME>
-<NOTES>Alpha 7 - 10%
-Beta 3 - 5%
-
-Subs: Perle, Northern Brewer</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>3.8</ALPHA>
-<AMOUNT>0.014</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>50.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Hallertauer</NAME>
-<NOTES>Used for: German Ales, German/US/Canadian Lagers, Wheat Beers
-Aroma: Pleaseant, mild spicy flavor, clean, neutral flavor
-Substitutes: Crytsal, Liberty, Hallertauer Mittenfrueh</NOTES>
-<ORIGIN>Germany</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>30</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>6.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Hallertauer Hersbrucker</NAME>
-<NOTES>Use for: German style lagers and wheat beers
-Aroma: Noble, pleasant, clean flavor
-Substitutes: Mt. Hood, Liberty, Hallertauer, Mittelfrueh
-Examples: Wheathook Wheaten Ale</NOTES>
-<ORIGIN>German</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Hallertauer Magnum</NAME>
-<NOTES>Alpha 11 - 16%
-Beta 5 - 7%
-
-Subs: Galena</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>4.6</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>45.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Hallertauer Mittelfrueh</NAME>
-<NOTES>Used for: Continental Lagers, German Ales/Lagers, US Lagers
-Aroma: Pleasant, assertive, mild herbal aroma
-Substitutes: Hallertauer, Mt. Hood, Liberty, Crystal
-Examples: Sam Adams Boston Lager, Sam Adams Boston Lightship</NOTES>
-<ORIGIN>Germany</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Hallertauer Tradition</NAME>
-<NOTES>Alpha 4 - 7%
-Beta 3 - 7%
-
-Subs: Hallertauer Mittelfruher</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP
-><ALPHA>11.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Herald</NAME>
-<NOTES>Alpha 9 - 13%
-Beta 4.8 - 5.5%
-
-Subs:  Target</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>12.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>7.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>30.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Horizon</NAME>
-<NOTES>Good dual purpose hops derived from Nugget hops in Oregon (1970)
-Use for: All purpose Ales, Lagers
-Aroma: Pleasant, Hoppy
-Substitutions: Magnum or other high alpha hops</NOTES>
-<ORIGIN>U.S.</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>12.0</ALPHA>
-<AMOUNT>0.056699</AMOUNT>
-<BETA>7.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Leaf</FORM>
-<HSI>30.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Horizon</NAME>
-<NOTES>Good dual purpose hops derived from Nugget hops in Oregon (1970)
-Use for: All purpose Ales, Lagers
-Aroma: Pleasant, Hoppy
-Substitutions: Magnum or other high alpha hops</NOTES>
-<ORIGIN>U.S.</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>60</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>12.35</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Horizon</NAME>
-<NOTES>Alpha 10.2 - 16.5%
-Beta 6.5 - 8.5%</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>12.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>7.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>30.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Horizon</NAME>
-<NOTES>Good dual purpose hops derived from Nugget hops in Oregon (1970)
-Use for: All purpose Ales, Lagers
-Aroma: Pleasant, Hoppy
-Substitutions: Magnum or other high alpha hops</NOTES>
-<ORIGIN>U.S.</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>12.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>7.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>30.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Horizon</NAME>
-<NOTES>Good dual purpose hops derived from Nugget hops in Oregon (1970)
-Use for: All purpose Ales, Lagers
-Aroma: Pleasant, Hoppy
-Substitutions: Magnum or other high alpha hops</NOTES>
-<ORIGIN>U.S.</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.3</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>3.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>50.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Liberty</NAME>
-<NOTES>Use for: German style lagers
-Aroma: Fine, mild, slightly spicy flavor
-Substitutes: Hallertau, Mt hood, Crystal
-Examples: Pete's Wicked Lager</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Lublin</NAME>
-<NOTES>Alpha 3 - 5%
-Beta 2.5 - 4%
-
-Subs:  Saaz</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>15.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Millennium</NAME>
-<NOTES>Alpha 14.5 - 16.5%
-Beta ?
-
-Subs:  Nugget, Columbus</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Mount Hood</NAME>
-<NOTES>Alpha 3 - 8%
-Beta 4 - 7.5%
-
-Subs:  Hallertauer, Tettnanger, Liberty, Ultra</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.2</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Mt. Rainier</NAME>
-<NOTES>Alpha 6.2%
-Beta ?
-
-Subs:  ?</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>8.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>New Zealand Hallertauer</NAME>
-<NOTES>Alpha 6.5 - 9.5%
-Beta 7.7 - 8.5%
-
-Subs: Hallertauer Mittelfruh</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>8.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Northdown</NAME>
-<NOTES>Alpha 6 - 10%
-Beta 3.6 - 6.2%
-
-Subs: Perle, Galena, Northern Brewer, Challenger</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>35.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Northern Brewer</NAME>
-<NOTES>Also called Hallertauer Northern Brewers
-Use for: Bittering and finishing both ales and lagers of all kinds
-Aroma: Fine, dry, clean bittering hop.  Unique flavor.
-Substitute: Hallertauer Mittelfrueh, Hallertauer
-Examples: Anchor Steam, Old Peculiar, </NOTES>
-<ORIGIN>Germany</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>4.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>35.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Northern Brewer</NAME>
-<NOTES>Also called Hallertauer Northern Brewers
-Use for: Bittering and finishing both ales and lagers of all kinds
-Aroma: Fine, dry, clean bittering hop.  Unique flavor.
-Substitute: Hallertauer Mittelfrueh, Hallertauer
-Examples: Anchor Steam, Old Peculiar, </NOTES>
-<ORIGIN>Germany</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.25</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Nugget</NAME>
-<NOTES>Alpha 12 - 14.5%
-Beta ?
-
-Subs: Perle, Olympic</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>11.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Olympic</NAME>
-<NOTES>Alpha 10 - 13%
-Beta 3.8 - 6.1%
-
-Subs: Chinook</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>14.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Pacific Gem</NAME>
-<NOTES>Alpha 13 - 16%
-Beta 7 - 9%
-
-Subs: Magnum, Millennium, Nugget, Columbus</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Perle</NAME>
-<NOTES>Alpha 4 - 9%
-Beta 2.5 - 5%
-
-Subs: Northern Brewer</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Perle (American)</NAME>
-<NOTES>Alpha 7 - 11%
-Beta 4 - 5%
-
-Subs: Northern Brewer</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>11.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Phoenix</NAME>
-<NOTES>Alpha 7 - 15%
-Beta 3.3 - 5.5%
-
-Subs: Challenger</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>11.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Pilgrim</NAME>
-<NOTES>Alpha 9 - 13%
-Beta 4.2 - 5.2%
-
-Subs: Target, Challenger</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Pioneer</NAME>
-<NOTES>Alpha 8 - 10%
-Beta 3.5 - 4%
-
-Subs:  East Kent Golding</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>9.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Pride of Kent</NAME>
-<NOTES>Alpha 8 - 11%
-Beta 6 - 8%
-
-Subs: ?</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>8.75</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Pride of Ringwood</NAME>
-<NOTES>Alpha 7 - 10.5%
-Beta 4 - 6%
-
-Subs: Kent Goldings, Centennial, Galena, Cluster</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.75</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Progress</NAME>
-<NOTES>Alpha 4 - 7.5%
-Beta 2 - 2.5%
-
-Subs:  Fuggle, Whitbread, Goldings Variety, East Kent Goldings</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>3.75</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Saaz (American)</NAME>
-<NOTES>Alpha 3 - 4.5%
-Beta 3 - 4.5%
-
-Subs:  Saaz (Czech), Polnischer Lublin, Tettnanger, Ultra, Sterling</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Saaz (Czech)</NAME>
-<NOTES>Alpha 3 - 6%
-Beta 3 - 8%
-
-Subs:  Saaz (American), Polnischer Lublin, Tettnanger, Ultra, Sterling</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.5</ALPHA>
-<AMOUNT>0.021262142325</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Saaz (Czech)</NAME>
-<NOTES>Alpha 3 - 6%
-Beta 3 - 8%
-
-Subs:  Saaz (American), Polnischer Lublin, Tettnanger, Ultra, Sterling</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>60</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.5</ALPHA>
-<AMOUNT>0.007087380775</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Saaz (Czech)</NAME>
-<NOTES>Alpha 3 - 6%
-Beta 3 - 8%
-
-Subs:  Saaz (American), Polnischer Lublin, Tettnanger, Ultra, Sterling</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>5</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Santiam</NAME>
-<NOTES>Alpha 5 - 7%
-Beta 6 - 8.5%
-
-Subs:  Tettnang Tettnanger, Spalt Spalter</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.25</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Satus</NAME>
-<NOTES>Alpha 12.5 - 14%
-Beta 8.5 - 9%
-
-Subs:  Galena</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>13.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>4.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>18.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Simcoe</NAME>
-<NOTES>High alpha bitterng hops with good aroma characteristics. Citrus aroma.
-Best for: IPAs
-Substitutes: N/A</NOTES>
-<ORIGIN>U.S.</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>16.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>3.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Sorachi Ace</NAME>
-<NOTES></NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>16.0</ALPHA>
-<AMOUNT>0.007</AMOUNT>
-<BETA>3.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Sorachi Ace</NAME>
-<NOTES></NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>10</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>16.0</ALPHA>
-<AMOUNT>0.02125</AMOUNT>
-<BETA>3.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>25.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Sorachi Ace</NAME>
-<NOTES></NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>5</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>12.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Southern Cross</NAME>
-<NOTES>Alpha 11 - 14%
-Beta 5 - 6%
-
-Subs:  Northern Brewer, Chinook</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Sovereign</NAME>
-<NOTES>Alpha 4 - 7%
-Beta ?
-
-Subs:  Fuggles</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.75</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Spalt Select</NAME>
-<NOTES>Alpha 3 - 6.5%
-Beta 2.5 - 6.2%
-
-Subs:  Spalt Spalter, Tettnang Tettnanger, Saaz Saazer, Hallertau Hallertauer Mittelfruh, Saaz (Czech)</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.25</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Spalt Spalter</NAME>
-<NOTES>Alpha 2.5 - 6%
-Beta 3 - 5%
-
-Subs:  Spalt Select, Tettnang Tettnanger, Saaz Saazer, Hallertau Hallertauer Mitterfruh, Saaz (Czech)</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.75</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Sterling</NAME>
-<NOTES>Alpha 4.5 - 9%
-Beta 4 - 6%
-
-Subs:  Saaz</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>12.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Sticklebract</NAME>
-<NOTES>Alpha 10.5 - 14.5%
-Beta 7.5 - 8.5%
-
-Subs:  ?</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Strisselspalt</NAME>
-<NOTES>Alpha 3 - 5%
-Beta 3 - 5.5%
-
-Subs:  Hersbruck, Mount Hood, Crystal</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.4</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>2.9</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>30.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Styrian Goldings</NAME>
-<NOTES>A seedless version of Fuggles grown in Slovenia
-Use for: Bittering, finishing for a wide variety of European Beers.
-   Popular in Europe and the United Kingdom
-Aroma: Similar to Fuggles: Mild, soft, grassy, floral aroma
-Substitutes: Fuggles Williamet</NOTES>
-<ORIGIN>Slovenia</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>18.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Summit</NAME>
-<NOTES>Alpha 17.5 - 19.5%
-Beta 4.7%
-
-Subs:  Columbus</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>14.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Sun</NAME>
-<NOTES>Alpha 12 - 16%
-Beta 4.5 - 7%
-
-Subs:  ?</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>11.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Super Alpha</NAME>
-<NOTES>Alpha 10 - 12%
-Beta 7 - 8.5%
-
-Subs:  ?</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>10.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Target</NAME>
-<NOTES>Alpha 8 - 13%
-Beta 4.3 - 5.7%
-
-Subs:  Admiral, Northdown, Progress</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>3.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Tettnang</NAME>
-<NOTES>Use for: German ales, lagers and wheat beer
-Aroma: Noble, mild, fine, slightly spicy
-Substitutes: Saaz, Spalt
-Examples: Sam Adams Octoberfest, Anderson Valley ESB</NOTES>
-<ORIGIN>Germany</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>3.8</ALPHA>
-<AMOUNT>0.01134</AMOUNT>
-<BETA>3.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Tettnang</NAME>
-<NOTES>Use for: German ales, lagers and wheat beer
-Aroma: Noble, mild, fine, slightly spicy
-Substitutes: Saaz, Spalt
-Examples: Sam Adams Octoberfest, Anderson Valley ESB</NOTES>
-<ORIGIN>Germany</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>5</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>4.75</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Ultra</NAME>
-<NOTES>Alpha 4.5 - 5%
-Beta 3.6 - 4.7%
-
-Subs:  Saaz</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Vanguard</NAME>
-<NOTES>Alpha 5 - 6%
-Beta 5 - 7%
-
-Subs:  Hallertauer, Tettnanger</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>15.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>6.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>20.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Warrior</NAME>
-<NOTES>High alpha hops from Yakima Chief Ranches. Also called YCR-5.
-Best for: Ales, Stouts
-Substitutes: Nugget</NOTES>
-<ORIGIN>U.S.</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>6.5</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Whitbread Goldings Variety</NAME>
-<NOTES>Alpha 5 - 8%
-Beta 2 - 3.3%
-
-Subs:  Fuggle (British), Styrian Goldings, East Kent Goldings</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Both</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>5.5</ALPHA>
-<AMOUNT>0.01219</AMOUNT>
-<BETA>3.5</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>40.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Williamette</NAME>
-<NOTES>Use for: Finishing American and British Ales
-Aroma: Mild, grassy, floral, slightly spicy
-Substitutes: Fuggles, E.K. Goldings
-Examples: Sierra Nevada Porter, Ballard Bitter
-</NOTES>
-<ORIGIN>US</ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Aroma</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>7.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Yakima Cluster</NAME>
-<NOTES>Alpha 5.5 - 8.5%
-Beta 4.5 - 5.5%
-
-Subs:  Chinook</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
-<HOP>
-<ALPHA>15.0</ALPHA>
-<AMOUNT>0.0</AMOUNT>
-<BETA>0.0</BETA>
-<CARYOPHYLLENE>0.0</CARYOPHYLLENE>
-<COHUMULONE>0.0</COHUMULONE>
-<FORM>Pellet</FORM>
-<HSI>0.0</HSI>
-<HUMULENE>0.0</HUMULENE>
-<MYRCENE>0.0</MYRCENE>
-<NAME>Zeus</NAME>
-<NOTES>Alpha 12 - 18+%
-Beta 4 - 6.5%
-
-Subs: ?</NOTES>
-<ORIGIN></ORIGIN>
-<SUBSTITUTES></SUBSTITUTES>
-<TIME>0</TIME>
-<TYPE>Bittering</TYPE>
-<USE>Boil</USE>
-<VERSION>1</VERSION>
-</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Admiral</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Newer high alpha.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Target</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>12.5</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Ahtanum</NAME>
+		<ORIGIN>USA, Yakima</ORIGIN>
+		<NOTES>Good for lagers, american ales, Floral. citrus, sharp and piney.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Target</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6</ALPHA>
+		<BETA>5.75</BETA>
+		<COHUMULONE>32.5</COHUMULONE>
+		<MYRCENE>52.5</MYRCENE>
+		<HUMULENE>18</HUMULENE>
+		<CARYOPHYLLENE>10</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.3</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Amarillo®</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Grown in Washington. A newer multi-use hop with a nice citrus-flower bouquet and medium-high acid content suited for bittering. Used in American Ales and IPAs.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Cascade</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>8.5</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Apollo</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>This super high alpha variety was developed by the Hopsteiner Breeding Program and released in 2006. It is resistant to powdery and downy mildew. The very high alpha, good storage stability and low cohumulone ratio makes it an excellent choice for bittering. Added late into the boil it provides a strong grapefruit and hoppy note.—usahops.org</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Nugget, Columbus, Tomahawk®, Zeus</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>17</ALPHA>
+		<BETA>6.75</BETA>
+		<COHUMULONE>26</COHUMULONE>
+		<MYRCENE>40</MYRCENE>
+		<HUMULENE>27.5</HUMULENE>
+		<CARYOPHYLLENE>17</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.85</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Aquila</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Not widely used.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Similar to Cluster.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7</ALPHA>
+		<BETA>3</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Banner</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Good yield. Developed in 1988. Use largely discontinued due to poor storage.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Similar to Aquila and Cluster.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10</ALPHA>
+		<BETA>4</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Bitter Gold</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Lineage includes Bullion, Comet, Brewer's Gold, Fuggle. Contains higher alpha acid levels than Nugget and Galena. Released in 1999. A 'super-alpha variety' with excellent bittering potential.—hopunion.com</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Nugget</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>17.1</ALPHA>
+		<BETA>7.1</BETA>
+		<COHUMULONE>38.5</COHUMULONE>
+		<MYRCENE>68.2</MYRCENE>
+		<HUMULENE>7.5</HUMULENE>
+		<CARYOPHYLLENE>8.4</CARYOPHYLLENE>
+		<FARNESENE>1.2</FARNESENE>
+		<HSI>56.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Brambling Cross</NAME>
+		<ORIGIN>UK, Canada</ORIGIN>
+		<NOTES>Grandparent of Saxon and Viking, they have a unique toasty, buttery, slighly resiny aroma with some woody notes.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>English Kent Goldings</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6</ALPHA>
+		<BETA>3</BETA>
+		<COHUMULONE>27.5</COHUMULONE>
+		<MYRCENE>37.5</MYRCENE>
+		<HUMULENE>31</HUMULENE>
+		<CARYOPHYLLENE>16</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.35</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Bravo</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Bravo is a second generation super high alpha variety that was developed by the Hopsteiner Breeding Program and released in 2006. It has good resistance to powdery mildew.   Bravo is an excellent bittering hop that provides pleasant fruity and floral aroma characteristics.—usahops.org</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Columbus, Tomahawk®, Zeus</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>15.5</ALPHA>
+		<BETA>3.5</BETA>
+		<COHUMULONE>31.5</COHUMULONE>
+		<MYRCENE>37.5</MYRCENE>
+		<HUMULENE>19</HUMULENE>
+		<CARYOPHYLLENE>11</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.7</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Brewers Gold</NAME>
+		<ORIGIN>USA, UK, Germany</ORIGIN>
+		<NOTES>Sibling of and similar to Bullion only maturing earlier and more disease resistant. English/wild Canadian cross. Pungent English character. very poor</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northern Brewer, Galena</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>9</ALPHA>
+		<BETA>3.75</BETA>
+		<COHUMULONE>38</COHUMULONE>
+		<MYRCENE>65</MYRCENE>
+		<HUMULENE>12</HUMULENE>
+		<CARYOPHYLLENE>0.25</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Bullion</NAME>
+		<ORIGIN>USA, UK</ORIGIN>
+		<NOTES>Neutral. Not highly regarded.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northern Brewer, Galena.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7.5</ALPHA>
+		<BETA>4.65</BETA>
+		<COHUMULONE>36</COHUMULONE>
+		<MYRCENE>64</MYRCENE>
+		<HUMULENE>12</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Cascade</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Spicy with citrus notes. Slightly grapefruity.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Centennial</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5.5</ALPHA>
+		<BETA>5.75</BETA>
+		<COHUMULONE>36.5</COHUMULONE>
+		<MYRCENE>52</MYRCENE>
+		<HUMULENE>13</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Cashmere</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Daughter of Cascade and containing Northern Brewer germplasm through the male parent. Mild herbal aroma with strong melon, lemon, lime and slightly spicy notes. Released by Washington State University in 2013. Contains a higher alpha acid content than Cascade and twice as much humulene. Provides smooth bitterness with mild aroma.—hopunion.com</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>8.4</ALPHA>
+		<BETA>6.8</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>40.5</MYRCENE>
+		<HUMULENE>27.5</HUMULENE>
+		<CARYOPHYLLENE>12.3</CARYOPHYLLENE>
+		<FARNESENE>1</FARNESENE>
+		<HSI>75</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Centennial</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Aromatic but acceptable for bittering. Medium aroma with floral and citrus tones. Good in medium to dark ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Cascade</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10</ALPHA>
+		<BETA>4</BETA>
+		<COHUMULONE>29.5</COHUMULONE>
+		<MYRCENE>50</MYRCENE>
+		<HUMULENE>14</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.37</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Challenger</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Popular bittering hop used primarily in British ales and lagers. Mild to moderate aroma, but quite spicy.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northern Brewer</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>8</ALPHA>
+		<BETA>4.25</BETA>
+		<COHUMULONE>22.5</COHUMULONE>
+		<MYRCENE>36</MYRCENE>
+		<HUMULENE>29</HUMULENE>
+		<CARYOPHYLLENE>9</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.4</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Chelan</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Chelan is a high alpha variety with a very high percentage of beta acids. The variety was developed through the John I. Haas, Inc., breeding program and released in 1994. It is a daughter of Galena and therefore has analytical data similar to Galena.—usahops.org</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>13.3</ALPHA>
+		<BETA>9.2</BETA>
+		<COHUMULONE>34</COHUMULONE>
+		<MYRCENE>50</MYRCENE>
+		<HUMULENE>13.5</HUMULENE>
+		<CARYOPHYLLENE>10.5</CARYOPHYLLENE>
+		<FARNESENE>1</FARNESENE>
+		<HSI>80</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Chinook</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Spicy, Medium to Heavy.Very strong bittering ability used in all American ales and lagers. Aroma is very floral.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Nugget, Cluster.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>13</ALPHA>
+		<BETA>3.5</BETA>
+		<COHUMULONE>32</COHUMULONE>
+		<MYRCENE>37.5</MYRCENE>
+		<HUMULENE>22.5</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.32</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Citra™</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Citra™ is a special aroma hop variety developed by the Hop Breeding Company (a joint venture between John I. Haas, Inc. and Select Botanicals Group, LLC). It was released in 2007. Citra™ has fairly high alpha acids and total oil contents with a low percentage of cohumulone content. The variety imparts interesting citrus and tropical fruit characters to beer.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>12</ALPHA>
+		<BETA>4</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>62.5</MYRCENE>
+		<HUMULENE>12</HUMULENE>
+		<CARYOPHYLLENE>7</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.75</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Cluster</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Used for bittering and flavor qualities in light and dark American lagers. Aroma is very floral.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Chinook.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7</ALPHA>
+		<BETA>5</BETA>
+		<COHUMULONE>39</COHUMULONE>
+		<MYRCENE>50</MYRCENE>
+		<HUMULENE>16.5</HUMULENE>
+		<CARYOPHYLLENE>6.5</CARYOPHYLLENE>
+		<FARNESENE>0.5</FARNESENE>
+		<HSI>0.17</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Columbia</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>A descendant of Fuggle and sister selection of Willamette. Subtle earth and mild fruit tones. Aroma characteristics are similar to Fuggle.—hopunion.com</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Fuggle</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>9.2</ALPHA>
+		<BETA>4.3</BETA>
+		<COHUMULONE>40</COHUMULONE>
+		<MYRCENE>54.6</MYRCENE>
+		<HUMULENE>16.7</HUMULENE>
+		<CARYOPHYLLENE>7.3</CARYOPHYLLENE>
+		<FARNESENE>4.1</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Columbus</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Used mainly for bittering with some flavor qualities as well. Aroma is pleasant.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Chinook.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>15</ALPHA>
+		<BETA>5</BETA>
+		<COHUMULONE>32.5</COHUMULONE>
+		<MYRCENE>35</MYRCENE>
+		<HUMULENE>20</HUMULENE>
+		<CARYOPHYLLENE>10</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.4</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Comet</NAME>
+		<ORIGIN/>
+		<NOTES>Very bitter, use sparingly or with other hops</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Chinook.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>9.5</ALPHA>
+		<BETA>4</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Crystal</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Mild. 'Noble'. Used mainly for its aroma which is mild and pleasant.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Liberty, Mt. Hood, Hallertauer Mittelfrüher</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>3.25</ALPHA>
+		<BETA>5.5</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>45</MYRCENE>
+		<HUMULENE>25</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.49</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Czech Saaz</NAME>
+		<ORIGIN>Czech Replublic</ORIGIN>
+		<NOTES>Very mild. 'Noble'.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Polish Lublin, Lubelski, Spalt Spalter, Tettnanger.</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5</ALPHA>
+		<BETA>3.5</BETA>
+		<COHUMULONE>26</COHUMULONE>
+		<MYRCENE>22.5</MYRCENE>
+		<HUMULENE>42.5</HUMULENE>
+		<CARYOPHYLLENE>11</CARYOPHYLLENE>
+		<FARNESENE>13</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Delta</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Delta (Hopsteiner 04188) is a new aroma variety that was developed by the Hopsteiner Breeding Program and released in 2009. It is a cross between Fuggle and a male variety derived from Cascade. It shows good tolerance to downy mildew. Delta has a mild and pleasant aroma that is slightly spicy with a hint of citrus.—usahops.org</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Fuggle, Willamette</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6.3</ALPHA>
+		<BETA>6.3</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>32.5</MYRCENE>
+		<HUMULENE>30</HUMULENE>
+		<CARYOPHYLLENE>12</CARYOPHYLLENE>
+		<FARNESENE>1</FARNESENE>
+		<HSI>85</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Dr. Rudi</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Derived from New Zealand Smoothcone. Fresh citrus peel, pine and lemongrass flavors. Developed at the New Zealand Horticultural Research Centre. Released in 1976 and formerly known as Super Alpha. Delivers a crisp, bitter edge with fine aroma characteristics; often used to balance regional ales and lagers. Works well in single hopped beers and with multiple aroma varieties.—hopunion.com</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>11</ALPHA>
+		<BETA>7.75</BETA>
+		<COHUMULONE>34.5</COHUMULONE>
+		<MYRCENE>29.2</MYRCENE>
+		<HUMULENE>33.2</HUMULENE>
+		<CARYOPHYLLENE>10.1</CARYOPHYLLENE>
+		<FARNESENE>1</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>East Kent Goldings</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Mild, slightly flowery.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>English Fuggle, B.C. Goldings, Willamette.</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5</ALPHA>
+		<BETA>3.25</BETA>
+		<COHUMULONE>22.5</COHUMULONE>
+		<MYRCENE>23</MYRCENE>
+		<HUMULENE>46</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.45</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>El Dorado®</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>El Dorado® is a special dual purpose variety with exceptional aroma qualities and high alpha acids. It was developed by CLS Farms, LLC in 2008 and released in 2010. El Dorado® consistently elicits responses of fruity notes, specifically tropical fruit flavors. Other fruit notes offered have been pear, watermelon and stone fruit.—usahops.org</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>15</ALPHA>
+		<BETA>7.5</BETA>
+		<COHUMULONE>30.5</COHUMULONE>
+		<MYRCENE>57.5</MYRCENE>
+		<HUMULENE>12.5</HUMULENE>
+		<CARYOPHYLLENE>7</CARYOPHYLLENE>
+		<FARNESENE>0.1</FARNESENE>
+		<HSI>67.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Equinox™</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>A pronounced aroma profile with citrus, tropical fruit, floral and herbal characteristics. Specific descriptors include lemon, lime, papaya, apple, and green pepper. Developed by the Hop Breeding Company. The diversified and pronounced aroma characteristics combined with extremely high oil content and a tight cone structure make this hop variety very unique.—hopunion.com</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>15</ALPHA>
+		<BETA>4.9</BETA>
+		<COHUMULONE>34.9</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Eroica</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Mainly used for bittering and good aroma for pale ales and dark ales, and also stouts. The aroma is quite strong but not unpleasant.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Nugget, Chinook, Cluster.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>12</ALPHA>
+		<BETA>4.5</BETA>
+		<COHUMULONE>39</COHUMULONE>
+		<MYRCENE>60</MYRCENE>
+		<HUMULENE>0.5</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.4</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Falconer’s Flight™ Blend</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>An exclusive proprietary hop blend created by Hop Union to honor and support the legacy of Glen Hay Falconer. Known to contain Citra™, Simcoe® and Sorachi Ace among other varieties. Blend imparts tropical, citrus, floral, lemon and grapefruit tones.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>11</ALPHA>
+		<BETA>4.4</BETA>
+		<COHUMULONE>27</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>First Gold</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>First commercial dwarf hop designed for aroma consideration in England, a very promising hop.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>UK Kent Golding, maybe Crystal</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7.5</ALPHA>
+		<BETA>3.5</BETA>
+		<COHUMULONE>33.5</COHUMULONE>
+		<MYRCENE>27.5</MYRCENE>
+		<HUMULENE>22</HUMULENE>
+		<CARYOPHYLLENE>6.5</CARYOPHYLLENE>
+		<FARNESENE>3</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Fuggle</NAME>
+		<ORIGIN>UK, USA</ORIGIN>
+		<NOTES>Mild. Mainly used for finishing and dry hopping especially pale ales, porters, and stouts. Aroma is mild and pleasant, spicy, and soft.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>English Fuggles, Styrian Goldings, Willamette.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4.75</ALPHA>
+		<BETA>1.75</BETA>
+		<COHUMULONE>28.5</COHUMULONE>
+		<MYRCENE>45</MYRCENE>
+		<HUMULENE>23</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.35</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Galena</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Neutral. This hop can be very bitter, but blends well with finishing hops. Used in American ales and lagers, but suitable for all beer styles. Aroma is medium but pleasant.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Cluster, Nugget, Chinook.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>13</ALPHA>
+		<BETA>8</BETA>
+		<COHUMULONE>40</COHUMULONE>
+		<MYRCENE>57.5</MYRCENE>
+		<HUMULENE>12.5</HUMULENE>
+		<CARYOPHYLLENE>12.5</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.15</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Glacier</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>An excellent new variety with balanced bittering properties combined with a good aroma profile.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Willamette, US Fuggle, US Tettnang, Styrian Golding</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5.5</ALPHA>
+		<BETA>8.2</BETA>
+		<COHUMULONE>12</COHUMULONE>
+		<MYRCENE>47.5</MYRCENE>
+		<HUMULENE>30</HUMULENE>
+		<CARYOPHYLLENE>8.25</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Goldings</NAME>
+		<ORIGIN>British Columbia, Canada, USA</ORIGIN>
+		<NOTES>Mild. Slightly flowery.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>E.K. Goldings</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5</ALPHA>
+		<BETA>3.25</BETA>
+		<COHUMULONE>22.5</COHUMULONE>
+		<MYRCENE>23</MYRCENE>
+		<HUMULENE>46</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.45</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Green Bullet</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Although a new variety in relative terms, Green Bullet delivers a very real, traditional bittering quality and hop flavour. A flagship within the New Zealand brewing industry this hop has contributed to several International Brewing Industry Awards.  Considered a bittering variety typically for Lager, Green Bullet also carries a solid Styrian characteristic of subtle spiciness which finds it at home in a freshly drawn pint of Bitter or an Irish-style Dry Stout.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>12.5</ALPHA>
+		<BETA>6.75</BETA>
+		<COHUMULONE>42</COHUMULONE>
+		<MYRCENE>38.3</MYRCENE>
+		<HUMULENE>28.2</HUMULENE>
+		<CARYOPHYLLENE>9.2</CARYOPHYLLENE>
+		<FARNESENE>0.3</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Hallertau</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Good for all around bittering and finishing stock ales, Belgian ales, and continental style lagers. Aroma is mild, pleasant and flowery.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Hallertauer Mittelfrüher, Crystal, Mt. Hood, Liberty</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4.5</ALPHA>
+		<BETA>4</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>39.5</MYRCENE>
+		<HUMULENE>34</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.45</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Hallertau Aroma</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>A multi-skilled hop that consistently delivers across all areas from kettle to consumer. A true dual-purpose variety with an enviable alpha: beta ratio, the New Zealand Hallertau measures up on flavour scores as well as flavour stability trials. Its rounded flavour, moderate cohumulone and outstanding oil profile create a truly rewarding finish.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Nugget, Columbus</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7.5</ALPHA>
+		<BETA>8.5</BETA>
+		<COHUMULONE>29</COHUMULONE>
+		<MYRCENE>35.5</MYRCENE>
+		<HUMULENE>16.8</HUMULENE>
+		<CARYOPHYLLENE>8.2</CARYOPHYLLENE>
+		<FARNESENE>6.7</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Hallertauer Hersbrucker</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Mild to strong. 'Noble'.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Hallertauer Mittelfrüher, Crystal, Liberty, Mt. Hood.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4.5</ALPHA>
+		<BETA>5.25</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>20</MYRCENE>
+		<HUMULENE>20</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.4</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Hallertauer Mittelfrüher</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Fine, 'Noble'.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Hallertauer Tradition, Crystal, Liberty.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4.5</ALPHA>
+		<BETA>4.5</BETA>
+		<COHUMULONE>21</COHUMULONE>
+		<MYRCENE>32</MYRCENE>
+		<HUMULENE>40</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.45</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Hallertauer Tradition</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Fine, 'Noble'.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Crystal, Liberty, Mt. Hood.</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6</ALPHA>
+		<BETA>4.5</BETA>
+		<COHUMULONE>27.5</COHUMULONE>
+		<MYRCENE>22.5</MYRCENE>
+		<HUMULENE>50</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.4</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Herald</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>New high-alpha acid dwarf.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Crystal, Liberty, Mt. Hood.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>12</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Herkules</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Spicy, powerful.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>15</ALPHA>
+		<BETA>4.75</BETA>
+		<COHUMULONE>34.5</COHUMULONE>
+		<MYRCENE>40</MYRCENE>
+		<HUMULENE>37.5</HUMULENE>
+		<CARYOPHYLLENE>9.5</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Hersbrucker</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Drier, spicier than Hallertauer. Most important aroma variety in Germany.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Polish Lublin, Lubelski, Spalt Spalter, Tettnanger.</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>12</COHUMULONE>
+		<MYRCENE>45</MYRCENE>
+		<HUMULENE>25</HUMULENE>
+		<CARYOPHYLLENE>7.5</CARYOPHYLLENE>
+		<FARNESENE>0.5</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Horizon</NAME>
+		<ORIGIN>United States</ORIGIN>
+		<NOTES>Pedigree A diploid high alpha, low co-humulone selection. Cross made in Oregon in 1970, half-sister of Nugget. Typical Beer Styles All Ales and Lagers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northdown</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>12</ALPHA>
+		<BETA>7.5</BETA>
+		<COHUMULONE>17</COHUMULONE>
+		<MYRCENE>60</MYRCENE>
+		<HUMULENE>12</HUMULENE>
+		<CARYOPHYLLENE>8.25</CARYOPHYLLENE>
+		<FARNESENE>3</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Huller Bitterer</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Moderate</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Perle, Hallertauer Hersbrucker</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5.75</ALPHA>
+		<BETA>5</BETA>
+		<COHUMULONE>30</COHUMULONE>
+		<MYRCENE>51</MYRCENE>
+		<HUMULENE>9</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.4</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Liberty</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Used mainly for finishing German and American style ales and lagers. Aroma is mild and pleasant.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Hallertau, Mt. Hood, and Crystal.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4</ALPHA>
+		<BETA>3.5</BETA>
+		<COHUMULONE>27</COHUMULONE>
+		<MYRCENE>37.5</MYRCENE>
+		<HUMULENE>37.5</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.55</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Lubelski-PLLU</NAME>
+		<ORIGIN>Poland</ORIGIN>
+		<NOTES/>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Nugget and Columbus.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>3.75</ALPHA>
+		<BETA>3</BETA>
+		<COHUMULONE>27</COHUMULONE>
+		<MYRCENE>30</MYRCENE>
+		<HUMULENE>32</HUMULENE>
+		<CARYOPHYLLENE>10</CARYOPHYLLENE>
+		<FARNESENE>11</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Lublin</NAME>
+		<ORIGIN>Poland</ORIGIN>
+		<NOTES>Mild. 'Noble'.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Czech Saaz, Spalter select, Tettnanger</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4.5</ALPHA>
+		<BETA>3</BETA>
+		<COHUMULONE>27</COHUMULONE>
+		<MYRCENE>30</MYRCENE>
+		<HUMULENE>37.5</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.4</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Magnum</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>A West Coast hop with high Alpha Acid. Excellent bittering hop.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northdown</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>14.5</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Magnum-PLMG</NAME>
+		<ORIGIN>Poland</ORIGIN>
+		<NOTES/>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Nugget and Columbus.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>13</ALPHA>
+		<BETA>5</BETA>
+		<COHUMULONE>26</COHUMULONE>
+		<MYRCENE>32</MYRCENE>
+		<HUMULENE>35</HUMULENE>
+		<CARYOPHYLLENE>10</CARYOPHYLLENE>
+		<FARNESENE>0.1</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Marynka</NAME>
+		<ORIGIN>Poland</ORIGIN>
+		<NOTES/>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Nugget and Columbus.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10.5</ALPHA>
+		<BETA>11.6</BETA>
+		<COHUMULONE>29.5</COHUMULONE>
+		<MYRCENE>30</MYRCENE>
+		<HUMULENE>29.5</HUMULENE>
+		<CARYOPHYLLENE>11.25</CARYOPHYLLENE>
+		<FARNESENE>2</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Merkur</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Strong aroma.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>13</ALPHA>
+		<BETA>5.1</BETA>
+		<COHUMULONE>18.5</COHUMULONE>
+		<MYRCENE>48.9</MYRCENE>
+		<HUMULENE>30.7</HUMULENE>
+		<CARYOPHYLLENE>8.6</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Millenium</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Very new hop. Primarily used for alpha potential.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Nugget and Columbus.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>15.5</ALPHA>
+		<BETA>4.8</BETA>
+		<COHUMULONE>30</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>25</HUMULENE>
+		<CARYOPHYLLENE>10.6</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.24</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Mosaic™</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Mosaic™ (HBC 369) is an aroma hop variety developed by Hop Breeding Company, LLC that was released in 2012. It offers a unique and complex blend of floral, tropical, fruity, and earthy characteristics that translate very favorably into several styles of beer. Mosaic™ is the daughter of Simcoe® (YCR 14) and a Nugget derived male.—usahops.org</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>12.5</ALPHA>
+		<BETA>3.6</BETA>
+		<COHUMULONE>25</COHUMULONE>
+		<MYRCENE>50</MYRCENE>
+		<HUMULENE>14.5</HUMULENE>
+		<CARYOPHYLLENE>6.5</CARYOPHYLLENE>
+		<FARNESENE>1</FARNESENE>
+		<HSI>75</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Motueka</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>An excellent hop in many applications from first kettle additions through to late gift.  This hop offers a unique aroma and flavour making it suitable for producing bigger more traditional style Lagers, especially Bohemian Pilsener. Excellent when employed in multiple additions from a single hop bill and sits well on the palate to balance speciality malt sweetness. An excellent variety for Belgian Ales and gives a real edge to Cask Bitter.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7</ALPHA>
+		<BETA>5.25</BETA>
+		<COHUMULONE>29</COHUMULONE>
+		<MYRCENE>47.7</MYRCENE>
+		<HUMULENE>3.6</HUMULENE>
+		<CARYOPHYLLENE>2</CARYOPHYLLENE>
+		<FARNESENE>12.2</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Mt. Hood</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Used mainly for aroma and flavor in American and German style ales and lagers. Aroma is mild, pleasant, light, and clean.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Crystal, Liberty, Hallertauer Mittelfrüher</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5</ALPHA>
+		<BETA>6.25</BETA>
+		<COHUMULONE>22.5</COHUMULONE>
+		<MYRCENE>60</MYRCENE>
+		<HUMULENE>20</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.45</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Nelson Sauvin</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Early trials with Nelson Sauvin immediately revealed it to be somewhat different in its brewing character than other hop cultivars. This variety imparts certain grape like flavours to the beer; flavours which have yet to be positively identified. To acknowledge this Sauvignon Blanc flavour the variety was named Nelson Sauvin.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Polish Lublin, Lubelski, Spalt Spalter, Tettnanger.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>14</ALPHA>
+		<BETA>7.2</BETA>
+		<COHUMULONE>25</COHUMULONE>
+		<MYRCENE>56</MYRCENE>
+		<HUMULENE>20.8</HUMULENE>
+		<CARYOPHYLLENE>6.5</CARYOPHYLLENE>
+		<FARNESENE>0.3</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>New Zealand Cascade</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Performs well when used as a single variety across multiple kettle additions or when singled out as a late gift. Can do some really great things for the hop advocate when matched up with some of the New Zealand aroma heavy weights such as Motueka or Riwaka. A fun hop in the brewery which literally sighs with pleasure when plunged into a hop back.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7</ALPHA>
+		<BETA>5.25</BETA>
+		<COHUMULONE>37</COHUMULONE>
+		<MYRCENE>53.6</MYRCENE>
+		<HUMULENE>14.5</HUMULENE>
+		<CARYOPHYLLENE>5.4</CARYOPHYLLENE>
+		<FARNESENE>6</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Newport</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Viewed as a high-bittering alpha hop.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Nugget, Fuggle, Magnum, Brewer's Gold</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>15.25</ALPHA>
+		<BETA>8.15</BETA>
+		<COHUMULONE>37</COHUMULONE>
+		<MYRCENE>50.5</MYRCENE>
+		<HUMULENE>11.5</HUMULENE>
+		<CARYOPHYLLENE>5.75</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.6</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Northdown</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Mellow English higher alpha-acid hop.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northern Brewer</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>8.6</ALPHA>
+		<BETA>5.25</BETA>
+		<COHUMULONE>27</COHUMULONE>
+		<MYRCENE>26</MYRCENE>
+		<HUMULENE>42.5</HUMULENE>
+		<CARYOPHYLLENE>14</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.35</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Northern Brewer</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Used for bittering with strong flavors and very fragrant in steam beers, dark English ales, and German lagers. Aroma is medium-strong with evergreen and mint overtones.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Perle, Hallertauer Northern Brewer, Galena.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>8</ALPHA>
+		<BETA>4</BETA>
+		<COHUMULONE>25</COHUMULONE>
+		<MYRCENE>55</MYRCENE>
+		<HUMULENE>25</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.2</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Nugget</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>This is very bitter and often used in medium to dark ales and lagers. Aroma is quite heavy and herbal.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Chinook, Cluster</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>13</ALPHA>
+		<BETA>5</BETA>
+		<COHUMULONE>28</COHUMULONE>
+		<MYRCENE>55</MYRCENE>
+		<HUMULENE>17</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.25</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Omega</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Some Challenger characteristics. Getting rare.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Chinook, Cluster</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Opal</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Good high alpha aroma hop. The hop is spicy with subtle citrus.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6.5</ALPHA>
+		<BETA>4.5</BETA>
+		<COHUMULONE>15</COHUMULONE>
+		<MYRCENE>27.5</MYRCENE>
+		<HUMULENE>40</HUMULENE>
+		<CARYOPHYLLENE>11.5</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Orion</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Dual use hop.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Czech Saaz, Spalter select, Tettnanger</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Pacific Gem</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Pacific Gem fills the brew house with enticing aromas during kettle addition and has been described as producing oaken flavours with a distinct blackberry aroma.  Typically used as a first hop addition and makes its presence felt through an excellent tempered bitterness and flavour. Well suited to a wide range of beer styles and lends itself well to European Lager styles of various bitterness levels.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Nugget, Columbus</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>14</ALPHA>
+		<BETA>8</BETA>
+		<COHUMULONE>38.5</COHUMULONE>
+		<MYRCENE>33.3</MYRCENE>
+		<HUMULENE>29.9</HUMULENE>
+		<CARYOPHYLLENE>11</CARYOPHYLLENE>
+		<FARNESENE>0.3</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Pacific Jade</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Suited for use as a bittering hop with some excellent results also being seen in dual purpose applications, with a soft bitterness attributable to the low cohumulone. The citrus aroma and flavour notes work well to temper malt sweetness in “fullish” Ales especially when used moderately as a finishing hop. Pacific Jade is also well suited to balance dryer Lager styles when employed as an “up-front” kettle addition to showcase its bittering qualities.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>13</ALPHA>
+		<BETA>7.5</BETA>
+		<COHUMULONE>24</COHUMULONE>
+		<MYRCENE>33.3</MYRCENE>
+		<HUMULENE>32.9</HUMULENE>
+		<CARYOPHYLLENE>10.2</CARYOPHYLLENE>
+		<FARNESENE>0.3</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Pacifica</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>The Pacifica brings something of a blend of new and old-world taste descriptors to the brewers' forum. Orange marmalade aptly describes the citrus aroma notes achieved through late addition.  Bittering quality is such that early kettle additions net a soft yet solid finish even in highly bittered beers.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5.5</ALPHA>
+		<BETA>6</BETA>
+		<COHUMULONE>25</COHUMULONE>
+		<MYRCENE>12.5</MYRCENE>
+		<HUMULENE>50.9</HUMULENE>
+		<CARYOPHYLLENE>16.7</CARYOPHYLLENE>
+		<FARNESENE>0.2</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Palisade™</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Palisade™ is an aroma type cultivar bred by Yakima Chief Ranches. Used for its aromatic properties and moderate bittering.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7.7</ALPHA>
+		<BETA>7</BETA>
+		<COHUMULONE>26.5</COHUMULONE>
+		<MYRCENE>9.5</MYRCENE>
+		<HUMULENE>20.5</HUMULENE>
+		<CARYOPHYLLENE>17</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Perle</NAME>
+		<ORIGIN>Germany, USA</ORIGIN>
+		<NOTES>Used mainly for its minty bittering and good green hop aromas in all non-pilsener lagersand wheats. Aroma is pleasant and slightly spicy</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northern Brewer, Cluster, Galena.</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>8.25</ALPHA>
+		<BETA>4.5</BETA>
+		<COHUMULONE>29.5</COHUMULONE>
+		<MYRCENE>50</MYRCENE>
+		<HUMULENE>30.5</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.15</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Phoenix</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Attractive English aroma with high alpha-acid. excellent.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Czech Saaz, Spalter select, Tettnanger</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Pilgrim</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Dual purpose hop developed at HRI Wye and released in 2000. Pilgrim is often compared to Target but exhibits much hoppier aroma due to higher humulene and selinine levels.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Target, Northern Brewer, Challenger</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>11</ALPHA>
+		<BETA>4.7</BETA>
+		<COHUMULONE>37</COHUMULONE>
+		<MYRCENE>30.5</MYRCENE>
+		<HUMULENE>17</HUMULENE>
+		<CARYOPHYLLENE>7.5</CARYOPHYLLENE>
+		<FARNESENE>0.3</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Pioneer</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>New dwarf variety with clean bitterness and mild English aroma.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Czech Saaz, Spalter select, Tettnanger</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>9</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Pride of Ringwood</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Moderate.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Cluster.</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>8.5</ALPHA>
+		<BETA>6</BETA>
+		<COHUMULONE>33</COHUMULONE>
+		<MYRCENE>58</MYRCENE>
+		<HUMULENE>1.5</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Progress</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Simular to Fuggles but a little sweeter.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Golding</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6.25</ALPHA>
+		<BETA>2.25</BETA>
+		<COHUMULONE>27.5</COHUMULONE>
+		<MYRCENE>32.5</MYRCENE>
+		<HUMULENE>44</HUMULENE>
+		<CARYOPHYLLENE>13</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Rakau</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Fresh orchard fruits, specifically apricot with some resinous pine needle characteristics are noted. Released from the New Zealand Hop breeding program. Well suited for new world styles where brash fruity character and big, but well constructed bitterness is desired.—hopunion.com</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Amarillo®, Summit™</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10.5</ALPHA>
+		<BETA>5.5</BETA>
+		<COHUMULONE>24</COHUMULONE>
+		<MYRCENE>56</MYRCENE>
+		<HUMULENE>16.3</HUMULENE>
+		<CARYOPHYLLENE>5.2</CARYOPHYLLENE>
+		<FARNESENE>4.5</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Record</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES/>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Golding</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6.5</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Riwaka</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>If you want to say “hops” in your beer then this variety says it all. The pure weight of the oil character experienced during selection carries right through to the glass. A punchy addition to the new-world styles of Pale Ale and regional Pilseners. A cult hero that is established in the New Zealand craft beer culture.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5.5</ALPHA>
+		<BETA>4.5</BETA>
+		<COHUMULONE>32.5</COHUMULONE>
+		<MYRCENE>68</MYRCENE>
+		<HUMULENE>9</HUMULENE>
+		<CARYOPHYLLENE>4</CARYOPHYLLENE>
+		<FARNESENE>1</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Saaz</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Used for finishing pilseners, continental lagers, and wheats. The aroma is spicy and pleasant with fragrant overtones.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Polish Lublin, Lubelski, Spalt Spalter, Tettnanger.</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5</ALPHA>
+		<BETA>3.5</BETA>
+		<COHUMULONE>26</COHUMULONE>
+		<MYRCENE>37</MYRCENE>
+		<HUMULENE>23</HUMULENE>
+		<CARYOPHYLLENE>7</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Santiam</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>A newly developed American aroma hop that contains noble hop characteristics.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>German Tettnang, German Spalt, German Spalter Select</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6</ALPHA>
+		<BETA>7</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>31.5</MYRCENE>
+		<HUMULENE>24.5</HUMULENE>
+		<CARYOPHYLLENE>7.5</CARYOPHYLLENE>
+		<FARNESENE>14.5</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Saphir</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Similar to Hallertauer Mittelfrüher and is well suited as an aroma hop.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Hallertauer Mittelfrüher</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>3.25</ALPHA>
+		<BETA>5.5</BETA>
+		<COHUMULONE>14.5</COHUMULONE>
+		<MYRCENE>32.5</MYRCENE>
+		<HUMULENE>25</HUMULENE>
+		<CARYOPHYLLENE>11.5</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Satus®</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Satus® is a bittering-type cultivar of recent origin. Used for its bittering and aromatic properties – similar to Galena.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>13.25</ALPHA>
+		<BETA>8.75</BETA>
+		<COHUMULONE>33.5</COHUMULONE>
+		<MYRCENE>25</MYRCENE>
+		<HUMULENE>23</HUMULENE>
+		<CARYOPHYLLENE>12</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Select</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Pedigree Bred from Hallertauer Mittlefr|h and Spalt as a disease resistant Spalt type. Originated from Hull Research Institution.  Typical Beer Styles Lager, any beer where noble aroma is wanted (i.e. Pilsner)</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northdown</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5</ALPHA>
+		<BETA>4</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>20</MYRCENE>
+		<HUMULENE>20</HUMULENE>
+		<CARYOPHYLLENE>9</CARYOPHYLLENE>
+		<FARNESENE>20</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Simcoe®</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Used for aromatic, and especially bittering properties.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Tettnanger, Spalt Spalter, Spalter Select</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>13</ALPHA>
+		<BETA>4.5</BETA>
+		<COHUMULONE>17.5</COHUMULONE>
+		<MYRCENE>62.5</MYRCENE>
+		<HUMULENE>12.5</HUMULENE>
+		<CARYOPHYLLENE>6.5</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Smaragd</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Bitterness of medium intensity. Both in smell and taste the aroma is predominately fruity, hoppy and flowery.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5</ALPHA>
+		<BETA>4.5</BETA>
+		<COHUMULONE>15.5</COHUMULONE>
+		<MYRCENE>30</MYRCENE>
+		<HUMULENE>40</HUMULENE>
+		<CARYOPHYLLENE>11.5</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Sorachi Ace</NAME>
+		<ORIGIN>Japan</ORIGIN>
+		<NOTES>Reportedly grown for several years at a Sapporo Breweries Hop Farm in China and exported to Japan and other countries. Sorachi Ace has a unique lemony aroma. Works well with Citra and Simcoe. Ideal for Belgian Saison's or new IPA recipes.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>12.85</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Southern Cross</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Used for first addition bittering this hop has no pretence at substitution for noble type. A kettle variety of the highest order Southern Cross imparts a soft bitterness with a subtle resinous quality. The essential oil component is such that it can deliver a delicate balance of citrus and spice when added toward the end of boil. Generally selected for its consistency in mainstream Lagers this hop has also ventured into the craft market as a reliable Brewpub mainstay.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>12.5</ALPHA>
+		<BETA>5.5</BETA>
+		<COHUMULONE>26.5</COHUMULONE>
+		<MYRCENE>31.8</MYRCENE>
+		<HUMULENE>20.8</HUMULENE>
+		<CARYOPHYLLENE>6.7</CARYOPHYLLENE>
+		<FARNESENE>7.3</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Sovereign</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>With aromas described as floral, grassy and herbal with a hint of mint flavours. It has a wonderfully complex and relatively delicate set of aromas. Sovereign has a classic, well-rounded, green tea bittering characteristic. Increasingly well regarded, Sovereign works well as a single hop and is a wonderful hedgerow variety with a medium alpha acid range and wonderfully complex aroma. Bred from an open pollination made in 1995 at Horticulture Research International (HRI), Wye College in the UK and released in 2006, Sovereign is the granddaughter of Pioneer and works well with Goldings in British bitters and pale ales.—britishhops.org.uk</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5.5</ALPHA>
+		<BETA>2.6</BETA>
+		<COHUMULONE>28</COHUMULONE>
+		<MYRCENE>27.5</MYRCENE>
+		<HUMULENE>23.5</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>4</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Spalt Spalter</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Mild, slightly spicy. 'Noble'.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Spalter Select, Czech Saaz, Tettnanger</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4.75</ALPHA>
+		<BETA>4.75</BETA>
+		<COHUMULONE>25</COHUMULONE>
+		<MYRCENE>20</MYRCENE>
+		<HUMULENE>19</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.55</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Spalter Select</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>Used for aroma in lagers and pale ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Tettnanger, Saaz</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4.75</ALPHA>
+		<BETA>3.75</BETA>
+		<COHUMULONE>24</COHUMULONE>
+		<MYRCENE>30</MYRCENE>
+		<HUMULENE>16</HUMULENE>
+		<CARYOPHYLLENE>7</CARYOPHYLLENE>
+		<FARNESENE>18.5</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Sterling</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Perceived to be similar to a Saaz and Mt. Hood combination. Finding favor as a Saaz replacement.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Czech Saaz</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7.5</ALPHA>
+		<BETA>5</BETA>
+		<COHUMULONE>25</COHUMULONE>
+		<MYRCENE>46</MYRCENE>
+		<HUMULENE>21</HUMULENE>
+		<CARYOPHYLLENE>6.5</CARYOPHYLLENE>
+		<FARNESENE>14</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Sticklebract</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Pine-like Aroma with a hint of citrus</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northern Brewer</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>11.5</ALPHA>
+		<BETA>8</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Strisselspalt</NAME>
+		<ORIGIN>France</ORIGIN>
+		<NOTES>French variety related to Hallertauer.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Hersbrucker</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>3.25</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>22.5</COHUMULONE>
+		<MYRCENE>25</MYRCENE>
+		<HUMULENE>20</HUMULENE>
+		<CARYOPHYLLENE>9</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.35</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Styrian Goldings</NAME>
+		<ORIGIN>Slovenia</ORIGIN>
+		<NOTES>Mild, pleasant.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>English Fuggle, Domestic Fuggle, Willamette.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6</ALPHA>
+		<BETA>2.75</BETA>
+		<COHUMULONE>28</COHUMULONE>
+		<MYRCENE>30</MYRCENE>
+		<HUMULENE>36</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.37</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Summit™</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Super-high alpha hop with a low cohumulone content and a strong orange/tangerine citrus character.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Simcoe</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>17</ALPHA>
+		<BETA>4.75</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Super Alpha</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>A very versatile hop in the brew house where it can be used to deliver a very crisp bitter edge on the back palate as well as excellent aroma qualities. Like most New Zealand varieties the exceptional oil profile sets it apart as a hop with many applications. A mainstay in the New Zealand Brewing industry since the mid 1970s' the Super Alpha can now be found in breweries throughout the Asia Pacific region where it is sought for its ability to integrate and finely balance many regional Ales and Lagers.—NZ Hops Limited</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>11</ALPHA>
+		<BETA>7.75</BETA>
+		<COHUMULONE>37.5</COHUMULONE>
+		<MYRCENE>29.2</MYRCENE>
+		<HUMULENE>33.2</HUMULENE>
+		<CARYOPHYLLENE>10.1</CARYOPHYLLENE>
+		<FARNESENE>0.5</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Super Galena</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Super Galena is a super high alpha variety developed by the Hopsteiner breeding program and released in 2006. It has relatively high contents of both alpha and beta acids, making it a good bittering hop with pleasant aroma. Super Galena is comparable to Galena in its aroma and bitterness profile, but offers a substantially higher yield and complete resistance to all current hop powdery mildew strains found in the U.S.—usahops.org</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>14.5</ALPHA>
+		<BETA>9</BETA>
+		<COHUMULONE>37.5</COHUMULONE>
+		<MYRCENE>52.5</MYRCENE>
+		<HUMULENE>21.5</HUMULENE>
+		<CARYOPHYLLENE>10</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.79</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Talisman</NAME>
+		<ORIGIN/>
+		<NOTES>An improved Cluster variety.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>English Fuggle, Domestic Fuggle, Willamette.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>8</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Target</NAME>
+		<ORIGIN>UK, Belgium, Germany</ORIGIN>
+		<NOTES>Used for its robust bittering ability in British ales and lagers. Aroma is quite intense</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Kent Goldings</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Taurus</NAME>
+		<ORIGIN>Germany</ORIGIN>
+		<NOTES>A variety of Hallertau with very high alpha acid content. It has a distinctive hoppy tang with a delicate aroma.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Tettnanger, Saaz</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>14.5</ALPHA>
+		<BETA>5</BETA>
+		<COHUMULONE>22.5</COHUMULONE>
+		<MYRCENE>40</MYRCENE>
+		<HUMULENE>28</HUMULENE>
+		<CARYOPHYLLENE>8.5</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Tettnanger</NAME>
+		<ORIGIN>Germany, USA</ORIGIN>
+		<NOTES>Mild, slightly spicy. 'Noble'.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Tettnang Tettnanger, Spalt Spalter, Czech Saaz.</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>4.5</ALPHA>
+		<BETA>3.5</BETA>
+		<COHUMULONE>22.5</COHUMULONE>
+		<MYRCENE>40.5</MYRCENE>
+		<HUMULENE>21</HUMULENE>
+		<CARYOPHYLLENE>6.5</CARYOPHYLLENE>
+		<FARNESENE>6.5</FARNESENE>
+		<HSI>0.42</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Tomahawk®</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Tomahawk® is a bittering hop of recent origin, bred by Charles Zimmermann. It is the first commercially grown “Super Alpha” variety. In 1998 it contributed to 11% of the USA hop crop.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>16</ALPHA>
+		<BETA>5.15</BETA>
+		<COHUMULONE>31.5</COHUMULONE>
+		<MYRCENE>32.5</MYRCENE>
+		<HUMULENE>16</HUMULENE>
+		<CARYOPHYLLENE>9.5</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Triplepearl</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>An open pollinated cross between a tetraploid Perle female and unknown diploid male. Lineage includes Northern Brewer and Hallertau. Pleasant and balanced with notes of melon, orange citrus, resin, spice and pepper. Released in 2013 by USDA-ARS. Expected to be utilized as an aroma variety, similar to Perle, but with more pronounced aroma characteristics.—hopunion.com</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Perle</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10.7</ALPHA>
+		<BETA>3.8</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>47.2</MYRCENE>
+		<HUMULENE>9.1</HUMULENE>
+		<CARYOPHYLLENE>4.3</CARYOPHYLLENE>
+		<FARNESENE>0.5</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Ultra</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Newer domestic aroma variety with Saaz characteristics.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Hallertauer Mittelfrüher</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>3</ALPHA>
+		<BETA>3.75</BETA>
+		<COHUMULONE>30</COHUMULONE>
+		<MYRCENE>20</MYRCENE>
+		<HUMULENE>42</HUMULENE>
+		<CARYOPHYLLENE>12.5</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.3</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Vanguard</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Still being tested and looked at by micro &amp; craft breweries.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Hallertau, Hersbrucker, Mt. Hood, Liberty</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5.75</ALPHA>
+		<BETA>6.5</BETA>
+		<COHUMULONE>15</COHUMULONE>
+		<MYRCENE>22.5</MYRCENE>
+		<HUMULENE>47.5</HUMULENE>
+		<CARYOPHYLLENE>13</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.775</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Waimea</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Granddaughter of New Zealand Pacific Jade. Intense tangelo and citrus fruit with subtle pine characteristics. Released in 2012 from the New Zealand Plant and Food Research Hop Breeding program in Riwaka. Can be used across a wide variety of beer styles and applications.—hopunion.com</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>17.5</ALPHA>
+		<BETA>8</BETA>
+		<COHUMULONE>23</COHUMULONE>
+		<MYRCENE>60</MYRCENE>
+		<HUMULENE>9.5</HUMULENE>
+		<CARYOPHYLLENE>2.6</CARYOPHYLLENE>
+		<FARNESENE>5</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Wakatu</NAME>
+		<ORIGIN>New Zealand</ORIGIN>
+		<NOTES>Bred from 2/3 Hallertau Mittelfrüh, open pollinated by 1/3 New Zealand derived male. Restrained floral notes and freshly zested lime. Released by Hort's Riwaka Research Center in 1988. Complimented for its rounded flavor, moderate co-humulone, outstanding oil profile and rewarding finish.—hopunion.com</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7.5</ALPHA>
+		<BETA>8.5</BETA>
+		<COHUMULONE>29</COHUMULONE>
+		<MYRCENE>35.5</MYRCENE>
+		<HUMULENE>16.8</HUMULENE>
+		<CARYOPHYLLENE>8.2</CARYOPHYLLENE>
+		<FARNESENE>6.7</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Warrior®</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>New hop with much potential. Very stable.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Nugget, Columbus</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>16</ALPHA>
+		<BETA>5</BETA>
+		<COHUMULONE>24</COHUMULONE>
+		<MYRCENE>45</MYRCENE>
+		<HUMULENE>17.5</HUMULENE>
+		<CARYOPHYLLENE>9</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Whitbread Golding (WGV)</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Traditional English hop with a sweet and fruity aroma.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Hallertauer Mittelfrüher</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>6</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Willamette</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>This hop is used for finishing and dry hopping American and British style ales. Aroma is mild and pleasant ans slightly spicy</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Fuggles, Styrian Goldings, E.K. Goldings.</SUBSTITUTES>
+		<TYPE>Bittering</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>5</ALPHA>
+		<BETA>3.5</BETA>
+		<COHUMULONE>32.5</COHUMULONE>
+		<MYRCENE>50</MYRCENE>
+		<HUMULENE>25</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.37</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Wye Target</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Neutral high-alpha. Bred from Northern Brewer crossed with some Goldenings. Used for hopped malt extract and many English Ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northern Brewer</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10</ALPHA>
+		<BETA>5.25</BETA>
+		<COHUMULONE>32</COHUMULONE>
+		<MYRCENE>50</MYRCENE>
+		<HUMULENE>20</HUMULENE>
+		<CARYOPHYLLENE>9</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.5</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Yeoman</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES>Mixes well with Mount Hood and Willamette. Unsuitable as an aroma hop.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northdown</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>7.25</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Zenith</NAME>
+		<ORIGIN>UK</ORIGIN>
+		<NOTES/>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Northdown</SUBSTITUTES>
+		<TYPE>Aroma</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>9</ALPHA>
+		<BETA>0</BETA>
+		<COHUMULONE>0</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Zeus</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Zeus is often grouped together with Columbus and Tomahawk® and labeled as CTZ. They are referred to as Super High Alpha varieties, having alpha acid content of between 14.5-16.5%. Together they make up approximately a quarter of the entire U.S. hop acreage.—usahops.org</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES>Galena, Chinook, Nugget</SUBSTITUTES>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>15.5</ALPHA>
+		<BETA>4.5</BETA>
+		<COHUMULONE>30</COHUMULONE>
+		<MYRCENE>45</MYRCENE>
+		<HUMULENE>15</HUMULENE>
+		<CARYOPHYLLENE>10</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0.52</HSI>
+	</HOP>
+	<HOP>
+		<VERSION>1</VERSION>
+		<NAME>Zythos™</NAME>
+		<ORIGIN>USA</ORIGIN>
+		<NOTES>Zythos is a customized IPA/Pale Ale style pellet blend designed to embody the powerful tradition and unique aroma characteristics required in premium craft brews…Zythos is not a replacement for proprietary varieties, but rather a premium pellet blend designed to compliment existing IPA/Pale Ale lineups. Zythos can be used as a single hop addition or as a compliment to current inventories, imparting distinct tropical (pineapple) and citrus tones with slight pine characteristics.—Don Bryant, Hopunion LLC</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<SUBSTITUTES/>
+		<TYPE>Both</TYPE>
+		<FORM>Pellet</FORM>
+		<USE>Boil</USE>
+		<ALPHA>10.9</ALPHA>
+		<BETA>5.2</BETA>
+		<COHUMULONE>29.6</COHUMULONE>
+		<MYRCENE>0</MYRCENE>
+		<HUMULENE>0</HUMULENE>
+		<CARYOPHYLLENE>0</CARYOPHYLLENE>
+		<FARNESENE>0</FARNESENE>
+		<HSI>0</HSI>
+	</HOP>
 </HOPS>

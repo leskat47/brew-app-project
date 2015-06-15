@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FERMENTABLES>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Barley (Pregelatinized Flakes)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Characteristics &amp; Applications: • Pregelatinized Barley Flakes have been produced specifically for brewing, developing characteristics necessary for easy and efficient use in a brewhouse. The process of gelatinizing makes the starches readily soluble and digestible by the naturally occurring enzymes in barley malt. This allows the flakes to be incorporated directly into the mash with other grains. • Because flakes have a large surface area and are pre-cooked, they hydrate and disintegrate quickly. Filtration time will be normal. • There is no need to mill Barley Flakes. However, they can be put through the mill if that is the easiest means of adding them to the mash. • Use Barley Flakes as an adjunct in all-grain brews to produce a lighter colored finished beer without lowering the original gravity. • Use in place of corn as an adjunct to eliminate corn flavor in the finished beer. • Use at 10-25% of total grist to produce a light colored, mild flavored, dry beer.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>1.7</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>77</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>9</MOISTURE>
+		<PROTEIN>9</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Barley Flaked</NAME>
+		<ORIGIN/>
+		<NOTES>Helps head retention, imparts creamy smoothness. For porters and stouts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>2.2</COLOR>
+		<MAX_IN_BATCH>20</MAX_IN_BATCH>
+		<YIELD>73.4</YIELD>
+		<COARSE_FINE_DIFF>2.17</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Barley Flakes</NAME>
+		<ORIGIN/>
+		<NOTES>Mash Ready Barley Flakes will lend a rich, grainy taste and will increase head retention, creaminess, and body. Can be used in amounts of up to 40% of grist total.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Gilbertson &amp; Page</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>1</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>75</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>7</MOISTURE>
+		<PROTEIN>13</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Barley Raw</NAME>
+		<ORIGIN/>
+		<NOTES>Raw, unmalted barley can be used to add body to your beer. Use in homebrew requires very fine milling combined with a decoction or multi-stage mash. Performs best when used in small quantities with well modified grains.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>2.2</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>73.4</YIELD>
+		<COARSE_FINE_DIFF>2.17</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Belgian Candi Syrup</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Candi syrup is a by-product of the candi sugar making process. Candi syrup has a more intense flavor and deeper color than rock candi sugar.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Dark Candi Inc.</SUPPLIER>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>80</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>83.84905</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>20</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Candi Sugar Amber</NAME>
+		<ORIGIN/>
+		<NOTES>Smooth taste, good head retention, sweet aroma and high gravity without being apparent. Use in Belgian and holiday ales. Use clear for tripels, amber for dubbels, and dark is used in brown beer and strong golden ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>75</COLOR>
+		<MAX_IN_BATCH>25</MAX_IN_BATCH>
+		<YIELD>100</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>1</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Candi Sugar Clear</NAME>
+		<ORIGIN/>
+		<NOTES>Smooth taste, good head retention, sweet aroma and high gravity without being apparent. Use in Belgian and holiday ales. Use clear for tripels, amber for dubbels, and dark is used in brown beer and strong golden ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>0.5</COLOR>
+		<MAX_IN_BATCH>25</MAX_IN_BATCH>
+		<YIELD>100</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>1</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Candi Sugar Dark</NAME>
+		<ORIGIN/>
+		<NOTES>Smooth taste, good head retention, sweet aroma and high gravity without being apparent. Use in Belgian and holiday ales. Use clear for tripels, amber for dubbels, and dark is used in brown beer and strong golden ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>275</COLOR>
+		<MAX_IN_BATCH>25</MAX_IN_BATCH>
+		<YIELD>100</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>1</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Corn Flaked (Maize)</NAME>
+		<ORIGIN/>
+		<NOTES>Generally a neutral flavor, used to reduce maltiness of beer. Produces beer with a milder, less malty flavor. Uses: Primarily for light Bohemian and Pilsner lagers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0.5</COLOR>
+		<MAX_IN_BATCH>40</MAX_IN_BATCH>
+		<YIELD>86.56</YIELD>
+		<COARSE_FINE_DIFF>1.73</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Corn Flakes</NAME>
+		<ORIGIN/>
+		<NOTES>Mash Ready Corn Flakes will provide depth of character to lighter beers when used in moderate quantities. Can be used in amounts of up to 40% of grist total.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Gilbertson &amp; Page</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0.7</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>90</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>8</MOISTURE>
+		<PROTEIN>7</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Corn Grits</NAME>
+		<ORIGIN/>
+		<NOTES>Imparts a corn/grain taste. Use in American lagers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0.5</COLOR>
+		<MAX_IN_BATCH>40</MAX_IN_BATCH>
+		<YIELD>84.55</YIELD>
+		<COARSE_FINE_DIFF>1.8</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Corn Sugar</NAME>
+		<ORIGIN/>
+		<NOTES>Use in priming beer or in extract recipes where flaked maize would be used in a mash.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>5</MAX_IN_BATCH>
+		<YIELD>83.03</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Dark Brown Sugar</NAME>
+		<ORIGIN/>
+		<NOTES>Imparts rich, sweet flavor. Use in Scottish ales, old ales and holiday beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>60</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>100</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>1</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Honey</NAME>
+		<ORIGIN/>
+		<NOTES>Imparts sweet and dry taste. For honey and brown ales. Also: specialty ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>0.09</COLOR>
+		<MAX_IN_BATCH>100</MAX_IN_BATCH>
+		<YIELD>84.69</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>18.6</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Invert Sugar</NAME>
+		<ORIGIN/>
+		<NOTES>Increases alcohol. Use in some Belgian or English ales. Made from sucrose &amp; is 5-10% less fermentable than sucrose. Does not contain dextrins.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>100</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>1</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Lactose</NAME>
+		<ORIGIN/>
+		<NOTES>Adds sweetness and body. Use in sweet or milk stouts.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>94</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>1</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Light Brown Sugar</NAME>
+		<ORIGIN/>
+		<NOTES>Imparts rich, sweet flavor. Use in Scottish ales, old ales and holiday beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>40</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>100</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>1</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Lyle's Golden Syrup</NAME>
+		<ORIGIN/>
+		<NOTES>Increases alcohol without flavor. Liquid invert sugar.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>96.8321</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>20</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Malto Dextrin</NAME>
+		<ORIGIN/>
+		<NOTES>Adds body and mouthfeel. For all extract beers. Does not ferment.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>98.26</YIELD>
+		<COARSE_FINE_DIFF>1.8</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Maple Syrup</NAME>
+		<ORIGIN/>
+		<NOTES>Imparts a dry, woodsy flavor if used in the boil. If beer is bottled with it, it gives it a smooth sweet, maple taste. Use in maple ales, pale ales, brown ales and porters.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>35</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>83.93</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>23</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Millet Raw</NAME>
+		<ORIGIN/>
+		<NOTES>used in traditional beer brewing</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>84.55</YIELD>
+		<COARSE_FINE_DIFF>1.8</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Molasses</NAME>
+		<ORIGIN/>
+		<NOTES>Imparts strong sweet flavor. Use in stouts and porters.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>80</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>96.94</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>20</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Oat Flakes</NAME>
+		<ORIGIN/>
+		<NOTES>Steamed, not roasted, Mash Ready Oat Flakes will add a distinct full-bodied flavor and creamy texture. Can be used in amounts of up to 30% of grist total.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Gilbertson &amp; Page</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>1.5</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>75</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>8</MOISTURE>
+		<PROTEIN>13</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Oat Hulls</NAME>
+		<ORIGIN/>
+		<NOTES>Oat Hulls are used as a filter medium, mostly used in all grain wheat beers to help prevent a stuck mash.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>0</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Oats (Pregelatinized Flakes)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Characteristics &amp; Applications: • Pregelatinized Oat Flakes have been produced specifically for brewing, developing characteristics necessary for easy and efficient use in a brewhouse. The process of gelatinizing makes the starches readily soluble and digestible by the naturally occurring enzymes in barley malt. This allows the flakes to be incorporated directly into the mash with other grains. • Because flakes have a large surface area and are pre-cooked, they hydrate and disintegrate quickly. Filtration time will be normal. • There is no need to mill Oat Flakes. However, they can be put through the mill if that is the easiest means of adding them to the mash. • Oat Flakes have been dehulled before being cooked and flaked. Although the flakes are readily attacked by the malt enzymes, yield will be slightly lower than with other Pregelatinized Flakes. • Oat Flakes have a very distinctive “sticky” mouthfeel which is noticeable even when used in small amounts. • Use 5-25% of the total grist for an Oatmeal Stout. • Use a small percentage in Belgian Wit Beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>85</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>7.5</MOISTURE>
+		<PROTEIN>9</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Oats Flaked</NAME>
+		<ORIGIN/>
+		<NOTES>Belgian White Ale(wit), other specialty beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>2.2</COLOR>
+		<MAX_IN_BATCH>20</MAX_IN_BATCH>
+		<YIELD>71.41</YIELD>
+		<COARSE_FINE_DIFF>2.1</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Oats Raw</NAME>
+		<ORIGIN/>
+		<NOTES>Adds body, mouth feel and head retention to the beer Creates chill haze in lighter beers, so is primarily used in dark ones.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>2.2</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>75.41</YIELD>
+		<COARSE_FINE_DIFF>1.8</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rice (Pregelatinized Flakes)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Characteristics &amp; Applications: • Pregelatinized Rice Flakes have been produced specifically for brewing, developing characteristics necessary for easy and efficient use in a brewhouse. The process of gelatinizing makes the starches readily soluble and digestible by the naturally occurring enzymes in barley malt. This allows the flakes to be incorporated directly into the mash with other grains. • Because flakes have a large surface area and are pre-cooked, they hydrate and disintegrate quickly. Filtration time will be normal. • There is no need to mill Rice Flakes. However, they can be put through the mill if that is the easiest means of adding them to the mash. • Pregelatinized Rice Flakes are made from medium-grain rice and produce a light, clean and crisp characteristic to the finished beer. • Use a slightly lower conversion temperature and extend the conversion time 15 minutes to obtain maximum efficiency. • Use up to 40% as a cereal adjunct in the total grist.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>1</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>70</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>9</MOISTURE>
+		<PROTEIN>9</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rice Flaked</NAME>
+		<ORIGIN/>
+		<NOTES>Used to add fermentables without increasing body or flavor. Produces a milder, less grainy tasting beer. Examples: American lagers, Bohemian lagers, Pilsners</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0.5</COLOR>
+		<MAX_IN_BATCH>40</MAX_IN_BATCH>
+		<YIELD>86.56</YIELD>
+		<COARSE_FINE_DIFF>1.73</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rice Flakes</NAME>
+		<ORIGIN/>
+		<NOTES>Mash Ready Rice Flakes will provide a light, crisp finish to your beer. Can be used in amounts of up to 25% of grist total.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Gilbertson &amp; Page</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0.7</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>86</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>9</MOISTURE>
+		<PROTEIN>10</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rice Hulls</NAME>
+		<ORIGIN/>
+		<NOTES>Rice Hulls are used as a filter medium, mostly used in all grain wheat beers to help prevent a stuck mash.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>0</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>0</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rice Raw</NAME>
+		<ORIGIN/>
+		<NOTES>Lightens flavor without taste. Use in American and Asian lagers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0.5</COLOR>
+		<MAX_IN_BATCH>40</MAX_IN_BATCH>
+		<YIELD>86.56</YIELD>
+		<COARSE_FINE_DIFF>1.73</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rice Syrup</NAME>
+		<ORIGIN/>
+		<NOTES>Used like other rice adjuncts in American and Japenes lagers to provide a dry, clean taste and light body. Adds gravity without changing body or flavor substantially. Use in place of corn sugar in small quantities.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>1.43</COLOR>
+		<MAX_IN_BATCH>40</MAX_IN_BATCH>
+		<YIELD>96.94</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>20</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rye (Pregelatinized Flakes)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Characteristics &amp; Applications: • Pregelatinized Rye Flakes have been produced specifically for brewing, developing characteristics necessary for easy and efficient use in a brewhouse. The process of gelatinizing makes the starches readily soluble and digestible by the naturally occurring enzymes in barley malt. This allows the flakes to be incorporated directly into the mash with other grains. • Because flakes have a large surface area and are pre-cooked, they hydrate and disintegrate quickly. Filtration time will be normal. • There is no need to mill Rye Flakes. However, they can be put through the mill if that is the easiest means of adding them to the mash. • Pregelatinized Rye Flakes are made from choice rye that is guaranteed ergo-free. Rye Flakes contribute a very clean, distinctive rye flavor. • Use up to 40% as a cereal adjunct in the total grist to create Rye Beer. • Start at 5-10% and increase in increments of 5% because of the concentrated flavor of Rye Flakes.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>4.6</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>71</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>9</MOISTURE>
+		<PROTEIN>9</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rye Flaked</NAME>
+		<ORIGIN/>
+		<NOTES>Imparts a dry, crisp character. Use in rye beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>2.8</COLOR>
+		<MAX_IN_BATCH>15</MAX_IN_BATCH>
+		<YIELD>73.58</YIELD>
+		<COARSE_FINE_DIFF>2.04</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rye Flakes</NAME>
+		<ORIGIN/>
+		<NOTES>Mash Ready Rye Flakes will lend a dry, crisp character and a strong rye flavor. Can be used in amounts of up to 20% of grist total, but 5 - 10% is preferred.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Gilbertson &amp; Page</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>2</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>78</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>9</MOISTURE>
+		<PROTEIN>10</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Rye Raw</NAME>
+		<ORIGIN/>
+		<NOTES>Contributes glyco-proteins to enhance foam stability.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>2.8</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>82.26</YIELD>
+		<COARSE_FINE_DIFF>1.8</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Soft Red Wheat (Pregelatinized Flakes)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Characteristics &amp; Applications: • Pregelatinized Red Wheat Flakes have been produced specifically for brewing, developing characteristics necessary for easy and efficient use in a brewhouse. The process of gelatinizing makes the starches readily soluble and digestible by the naturally occurring enzymes in barley malt. This allows the flakes to be incorporated directly into the mash with other grains. • Because flakes have a large surface area and are pre-cooked, they hydrate and disintegrate quickly. Filtration time will be normal. • There is no need to mill Red Wheat Flakes. However, they can be put through the mill if that is the easiest means of adding them to the mash. • Pregelatinized Red Wheat Flakes can be used in place of Wheat Malt to make Wheat Beer. Flakes will yield a different flavor profile than Wheat Malt. • Use up to 40% as a cereal adjunct in the total grist • Use in the production of Belgian Wit Beers • Use 0.5-1.0% to a standard brew to increase foam stability.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>1.6</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>77</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>9</MOISTURE>
+		<PROTEIN>16</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Torrified Barley</NAME>
+		<ORIGIN/>
+		<NOTES>A whole kernel version of our popular barley flakes. This is a whole kernel grain and will require milling.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Gilbertson &amp; Page</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>75</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>7</MOISTURE>
+		<PROTEIN>13</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Torrified Wheat</NAME>
+		<ORIGIN/>
+		<NOTES>Helps head retention and mouthfeel, used in some pale ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>1.25</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>73.58</YIELD>
+		<COARSE_FINE_DIFF>2.04</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Torrified Wheat</NAME>
+		<ORIGIN/>
+		<NOTES>A whole kernel version of our popular wheat flakes. This is a whole kernel grain and will require milling.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Gilbertson &amp; Page</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>1</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>80</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>7</MOISTURE>
+		<PROTEIN>12</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Treacle</NAME>
+		<ORIGIN/>
+		<NOTES>Imparts intense, sweet flavor. A British mixture of molasses, invert sugar and golden syrup (corn syrup). Use in dark English ales.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>100</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>96.94</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>20</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Wheat Flaked</NAME>
+		<ORIGIN/>
+		<NOTES>Belgian White Ale(wit), other specialty beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>2</COLOR>
+		<MAX_IN_BATCH>20</MAX_IN_BATCH>
+		<YIELD>82.26</YIELD>
+		<COARSE_FINE_DIFF>1.8</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Wheat Flakes</NAME>
+		<ORIGIN/>
+		<NOTES>Mash Ready Wheat Flakes will greatly increase head retention and body when used in an amount as low as 8% of your total grist. Can be used in amounts of up to 40% of grist total.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Gilbertson &amp; Page</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>80</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>7</MOISTURE>
+		<PROTEIN>12</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Wheat Raw</NAME>
+		<ORIGIN/>
+		<NOTES>Contributes glyco-proteins to enhance foam stability.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>2</COLOR>
+		<MAX_IN_BATCH>10</MAX_IN_BATCH>
+		<YIELD>82.26</YIELD>
+		<COARSE_FINE_DIFF>1.8</COARSE_FINE_DIFF>
+		<MOISTURE>4</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>White Table Sugar (Sucrose)</NAME>
+		<ORIGIN/>
+		<NOTES>Common household table/baking sugar. Lightens flavor and body of beer. Can contribute a cider-like flavor to the beer if not cold-fermented or used in large quantities.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER/>
+		<RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>5</MAX_IN_BATCH>
+		<YIELD>100</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>1</MOISTURE>
+		<PROTEIN>0</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+	<FERMENTABLE>
+		<VERSION>1</VERSION>
+		<NAME>Yellow Corn (Pregelatinized Flakes)</NAME>
+		<ORIGIN>North America</ORIGIN>
+		<NOTES>Characteristics &amp; Applications: • Pregelatinized Yellow Corn Flakes can be used as a cereal adjunct. The flakes can be added to the mash without first using a cereal cooker. The pregelatinized flakes will give a higher yield and a more trouble-free brew than a conventional flaked corn. Also, the corn has been degermed (the oil removed), thus eliminating rancidity. • Using Pregelatinized Yellow Corn Flakes as an adjunct produces a lower color in the finished beer without lowering the original gravity. • Pregelatinized Yellow Corn Flakes produce a beer with a mild, less malty flavor • Pregelatinized Yellow Corn Flakes produce a drier, more crisp beer. • Use up to 40% as a cereal adjunct in the total grist • Add directly to the mash with the malts. Do not mill. A single or multiple temperature infusion can be used. Conversion time and lautering time will be normal.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Adjunct</TYPE>
+		<SUPPLIER>Briess</SUPPLIER>
+		<RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+		<COLOR>0</COLOR>
+		<MAX_IN_BATCH>0</MAX_IN_BATCH>
+		<YIELD>85.5</YIELD>
+		<COARSE_FINE_DIFF>0</COARSE_FINE_DIFF>
+		<MOISTURE>9.5</MOISTURE>
+		<PROTEIN>10</PROTEIN>
+		<DIASTATIC_POWER>0</DIASTATIC_POWER>
+	</FERMENTABLE>
+</FERMENTABLES>

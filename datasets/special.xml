@@ -1,0 +1,1704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MISCS>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>5.2 pH Stabilizer</NAME>
+		<ORIGIN>Manufactured by Five Star</ORIGIN>
+		<NOTES>Five Star 5.2 pH Stabilizer. A proprietary blend of food-grade phosphate buffers that locks in your mash and kettle water at a pH of 5.2, regardless of the starting pH. It also reduces scaling and mineral deposits on brewing equipment. 1 pound. Use at the rate of 1 tablespoon per 5 gallons of water.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>AllFine</NAME>
+		<ORIGIN>Manufactured by Alltech</ORIGIN>
+		<NOTES>Clarifier. A purified and standardized form of fish collagen, with a small amount of sodium metabisulfite as a preservative. A free-flowing white powder, mixed into solution in a simple mixer, and normally added as beer is transferred from fermenter to storage. Usage is approx .4-1.2 oz. per 10 bbl. for both ales and lagers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>AllFloc</NAME>
+		<ORIGIN>Produced by Alltech</ORIGIN>
+		<NOTES>Enhanced Kappa Carrageenan reduces dosage rates and improves flocculation! For addition to the boiling kettle 15-20 minutes before the end of boil. Usage approx .4 - 1.2 oz. per 10 bbl. AllFloc is prized for its consistency and high potency. Results include improved hot and cold breaks, trub compaction, improved filtration, and some chillproofing.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Allspice</NAME>
+		<ORIGIN>Jamaica</ORIGIN>
+		<NOTES>A spice of a mildly pungent taste, and agreeably aromatic; Jamaica pepper; pimento. It has been supposed to combine the flavor of cinnamon, nutmegs, and cloves; and hence the name.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Amylase enzyme</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Aids in converting starches into sugar</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Anise (extract)</NAME>
+		<ORIGIN>Egypt, Spain, Malta and others</ORIGIN>
+		<NOTES>Contains: Alcohol (70%-80%), Water, Pure Oil of Anise. Liquorice-flavored.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Anise seed</NAME>
+		<ORIGIN>Egypt, Malta, Spain and others</ORIGIN>
+		<NOTES>Anise Seed is a graybrown oval seed from Pimpinella anisum, a plant in the parsley family. It is related to caraway, dill, cumin, and fennel. Anise Seeds smell and taste like licorice.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Anti-Oxidant</NAME>
+		<ORIGIN/>
+		<NOTES>Mostly Sodium Erythorbate, but also contains metabisulfite, which generates S02 as an additional anti-oxidant.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Apricot (extract)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Extract or concentrate of the fruit allied to the plum, Apricot have an orange color and oval shape.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Apricot (preserves)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Diced apricots cooked with sugar.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Apricot (pureed)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Apricots finely chopped to a jelly like state.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Ascorbic Acid</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Decreases oxidation in bottled beer</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>AYF Yeast Nutrient</NAME>
+		<ORIGIN>Manufactured by Alltech</ORIGIN>
+		<NOTES>A superbly balanced blend of minerals, proteins, amino acids and vitamins essential to optimize yeast activity during fermentation, notably of high adjunct beers. Usage is approx. .8 - 1.6 oz per 10 bbl. Compare these dosage rates to other products, and you'll switch! Benefits are improved attenuation, increased consistency of fermentation rate and beer flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Belgian Chocolate</NAME>
+		<ORIGIN>Belgium</ORIGIN>
+		<NOTES>Chocolate with a unique velvety rich flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Bitter Curacao/Bitter Orange (Peel)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Used in Belgian Wit beers. Add to last 5 minutes of boil.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Black Peppercorns</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Peppercorns are the berries of a tropical vine. They have a warm pungent slightly nutmeg flavour and a hot, biting taste.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Black Treacle</NAME>
+		<ORIGIN>United Kingdom</ORIGIN>
+		<NOTES>Treacle is a byproduct of sugar refining, similar to molasses. Black treacle has a slightly burnt flavor that is somewhat stronger than that of molasses.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blackberries (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Related to raspberries. Blackberries has a firm shiney black purple color. Very sweet.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blackberries (frozen)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Related to raspberries. Blackberries has a firm shiney black purple color. Very sweet.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blackberries (pureed)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Blackberries have a firm shiney black purple color.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blackberry Extract</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Flavor extract. Blackberries have a firm shiney black purple color.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blackberry Syrup</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Very sweet extract sugar syrup from Blackberries.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blueberries (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Bright blue berries with soft mildly sweet interior.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blueberries (frozen)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Bright blue berries with soft mildly sweet interior.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blueberries (pureed)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Blueberries are bright blue berries with soft mildly sweet interior.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blueberry Extract</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Flavor extract. Blueberries are bright blue berries with soft mildly sweet interior.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Blueberry Syrup</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Sweet sugar syrup made from the bright blue berries.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Boysenberries (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Related to raspberries and blackberries. It has a firm shiney reddish purple color. Very sweet.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Boysenberries (frozen)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Related to raspberries and blackberries. It has a firm shiney reddish purple color. Very sweet.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Boysenberries (pureed)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Boysenberries are related to raspberries and blackberries. They have a firm shiney reddish purple color.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Boysenberry Extract</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Flavor extract. Boysenberries are related to raspberries and blackberries. They have a firm shiney reddish purple color.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Boysenberry Syrup</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Very sweet extract sugar syrup from boysenberries.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Caraway</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>The fruits (erroneously called seeds) have a pungent, anise-like flavor and aroma. They are often used as a spice in rye bread, as well as some deserts, liquors and other foods.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cardamom (ground)</NAME>
+		<ORIGIN>India, Guatemala, and Ceylon.</ORIGIN>
+		<NOTES>Cardamom has an intense, pungent, sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cardamom (Whole)</NAME>
+		<ORIGIN>India, Nepal, Sri Lanka, Guatemala, Mexico, Thailand and Central America.</ORIGIN>
+		<NOTES>Cardamom pods have an intense, pungent, sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cayenne Pepper</NAME>
+		<ORIGIN>Central and South America and the West Indies.</ORIGIN>
+		<NOTES>Cayenne Pepper is made from the dried pods of pungent chili peppers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Chamomile (dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Chamomile, a member of the daisy family, is native to Europe and western Asia. German chamomile is the most commonly used. The herb has a very mild soothing flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cherries (fresh)</NAME>
+		<ORIGIN>Iran, France, USA, Romania, Germany, Spain, Italy</ORIGIN>
+		<NOTES>Shiney red to purple plumb shaped fruit. A distant relative of the plumb. Strong distinctly sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cherries (frozen)</NAME>
+		<ORIGIN>Iran, France, USA, Romania, Germany, Spain, Italy</ORIGIN>
+		<NOTES>Shiney red to purple plumb shaped fruit. A distant relative of the plumb. Strong distinctly sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cherries (pureed)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Cherries are shiney red to purple, plumb shaped fruits. A distant relative of the plumb.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cherry Extract</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Flavor extract. Cherries are shiney red to purple, plumb shaped fruits. A distant relative of the plumb.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cherry Peppers</NAME>
+		<ORIGIN>United States, Mexico and Europe</ORIGIN>
+		<NOTES>So named because of their resemblance to cherries, red cherry chile peppers are deep orange to bright red at maturity. They are nearly spherical. Ranging from mild to fairly hot, some are quite sweet. Varying in size, they may be small or large.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cherry Syrup</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Strong distinctly sweet flavored sugar syrup. Made from extract of cherry.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Chili Peppers</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Small, tapered chilies about 1 to 2 inches long are sold dried, but there is no one varietal name that applies to all of them.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Chocolate (bittersweet bakers)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Chocolate liquor to which sweeteners and cocoa butter have been added. Also known as dark chocolate. According to government standards, it must contain at least 35 percent chocolate liquor. Its fat content averages 27 percent. Tastes rich and smooth. Strongest chocolate flavor with minimal dairy or milk flavor. Flavor depends on cocoa bean blend rather than dairy ingredients.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Chocolate (dark)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>A general term for chocolates containing 15% to 35% chocolate liquor and less than 12% milk solids. Straight from the grinding mill with ingredients like cocoa butter, sugar and vanilla added to make it palatable. It has a deep to moderate chocolate flavor, ranging from fruity to earthy, with minimal dairy or milk flavor. Bean blend determines flavor more than milk ingredients.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Chocolate (semisweet baking)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Chocolate liquor to which sweeteners and cocoa butter have been added. Also known as dark chocolate. According to government standards, it must contain at least 35 percent chocolate liquor. Its fat content averages 27 percent. Tastes rich and smooth. Strongest chocolate flavor with minimal dairy or milk flavor. Flavor depends on cocoa bean blend rather than dairy ingredients.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Chocolate (unsweetened)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Unsweetened Chocolate is pure chocolate liquor, also known as bitter or baking chocolate. It's unadulterated chocolate: ground roasted chocolate beans with no other added ingredients imparts a strong, deep chocolate flavor in all the sweets you add it to.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cinnamon (ground)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Cinnamon is the dried bark of various laurel trees in the cinnamomun family. One of the more common trees from which Cinnamon is derived is the cassia. Ground cinnamon is perhaps the most common baking spice. Ground cinnamon is ground from long pieces of bark that are rolled, pressed, and dried.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cinnamon (stick)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Cinnamon is the dried bark of various laurel trees in the cinnamomun family. One of the more common trees from which Cinnamon is derived is the cassia. Ground cinnamon is perhaps the most common baking spice. Cinnamon sticks are made from long pieces of bark that are rolled, pressed, and dried.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Clearfine</NAME>
+		<ORIGIN/>
+		<NOTES>Clarifier. A unique blend of animal collagen and polysaccharides which, when added to beer during cold storage, results in rapid precipitation and compaction fo yeast and insoluble materials. Usage approx. .8-2.4 oz. per 1- bbl. Benefits are simpler, quicker preparation that isinglass, improved yeast separation, reduced beer loss and improved filter performance. Separated material forms a dense, compact layer.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Clementine juice</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>The Clementine is a hybrid of tangerine and the Seville or bitter orange developed in 1902 near Oran, Algeria by Father Clement Rodier, a French missionary. They are easy to peel, have only occasional seeds, and have a very pleasant tangy, sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Clementine peel</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>The Clementine is a hybrid of tangerine and the Seville or bitter orange developed in 1902 near Oran, Algeria by Father Clement Rodier, a French missionary. They are easy to peel, have only occasional seeds, and have a very pleasant tangy, sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Clementine peel (dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>The Clementine is a hybrid of tangerine and the Seville or bitter orange developed in 1902 near Oran, Algeria by Father Clement Rodier, a French missionary. They are easy to peel, have only occasional seeds, and have a very pleasant tangy, sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Clementine zest</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>The Clementine is a hybrid of tangerine and the Seville or bitter orange developed in 1902 near Oran, Algeria by Father Clement Rodier, a French missionary. They are easy to peel, have only occasional seeds, and have a very pleasant tangy, sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cloves (ground)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Cloves are the rich, brown, dried, unopened flower buds of Syzygium aromaticum, an evergreen tree in the myrtle family. The name comes from the French &quot;clou&quot; meaning nail. Cloves are strong, pungent, and sweet.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cloves (whole)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Cloves are the rich, brown, dried, unopened flower buds of Syzygium aromaticum, an evergreen tree in the myrtle family. The name comes from the French &quot;clou&quot; meaning nail. Cloves are strong, pungent, and sweet.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cocoa Powder</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Cocoa powder is made when chocolate liquor is pressed to remove three quarters of its cocoa butter. The remaining cocoa solids are processed to make fine unsweetened cocoa powder.Tastes very bitter and gives a deep chocolate flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Coconut (chunks)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Coconut (Cocos nucifera) belongs to the Palm family Arecaceae and is found growing around the world in lowland, tropical and subtropical habitats. Classed as a fruit, it is actually a one-seeded drupe. What we buy in shops is the &quot;stone&quot; of this drupe, consisting of a hard shell (the endocarp) which encloses the seed. The meat has a mild nutty sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Coconut (flaked)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Coconut (Cocos nucifera) belongs to the Palm family Arecaceae and is found growing around the world in lowland, tropical and subtropical habitats. Classed as a fruit, it is actually a one-seeded drupe. What we buy in shops is the &quot;stone&quot; of this drupe, consisting of a hard shell (the endocarp) which encloses the seed. It has a mild nutty sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Coffee (beans)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>From the arabica plant. Beans are usually roasted and have a strong distinct bitter flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Coffee (grounds)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>From the arabica plant. Beans are usually roasted and have a strong distinct bitter flavor. They are then ground and hot water is used to &quot;steep&quot; the unigue oils out of the grounds.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Coffee Beans (Espresso)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Roasting achieves a very dark chicory richness.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Convertase AG-300</NAME>
+		<ORIGIN/>
+		<NOTES>a liquid fungal glucoamylase for the creation of light beers, Convertase AG-300 is used to rapidly break down the 1-4 glucosodic bonds, and, at a slower rate, the 1-6 bonds in liquefied starch. Recommended usage is in the fermenting vessel. Optimum temp. is 60deg C, range 10 to 70 deg. C. Note that glucoamylase will convert all starches to glucose. Care must be taken to isolate this enzyme in the brewery. Contamination of other beers can cause sweetening of product during storage, and even after bottling.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Convertase MG-30/Bio Cellulase</NAME>
+		<ORIGIN/>
+		<NOTES>a liquid fungal glucoamylase for the creation of light beers, Convertase AG-300 is used to rapidly break down the 1-4 glucosodic bonds, and, at a slower rate, the 1-6 bonds in liquefied starch. Recommended usage is in the fermenting vessel. Optimum temp. is 60deg C, range 10 to 70 deg. C. Note that glucoamylase will convert all starches to glucose. Care must be taken to isolate this enzyme in the brewery. Contamination of other beers can cause sweetening of product during storage, and even after bottling.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Corriander crushed</NAME>
+		<ORIGIN>Morocco and Romania</ORIGIN>
+		<NOTES>Coriander is the seed of Coriandrum sativum, a plant in the parsley family. The seed is ground or crushed. Coriander has a mild, distinctive taste similar to a blend of lemon and sage.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Corriander seeds</NAME>
+		<ORIGIN>Morocco and Romania</ORIGIN>
+		<NOTES>Coriander is the seed of Coriandrum sativum, a plant in the parsley family. The seed is globular and almost round, brown to yellow red, and 1/5 inch in diameter with alternating straight and wavy ridges. Coriander has a mild, distinctive taste similar to a blend of lemon and sage.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cranberries (fresh)</NAME>
+		<ORIGIN>U.S.A</ORIGIN>
+		<NOTES>Powerfully sour berry. Cranberries grow on vines in boggy areas. Cranberries were first cultivated in Massachusetts around 1815 and are only one of three major native North American fruits. Some cranberry beds have been around for over 100 years.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cranberries (frozen)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Powerfully sour berry. Cranberries grow on vines in boggy areas. Cranberries were first cultivated in Massachusetts around 1815 and are only one of three major native North American fruits. Some cranberry beds have been around for over 100 years.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cranberry Extract</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Flavor extract. Powerfully sour berry.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cranberry Juice (sweetened)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Powerfully sour berry.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cranberry Juice (unsweetened)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Powerfully sour berry.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cranberry Syrup</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Strong Cranberry flavor usually contain fructose sugar, pectin, lemon juice.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Cumin Seed</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Cumin has an earthy, pungent, aromatic flavour which is slightly bitter but not hot.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Curacao</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>A liqueur, or cordial, flavored with orange peel, cinnamon, and mace</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Divergan 'F' (formerly Polyclar)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>An insoluble plastic polymer used as a processing aid to prevent chill haze in beer and oxidation browning and pinking in wine. Add a couple teaspoons after the dead yeast has settled and it will attract and settle tannins to the bottom with the dead yeast. Completely inert , cheap, and effective</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Elderberries (Dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Flavor has been described as a “spicy cola”. Often used in port style wines.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Ferm-Cap S</NAME>
+		<ORIGIN/>
+		<NOTES>A silica-based emulsion with the ability to increase fermentation capacity and improve hop utilization with no negative effect on final beer head stability. Can reduce required fermenter head space from 20% to about 5%. Product is removed from the beer on yeast cells and tank walls.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Finings Gelatin</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Clears beer by causing particles to coagulate and settle</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Fungal Alpha Amylase:</NAME>
+		<ORIGIN>Produced by Siebel/Quest:</ORIGIN>
+		<NOTES>Used in fermentation or cold storage to hydrolyze 1-4 glucosidic links in malt and adjunct starches. Leaves the 1-6 links, and is therefore self-limiting, converting just some starches and dextrins into maltose. Recommended for light beers, or to prevent starch problems in storage.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Ginger (candied)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Ginger that is treated with sugar. It possesses an intriguing; sweet, spicy and pungent flavour.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Ginger (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Ginger possesses an intriguing; sweet, spicy and pungent flavour. Ginger is the common name given to the underground stem (rhizome) of the perennial plant Zingiber officinale Roscoe. It is chemically classified as an essential oil with pungent principles, and has been in use as a flavoring agent worldwide for over 20 centuries.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Ginger (pickled)</NAME>
+		<ORIGIN>Oriental Markets</ORIGIN>
+		<NOTES>Pickled ginger has the root sliced paper-thin and pickled in a vinegar solution. This pickle is known in Japan as gari , which often accompanies sushi, and is served to refresh the palate between courses.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Grains of Paradise</NAME>
+		<ORIGIN>Africa</ORIGIN>
+		<NOTES>Pungent peppery flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Habernero pepper</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>To date these are the Hottest chili peppers know to man, HOT - HOT - HOT. Use extreme caution when using. Marble-shaped chili peppers, ranges in color from unripe green to full ripe red.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Hazelnut (extract)</NAME>
+		<ORIGIN>Oregon, U.S.A</ORIGIN>
+		<NOTES>Flavor extracted from freshly roasted hazelnuts. Has a rich mildly nutty sweet flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Heading Liquid</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Helps improve head retention in low malt beers</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Heather Blossoms (dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds a unique floral gingery flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Heather Blossoms (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds a unique floral gingery flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Heather Tips (dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds a unique floral gingery flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Irish Moss</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>A dried red-brown marine algae. Fining agent to remove large proteins. Negatively charged polymer attracts positively charged protein-tannin complexes (extracted from grain husks and hops) during the boil. This action is aided by the clumping of proteins in the boiling process. Irish moss settles to the bottom of the brew kettle with spent hops and hot break material at the end of the boil.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Isinglass finings</NAME>
+		<ORIGIN>Various</ORIGIN>
+		<NOTES>Isinglass finings are used extensively as a processing aid in the British brewing industry to accelerate the fining, or clarification, of beer. They are used particularly in the production of cask-conditioned beers, known as real ale, although there are a few cask ales available which are not fined using isinglass. The finings, a pure form of gelatin, flocculate the live yeast in the beer into a spongy mass, which settles to the bottom of the cask. Left to itself, beer will clear naturally; however, the use of isinglass finings accelerates the process. Isinglass is sometimes used with an auxiliary fining, which further accelerates the process of sedimentation.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Jalepeno Peppers</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>These peppers have thicker flesh, darker green color, and more cylindrical shape than Fresno chilies; however, the heat level of the two varieties is about the same - HOT! Canned and bottled peppers are sometimes labeled &quot;hot peppers&quot; with jalapeno as a subtitle. They are always available in sauce form as salsa jalapena, and pickled.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Juniper Berries (dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Juniper berries are the fruits of an evergreen bush found in northern Europe and America. Juniper berries are used in wines, beer, brandies, and is the key flavor ingredient in gin. They are also used in marinades and sauces, especially for pork and game dishes. Usually used dried, they should be crushed before use to release their essential oils.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Juniper Berries (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Juniper berries are the fruits of an evergreen bush found in northern Europe and America. Juniper berries are used in wines, beer, brandies, and is the key flavor ingredient in gin. They are also used in marinades and sauces, especially for pork and game dishes. Usually used dried, they should be crushed before use to release their essential oils.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Kiwi (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Common name for a southeast-Asian vine, also called Chinese gooseberry and yangtao, and for its edible fruit. The small, oval fruit has a thin brownish-green skin with a fuzzy surface. The flesh, which is a distinctive green, with tiny purplish seeds surrounding a white core, may be eaten raw or cooked.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lavender (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds a unique mild soothing floral soapy flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lavender flower (dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds a unique mild soothing floral soapy flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lemon concentrate</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Has a distinct sweet odor and a strong soury sweetness. The extracted juice contains between 4.5 and 8.5% organic acids (mostly citric).</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lemon juice</NAME>
+		<ORIGIN>South East Asia</ORIGIN>
+		<NOTES>Has a distinct sweet odor and a strong soury sweetness. The extracted juice contains between 4.5 and 8.5% organic acids (mostly citric).</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lemon peel (dried)</NAME>
+		<ORIGIN>South East Asia</ORIGIN>
+		<NOTES>Has a slight sweet odor and a subtle mild sweetness. One medium lemon has about 3 tablespoons of grated peel.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lemon peel (fresh)</NAME>
+		<ORIGIN>South East Asia</ORIGIN>
+		<NOTES>Has a slight sweet odor and a subtle mild sweetness. One medium lemon has about 3 tablespoons of grated peel.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lemon zest</NAME>
+		<ORIGIN>South East Asia</ORIGIN>
+		<NOTES>Has a slight sweet odor and a subtle mild sweetness. One medium lemon has about 3 tablespoons of grated peel.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lemongrass</NAME>
+		<ORIGIN>Tropical</ORIGIN>
+		<NOTES>Widely used as an herb in Asian cuisine, lemongrass has a subtle citrus flavor and can be dried and powdered, or used fresh. Can also be steeped to create an herbal tea.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Licorice (root)</NAME>
+		<ORIGIN>Spain and others</ORIGIN>
+		<NOTES>Adds a flavor similar to anise and fennel. Licorice root contains a substance called glycyrrhizin that is 50 times sweeter than ordinary sugar.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Licorice (stick)</NAME>
+		<ORIGIN>Spain and others</ORIGIN>
+		<NOTES>Adds a flavor similar to anise and fennel. Licorice root contains a substance called glycyrrhizin that is 50 times sweeter than ordinary sugar.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Licorice Stick (Brewer)</NAME>
+		<ORIGIN>Italy</ORIGIN>
+		<NOTES>Use sparingly (about 1/2 stick) in porters and stouts. Improves head on beer and adds a unique, interesting flavor. Italian made, and bitter. Not the candy type.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lime concentrate</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Has a mildly sweet odor and a very strong sourness. The extracted juice contains between 4.5 and 8.5% organic acids (mostly citric).</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lime juice</NAME>
+		<ORIGIN>Southeast Asia</ORIGIN>
+		<NOTES>Has a mildly sweet odor and a very strong sourness. The extracted juice contains between 4.5 and 8.5% organic acids (mostly citric).</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lime peel</NAME>
+		<ORIGIN>Southeast Asia</ORIGIN>
+		<NOTES>Has a slight sweet odor and a subtle mild tart sweetness. One medium lime has about 1 tablespoons of grated peel.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lime peel (dried)</NAME>
+		<ORIGIN>Southeast asia</ORIGIN>
+		<NOTES>Has a slight sweet odor and a subtle mild tart sweetness. One medium lime has about 1 tablespoons of grated peel.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Lime zest</NAME>
+		<ORIGIN>Southeast Asia</ORIGIN>
+		<NOTES>Has a slight sweet odor and a subtle mild tart sweetness. One medium lime has about 1 tablespoons of grated peel.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Liquid Smoke</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Liquid Smoke is produced by burning wood chips at very high temperatures and then the smoke is cooled rapidly causing it to condense. It is often mixed with cornsyrup or molasses and vinegar.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Maltodextrine</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds extra body to homebrew</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Mangos (fresh)</NAME>
+		<ORIGIN>India</ORIGIN>
+		<NOTES>The flesh of a mango is peachlike and juicy, with more or less numerous fibers radiating from the husk of the single large kidney-shaped seed. Fibers are more pronounced in fruits grown with hard water and chemical fertilizers. The flavor is pleasant and rich and high in sugars and acid. More fresh mangos are eaten every day than any other fruit in the world. The 'Paisley' design motif is a design from India based on the mango</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Mangos (pureed)</NAME>
+		<ORIGIN>India</ORIGIN>
+		<NOTES>The flesh of a mango is peachlike and juicy, with more or less numerous fibers radiating from the husk of the single large kidney-shaped seed. Fibers are more pronounced in fruits grown with hard water and chemical fertilizers. The flavor is pleasant and rich and high in sugars and acid. More fresh mangos are eaten every day than any other fruit in the world. The 'Paisley' design motif is a design from India based on the mango</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Marsh Rosemary</NAME>
+		<ORIGIN>Unknown</ORIGIN>
+		<NOTES>A member of the Mint Family. It is a false rosemary, whose branches and leaves are similar to Rosemary. It is used to perfume Russian leather and to season some Nordic beers.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Medjool dates (pureed)</NAME>
+		<ORIGIN>Morocco</ORIGIN>
+		<NOTES>Medjool dates have a wrinkly skin and rich mahogany to amber color. They are one to two and a half inches in length, and three-fourths of an inch in diameter. Medjools are very sweet due to their high sugar content, and have a caramel-like flavor. Their texture is soft but resilient like a raisin.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Mint Leaves (dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Mint is strong and sweet with a tangy flavor and a cool after taste. Mint is the dried leaf of a perennial herb. There are two important species, Mentha spicata L. (spearmint) and Mentha piperita L. (peppermint).</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Mint Leaves (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Mint is strong and sweet with a tangy flavor and a cool after taste. Mint is the dried leaf of a perennial herb. There are two important species, Mentha spicata L. (spearmint) and Mentha piperita L. (peppermint).</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Nutmeg (ground)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Nutmeg is pungent and sweet. Nutmeg is the seed of Myristica fragrans, an evergreen tree native to the Molucca Islands. Interestingly, the tree produces both Nutmeg and mace, and grows up to 60 feet tall. Although the tree takes seven years to bear fruit, it may produce until the 90th year. Both spices come from the trees fruit, which splits into a scarlet outer membrane, mace, and an inner brown seed, Nutmeg.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Nutmeg (whole, crushed)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Nutmeg is pungent and sweet. Nutmeg is the seed of Myristica fragrans, an evergreen tree native to the Molucca Islands. Interestingly, the tree produces both Nutmeg and mace, and grows up to 60 feet tall. Although the tree takes seven years to bear fruit, it may produce until the 90th year. Both spices come from the trees fruit, which splits into a scarlet outer membrane, mace, and an inner brown seed, Nutmeg.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Oak Wood Chips</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds a pungent woody flavor. Adding oak chips (which is done in the fermenter, not the mash tun) can add some interesting flavors to your homebrew as well as acting as a surface area to accelerate aging. To provide aged-in-oak flavor. Used in some IPA to simulate flavors from ocean passage to India.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Orange concentrate</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds strong sweet tangy citrus flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Orange juice</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds sweet tangy citrus flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Orange Marmalade</NAME>
+		<ORIGIN>Locally Available</ORIGIN>
+		<NOTES>A preserve containing pieces of fruit rind, especially citrus fruit. The original marmalades were made from quince-the Portuguese word marmelada means &quot;quince jam.&quot; Now, however, Seville oranges are the most popular fruit for making marmalades.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Orange Peel</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Has a fragrantt sweet odor and a subtle mild sweetness. One medium orange has about 3 tablespoons of grated peel.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Orange Peel (dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Has a fragrantt sweet odor and a subtle mild sweetness. One medium orange has about 3 tablespoons of grated peel.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Orange zest</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Has a fragrantt sweet odor and a subtle mild sweetness. One medium orange has about 3 tablespoons of grated peel.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Oregano</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Oregano has a pungent odor and flavor. Mediterranean Oregano is the dried leaf of Origanum vulgare L., a perennial herb in the mint family. Mexican Oregano is the dried leaf of one of several plants of the Lippia genus.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Parsley</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Parsley has a light, fresh scent and flavor. Parsley is the dried leaf of Petroselinum crispum, a biennial in the parsley family.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Peach Extract</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Strong floral scented extract. Has a very strong sweet flavor. Often contains alcohol.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Peaches (canned)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Pink to orange flesh very sweet and juicy.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Peaches (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Pink to orange flesh surround a large pit. Very sweet and juicy. Cling or clingstone peaches have a pit to which the flesh 'clings'; freestone peaches have a pit from which the flesh is easily pulled away.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Peaches (pureed)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Pink to orange flesh surround a large pit. Very sweet and juicy.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Phosphoric Acid 10%</NAME>
+		<ORIGIN/>
+		<NOTES>Used to reduce sparge or mash water pH. Our phosphoric acid is diluted (1 oz of 75% phosphoric and 7 oz spring water) for easy measurement. 10% Solution. One 8 oz bottle will acidify many gallons of sparge water.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Pineapple (canned)</NAME>
+		<ORIGIN>Brazil</ORIGIN>
+		<NOTES>Strong cuttingly sweet juicy citrus flavor. There are no known native or wild pineapples known today, They are probably a cultivated species that developed under conditions of artificial selection.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Pineapple (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Strong cuttingly sweet juicy citrus flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Pineapple Juice</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Strong cuttingly sweet juicy citrus flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Polyclar</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Helps prevent chill haze in beer</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Pumpkin (canned)</NAME>
+		<ORIGIN>Central America</ORIGIN>
+		<NOTES>Mild earth spicy flavor. Pumpkins are fruits from the gourd family.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Pumpkin (fresh)</NAME>
+		<ORIGIN>Central America</ORIGIN>
+		<NOTES>Mild earth spicy flavor. Pumpkins are fruits from the gourd family.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Pumpkin Pie Spice</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Often contains cinnamon, ginger, nutmeg, and cloves.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Raisins</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Dried grapes. Has a sweet prune like flavor. California discovered the commercial potential of raisins quite by accident. In 1873, a freak hot spell withered the grapes on the vine. One enterprising San Francisco grocer advertised these shriveled grapes as &quot;Peruvian Delicacies&quot; and the rest is history. California is now the world's leading producer of raisins.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Raspberries (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Related to blackberries. Raspberries have a dull pink or reddish color. Tangy sweet.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Raspberries (frozen)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Related to blackberries. Raspberries have a dull pink or reddish color. Tangy sweet.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Raspberries (pureed)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Raspberries have a dull pink or reddish color.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Raspberry Extract</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Flavor extract. Raspberries have a dull pink or reddish color.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Raspberry Syrup</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Very sweet extract sugar syrup made from raspberries.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Rose Hips</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Adds a unique mild floral flavor.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Rosemary</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Rosemary has a tealike aroma and a piney flavor. Rosemary is an herb in the mint family. It is a small evergreen shrub, Rosmarinus officinalis, whose 1inch leaves resemble curved pine needles.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Sassafras Bark</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>One of the ingredients in root beer, contains volatile oils, 80% of which is safrole. The FDA banned its use as an additive in 1960, as safrole was found to cause liver cancer in rats. The sale of sassafras tea was banned in 1976. The root bark extract and leaves are now treated commercially to produce a safrole-free product, the root bark being used as a flavoring agent and the leaves for fil powder. The safrole free extract has, unfortunately, an inferior flavor. (Safrole is similar to thujone, which is found in wormwood, and was used to make absinthe --- banned since 1913). It is NOT possible to make a safrole free extract at home.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Seaweed</NAME>
+		<ORIGIN>The Ocean</ORIGIN>
+		<NOTES>Seaweed is high in glutamate which has a basic and independent taste (known as &quot;Umami&quot;). Umami plays a major role in the flavorful appeal of many foods.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Sodium Erythorbate</NAME>
+		<ORIGIN/>
+		<NOTES>Protects finished beer against dissolved and head-space oxygen during brewing and packaging. Protection against oxidation continues during shipping, warehousing and retail storage. Extends shelf-life, maintains and stabilizes flavor, palatability and brilliance.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Spruce (essence)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Spruce Essence adds to the foam of beer and will not impair the color. Typical use: 1 teaspoon per gallon.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Strawberries (fresh)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Juicey red fruit with a crisp tangy sweetness. The strawberry is a member of the rose family and is unique in that it is the only fruit with seeds on the outside rather than the inside.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Strawberries (frozen)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Juicey red fruit with a crisp tangy sweetness. The strawberry is a member of the rose family and is unique in that it is the only fruit with seeds on the outside rather than the inside.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Strawberries (pureed)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Strawberries are juicey red fruits with a crisp tangy sweetness.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Strawberry Extract</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Flavor extract. Strawberries are juicey red fruits with a crisp tangy sweetness.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Strawberry Syrup</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Very sweet red syrup. The strawberry is a member of the rose family and is unique in that it is the only fruit with seeds on the outside rather than the inside.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Tarter</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Tartaric acid is a brownish-red acid powder (potassium bitartrate) that is precipitated onto the walls of casks used to age wine. When refined into a white acid powder, cream of tartar, it is used in baking. Cream of tartar is an acid powder. Combined with baking SODA it makes baking POWDER. Cream of tartar is also used to give a creamier texture to sugary things like candy and frosting and to stabilize and increase the volume of beaten egg whites. Cream of tartar can be used to clean brass and copper cookware.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Vanilla (extract)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Vanilla Beans have a sweet, perfumed aroma with a woody or smoky flavor. Pure Vanilla Extract has a similar aroma. To obtain Pure Vanilla Extract, cured Vanilla Beans are steeped in alcohol. According to law, Pure Vanilla Extract must be 35 percent alcohol by volume.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Vanilla (whole bean)</NAME>
+		<ORIGIN>Madagascar, Mexico, Indonesia, and Tahiti</ORIGIN>
+		<NOTES>Vanilla Beans have a sweet, perfumed aroma with a woody or smoky flavor. Pure Vanilla Extract has a similar aroma. Vanilla Beans are the long, greenish-yellow seed pods of the tropical orchid plant, Vanilla planifolia. Before the plant flowers, the pods are picked, unripe, and cured until they're dark brown. The process takes up to six months.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Walnut (chopped)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Nutty rich, savory flavor. Walnuts are the fruit of a large deciduous tree belonging to the family Juglandaceae . Of the 60 varieties about 20 are edible. They are unique amongst nuts because most of the fat in walnuts is polyunsaturated which are said to lower cholesterol.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Walnut (extract)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Has a rich savory nutty flavor. Extracts often contain alcohol.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Whirlfloc Tablets (Irish moss)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Enhanced Irish Moss in convenient tablet form</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Wintergreen Leaves (Dried)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Used in some specialty beers, especially Ethiopian beer</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Wyeast Nutrient</NAME>
+		<ORIGIN>Manufactured by Wyeast Labs</ORIGIN>
+		<NOTES>Although wort is a good growth medium for yeast, additional Wyeast Nutrient will reduce lag time, improve yeast viability and provide consistent attenuation rates. Low assimilable nitrogen concentrations (FAN) of grape must or wort have long been known as a cause of sluggish or stuck fermentations. Wyeast yeast nutrient, a blend of vitamin B's, minerals, inorganic nitrogen (DAP), organic nitrogen (amino acids), zinc, phosphates and other trace elements will benefit yeast growth and carbohydrate uptake for a more rapid, complete fermentation. Use 1/4 tsp per pint for beer propagation, 1 tsp per 5 gallons for wine or beer fermentation or 1.5 oz per 10 barrels for beer fermentation.</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Yeast Energizer</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Helps revive stuck or slow fermentation</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+	<MISC>
+		<VERSION>1</VERSION>
+		<NAME>Yeast Nutrient (AKA Fermax)</NAME>
+		<ORIGIN>Common</ORIGIN>
+		<NOTES>Helps yeast stay active during fermentation</NOTES>
+		<AMOUNT>0</AMOUNT>
+		<TIME>0</TIME>
+		<TYPE>Other</TYPE>
+		<USE>Boil</USE>
+	</MISC>
+</MISCS>
