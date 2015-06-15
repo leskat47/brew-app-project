@@ -23,7 +23,15 @@ This app was an independent student project, built as part of the Hackbright Aca
 
 ### Data Handling
 
-Brew Day utilizes databases of ingredients and styles from XML and stores them in SQL through a seed file. The data model connects recipes and ingredient details through ingredient instructions tables. Recipes connect to style descriptions, users and brews, which are instances of making a recipe. User recipe entries are checked through an Ajax call to prevent duplicates and upload recipes are checked in python. 
+Brew Day utilizes databases of ingredients and styles from XML and stores them in SQL through a seed file. The data model connects recipes and ingredient details through ingredient instructions tables. Recipes connect to style descriptions, users and brews, which are instances of making a recipe.
+
+<img src="static/datamodel2.png">
+
+Recipes are associated with users and brews stores details about a user's brew of a recipe:
+
+<img src="static/datamodel1.png">
+
+User recipe entries are checked through an Ajax call to prevent duplicates and upload recipes are checked in python. 
 
 Fields for data input are dynamic, meaning that users can enter any number of data groups for a given ingredient type (e.g. a recipe could have one hop or six). The information is serialized in the jQuery and parsed in Python. 
 
@@ -33,7 +41,11 @@ Color calculations are done for each recipe after all ingredient instructions ar
 
 Functions in the builder file pull data from SQL and organize into recipes, dropdown lists and brews.
 
+The explore brews page provides options to search by style, recipe name or list all a user's own recipes. When a recipe is selected the recipe displays and users can choose to brew it, make a version or delete the recipe. 
+<img src="static/editrecipescreen.png">
+
 The information for the brew day page is organized by stage and time of the brewing process. A timer responds to buttons in various steps in the recipe with a javascript powered timer with a time showing the delta to the next action. The user enters the time at the start of the boil which is immediately sent via Ajax to the backend to safeguard the starting time should the browser be closed. 
+<img src="static/brewscreen.png">
 
 Long term steps may be recorded into the user's calendar through the Add to Calendar utility integrated into the site. The user can record the original gravity and final gravity and get a calculation of the alcohol by volume of his/her beer. 
 
