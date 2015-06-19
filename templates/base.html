@@ -27,16 +27,19 @@
 					<div>{% include 'navbar.html' %}</div>
 					<br>
 				</div>
-				{% block content %}
-				{% endblock %}
 			</div>
+			{% block content %}
+			{% endblock %}
 		</div>
 		{# Place scripts at the bottom for faster page load #}
 		<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/1.2.0/jquery.serializeJSON.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="/static/myscript.js"></script>
 		<script src="/static/buzz.min.js"></script>
 		<script src="/static/tock.js"></script>
+		{% block extra_scripts %}
+		{% endblock %}
 	</body>
 </html>
