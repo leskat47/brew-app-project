@@ -1,56 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<script>
-	$(document).ready(function() {
-	$("#style").change(function(){
-		console.log("style change")
-		this.form.submit();
-	});
-
-	$("#recipe").change(function(){
-		console.log("recipe change")
-		this.form.submit();
-	});
-	$("#inprogress").click(function(){
-		$(".completed").hide();
-		$(".inprogress").show();
-	});
-	$("#completed").click(function(){
-		$(".inprogress").hide();
-		$(".completed").show();
-	});
-	$("#showall").click(function(){
-		$(".inprogress").show();
-		$(".completed").show();
-	})
-		beerColor = $(".beercolor").attr("#id")
-		$(".beerColor").css('background-color', beerColor)
-		});
-</script>
-
 <div class="grain">
 	<div class="row">
 		<div class="col-sm-1 col-md-2">
 		</div>
 		<div class="col-sm-10 col-md-8" style="background-color: white">
 			<div>
-				    	{% with messages = get_flashed_messages() %}
-			            {% if messages %}
-			                <div class="flashes">
-			                {% for message in messages %}
-			                    {{ message }} <br>
-			                {% endfor %}
-			                </div>
-
-			            {% endif %}
-		        	{% endwith %}
-		    </div>
+							{% with messages = get_flashed_messages() %}
+									{% if messages %}
+											<div class="flashes">
+											{% for message in messages %}
+													{{ message }} <br>
+											{% endfor %}
+											</div>
+									{% endif %}
+							{% endwith %}
+				</div>
 		<h2>My Brews</h2>
 		<hr>
 		</div>
 		<div class="col-sm-1 col-md-2">
 		</div>
-
 	</div>
 	<div class="row">
 		<div class="col-sm-1 col-md-2">
@@ -61,8 +31,8 @@
 				<tr>
 					<td>
 						 <div>
-						 	<p>You haven't added any brews yet! Get started:</p>
-						 	<a href="/explore"><button type="button" name="Browse recipes">Browse Recipes</button></a>
+							<p>You haven't added any brews yet! Get started:</p>
+							<a href="/explore"><button type="button" name="Browse recipes">Browse Recipes</button></a>
 					</td>
 				</tr>
 			</table>
@@ -155,9 +125,35 @@
 		</div>
 	</div>
 </div>
-
-
 {% endif %}
 {% endblock %}
 
+{% block extra_scripts %}
+<script>
+	$(document).ready(function() {
+	$("#style").change(function(){
+		console.log("style change")
+		this.form.submit();
+	});
 
+	$("#recipe").change(function(){
+		console.log("recipe change")
+		this.form.submit();
+	});
+	$("#inprogress").click(function(){
+		$(".completed").hide();
+		$(".inprogress").show();
+	});
+	$("#completed").click(function(){
+		$(".inprogress").hide();
+		$(".completed").show();
+	});
+	$("#showall").click(function(){
+		$(".inprogress").show();
+		$(".completed").show();
+	})
+		beerColor = $(".beercolor").attr("#id")
+		$(".beerColor").css('background-color', beerColor)
+		});
+</script>
+{% endblock %}
