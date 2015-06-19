@@ -234,6 +234,9 @@ def show_brew_recipe(recipe):
     elif record.batch_units == "L":
         batch_size = round((record.batch_size * 0.26417), 2)
         batch_units = "gallons"
+    else:
+        batch_size = record.batch_size
+        batch_units = record.batch_units
 
     # Boil list -> Hops and special ingredients that go in the boil.
     boil = []
