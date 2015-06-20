@@ -78,7 +78,7 @@
 						{% else %}
 							<p>&nbsp; -- There are no sugars for this recipe. -- </p>
 						{% endif %}
-						<p>Return to boil. Start boil time: <input id="boil_start" type="time" name-"boil_start" {% if brew.boil_start %}value="{{ brew.boil_start }}"{% endif %}></p>
+						<p>Return to boil. Start boil time: <input class="form-control" style="width: 150px; display: inline" id="boil_start" type="time" name-"boil_start" {% if brew.boil_start %}value="{{ brew.boil_start }}"{% endif %}></p>
 						{% for time in times %}
 						<p><strong>At {{ time }} minutes:</strong>
 							{% for ingredient in boiltime[time] %}
@@ -118,7 +118,8 @@
 						<p><label for="orig_gravity">Original gravity:</label> <input type="text" step="0.01" name="orig_gravity" id="orig_gravity" class="form-control" style="width: 100px; display: inline" value="{% if brew.og %}{{ brew.og }}{% endif %}"></p>
 						<p>Original gravity range for this style: {{ og_min }} - {{ og_max }}</p>
 						<div>
-							<p><label for="curr_gravity">Current gravity measurement:</label> <input type="float" name="curr_gravity" id="curr_gravity" class="form-control" style="width: 100px; display: inline"> Measured on: <input type="date" name="cg_date" id="cg_date">
+							<p><label for="curr_gravity">Current gravity measurement:</label> <input type="float" name="curr_gravity" id="curr_gravity" class="form-control" style="width: 100px; display: inline" value="{% if c_gravity %}{{ c_gravity }} {% else %} {% endif %}"> </p>
+							<p>Measured on: <input type="date" class="form-control" style="width: 160px; display:inline" name="cg_date" id="cg_date" value="{{ c_gravity_date }}">
 							</p>
 
 						</div>

@@ -66,7 +66,7 @@ class Brew(db.Model):
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.recipe_id'))
     og = db.Column(db.Float, nullable=True)
     cg = db.Column(db.Float, nullable=True)
-    cg_date = db.Column(db.Float, nullable=True)
+    cg_date = db.Column(db.Date, nullable=True)
     fg = db.Column(db.Float, nullable=True)
     abv = db.Column(db.Float, nullable=True)
     date = db.Column(db.Date, nullable=False)
