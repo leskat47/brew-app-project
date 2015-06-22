@@ -1,4 +1,5 @@
 from model import Hop, Fermentable, Yeast, Recipe, Style, User, Misc, Extract, ExtIns, YeastIns, HopIns, FermIns, MiscIns, connect_to_db, db
+from builder import calc_srm_color
 import xml.etree.ElementTree as ET
 
 
@@ -47,30 +48,13 @@ def calc_color(recipe_id, batch_size, batch_units):
     else:
         batch_size = float(batch_size)
 
-    ext_color = 0
-
-    def sum_srm(inslist, cls, batch_size):
-        srm_color = 0
-        for ins in fermins:
-            amount_in_lbs = ins.amount * 2.2046
-            ferm_id = ins.ferm_id
-            color = Fermentable.query.filter_by(id=ferm_id).one().color
-            print "color", color, " amount, ", amount_in_lbs, " batch ", batch_size
-            mcu = (color * amount_in_lbs) / batch_size
-            print mcu
-            srm_color += 1.4922 * (mcu ** .6859)
-        return srm_color
-
+    srm_color = 0.0
+    for ins in fermins:
+        srm_color += calc_srm_color(Fermentable, ins.fermentable.name, ins.amount, ins.units, batch_size)
     for ins in extins:
-        amount_in_lbs = ins.amount * 2.2046
-        ext_id = ins.extract_id
-        print ext_id
-        color = Extract.query.filter_by(id=ext_id).one().color
-        print "color", color, " amount, ", amount_in_lbs, " batch ", batch_size
-        mcu = (color * amount_in_lbs) / batch_size
-        ext_color += 1.4922 * (mcu ** .6859)
+        srm_color += calc_srm_color(Extract, ins.extract.name, ins.amount, ins.units, batch_size)
 
-    srm_color = int(round(sum_srm(fermins, Fermentable, batch_size) + ext_color))
+    srm_color = int(round(srm_color))
     print "feeder ", srm_color
 
     Recipe.query.filter_by(recipe_id=recipe_id).one().srm = srm_color
