@@ -146,39 +146,7 @@ $("#c-days").change( function(){
                 var h = d[g]('body')[0];h.appendChild(s); }})();
 
 });
-$("#reminder").change(function(){
-	next_step = $("#reminder").val();
-	$("#cal_title").text(next_step);
-	$("#cal_desc").text(next_step);
-})
 
-$("#r-days").change( function(){
-	var date = new Date();
-	var days = parseInt($("#r-days").val());
-	date.setDate(date.getDate() + days);
-
-	year = date.getFullYear();
-	month = date.getMonth() + 1;
-	if (month < 10) {
-		month = "0" + month;
-	}
-	day = date.getDate();
-	if (day < 10) {
-		day = "0" + day;
-	}
-	newdate = year + "-" + month + "-" + day + " 12:00:00";
-	$("#r_date_start").text(newdate);
-	$("#r_date_end").text(newdate);
-	$("#cal-reminder").show();
-
-	(function () {
-	            if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
-	            if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
-	                var d = document, s = d.createElement('script'), g = 'getElementById'; 
-	                s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
-	                s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
-	                var h = d[g]('special_rem'); console.log(h); h.appendChild(s);}})();
-});
 // ABV:
 $("#final_gravity").change( function(){
 	var fg = parseFloat($("#final_gravity").val());
