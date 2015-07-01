@@ -56,8 +56,13 @@ def index():
 @app.route('/explore', methods=['GET', 'POST'])
 def show_explore():
 
-    selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
-    new = True
+    if session:
+        selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
+        new = True
+    else:
+        selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(9999)
+        new = True
+
     # For recipe selected, show recipe.
     if request.method == "POST":
         # Render either recipe list for style selection or recipe
@@ -75,7 +80,7 @@ def show_explore():
             print "SERVER SRM ", srm_color
             color = color_conversion(srm_color)
             deleteable = False
-            if Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
+            if session["user_id"] and Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
                 deleteable = True
             return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, batch_size=batch_size,
                                    selectlist_styles=selectlist_styles, name=name, source=source, color=color, style=style,
@@ -84,7 +89,7 @@ def show_explore():
 
     return render_template("explore_brews.html", new=new, selectlist_recipes=selectlist_recipes,
                            selectlist_styles=selectlist_styles, selectlisrt_user=selectlist_user,
-                           sel_user_styles=sel_user_styles)
+                           sel_user_styles=sel_user_styles, session=session)
 
 
 # ***************************************************************************************
