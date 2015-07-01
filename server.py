@@ -1,7 +1,9 @@
+#!/usr/bin/env python
+
 from flask import Flask, render_template, redirect, request, flash, session, url_for, send_from_directory
 from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
 from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins, calc_color
-from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist, show_brew_recipe, color_conversion
+from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist, show_brew_recipe, color_conversion, calc_srm_color, normalize_batch_size
 import xml.etree.ElementTree as ET
 import os
 from werkzeug import secure_filename
@@ -470,36 +472,18 @@ def check_name():
 @app.route('/colorcalc', methods=['GET', 'POST'])
 def calculate_color():
     data = request.get_json()
-    grains = data['grains']
-    print grains
-    extracts = data['extracts']
-    batch_size = float(data["batch_size"])
-    batch_units = data["units"]
-    if batch_units not in ["gallon", "gallons", "Gallons", "g"]:
-        batch_size = float(batch_size) * 0.26417    # Convert to pounds
+    # print data
+    batch_size, batch_units = normalize_batch_size(data["batch_size"], data["units"])
 
-    def get_each_srm(cls, ingredient_list, batch_size):
-        srm_color = 0
+    srm = 0
+    for ingredient_idx, fermentable in [('grains', Fermentable), ('extracts', Extract)]:
+        ingredient_list = data[ingredient_idx]
         for i in range(0, len(ingredient_list), 3):
             name = ingredient_list[i]["value"]
-            color = cls.query.filter_by(name=name)[0].color
             amount = float(ingredient_list[i+1]["value"])
             units = ingredient_list[i+2]["value"]
-            # Convert amount to pounds
-            if units in ["oz", "ounces"]:
-                amount = amount * 0.062500
-            elif units in ["g", "grams"]:
-                amount = amount * 0.0022046
-            else:
-                amount = amount * 2.20462
-            print "color", color, "amount ", amount, "batch_size ", batch_size
-            mcu = (color * amount) / batch_size
-            print mcu
-            srm_color += 1.4922 * (mcu ** .6859)
+            srm += calc_srm_color(fermentable, name, amount, units, batch_size)
 
-        srm_color = int(round(srm_color))
-        return srm_color
-    srm = get_each_srm(Fermentable, grains, batch_size) + get_each_srm(Extract, extracts, batch_size)
     print srm
     color = color_conversion(srm)
     return color

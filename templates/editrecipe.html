@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-<script src="/static/recipeform.js">
-</script>
 <div class="hidden">
 		<div id="moregrains1" class="repeat-grain" name="graindiv">
 		<br>
@@ -348,6 +346,9 @@
 		</div>
 	</div>
 </div>
-				
+{% endblock %}
 
+{% block extra_scripts %}
+<script src="/static/recipeform.js">
+</script>
 {% endblock %}

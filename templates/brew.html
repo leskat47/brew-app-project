@@ -1,48 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<script src="../static/brews.js">
-</script>
-
-<script>
-   var brew_id = {{ brew.id }};
-</script>
-<div class="beerColor">
+<div class="beercolor">
 	<form action="/brew/{{ brew.id }}" method="post" id="{{ brew.id }}">
 	<div class="row">
-	
 		<div class="col-sm-1 col-md-1">
 		</div>
 		<div class="col-sm-11 col-md-11" style="background-color: white">
 			<h2>{{ recipe }}</h2>
 			<button type="submit" value="Save and Return Later" class="btn btn-default">Save and Return Later</button>
 				<p>
-					<div style="width: 90%; height: 10px; background-color: {{ color }}">
-					</div>
+					<div style="width: 90%; height: 10px; background-color: {{ color }}"> </div>
 				</p>	
 		</div>	
-
 	</div>
 	<div class="row">
-	<div class="col-sm-1 col-md-1">
-	</div>
-<div class="row mainContent">
-	<div class="col-sm-11 col-md-7 brew">		
-			<div id="timergoodies">
-				<div id="popUpDiv">
-					<strong>Timer</strong>
+		<div class="col-sm-1 col-md-1">
+		</div>
+		<div class="row maincontent">
+			<div class="col-sm-11 col-md-7 brew">		
+				<div id="timergoodies">
+					<div id="popUpDiv">
+						<strong>Timer</strong>
 						<p><input class="clock" id="clock" style="width: 180px;"> </p>
 						<button type="button" class="stop form-control" style="display: inline; width: 80px">Pause</button>
 						<button type="button" class="clos form-control" style="display: inline; width: 80px">Hide</button>
+					</div>
+					<button type="button" id="showtimer" class="form-control">Show timer</button>
 				</div>
-				<button type="button" id="showtimer" class="form-control">Show timer</button>
-			</div>
-			<p>Target color: 
+				<p>Target color: 
 				<div style="width: 25px; height: 25px; background-color: {{ color }};">
 				</div>
-			</p>
-
-			Brew Date: <input type="date" name="brew_date" id="brew_date" class="form-control" style="width: 200px" value={{ brew.date }}>  					
+				</p>
+			Brew Date: <input type="date" name="brew_date" id="brew_date" class="form-control" style="width: 200px" value={{ brew.date }}>						
 				<a data-toggle="collapse" href="#steep-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline; text-decoration: none;">
 					<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="display: none"></span>
 					<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
@@ -62,8 +52,7 @@
 						<button type="button" class="timer form-control" style="width: 150px; display: inline;" value="30">Start a Timer</button>
 					</div>
 				</blockquote>
-
-			<a data-toggle="collapse" href="#boil-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline; text-decoration: none;">
+				<a data-toggle="collapse" href="#boil-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline; text-decoration: none;">
 				<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="display: none"></span>
 				<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>				
 				</a><h2 style="display: inline">2. Boil</h2> 
@@ -97,15 +86,15 @@
 					</a><h2 style="display: inline">3. Cool</h2>
 				<blockquote>
 					<div id="cool" class="collapse in">
-					<p> Bring temperature down to 68&deg; to 70&deg; F. 
-					</p>
+						<p> Bring temperature down to 68&deg; to 70&deg; F. 
+						</p>
+					</div>
 				</blockquote>
-
-			<a data-toggle="collapse" href="#transfer-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline; text-decoration: none;">
-					<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="display: none"></span>
-					<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-			</a>
-			<h2 style="display: inline">4. Primary</h2>
+				<a data-toggle="collapse" href="#transfer-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline; text-decoration: none;">
+						<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="display: none"></span>
+						<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+				</a>
+				<h2 style="display: inline">4. Primary</h2>
 				<blockquote>
 					<div id="transfer-instructions" class="collapse in">
 						<p>Transfer to primary. </p>
@@ -121,7 +110,6 @@
 							<p><label for="curr_gravity">Current gravity measurement:</label> <input type="float" name="curr_gravity" id="curr_gravity" class="form-control" style="width: 100px; display: inline" value="{% if c_gravity %}{{ c_gravity }} {% else %} {% endif %}"> </p>
 							<p>Measured on: <input type="date" class="form-control" style="width: 160px; display:inline" name="cg_date" id="cg_date" value="{{ c_gravity_date }}">
 							</p>
-
 						</div>
 						<div class="reminders">
 							<div class="row" style="padding: 5px;">
@@ -129,13 +117,11 @@
 							</div>
 							<div class="row" style="background-color: #d0e0a9; padding: 5px;">
 								<div class="col-md-5 rem-select">
-							
-										<p>Set next reminder:</p>
-										<input type="radio" class="rem-radio" name="rem" value="gravity"> Gravity Check<br>
-										<input type="radio" class="rem-radio" name="rem" value="add-ing"> Add next ingredient<br>
-										<input type="radio" class="rem-radio" name="rem" value="temperature"> Check temperature<br>
-										<input type="radio" class="rem-radio" name="rem" value="reminder"> Other reminder<br><br>
-								
+									<p>Set next reminder:</p>
+									<input type="radio" class="rem-radio" name="rem" value="gravity"> Gravity Check<br>
+									<input type="radio" class="rem-radio" name="rem" value="add-ing"> Add next ingredient<br>
+									<input type="radio" class="rem-radio" name="rem" value="temperature"> Check temperature<br>
+									<input type="radio" class="rem-radio" name="rem" value="reminder"> Other reminder<br><br>
 								</div>
 								<div class="col-md-7">
 									<div id="rem-display">
@@ -144,41 +130,37 @@
 										<p>
 											Create calendar reminder in <input type="number" name="c-days" id="c-days" style="width: 50px; display: inline"> days.</p>
 											<span class="addtocalendar atc-style-blue" id="rem">
-						        				<var class="atc_event">
-										            <var class="atc_date_start" id="date_start"></var>
-										            <var class="atc_date_end" id="date_end"></var>
-										            <var class="atc_timezone">Pacific/Midway</var>
-										            <var class="atc_title">Gravity Check</var>
-										            <var class="atc_description">Check gravity for {{ recipe }}</var>
-										            <var class="atc_location">At your brew</var>
-										        </var>
-										    </span>
-								    </div>
+														<var class="atc_event">
+																<var class="atc_date_start" id="date_start"></var>
+																<var class="atc_date_end" id="date_end"></var>
+																<var class="atc_timezone">Pacific/Midway</var>
+																<var class="atc_title">Gravity Check</var>
+																<var class="atc_description">Check gravity for {{ recipe }}</var>
+																<var class="atc_location">At your brew</var>
+														</var>
+												</span>
+									</div>
 								</div>
 							</div>
-
-				    	</div>
+						</div>
 					</div>
 				</blockquote>
-			<a data-toggle="collapse" href="#secondary-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline; text-decoration: none;">
-					<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="display: none"></span>
-					<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-
-			</a>
+				<a data-toggle="collapse" href="#secondary-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline; text-decoration: none;">
+						<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="display: none"></span>
+						<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+				</a>
 				<h2 style="display: inline">5. Secondary</h2>
 				<blockquote>
 					<div id="secondary-instructions" class="collapse in">
-					{% if secondary %}
-					<p>Add:
-						{% for item in secondary %}
-							{{ item }}
-						{% endfor %}
-					{% else %}
-					</p>
-						<p>There are no secondary steps for this beer.</p>
-					
-					{% endif %}
-
+						{% if secondary %}
+						<p>Add:
+							{% for item in secondary %}
+								{{ item }}
+							{% endfor %}
+						{% else %}
+						</p>
+							<p>There are no secondary steps for this beer.</p>
+						{% endif %}
 					</div>
 				</blockquote>
 				<p>
@@ -187,12 +169,10 @@
 					<strong>ABV:</strong> <span id="abv">{% if brew.abv %}{{ brew.abv }}{% endif %}</span>
 				</p>
 				<br>
-
-				<p><input type="submit" value="Save Brew" class="btn btn-warning form-control">
-				</p>
+				<p><input type="submit" value="Save Brew" class="btn btn-warning form-control"></p>
 				<br>
-		</div>
-		<div class="col-sm-11 col-md-4 mainContent">
+			</div>
+			<div class="col-sm-11 col-md-4 mainContent">
 				<br>
 				<h2>Recipe Notes:</h2>
 				{% if notes %}{{ notes }}{% else %}There are no notes for this recipe.{% endif %}<br>
@@ -204,11 +184,11 @@
 					{% if not rating %}
 					<p>
 						<div id="rating" class="rating">
-						    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
-						    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-						    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
-						    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
-						    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+								<input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+								<input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+								<input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+								<input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+								<input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
 						</div>
 					</p>
 					{% else %}
@@ -216,17 +196,25 @@
 						<br><br>
 						<p>Change rating to:<br>
 							<div id="rating" class="rating">
-						    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
-						    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-						    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
-						    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
-						    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+								<input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+								<input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+								<input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+								<input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+								<input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
 							</div>
 						</p>
 					{% endif %}
-	</div>
-	</div>
+				</div>
+			</div>
+		</div>
+	</form>
 </div>
-</form>
-
 {% endblock %}
+
+{% block extra_scripts %}
+	<script src="/static/brews.js">
+<script>
+   var brew_id = {{ brew.id }};
+</script>
+{% endblock %}
+

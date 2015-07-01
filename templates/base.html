@@ -1,55 +1,45 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Brew Day</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300|Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
-
-<!-- 		<link rel="stylesheet" type="text/css" href="../static/mystyles.css"> -->
-
 		<link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
-
-	    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/mystyles.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<div>
+					<br><br>
+					<form class="navbar-form navbar-right" action>
+						<div>
+						{% if session["username"] %}
+							<a class="btn btn-default" href="/logout">Logout</a>
+						{% else %}
+							<a class="btn btn-default" href="/login">Log In</a>
+						{% endif %}
+							<a class="btn btn-default" href="/register" style="margin-right: 20px; margin-bottom: 0px">Register</a>
+					</div>
+					</form>
+					<br><br>
+					<div>{% include 'navbar.html' %}</div>
+					<br>
+				</div>
+			</div>
+			{% block content %}
+			{% endblock %}
+		</div>
+		{# Place scripts at the bottom for faster page load #}
+		<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/1.2.0/jquery.serializeJSON.min.js"></script>
-
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="/static/myscript.js"></script>
 		<script src="/static/buzz.min.js"></script>
 		<script src="/static/tock.js"></script>
-		<link rel="stylesheet" type="text/css" href="/static/mystyles.css">
-		<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
-
-	</head>
-
-	<body>
-		
-		<div class="container">
-		<div class="header">
-		<div>
-				<br><br>
-				<form class="navbar-form navbar-right">
-				<div class="form-group">
-					{% if session["username"] %}
-						<a class="btn btn-default from-control" href="/logout">Logout</a>
-					{% else %}
-						<a class="btn btn-default form-control" href="/login">Log In</a>
-					{% endif %}
-						<a class="btn btn-default form-control" href="/register" style="margin-right: 20px; margin-bottom: 0px">Register</a>
-				</div>
-				</form>
-
-				<br><br>
-    		<div>{% include 'navbar.html' %}</div>
-    		<br>
-    	</div>
-
-
-
-
-      {% block content %}{% endblock %}
-      </div>
-      </div>
+		{% block extra_scripts %}
+		{% endblock %}
 	</body>
-
 </html>

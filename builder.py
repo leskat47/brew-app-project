@@ -1,5 +1,40 @@
 from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
 
+def calc_srm_color(ingredient, name, amount, units, batch_size):
+    """
+    Calculate the color contribution of various ingredients
+    """
+    color = ingredient.query.filter_by(name=name)[0].color
+
+    # Convert amount to pounds
+    if units in ["oz", "ounces"]:
+        amount = amount * 0.062500
+    elif units in ["g", "grams"]:
+        amount = amount * 0.0022046
+    else:
+        amount = amount * 2.20462
+    mcu = (color * amount) / float(batch_size)
+    srm_color = 1.4922 * (mcu ** .6859)
+    return srm_color
+
+
+def normalize_batch_size(batch_size, batch_units):
+    """
+    Normalize the batch size to gallons
+    """
+    # Handle empty case
+    if batch_size == "":
+        normalized_size = 5
+        normalized_units = "gallons"
+    elif batch_units not in ["gallon", "gallons", "Gallons", "g"]:
+        normalized_size = round(float(batch_size) * 0.26417, 2)    # 0.26 gallons / liter, round to 2 decimal places
+        normalized_units = "gallons"
+    else:
+        normalized_size = batch_size
+        normalized_units = "gallons"
+
+    return (normalized_size, normalized_units)
+
 
 # Build lists for recipe form drop downs
 def feed_recipe_form():
@@ -102,6 +137,7 @@ def get_brewlist(all_brews):
 
 # Convert srm color to a hexidecimal value
 def color_conversion(srm):
+
     color_ref = {1: "#ffe699", 2: "#ffd878", 3: "#ffca5a", 4: "#ffbf42", 5: "#fbb123",
                  6: "#f8a600", 7: "#f39c00", 8: "#ea8f00", 9: "#e58500", 10: "#de7c00",
                  11: "#d77200", 12: "#cf6900", 13: "#cb6200", 14: "#c35900", 15: "#bb5100",
@@ -111,8 +147,14 @@ def color_conversion(srm):
                  31: "#5a0a02", 32: "#600903", 33: "#520907", 34: "#4c0505", 35: "#470606",
                  36: "#440607", 37: "#3f0708", 38: "#3b0607", 39: "#3a070b", 40: "#36080a"}
 
-    if srm <= 40:
-        color = color_ref[srm]
+    # Convert to integer if required.
+    try:
+        rounded_srm = int(round(srm))
+    except TypeError:
+        rounded_srm = int(srm)
+
+    if rounded_srm <= 40:
+        color = color_ref[rounded_srm]
     else:
         color = "#200406"
     return color
@@ -124,13 +166,11 @@ def get_recipe_info(recipe):
     name = display_recipe.name
     source = display_recipe.source
     style = display_recipe.style_name
-    batch_size = display_recipe.batch_size
-    batch_units = display_recipe.batch_units
     srm_color = display_recipe.srm
     print "SRM", srm_color
-    if batch_units == "L" or batch_units is None:
-        batch_size = round((batch_size * 0.26417), 2)
-        batch_units = "gallons"
+
+    batch_size, batch_units = normalize_batch_size(display_recipe.batch_size, display_recipe.batch_units)
+
     if display_recipe.notes == "":
         notes = "There are no notes for this recipe."
     else:
@@ -228,12 +268,7 @@ def show_brew_recipe(recipe):
     og_min = style_record.og_min
     og_max = style_record.og_max
 
-    if record.batch_size == "":
-        batch_size = 5
-        batch_units = "gallons"
-    elif record.batch_units == "L":
-        batch_size = round((record.batch_size * 0.26417), 2)
-        batch_units = "gallons"
+    batch_size, batch_units = normalize_batch_size(record.batch_size, record.batch_units)
 
     # Boil list -> Hops and special ingredients that go in the boil.
     boil = []
