@@ -7,7 +7,7 @@
 	</div>
 	<div class="col-sm-10 col-md-8" style="background-color: white;">
 		<div>
-			    	{% with messages = get_flashed_messages() %}
+			    {% with messages = get_flashed_messages() %}
 		            {% if messages %}
 		                <div class="flashes">
 		                {% for message in messages %}
@@ -53,7 +53,7 @@
 						</select>
 					</div>
 				</form>
-				{% if session %}<a href="/myrecipes"><button type="button" id="myrecipes" class="form-control">Show my recipes</button></a>{% endif %}
+				{% if session["user_id"] %}<a href="/myrecipes"><button type="button" id="myrecipes" class="form-control">Show my recipes</button></a>{% endif %}
 				<br>
 				</div>
 				<div class="col-sm-12 col-md-6">

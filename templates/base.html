@@ -29,13 +29,13 @@
 		<div>
 				<br><br>
 				<form class="navbar-form navbar-right">
-				<div class="form-group"
+				<div class="form-group">
 					{% if session["username"] %}
-						<a href="/logout"><button class="form-control">Logout</button></a>
+						<a class="btn btn-default from-control" href="/logout">Logout</a>
 					{% else %}
-						<a href="/login" class="form-control"><button>Log In</button></a>
+						<a class="btn btn-default form-control" href="/login">Log In</a>
 					{% endif %}
-						<a href="/register"><button class="form-control" style="margin-right: 20px; margin-bottom: 0px">Register</button></a>
+						<a class="btn btn-default form-control" href="/register" style="margin-right: 20px; margin-bottom: 0px">Register</a>
 				</div>
 				</form>
 

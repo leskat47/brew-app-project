@@ -1,9 +1,17 @@
-<h4>
+<script>
+	$(.loginnote).hover(function (){
+		alert("Log In")
+		$(this).fadeOut(50);
+		$(this).html("<div>Log in to view this page</div>");
+	})
+</script>
 
+<h4>
 		<ul class="nav nav-tabs nav-justified">
-			<li><a href="/" style="color: black; font-size: 18pt">Home</a></li>
-			<li><a href="/explore" style="color: black; font-size: 18pt">Explore Brews</a></li>
-			<li {% if not session["user_id"] %} class="disabled"{% endif %}><a href="/mybrews" style="color: black; font-size: 18pt">My Brews</a></li>
-			<li {% if not session["user_id"] %} class="disabled"{% endif %}><a href="/addrecipe" style="color: black; font-size: 18pt">Add a Recipe</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/explore">Explore Brews</a></li>
+			<li>{% if session["user_id"] %} <a href="/mybrews">My Brews</a>{% else %}<a class="disabled"><span style="color: grey;">My Brews</span>{% endif %}</a></li>
+			<li>{% if session["user_id"] %} <a href="/addrecipe">Add a Recipe</a>{% else %}<a class="disabled loginnote"><span style="color: grey;">Add a Recipe</span></a>{% endif %}</li>
 		</ul>
 </h4>
+

@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="row" style="background-color: white;">
+<div class="col-1">
+</div>
+<div class="col-10 maincontent">
 <h2>Register</h2>
+			    {% with messages = get_flashed_messages() %}
+		            {% if messages %}
+		                <div class="flashes">
+		                {% for message in messages %}
+		                    <p>{{ message }} </p><br>
+		                {% endfor %}
+		                </div>
+		            {% endif %}
+	        	{% endwith %}
 <p>Let's brew some beer! Register to keep track of your recipes and your brew notes.</p>
+
 <table>
 	<tr>
 		<td>
@@ -33,6 +47,10 @@
 			</form>
 		</td>
 	</tr>
+</table>
+</div>
+<div class="col-1">
+</div>
 
 
 {% endblock %}
