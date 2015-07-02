@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<script src="/static/recipeform.js">
-</script>
 <div class="hidden">
-		<div id="moregrains1" class="repeat-grain" name="graindiv">
+	<div id="moregrains1" class="repeat-grain" name="graindiv">
 		<br>
 			<select id="grain" name="grain" class="form-control" style="width: 40%; display: inline" required>
 				<option selected disabled>Grain</option>
@@ -84,7 +82,7 @@
 				<option value="secondary">secondary</option>
 			</select>
 			<input type="number" id="misc_time" name="misc_time" class="form-control" placeholder="time in boil" style="width: 19%; display: inline" required>
-				<input type="button" id= "del-misc" name="1" value="Remove special" class="btn btn-del del-misc">	
+				<input type="button" id= "del-misc" name="1" value="Remove special" class="btn btn-del del-misc">
 		</div>
 		<div id="moreyeast1" class="repeat-yeast">
 		<br>
@@ -148,7 +146,7 @@
 								</select>
 						</p>
 					</td>
-				</tr> 
+				</tr>
 				<tr>
 					<td colspan="4">
 						<label for="batchsize">Batch Size: </label>
@@ -219,11 +217,12 @@
 								{% else %}
 									<option value="grams">g</option>
 									<option value="ounces" selected="selected">oz</option>
-								{% endif %}			</select>
+								{% endif %}
+							</select>
 							<input type="button" id="del-extract" value="Remove extract" class="btn btn-del del-extract" required>
 						</div>
 						{% endfor %}
-						<button type="button" id="add-extract" value="Add extract" class="btn btn-add add-extract">Add extract</button>	
+						<button type="button" id="add-extract" value="Add extract" class="btn btn-add add-extract">Add extract</button>
 						<br>
 						<div>
 							<button type="button" id="colorcalc" class="btn btn-warning">Estimate color</button><div id="color" style="width: 100%; height: 25px">&nbsp;
@@ -292,10 +291,10 @@
 						{% endif %}
 							<button type="button" id="add-misc" value="Add misc" class="add-misc btn btn-add">Add special</button>
 					</td>
-				</tr>			
+				</tr>
 				<tr>
 					<td colspan="4">
-					<br><strong>Yeasts/Bacteria:</strong>	
+					<br><strong>Yeasts/Bacteria:</strong>
 					{% for y in yeast_steps %}<br>
 						<div id="moreyeast1" class="repeat-yeast">
 							<select id="yeast" name="yeast" class="form-control" style="width: 40%; display: inline" required>
@@ -312,7 +311,7 @@
 							{% else %}
 									<option value="grams">g</option>
 									<option value="ounces" selected="selected">oz</option>
-							{% endif %}			</select>
+							{% endif %}
 							</select>
 							<br>
 							{% if y.phase == primary %}
@@ -323,7 +322,7 @@
 								<option value="primary">primary</option>
 								<option value="secondary" selected="selected">secondary</option>
 							{% endif %}
-							</select>		
+							</select>
 							<input type="button" id= "del-yeast" name="1" value="Remove yeast" class="del-yeast btn btn-del">
 						</div>
 					{% endfor %}
@@ -348,6 +347,9 @@
 		</div>
 	</div>
 </div>
-				
+{% endblock %}
 
+{% block extra_scripts %}
+	<script src="/static/recipeform.js">
+	</script>
 {% endblock %}
