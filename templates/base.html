@@ -45,5 +45,15 @@
 		<script src="/static/tock.js"></script>
 		{% block extra_scripts %}
 		{% endblock %}
+		<script>
+			var menu_text;
+			var fade_time = 200;
+			$(".loginnote").mouseenter(function (){
+					menu_text = $(this).html();
+					$(this).html("<div>Please Login</div>");
+				}).mouseleave(function(){
+					$(this).html(menu_text);
+				})
+		</script>
 	</body>
 </html>
