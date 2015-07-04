@@ -136,13 +136,131 @@ function checkName (){
 	});
 }
 
+// Form validation
+$(function()
+{
+	$("#recipeform").validate(
+		{
+		rules: {
+			name:
+			{
+				required: true
+			},
+			source:
+			{
+				required: true
+			},
+			style:
+			{
+				required: true
+			},
+			share:
+			{
+				required: true
+			},
+			batch_size:
+			{
+				required: true
+			},
+			units:
+			{
+				required: true
+			},
+			grain:
+			{
+				required: true
+			}
+
+		},
+		messages: {
+			name:
+			{
+				required: "Please enter beer name"
+			},
+			source:
+			{
+				required: "Enter a source"
+			},
+			style:
+			{
+				required: "Enter a style"
+			},
+			share:
+			{
+				required: "Would you like to share this recipe?"
+			},
+			batch_size:
+			{
+				required: "Enter a batch size"
+			},
+			units:
+			{
+				required: "Enter the units for your batch"
+			}
+		}
+	});
+});
 
 //  *********************************************
 //  Create objects to convert to JSON
+$("#recipeform").validate();
 
-var postparams = {}
+$("#submit").click(function (event){
+	event.preventDefault();	
+	var valid = true;
+	
+	$("#grainerror").empty();
+	$("#extracterror").empty();
+	$("#hoperror").empty();
+	$("#miscerror").empty();
+	$("#yeasterror").empty();
 
-$("#submit").click(function (event){	
+	$('#recipeform').valid()
+		
+		$("form .repeat-grain").children("input, select").each(function () {
+			
+			if ($(this).val() == ""){
+				console.log($(this).val())
+				$("#grainerror").text("Please fill in all grain fields");
+				valid = false
+			}
+		});
+		$("form .repeat-hop").children("input, select").each(function () {
+			if ($(this).val() == "") {
+				$("#hoperror").text("Please fill in all hop fields");
+				valid = false
+			}
+		});
+		$("form .repeat-extract").children("input, select").each(function () {
+			if ($(this).val() == "") {
+				$("#extracterror").text("Please fill in all extract fields");
+				valid = false
+			}
+		});
+		$("form .repeat-special").children("input, select").each(function () {
+			if ($(this).val() == "") {
+				$("#miscerror").text("Please fill in all special fields");
+				valid = false
+			}
+		});
+		$("form .repeat-yeast").children("input, select").each(function () {	
+			if ($(this).val() == "") {
+				$("#yeasterror").text("Please fill in all yeast fields");
+				valid = false
+			}
+		});
+	
+	if (valid = true) {
+		sendData();
+	}
+
+});
+
+function sendData() {
+	
+	console.log ("send data")
+	
+	var postparams = {}
 
 	postparams.name = ($("#name").val());
 	postparams.source = ($("#source").val());
@@ -161,18 +279,18 @@ $("#submit").click(function (event){
 
 //  *********************************************
 //  Send data to server
-	$.ajax({url: "/addrecipe", 
-		type: "POST",
-		data:JSON.stringify(postparams),
-		contentType: "application/json; charset=utf-8",
-		success: function(result){
-			console.log(result)
-			alert("Recipe added!")
-			var url = "/recipe/" + postparams.name;
-			$(location).attr('href',url);
-		}
-	});
-});
+	// $.ajax({url: "/addrecipe", 
+	// 	type: "POST",
+	// 	data:JSON.stringify(postparams),
+	// 	contentType: "application/json; charset=utf-8",
+	// 	success: function(result){
+	// 		console.log(result)
+	// 		alert("Recipe added!")
+	// 		var url = "/recipe/" + postparams.name;
+	// 		$(location).attr('href',url);
+	// 	}
+	// });
+}
 });
 
 

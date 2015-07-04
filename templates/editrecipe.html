@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<script src="/static/recipeform.js">
-</script>
+
 <div class="hidden">
 		<div id="moregrains1" class="repeat-grain" name="graindiv">
 		<br>
@@ -83,7 +82,7 @@
 				<option value="primary">primary</option>
 				<option value="secondary">secondary</option>
 			</select>
-			<input type="number" id="misc_time" name="misc_time" class="form-control" placeholder="time in boil" style="width: 19%; display: inline" required>
+			<input type="number" id="misc_time" name="misc_time" class="form-control" placeholder="time in boil" style="width: 19%; display: inline">
 				<input type="button" id= "del-misc" name="1" value="Remove special" class="btn btn-del del-misc">	
 		</div>
 		<div id="moreyeast1" class="repeat-yeast">
@@ -112,20 +111,22 @@
 <div class="row beercolor">
 	<div class="col-sm-1 col-md-2">
 	</div>
-	<div class="col-sm-10 col-md-8 mainContent">
+	<div class="col-sm-10 col-md-8 maincontent">
 		<h2>Edit Recipe</h2>
 		<br>
 		<div class="form-group">
-			<form role="form">
+			<form role="form" id="recipeform" name="recipeform">
 			<table cellspacing="10px">
 				<tr>
 					<td colspan="2">
 						<label for="name">Recipe name</label> - Change to your own fresh recipe name!
 						<input type="text" id="name" name="name" class="name form-control" placeholder="{{ name }}" required>
+						<span id="nameWarning"></span><br>
 					</td>
 					<td colspan="2">
 						<label for="source">Source</label>
 						<input id="source" type="text" name="source" class="source form-control" value="{{ source }}" required>
+						<br>
 					</td>
 				<tr>
 					<td colspan="3">
@@ -174,17 +175,17 @@
 				</tr>
 				<tr>
 					<td colspan="4">
-						<br><strong>Grains:</strong>
+						<br><strong>Grains: </strong> <span class="error" id="grainerror"></span>
 						{% for ferm in ferm_steps %}<br>
-						<div id="moregrains1" class="repeat-grain" name="graindiv">
-							<select id="grain" name="grain" class="form-control" style="width: 40%; display: inline" required>
+						<div id="moregrains1" class="repeat-grain">
+							<select id="grain" name="grain" class="form-control grain_data" style="width: 40%; display: inline" required>
 								<option value="{{ ferm.name }}">{{ ferm.name }}</option>
 								{% for grain in grain_choice %}
 								<option value="{{ grain }}">{{ grain }}</option>
 								{% endfor %}
 							</select>
-							<input type="number" id="grain_amount" name="grain_amount" class="form-control" placeholder="amount" style="width: 25%; display: inline" value="{{ ferm.amount }}" required>
-							<select id="grain_units" name="grain_units" class="form-control" style="width: 10%; display: inline" required>
+							<input type="number" id="grain_amount" name="grain_amount" class="form-control grain_data" placeholder="amount" style="width: 25%; display: inline" value="{{ ferm.amount }}" required>
+							<select id="grain_units" name="grain_units" class="form-control grain_data" style="width: 10%; display: inline" required>
 							{% if ferm.units == g %}
 									<option value="grams" selected="selected">g</option>
 									<option value="ounces">L</option>
@@ -202,7 +203,7 @@
 				</tr>
 				<tr>
 					<td colspan="4">
-						<br><strong>Extracts:</strong>
+						<br><strong>Extracts: </strong> <span class="error" id="extracterror"></span>
 						{% for ext in ext_steps %}<br>
 						<div id="moreextract1" class="repeat-extract">
 							<select id="extract" name="extract" class="form-control" style="width: 40%; display: inline" required>
@@ -232,7 +233,7 @@
 				</tr>
 				<tr>
 					<td colspan="4">
-						<br><strong>Hops:</strong>
+						<br><strong>Hops: </strong> <span class="error" id="hoperror"></span>
 						{% for h in hop_steps %}<br>
 						<div id="morehops1" class="repeat-hops">
 							<select id="hop" name="hop" class="form-control" style="width: 40%; display: inline" required>
@@ -267,7 +268,7 @@
 				</tr>
 				<tr>
 					<td colspan="4">
-						<br><strong>Special Additions:</strong>
+						<br><strong>Special Additions: </strong> <span class="error" id="miscerror"></span>
 						{% if misc_steps %}
 						{% for m in misc_steps %}<br>
 							<div id="morespecial1" class="repeat-special">
@@ -278,7 +279,7 @@
 									{% endfor %}
 								</select>
 								<input type="number" name="misc_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" value="{{ m.amount}}" required>
-								<input type="text" name="misc-units" class="form-control" style="width: 10%; display: inline" value="{{ m.value }}" placeholder="units" required><br>
+								<input type="text" name="misc-units" class="form-control" style="width: 10%; display: inline" value="{{ m.value }}" placeholder="units"><br>
 								<select name="misc_phase" class="form-control" style="width: 20%; display: inline" required>
 									<option value="{{ m.phase }}">phase</option>
 									<option value="boil">boil</option>
@@ -295,7 +296,7 @@
 				</tr>			
 				<tr>
 					<td colspan="4">
-					<br><strong>Yeasts/Bacteria:</strong>	
+					<br><strong>Yeasts/Bacteria: </strong> <span class="error" id="yeasterror"></span>
 					{% for y in yeast_steps %}<br>
 						<div id="moreyeast1" class="repeat-yeast">
 							<select id="yeast" name="yeast" class="form-control" style="width: 40%; display: inline" required>
@@ -304,19 +305,19 @@
 								<option value="{{ yeast }}">{{ yeast }}</option>
 								{% endfor %}
 							</select>
-							<input type="number" name="yeast_amount" class="form-control" placeholder="amount" style="width: 25%; display: inline" style="width: 20%; display: inline" value="{{ y.amount }}" required>
+							<input type="number" name="yeast_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" style="width: 20%; display: inline" value="{{ y.amount }}" required>
 							<select name="yeast-units" class="form-control" style="width: 10%; display: inline" required>
-							{% if y.units == g %}
-									<option value="grams" selected="selected">g</option>
-									<option value="ounces">L</option>
-							{% else %}
-									<option value="grams">g</option>
-									<option value="ounces" selected="selected">oz</option>
-							{% endif %}			</select>
+								{% if y.units == g %}
+										<option value="grams" selected="selected">g</option>
+										<option value="ounces">L</option>
+								{% else %}
+										<option value="grams">g</option>
+										<option value="ounces" selected="selected">oz</option>
+								{% endif %}	
 							</select>
-							<br>
+							
+							<select id="yeast_phase" name="yeast_phase" class="form-control" style="width: 30%; display: inline" required>
 							{% if y.phase == primary %}
-							<select id="yeast_phase" name="yeast_phase" class="form-control" style="width: 20%; display: inline" required>
 								<option value="primary" selected="selected">primary</option>
 								<option value="secondary">secondary</option>
 							{% else %}
@@ -339,7 +340,7 @@
 				<tr>
 					<td colspan="4">
 						<p>
-							<button type="button" value="submit" id="submit" class="btn btn-warning" style="width: 50%">Submit</button>
+							<button type="submit" id="submit" class="btn btn-warning" style="width: 50%">Submit</button>
 						</p>
 					</td>
 				</tr>
@@ -348,6 +349,10 @@
 		</div>
 	</div>
 </div>
-				
+
+{% endblock %}
+{% block extra_scripts %}				
+	<script src="/static/recipeform.js">
+	</script>
 
 {% endblock %}

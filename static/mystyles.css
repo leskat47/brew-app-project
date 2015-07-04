@@ -77,7 +77,9 @@ a 	{
 .glyphicon {
 	text-decoration: none;
 } 
-
+#nameWarning {
+	color: red;
+}
 /* Timer */
 [draggable=true] {
 	cursor: move;
@@ -131,7 +133,10 @@ a 	{
 	color: black;
 }
 
-
+.error 	{
+	color: red;
+	font-weight: bold;
+}
 /* Make brew ratings into stars */
 
 .rating {
