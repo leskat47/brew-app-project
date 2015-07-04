@@ -125,7 +125,7 @@
 					</td>
 					<td colspan="2">
 						<label for="source">Source</label>
-						<input id="source" type="text" name="source" class="source form-control" value="{{ source }}" required>
+						<input id="source" type="text" name="source" class="source form-control" value="{{ name }}" required>
 						<br>
 					</td>
 				<tr>
@@ -280,7 +280,11 @@
 									{% endfor %}
 								</select>
 								<input type="number" name="misc_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" value="{{ m.amount}}" required>
-								<input type="text" name="misc-units" class="form-control" style="width: 10%; display: inline" value="{{ m.value }}" placeholder="units"><br>
+								<select id=="misc-units" name="misc-units" class="form-control" style="width: 10%; display: inline" required>
+									<option value="{{ m.units }}">{{ m.units }}</option>
+									<option value="grams">g</option>
+									<option value="ounces" selected="selected">oz</option>
+								</select><br>
 								<select name="misc_phase" class="form-control" style="width: 20%; display: inline" required>
 									<option value="{{ m.phase }}">phase</option>
 									<option value="boil">boil</option>
