@@ -222,11 +222,7 @@ def all_text_fragments(et):
     return alltext
 
 ########################################################################
-
-if __name__ == "__main__":
-    connect_to_db(app)
-    db.create_all()
-
+def seed_db():
     load_styles("datasets/styleguide.xml")
     load_hops("datasets/hops.xml")
     load_extracts("datasets/adjuncts.xml")
@@ -235,3 +231,14 @@ if __name__ == "__main__":
     load_yeasts("datasets/yeast.xml")
     load_ferms("datasets/grains.xml")
     load_recipes("datasets/recipe.xml")
+
+def connect_to_db():
+    connect_to_db(app)
+    db.create_all()
+
+def main():
+    connect_to_db()
+    seed_db()
+
+if __name__ == "__main__":
+    main()
