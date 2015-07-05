@@ -12,9 +12,24 @@
 		</ul>
 </h4>
 
-{% block extra_scripts %}
-
-{% endblock %}
+<script>
+	var menu_text = "";
+	var fade_time = 200;
+	$(".mybrews").mouseenter(function (){
+			menu_text = "<span style='color: grey;'>My Brews</span>"
+			$(this).html("<div id='login'> Log in to view this page </div>");
+		}).mouseleave(function(){
+			$(this).empty();
+			$(this).html(menu_text);
+		});
+	$(".addrecipe").mouseenter(function (){
+			menu_text = "<span style='color: grey;'>Add Recipe</span>"
+			$(this).html("<div id='login'> Log in to view this page </div>");
+		}).mouseleave(function(){
+			$(this).empty();
+			$(this).html(menu_text);
+		});
+</script>
 
 {% endblock %}
 
