@@ -55,7 +55,6 @@ def calc_color(recipe_id, batch_size, batch_units):
         srm_color += calc_srm_color(Extract, ins.extract.name, ins.amount, ins.units, batch_size)
 
     srm_color = int(round(srm_color))
-    print "feeder ", srm_color
 
     Recipe.query.filter_by(recipe_id=recipe_id).one().srm = srm_color
     db.session.commit()
