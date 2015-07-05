@@ -165,12 +165,7 @@ $(function()
 			units:
 			{
 				required: true
-			},
-			grain:
-			{
-				required: true
 			}
-
 		},
 		messages: {
 			name:
@@ -279,17 +274,17 @@ function sendData() {
 
 //  *********************************************
 //  Send data to server
-	// $.ajax({url: "/addrecipe", 
-	// 	type: "POST",
-	// 	data:JSON.stringify(postparams),
-	// 	contentType: "application/json; charset=utf-8",
-	// 	success: function(result){
-	// 		console.log(result)
-	// 		alert("Recipe added!")
-	// 		var url = "/recipe/" + postparams.name;
-	// 		$(location).attr('href',url);
-	// 	}
-	// });
+	$.ajax({url: "/addrecipe", 
+		type: "POST",
+		data:JSON.stringify(postparams),
+		contentType: "application/json; charset=utf-8",
+		success: function(result){
+			console.log(result)
+			alert("Recipe added!")
+			var url = "/recipe/" + postparams.name;
+			$(location).attr('href',url);
+		}
+	});
 }
 });
 
