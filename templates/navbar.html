@@ -5,19 +5,15 @@
 		<ul class="nav nav-tabs nav-justified">
 			<li><a href="/">Home</a></li>
 			<li><a href="/explore">Explore Brews</a></li>
-			<li>{% if session["user_id"] %} <a href="/mybrews">My Brews</a>{% else %}<a class="disabled loginnote"><span style="color: grey;">My Brews</span>{% endif %}</a></li>
-			<li>{% if session["user_id"] %} <a href="/addrecipe">Add a Recipe</a>{% else %}<a class="disabled loginnote"><span style="color: grey;">Add a Recipe</span></a>{% endif %}</li>
+			<li>
+				{% if session["user_id"] %} <a href="/mybrews">My Brews</a>
+				{% else %}<a class="disabled mybrews"><span style="color: grey;">My Brews</span>{% endif %}</a></li>
+			<li>{% if session["user_id"] %} <a href="/addrecipe">Add a Recipe</a>{% else %}<a class="disabled addrecipe"><span style="color: grey;">Add a Recipe</span></a>{% endif %}</li>
 		</ul>
 </h4>
 
 {% block extra_scripts %}
-<script>
-	$(".loginnote").hover(function (){
-		alert("Log In")
-		$(this).fadeOut(50);
-		$(this).html("<div>Log in to view this page</div>");
-	})
-</script>
+
 {% endblock %}
 
 {% endblock %}

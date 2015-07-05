@@ -25,8 +25,7 @@
 							<a class="btn btn-default" href="/register" style="margin-right: 20px; margin-bottom: 0px">Register</a>
 					</div>
 					</form>
-					<br><br>
-					<div>{% include 'navbar.html' %}</div>
+					<div style="padding: 50px 0px 10px 0px">{% include 'navbar.html' %}</div>
 					<br>
 				</div>
 			</div>
@@ -46,14 +45,22 @@
 		{% block extra_scripts %}
 		{% endblock %}
 		<script>
-			var menu_text;
+			var menu_text = "";
 			var fade_time = 200;
-			$(".loginnote").mouseenter(function (){
-					menu_text = $(this).html();
-					$(this).html("<div>Please Login</div>");
+			$(".mybrews").mouseenter(function (){
+					menu_text = "<span style='color: grey;'>My Brews</span>"
+					$(this).html("<div id='login'> Log in to view this page </div>");
 				}).mouseleave(function(){
+					$(this).empty();
 					$(this).html(menu_text);
-				})
+				});
+			$(".addrecipe").mouseenter(function (){
+					menu_text = "<span style='color: grey;'>Add Recipe</span>"
+					$(this).html("<div id='login'> Log in to view this page </div>");
+				}).mouseleave(function(){
+					$(this).empty();
+					$(this).html(menu_text);
+				});
 		</script>
 	</body>
 </html>

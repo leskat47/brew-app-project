@@ -15,6 +15,20 @@ h1, h2, .nav	{
 	font-size: 20pt;
 }
 
+#nav {
+	padding-top: 500px;
+	background-color: blue;
+}
+
+#login {
+	font-size: 14pt;
+	color: grey;
+	padding: 0px 20px 0px 18px;
+	font-weight: medium;
+	font-family: 'Maven Pro', sans-serif;
+
+}
+
 a 	{
 	color: #89be5e;
 }
