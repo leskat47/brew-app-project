@@ -19,32 +19,30 @@
 <table>
 	<tr>
 		<td>
-			<form action="/register" method="POST" id="register" name="register">
-				<p>
-					First Name: <input type="text" id="fname" name="fname" required>
-				</p>
-				<p>
-					Last Name: <input type="text" id="lname" name="lname" required>
-				</p>
-				<p>
-					Email: <input type="text" id="email" name="email" required>
-				</p>
-				<p>
-					Select a username: <input type="text" name="username" id="username" required>
-				</p>
-				<p>
-					Select a password: <input type="password" name="password" id="password" required>
-				</p>
-				<p>
-					<input type="submit" value="submit">
-				</p>
-
-		</td>
-	</tr>
-	<tr>
-		<td>					
-
+			<form method="post" name="register" id="register" action="/register">
+				<label for='fullname'>First Name: </label><br>
+				<input type="text" name="fname" >
+			</p>
+		    <p>
+			<label for='lastname'>Last Name: </label><br>
+				<input type="text" name="lname" >
+			</p>
+			<p>
+				<label for='email'>Email Address:</label><br>
+				<input type="text" name="email" >
+			</p>
+		    <p>
+				<label for='phone'>Username:</label><br>
+				<input type="text" name="username">
+			</p>    
+			<p>
+				<label for="password">Select a password:</label><br>
+				<input type="password" name="password" id="password">
+			</p>
+			   
+			<input type="submit" name='submit' value="Submit" class="btn btn-default">
 			</form>
+
 		</td>
 	</tr>
 </table>
@@ -53,6 +51,62 @@
 </div>
 {% endblock %}
 
-<!-- {% block extra_scripts %}
-	<script src="/static/registration.js"></script>
-{% endblock %} -->
+{% block extra_scripts %}
+<script>
+$(function()
+{
+    $("#register").validate(
+      {
+        rules: 
+        {
+          fname: 
+          {
+            required: true
+          },
+          lname: 
+          {
+            required: true
+          },
+          username:
+          {
+          	required: true
+          },
+          email: 
+          {
+            required: true,
+            email: true
+          },
+          password: 
+          {
+          	required: true,
+            minlength: 4
+          }
+        },
+        messages: 
+        {
+          fname: 
+          {
+            required: "Please enter your name"
+          },
+          lname:
+          {
+          	required: "Please enter last name"
+          },
+          username:
+          {
+          	required: "Please enter a username"
+          },
+          email: 
+          {
+            required: "Please enter your email address."
+          },
+          password: 
+          {
+            minlength: jQuery.format("Password must be at least {0} characters")
+          }
+        }
+      });	
+});
+
+	</script>
+{% endblock %}
