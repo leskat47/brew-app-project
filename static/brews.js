@@ -82,7 +82,7 @@ $(".stop").on('click', function() {
 
 
 // CALENDAR:
-$("#rem-display").hide()
+$("#rem-display").hide();
 $("input[name=rem]:radio").change( function(){
 	$("#get-inst").val('');
 	$("#c-days").val('');
@@ -110,12 +110,16 @@ $("input[name=rem]:radio").change( function(){
 		$("#cal_desc").text("Beer reminder");
 		$("#prompt").html('Other instructions: <input type="text" id="get-inst"><br>');
 	}
+	$("#get-inst").change( function(){
+		var instructions = $("#get-inst").val();
+		console.log (instructions);
+		$("#cal_desc").text(instructions);
+	});
 });
-$("#get-inst").change( function(){
-	$("#cal_desc").text($("#get-inst").val());
 
-});
+// Calendar instructions -when changed get new instructions
 
+// Calendar date - when changed get value, convert format and add to today's date
 $("#c-days").change( function(){
 	console.log("change")
 	var date = new Date();
@@ -139,11 +143,11 @@ $("#c-days").change( function(){
 
 	(function () {
 			if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
-            if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+            window.ifaddtocalendar = 1;
                 var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
                 s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
                 s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
-                var h = d[g]('body')[0];h.appendChild(s); }})();
+                var h = d[g]('body')[0];h.appendChild(s); })();
 
 });
 
