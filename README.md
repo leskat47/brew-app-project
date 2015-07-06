@@ -51,6 +51,24 @@ Long term steps may be recorded into the user's calendar through the Add to Cale
 
 The user's my brews page shows summary tables of the user's brews, completed and in progress, including notes on brew, results, a rating of the results and basic data about the beer. 
 
+### Usage
+
+1. Set up environment 
+``` sh
+pip install -r requirements.txt
+```
+2. Create a directory "uploads" in tmp  
+``` sh
+mkdir /tmp/uploads 
+```
+3. Run seed file
+``` sh
+python seed.py
+```
+4. Run server file
+``` sh
+python server.py
+```
 
 
 
