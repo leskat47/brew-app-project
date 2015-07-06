@@ -77,8 +77,9 @@ class TestCase(unittest.TestCase):
 
         rv = self.login('jsmith', 'test')
         self.assertTrue('Logout' in rv.data)
+
         rv = self.logout()
-        self.assertTrue('Login' in rv.data)
+        self.assertTrue('Log In' in rv.data)
 
         rv = self.login('jsmith', 'testb')
         self.assertTrue('User name and password do not match' in rv.data)
