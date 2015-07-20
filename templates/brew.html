@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="beercolor">
-	<form action="/brew/{{ brew.id }}" method="post" id="{{ brew.id }}">
+	<form action="/brew/{{ brew.id }}" method="post" id="brew">
 	<div class="row">
 		<div class="col-sm-1 col-md-1">
 		</div>
@@ -104,10 +104,15 @@
 							{{ item.name }} {{ item.amount }} {{ item.units }} 
 						{% endfor %}
 						</p>
-						<p><label for="orig_gravity">Original gravity:</label> <input type="text" step="0.01" name="orig_gravity" id="orig_gravity" class="form-control" style="width: 100px; display: inline" value="{% if brew.og %}{{ brew.og }}{% endif %}"></p>
+						<p><label for="orig_gravity">Original gravity:</label> 
+							<input type="text" step="0.01" name="orig_gravity" id="orig_gravity" class="form-control" style="width: 100px; display: inline" value="{% if brew.og %}{{ brew.og }}{% endif %}">
+						</p>
 						<p>Original gravity range for this style: {{ og_min }} - {{ og_max }}</p>
 						<div>
-							<p><label for="curr_gravity">Current gravity measurement:</label> <input type="float" name="curr_gravity" id="curr_gravity" class="form-control" style="width: 100px; display: inline" value="{% if c_gravity %}{{ c_gravity }} {% else %} {% endif %}"> </p>
+							<p><label for="curr_gravity">Current gravity measurement:</label> 
+								<input type="text" name="curr_gravity" id="curr_gravity" class="form-control" style="width: 100px; display: inline" value="{% if c_gravity %}{{ c_gravity }} {% else %} {% endif %}"> 
+
+							</p>
 							<p>Measured on: <input type="date" class="form-control" style="width: 160px; display:inline" name="cg_date" id="cg_date" value="{{ c_gravity_date }}">
 							</p>
 						</div>
@@ -128,7 +133,7 @@
 										<div id="prompt">
 										</div>
 										<p>
-											Create calendar reminder in <input type="number" name="c-days" id="c-days" style="width: 50px; display: inline"> days.</p>
+											Create calendar reminder in <input type="number" name="c_days" id="c_days" style="width: 50px; display: inline"><em>(number)</em> days.</p>
 											<span class="addtocalendar atc-style-blue" id="rem">
 												<var class="atc_event">
 													<var class="atc_date_start" id="date_start"></var>

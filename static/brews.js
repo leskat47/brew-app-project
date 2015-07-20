@@ -1,4 +1,63 @@
 $(document).ready(function() {
+
+// *******************************************
+// Form validation - only brew date is required. Others prevent strings from being endtered.
+$(function()
+{
+    $("#brew").validate(
+      {
+        rules: 
+        {
+          brew_date: 
+          {
+            required: true,
+            date: true
+          },
+          orig_gravity: 
+          {
+            digits: true
+          },
+          curr_gravity:
+          {
+          	digits: true
+          },
+          c_days: 
+          {
+            digits: true
+          },
+          final_gravity: 
+          {
+          	digits: true
+          }
+        },
+        messages: 
+        {
+          brew_date: 
+          {
+            required: "Please enter the date of your brew."
+          },
+          orig_gravity:
+          {
+          	required: "Please enter only numbers."
+          },
+          curr_gravity:
+          {
+          	required: "Please enter only numbers."
+          },
+          c_days: 
+          {
+          	required: "Please enter only numbers."
+          },
+          final_gravity: 
+          {
+          	required: "Please enter only numbers."
+          }
+        }
+      });	
+});
+
+// *******************************************
+// Set up: alarm sound, timer, calendar, and collapse feature
   var alarmBell = new buzz.sound("/static/bells/alarmbell", {
 	    formats: [ "mp3", "wav"]
   });
@@ -12,7 +71,6 @@ $(document).ready(function() {
 
 // *******************************************
 // Save the boil start time
-
 
 $('#boil_start').change(function(){
 	boil_start = ($('#boil_start').val());
@@ -29,8 +87,6 @@ $('.glyphicon').click(function(){
 	$(this).siblings($('.glyphicon')).toggle();
 
 })
-
-
 
 // ********************************************
 // timer functionality
@@ -85,7 +141,7 @@ $(".stop").on('click', function() {
 $("#rem-display").hide();
 $("input[name=rem]:radio").change( function(){
 	$("#get-inst").val('');
-	$("#c-days").val('');
+	$("#c_days").val('');
 
 	$("#rem-display").show()
 	if (this.value == "gravity") {
@@ -120,10 +176,10 @@ $("input[name=rem]:radio").change( function(){
 // Calendar instructions -when changed get new instructions
 
 // Calendar date - when changed get value, convert format and add to today's date
-$("#c-days").change( function(){
+$("#c_days").change( function(){
 	console.log("change")
 	var date = new Date();
-	var days = parseInt($("#c-days").val());
+	var days = parseInt($("#c_days").val());
 	date.setDate(date.getDate() + days);
 
 	year = date.getFullYear();
