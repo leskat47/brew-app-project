@@ -15,19 +15,19 @@ $(function()
           },
           orig_gravity: 
           {
-            digits: true
+            number: true
           },
           curr_gravity:
           {
-          	digits: true
+          	number: true
           },
           c_days: 
           {
-            digits: true
+            number: true
           },
           final_gravity: 
           {
-          	digits: true
+          	number: true
           }
         },
         messages: 
