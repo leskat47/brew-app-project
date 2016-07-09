@@ -15,7 +15,7 @@ app = Flask(__name__)
 # Required to use Flask sessions and the debug toolbar
 app.secret_key = "ABC"
 
-app.config['UPLOAD_FOLDER'] = '/tmp/uploads/'
+app.config['UPLOAD_FOLDER'] = 'tmp/uploads/'
 app.config['ALLOWED_EXTENSIONS'] = set(['xml'])
 
 
@@ -434,7 +434,7 @@ def upload_file():
             if newfile and allowed_file(newfile.filename):
                 filename = secure_filename(newfile.filename)
                 newfile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                filepath = "/tmp/uploads/" + filename
+                filepath = "tmp/uploads/" + filename
 
                 status, name = load_recipes(filepath, session["user_id"], share)
                 if status == "error":
@@ -446,6 +446,7 @@ def upload_file():
         session['error_list'] = []
 
         for newfile in files:
+            print newfile.filename
             save_files(newfile)
 
         if error_names != []:

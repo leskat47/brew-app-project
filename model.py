@@ -193,7 +193,7 @@ class Hop(db.Model):
     # __table_args__ = (UniqueConstraint('name', 'form'))
 
     def __repr__(self):
-        return "Hop_id: %s, hop_name:" % (self.hop_id, self.name)
+        return "Hop_id: %s, hop_name: %s" % (self.hop_id, self.name)
 
 
 class Extract(db.Model):
