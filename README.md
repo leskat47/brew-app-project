@@ -53,19 +53,19 @@ The user's my brews page shows summary tables of the user's brews, completed and
 
 ### Usage
 
-1. Set up environment 
+Set up environment 
 ``` sh
 pip install -r requirements.txt
 ```
-2. Create a directory "uploads" in tmp  
+Create a directory "uploads" in tmp  
 ``` sh
 mkdir /tmp/uploads 
 ```
-3. Run seed file
+Run seed file
 ``` sh
 python seed.py
 ```
-4. Run server file
+Run server file
 ``` sh
 python server.py
 ```
