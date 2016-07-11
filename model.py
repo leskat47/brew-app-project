@@ -272,7 +272,7 @@ def connect_to_db(app):
     """Connect the database to Flask app."""
 
     # Configure to use SQLite database
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///recipes'
     db.app = app
     db.init_app(app)
 
