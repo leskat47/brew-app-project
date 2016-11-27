@@ -12,7 +12,7 @@ class Style(db.Model):
     __tablename__ = "styles"
 
     style_id = db.Column(db.Integer, primary_key=True, nullable=False)
-    style_name = db.Column(db.String)
+    style_name = db.Column(db.String, unique=True)
     category = db.Column(db.String)
     aroma = db.Column(db.String)
     appearance = db.Column(db.String)
@@ -47,9 +47,9 @@ class Recipe(db.Model):
     source = db.Column(db.String, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
     public = db.Column(db.String, nullable=False)
-    style_name = db.Column(db.Integer, db.ForeignKey('styles.style_name'))
+    style_name = db.Column(db.String, db.ForeignKey('styles.style_name'))
     notes = db.Column(db.String, nullable=True)
-    batch_size = db.Column(db.Integer, nullable=False)
+    batch_size = db.Column(db.Float, nullable=False)
     batch_units = db.Column(db.String, nullable=False)
     srm = db.Column(db.Integer, nullable=True)
 

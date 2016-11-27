@@ -4,6 +4,12 @@ from server import app
 import xml.etree.ElementTree as ET
 import re
 
+
+def load_user():
+    new_user = User(user_id="999", first_name="Sample", last_name="Test", email="s@t.com", username="st", password="sssttt")
+    db.session.add(new_user)
+    db.session.commit()
+
 ###########################################################################
 # STYLES
 
@@ -223,6 +229,7 @@ def all_text_fragments(et):
 
 ########################################################################
 def seed_db():
+    load_user()
     load_styles("datasets/styleguide.xml")
     load_hops("datasets/hops.xml")
     load_extracts("datasets/adjuncts.xml")
@@ -232,12 +239,13 @@ def seed_db():
     load_ferms("datasets/grains.xml")
     load_recipes("datasets/recipe.xml")
 
-def connect_to_db():
+def connect_db():
     connect_to_db(app)
+    db.drop_all()
     db.create_all()
 
 def main():
-    connect_to_db()
+    connect_db()
     seed_db()
 
 if __name__ == "__main__":
