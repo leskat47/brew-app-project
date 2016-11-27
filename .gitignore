@@ -4,6 +4,9 @@ __pycache__/
 
 recipes.db
 test.db
+*.sh
+/tmp
+/olddata
 
 # C extensions
 *.so
