@@ -55,17 +55,17 @@ a 	{
 
  /* Background photos */
 .hop {
-	background-image: url(/static/hops2.jpg);
+	background-image: url(/static/images/hops2.jpg);
 	background-repeat: repeat-y;
 	padding: 0px;
 }
 .beercolor {
-	background-image: url(/static/beercolor.jpg); 
+	background-image: url(/static/images/beercolor.jpg); 
 	background-repeat: repeat-y; 
 	margin-top: 0px;
 }
 .grain {
-	background-image: url(/static/malt.jpg); 
+	background-image: url(/static/images/malt.jpg); 
 	background-repeat: repeat-y; 
 	margin-top: 0px;
 }
