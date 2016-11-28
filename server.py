@@ -82,7 +82,7 @@ def show_explore():
             print "SERVER SRM ", srm_color
             color = color_conversion(srm_color)
             deleteable = False
-            if session["user_id"] and Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
+            if "user_id" in seed and Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
                 deleteable = True
             return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, batch_size=batch_size,
                                    selectlist_styles=selectlist_styles, name=name, source=source, color=color, style=style,
