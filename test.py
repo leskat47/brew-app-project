@@ -74,22 +74,22 @@ class TestCase(unittest.TestCase):
     def logout(self):
         return self.app.get('/logout', follow_redirects=True)
 
-    # def test_login_logout(self):
-    #     u = User(first_name='John', last_name='Smith', email='jsmith@example.com', username='jsmith', password='test')
-    #     db.session.add(u)
-    #     db.session.commit()
-    #
-    #     rv = self.login('jsmith', 'test')
-    #     self.assertTrue('Logout' in rv.data)
-    #
-    #     rv = self.logout()
-    #     self.assertTrue('Log In' in rv.data)
-    #
-    #     rv = self.login('jsmith', 'testb')
-    #     self.assertTrue('User name and password do not match' in rv.data)
-    #
-    #     rv = self.login('jsmithc', 'test')
-    #     self.assertTrue('This username is not registered - please create an account' in rv.data)
+    def test_login_logout(self):
+        u = User(first_name='John', last_name='Smith', email='jsmith@example.com', username='jsmith', password='test')
+        db.session.add(u)
+        db.session.commit()
+
+        rv = self.login('jsmith', 'test')
+        self.assertTrue('Logout' in rv.data)
+
+        rv = self.logout()
+        self.assertTrue('Log In' in rv.data)
+
+        rv = self.login('jsmith', 'testb')
+        self.assertTrue('User name and password do not match' in rv.data)
+
+        rv = self.login('jsmithc', 'test')
+        self.assertTrue('This username is not registered - please create an account' in rv.data)
 
     # ==============================================================================
     # Test Beer Edit Views
