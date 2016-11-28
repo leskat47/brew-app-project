@@ -42,42 +42,25 @@ def feed_recipe_form():
     for style_obj in Style.query.all():
         if style_obj.style_name not in selectlist_styles:
             selectlist_styles.append(style_obj.style_name)
-    grains = Fermentable.query.all()
-    extracts = Extract.query.all()
-    hops = Hop.query.all()
-    miscs = Misc.query.all()
-    yeasts = Yeast.query.all()
 
-    grain_choice = []
-    for g in grains:
-        if g.name not in grain_choice:
-            grain_choice.append(g.name)
-    extract_choice = []
-    for e in extracts:
-        if e.name not in extract_choice:
-            extract_choice.append(e.name)
-    hop_choice = []
-    for h in hops:
-        if h.name not in hop_choice:
-            hop_choice.append(h.name)
-    misc_choice = []
-    for m in miscs:
-        if m.name not in misc_choice:
-            misc_choice.append(m.name)
-    yeast_choice = []
-    for y in yeasts:
-        if y.name not in yeast_choice:
-            yeast_choice.append(y.name)
+    def make_alpha_lists(query_list):
+        choices = set()
+        for obj in query_list:
+            choices.add(obj.name)
+        return sorted(list(choices))
 
-    grain_choice = sorted(grain_choice)
-    extract_choice = sorted(extract_choice)
-    hop_choice = sorted(hop_choice)
-    misc_choice = sorted(misc_choice)
-    yeast_choice = sorted(yeast_choice)
-    selectlist_styles = sorted(selectlist_styles)
+    grain_choice = make_alpha_lists(Fermentable.query.all())
+    extract_choice = make_alpha_lists(Extract.query.all())
+    hop_choice = make_alpha_lists(Hop.query.all())
+    misc_choice = make_alpha_lists(Misc.query.all())
+    yeast_choice = make_alpha_lists(Yeast.query.all())
+
     print "feed recipe form ran"
 
     return grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles
+
+
+
 
 
 # Create lists of recipes and styles which will show in the dropdown selections. list_recipes will
