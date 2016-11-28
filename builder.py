@@ -60,9 +60,6 @@ def feed_recipe_form():
     return grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles
 
 
-
-
-
 # Create lists of recipes and styles which will show in the dropdown selections. list_recipes will
 # hold a list of recipes within a style when style type is selected.
 def get_selectlists(user_id):
