@@ -83,7 +83,7 @@
 				<option value="secondary">secondary</option>
 			</select>
 			<input type="number" id="misc_time" name="misc_time" class="form-control" placeholder="time in boil" style="width: 19%; display: inline">
-				<input type="button" id= "del-misc" name="1" value="Remove special" class="btn btn-del del-misc">	
+				<input type="button" id= "del-misc" name="1" value="Remove special" class="btn btn-del del-misc">
 		</div>
 		<div id="moreyeast1" class="repeat-yeast">
 		<br>
@@ -320,9 +320,9 @@
 								{% else %}
 										<option value="grams">g</option>
 										<option value="ounces" selected="selected">oz</option>
-								{% endif %}	
+								{% endif %}
 							</select>
-							
+
 							<select id="yeast_phase" name="yeast_phase" class="form-control" style="width: 30%; display: inline" required>
 							{% if y.phase == primary %}
 								<option value="primary" selected="selected">primary</option>
@@ -359,9 +359,6 @@
 
 
 {% endblock %}
-{% block extra_scripts %}				
-	<script src="/static/recipeform.js">
-	</script>
+{% block extra_scripts %}
+	<script src="/static/js/recipeform.js"></script>
 {% endblock %}
-
-

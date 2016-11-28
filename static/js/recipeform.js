@@ -2,7 +2,7 @@ $(document).ready(function () {
     "use strict";
 
 //  *********************************************
-//  Ingredient add/delete-a-row functions 
+//  Ingredient add/delete-a-row functions
 
 $("#hidden").hide();
 
@@ -12,17 +12,17 @@ $("#add-grain").click(function() {
 	var num = $(".repeat-grain").length;
 	var newNum = num + 1;
 	if (num > 0) {
-		$('.del-grain').prop('disabled', false);	
-	}	
+		$('.del-grain').prop('disabled', false);
+	}
 	var newElement = $("#moregrains1").clone(true).attr('id', 'moregrains' + newNum).show();
 	$("#add-grain").before(newElement);
 });
 
 $('.del-grain').click(function () {
-    $(this).parent('div').remove(); 
+    $(this).parent('div').remove();
     if ($('.repeat-grain').length === 2) {
     	$('.del-grain').prop('disabled', true);
-	} 
+	}
     });
 
 // $('.del-extract').prop('disabled', true);
@@ -31,17 +31,17 @@ $("#add-extract").click(function() {
 	var num = $(".repeat-extract").length;
 	var newNum = num + 1;
 	if (num > 0) {
-		$('.del-extract').prop('disabled', false);	
+		$('.del-extract').prop('disabled', false);
 	}
 	var newElement = $("#moreextract1").clone(true).attr('id', 'moreextract' + newNum).show();
 	$("#add-extract").before(newElement);
 });
 
 $('.del-extract').click(function () {
-    $(this).parent('div').remove();  
+    $(this).parent('div').remove();
     if ($('.repeat-extract').length === 2) {
     	// $('.del-extract').prop('disabled', true);
-	} 
+	}
     });
 
 // $('.del-hop').prop('disabled', true);
@@ -50,16 +50,16 @@ $("#add-hop").click(function() {
 	var num = $(".repeat-hops").length;
 	var newNum = num + 1;
 	if (num > 0) {
-		$('.del-hop').prop('disabled', false);	
+		$('.del-hop').prop('disabled', false);
 	}
 	var newElement = $("#morehops1").clone(true).attr('id', 'morehops' + newNum).show();
 	$("#add-hop").before(newElement);
 });
 $('.del-hop').click(function () {
-    $(this).parent('div').remove();  
+    $(this).parent('div').remove();
     if ($('.repeat-hops').length === 2) {
     	$('.del-hop').prop('disabled', true);
-	} 
+	}
     });
 
 $("#moremisc1").hide();
@@ -67,13 +67,13 @@ $("#add-misc").click(function() {
 	var num = $(".repeat-misc").length;
 	var newNum = num + 1;
 	if (num > 0) {
-		$('.del-misc').prop('disabled', false);	
+		$('.del-misc').prop('disabled', false);
 	}
 	var newElement = $("#moremisc1").clone(true).attr('id', 'moremisc' + newNum).show();
 	$("#add-misc").before(newElement);
 });
 $('.del-misc').click(function () {
-    $(this).parent('div').remove();  
+    $(this).parent('div').remove();
     });
 
 $("#moreyeast1").hide();
@@ -81,16 +81,16 @@ $("#add-yeast").click(function() {
 	var num = $(".repeat-yeast").length;
 	var newNum = num + 1;
 	if (num > 0) {
-		$('.del-yeast').prop('disabled', false);	
+		$('.del-yeast').prop('disabled', false);
 	}
 	var newElement = $("#moreyeast1").clone(true).attr('id', 'moreyeast' + newNum).show();
 	$("#add-yeast").before(newElement);
 });
 $('.del-yeast').click(function () {
-    $(this).parent('div').remove();  
+    $(this).parent('div').remove();
     if ($('.repeat-yeast').length === 2) {
     	$('.del-yeast').prop('disabled', true);
-	} 
+	}
     });
 
 
@@ -126,7 +126,7 @@ $("#name").change(function () {
 function checkName (){
 	$.post("/check_recipe_name",
 	"name=" + $("#name").val(),
-	function(result) { 
+	function(result) {
 		if (result === "nope") {
 		$("#nameWarning").text('Sorry that recipe name is taken, please try a different name.');
 		$("#name").val('');
@@ -201,9 +201,9 @@ $(function()
 $("#recipeform").validate();
 
 $("#submit").click(function (event){
-	event.preventDefault();	
+	event.preventDefault();
 	var valid = true;
-	
+
 	$("#grainerror").empty();
 	$("#extracterror").empty();
 	$("#hoperror").empty();
@@ -211,9 +211,9 @@ $("#submit").click(function (event){
 	$("#yeasterror").empty();
 
 	$('#recipeform').valid()
-		
+
 		$("form .repeat-grain").children("input, select").each(function () {
-			
+
 			if ($(this).val() == ""){
 				console.log($(this).val())
 				$("#grainerror").text("Please fill in all grain fields");
@@ -238,13 +238,13 @@ $("#submit").click(function (event){
 				valid = false
 			}
 		});
-		$("form .repeat-yeast").children("input, select").each(function () {	
+		$("form .repeat-yeast").children("input, select").each(function () {
 			if ($(this).val() == "") {
 				$("#yeasterror").text("Please fill in all yeast fields");
 				valid = false
 			}
 		});
-	
+
 	if (valid = true) {
 		sendData();
 	}
@@ -252,9 +252,9 @@ $("#submit").click(function (event){
 });
 
 function sendData() {
-	
+
 	console.log ("send data")
-	
+
 	var postparams = {}
 
 	postparams.name = ($("#name").val());
@@ -274,7 +274,7 @@ function sendData() {
 
 //  *********************************************
 //  Send data to server
-	$.ajax({url: "/addrecipe", 
+	$.ajax({url: "/addrecipe",
 		type: "POST",
 		data:JSON.stringify(postparams),
 		contentType: "application/json; charset=utf-8",
@@ -287,7 +287,3 @@ function sendData() {
 	});
 }
 });
-
-
-
-

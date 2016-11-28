@@ -84,7 +84,7 @@
 								</ul>
 					{% endif %}
 							{% if name %}
-								<h3>{{ name }}</h3> 
+								<h3>{{ name }}</h3>
 									{% if session["user_id"] %}
 										<input type="button" id="makerecipe" name="{{ name }}" value="Brew this now!">
 										<form action="/editrecipe/{{ name }}">
@@ -147,7 +147,7 @@
 								<br><br>
 							{% endif %}
 				</div>
-			</div>			
+			</div>
 		</div>
 		<div class="col-sm-1 col-md-2">
 		</div>
@@ -156,6 +156,5 @@
 {% endblock %}
 
 {% block extra_scripts %}
-	<script src="/static/recipe.js"></script>
+	<script src="/static/js/recipe.js"></script>
 {% endblock %}
-
