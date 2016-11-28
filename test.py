@@ -13,6 +13,7 @@ from sqlalchemy import exc
 import json
 
 import feeder
+import builder
 
 
 class TestCase(unittest.TestCase):
@@ -73,22 +74,22 @@ class TestCase(unittest.TestCase):
     def logout(self):
         return self.app.get('/logout', follow_redirects=True)
 
-    def test_login_logout(self):
-        u = User(first_name='John', last_name='Smith', email='jsmith@example.com', username='jsmith', password='test')
-        db.session.add(u)
-        db.session.commit()
-
-        rv = self.login('jsmith', 'test')
-        self.assertTrue('Logout' in rv.data)
-
-        rv = self.logout()
-        self.assertTrue('Log In' in rv.data)
-
-        rv = self.login('jsmith', 'testb')
-        self.assertTrue('User name and password do not match' in rv.data)
-
-        rv = self.login('jsmithc', 'test')
-        self.assertTrue('This username is not registered - please create an account' in rv.data)
+    # def test_login_logout(self):
+    #     u = User(first_name='John', last_name='Smith', email='jsmith@example.com', username='jsmith', password='test')
+    #     db.session.add(u)
+    #     db.session.commit()
+    #
+    #     rv = self.login('jsmith', 'test')
+    #     self.assertTrue('Logout' in rv.data)
+    #
+    #     rv = self.logout()
+    #     self.assertTrue('Log In' in rv.data)
+    #
+    #     rv = self.login('jsmith', 'testb')
+    #     self.assertTrue('User name and password do not match' in rv.data)
+    #
+    #     rv = self.login('jsmithc', 'test')
+    #     self.assertTrue('This username is not registered - please create an account' in rv.data)
 
     # ==============================================================================
     # Test Beer Edit Views
@@ -104,6 +105,19 @@ class TestCase(unittest.TestCase):
     # ==============================================================================
     def test_upload(self):
         self.assertEqual(feeder.load_recipes("olddata/samplerecipe.xml"), ("success", "Tester Recipe"))
+
+    # ==============================================================================
+    # Unit Test Get Ingredient Lists
+    # ==============================================================================
+    def test_feed_recipe_form(self):
+        ingredient_lists = builder.feed_recipe_form()
+        self.assertTrue("2-Row Black Malt" in ingredient_lists[0])
+        self.assertTrue("Blond Dry" in ingredient_lists[1])
+        self.assertTrue("Magnum" in ingredient_lists[2])
+        self.assertTrue("Orange zest" in ingredient_lists[3])
+        self.assertTrue("Windsor" in ingredient_lists[4])
+
+        self.assertEqual(ingredient_lists[0][0], "2-Row Black Malt")
 
 
 if __name__ == '__main__':
