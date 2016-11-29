@@ -24,7 +24,7 @@ class TestCase(unittest.TestCase):
         """
         self.app = app.test_client()
         app.config['TESTING'] = True
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///testingdb'
         db.app = app
         db.init_app(app)
         db.create_all()
