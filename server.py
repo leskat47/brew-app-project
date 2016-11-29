@@ -78,8 +78,12 @@ def show_explore():
                                    selectlist_styles=selectlist_styles)
         elif request.form.get("recipe"):
             recipe = request.form.get("recipe")
+            display_recipe = Recipe.query.filter_by(name=recipe).one()
             name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
             print "SERVER SRM ", srm_color
+            if not srm_color:
+                calc_color(display_recipe.recipe_id, batch_size, batch_units)
+                srm_color = display_recipe.srm
             color = color_conversion(srm_color)
             deleteable = False
             if "user_id" in session and Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
@@ -116,7 +120,7 @@ def get_my_recipes():
 def get_recipes(recipe):
     selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session.get("user_id"))
     deleteable = False
-    if Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
+    if Recipe.query.filter_by(name=recipe).one().user_id == session.get("user_id"):
         deleteable = True
     name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
     color = color_conversion(srm_color)
