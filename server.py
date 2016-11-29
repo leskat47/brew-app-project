@@ -82,7 +82,7 @@ def show_explore():
             print "SERVER SRM ", srm_color
             color = color_conversion(srm_color)
             deleteable = False
-            if "user_id" in seed and Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
+            if "user_id" in session and Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
                 deleteable = True
             return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, batch_size=batch_size,
                                    selectlist_styles=selectlist_styles, name=name, source=source, color=color, style=style,
@@ -369,12 +369,13 @@ def enter_recipe():
         # Misc Instructions
         if miscs != []:
             for i in range(0, len(data['miscs']), 5):
+                print miscs[i]["value"]
                 misc_name = miscs[i]["value"]
                 misc_id = Misc.query.filter_by(name=misc_name)[0].misc_id
                 misc_amount = miscs[i+1]["value"]
-                misc_phase = miscs[i+2]["value"]
-                misc_time = miscs[i+3]["value"]
-                misc_units = miscs[i+4]["value"]
+                misc_units = miscs[i+2]["value"]
+                misc_phase = miscs[i+3]["value"]
+                misc_time = miscs[i+4]["value"]
                 new_miscins = MiscIns(recipe_id=recipe_id, misc_id=misc_id, phase=misc_phase, amount=misc_amount,
                                       time=misc_time, units=misc_units)
                 db.session.add(new_miscins)
