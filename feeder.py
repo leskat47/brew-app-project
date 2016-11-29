@@ -77,7 +77,7 @@ def load_hops_ins(filepath):
                 amount = hop.find('AMOUNT').text
                 units = "kg"
                 phase = hop.find('USE').text
-                time = hop.find('TIME').text
+                time = int(float(hop.find('TIME').text))
                 kind = hop.find('TYPE').text
                 new_inst_item = HopIns(recipe_id=recipe_id, hop_id=hop_id, amount=amount,
                                        units=units, phase=phase, time=time, kind=kind)
