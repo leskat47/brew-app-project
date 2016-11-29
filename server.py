@@ -100,8 +100,8 @@ def show_explore():
 # List user's recipes
 @app.route('/myrecipes')
 def get_my_recipes():
-    selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
-    recipe_list = Recipe.query.filter_by(user_id=session["user_id"]).all()
+    selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session.get("user_id"))
+    recipe_list = Recipe.query.filter_by(user_id=session.get("user_id")).all()
     recipes = []
     for recipe in recipe_list:
         recipes.append(recipe.name)
@@ -114,7 +114,7 @@ def get_my_recipes():
 #  Show details of a single recipe
 @app.route('/recipe/<string:recipe>')
 def get_recipes(recipe):
-    selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
+    selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session.get("user_id"))
     deleteable = False
     if Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
         deleteable = True

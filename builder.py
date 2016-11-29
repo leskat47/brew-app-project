@@ -47,7 +47,7 @@ def feed_recipe_form():
         choices = set()
         for obj in query_list:
             choices.add(obj.name)
-        return sorted(list(choices))
+        return sorted(choices)
 
     grain_choice = make_alpha_lists(Fermentable.query.all())
     extract_choice = make_alpha_lists(Extract.query.all())
