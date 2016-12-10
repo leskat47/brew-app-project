@@ -11,14 +11,14 @@
 			<button type="submit" value="Save and Return Later" class="btn btn-default">Save and Return Later</button>
 				<p>
 					<div style="width: 90%; height: 10px; background-color: {{ color }}"> </div>
-				</p>	
-		</div>	
+				</p>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-1 col-md-1">
 		</div>
 		<div class="row maincontent">
-			<div class="col-sm-11 col-md-7 brew">		
+			<div class="col-sm-11 col-md-7 brew">
 				<div id="timergoodies">
 					<div id="popUpDiv">
 						<strong>Timer</strong>
@@ -28,11 +28,11 @@
 					</div>
 					<button type="button" id="showtimer" class="form-control" style="width: 100px; float: right">Show timer</button>
 				</div>
-				<p>Target color: 
+				<p>Target color:
 				<div style="width: 25px; height: 25px; background-color: {{ color }};">
 				</div>
 				</p>
-			Brew Date: <input type="date" name="brew_date" id="brew_date" class="form-control" style="width: 200px" value={{ brew.date }}>						
+			Brew Date: <input type="date" name="brew_date" id="brew_date" class="form-control" style="width: 200px" value={{ brew.date }}>
 				<a data-toggle="collapse" href="#steep-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline; text-decoration: none;">
 					<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="display: none"></span>
 					<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
@@ -48,14 +48,14 @@
 							{% endfor %}
 							</ul>
 							</p>
-						<p>Steep for <span class="timer" id="steep">30 minutes</span>.</p> 
+						<p>Steep for <span class="timer" id="steep">30 minutes</span>.</p>
 						<button type="button" class="timer form-control" style="width: 150px; display: inline;" value="30">Start a Timer</button>
 					</div>
 				</blockquote>
 				<a data-toggle="collapse" href="#boil-instructions" aria-expanded="false" aria-controls="collapseExample" style="display: inline; text-decoration: none;">
 				<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="display: none"></span>
-				<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>				
-				</a><h2 style="display: inline">2. Boil</h2> 
+				<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+				</a><h2 style="display: inline">2. Boil</h2>
 				<blockquote>
 					<div class="collapse in" id="boil-instructions">
 						<p>Bring water to a boil. Turn off flame and add sugars:</p>
@@ -67,7 +67,7 @@
 						{% else %}
 							<p>&nbsp; -- There are no sugars for this recipe. -- </p>
 						{% endif %}
-						<p>Return to boil.</p> 
+						<p>Return to boil.</p>
 						<p>Record start boil time: <input class="form-control" style="width: 100px; display: inline" id="boil_start" type="time" name-"boil_start" {% if brew.boil_start %}value="{{ brew.boil_start }}"{% endif %}></p>
 						{% for time in times %}
 						<p><strong>At {{ time }} minutes:</strong>
@@ -78,16 +78,16 @@
 							<button type="button" class="timer form-control" style="width: 150px; display: inline;" value="{{ timerset[time] }}">Start a Timer</button>
 							{% endif %}
 						</p>
-						{% endfor %}	
+						{% endfor %}
 					</div>
 				</blockquote>
-					<a data-toggle="collapse" href="#cool" aria-expanded="false" aria-controls="collapseExample" tyle="display: inline; text-decoration: none;">	
+					<a data-toggle="collapse" href="#cool" aria-expanded="false" aria-controls="collapseExample" tyle="display: inline; text-decoration: none;">
 						<span class="glyphicon glyphicon-triangle-right" aria-hidden="true" style="display: none"></span>
-						<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>			
+						<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
 					</a><h2 style="display: inline">3. Cool</h2>
 				<blockquote>
 					<div id="cool" class="collapse in">
-						<p> Bring temperature down to 68&deg; to 70&deg; F. 
+						<p> Bring temperature down to 68&deg; to 70&deg; F.
 						</p>
 					</div>
 				</blockquote>
@@ -100,18 +100,18 @@
 					<div id="transfer-instructions" class="collapse in">
 						<p>Transfer to primary. </p>
 
-						<p>Add yeast: 
-						{% for item in yeast %} 
-							{{ item.name }} {{ item.amount }} {{ item.units }} 
+						<p>Add yeast:
+						{% for item in yeast %}
+							{{ item.name }} {{ item.amount }} {{ item.units }}
 						{% endfor %}
 						</p>
-						<p><label for="orig_gravity">Original gravity:</label> 
+						<p><label for="orig_gravity">Original gravity:</label>
 							<input type="number" step="0.01" name="orig_gravity" id="orig_gravity" class="form-control" style="width: 100px; display: inline" value="{% if brew.og %}{{ brew.og }}{% endif %}">
 						</p>
 						<p>Original gravity range for this style: {{ og_min }} - {{ og_max }}</p>
 						<div>
-							<p><label for="curr_gravity">Current gravity measurement:</label> 
-								<input type="number" name="curr_gravity" id="curr_gravity" class="form-control" style="width: 100px; display: inline" value="{% if c_gravity %}{{ c_gravity }} {% else %} {% endif %}"> 
+							<p><label for="curr_gravity">Current gravity measurement:</label>
+								<input type="number" name="curr_gravity" id="curr_gravity" class="form-control" style="width: 100px; display: inline" value="{% if c_gravity %}{{ c_gravity }} {% else %} {% endif %}">
 
 							</p>
 							<p>Measured on: <input type="date" class="form-control" style="width: 160px; display:inline" name="cg_date" id="cg_date" value="{{ c_gravity_date }}">
@@ -218,9 +218,8 @@
 {% endblock %}
 
 {% block extra_scripts %}
-	<script src="/static/brews.js">
+	<script src="/static/js/brews.js">
 <script>
    var brew_id = {{ brew.id }};
 </script>
 {% endblock %}
-
