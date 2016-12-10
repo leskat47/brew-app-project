@@ -241,7 +241,7 @@ def show_brew_recipe(recipe):
     else:
         notes = record.notes
 
-    srm_color = record.calc_color
+    srm_color = record.calc_color()
 
     style_name = record.style_name
     style_record = Style.query.filter_by(style_name=style_name).one()
