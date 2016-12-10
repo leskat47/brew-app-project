@@ -46,10 +46,15 @@ class MyAppIntegrationTestCase(unittest.TestCase):
     def test_recipe(self):
         result = self.app.get("/recipe/Nate's%20Citrus%20Bomb%20IPA")
         self.assertIn("Citrus Bomb IPA</h3>", result.data)
+        
+        # TODO: Add tests for color calc on Explore page
 
     def test_myrecipes(self):
         result = self.app.get('/myrecipes')
         self.assertIn('Beer Styles', result.data)
+
+
+    # TODO: Add test for ajax call trying color calculation display.
 
 if __name__ == '__main__':
     # If called like a script, run our tests
