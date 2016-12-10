@@ -36,6 +36,7 @@ class MyAppIntegrationTestCase(unittest.TestCase):
         u = User(first_name='Jane', last_name='Smith', email='jsmith@example.com', username='jsmith', password='test')
         db.session.add(u)
         db.session.commit()
+        self.login('jsmith', 'test')
 
     def login(self, username, password):
         return self.app.post('/login', data=dict(
@@ -65,16 +66,19 @@ class MyAppIntegrationTestCase(unittest.TestCase):
         self.assertIn('Beer Styles', result.data)
 
     def test_brew(self):
-        self.login('jsmith', 'test')
         result = self.app.get("/addbrew/Nate's%20Citrus%20Bomb%20IPA", follow_redirects=True)
         # Does the correct color display for Nate's Citrus Bomb?
         self.assertIn('<div style="width: 25px; height: 25px; background-color: #f39c00;">',
                       result.data)
-                      
+
         result = self.app.get("/brew/1")
         self.assertIn('<div style="width: 25px; height: 25px; background-color: #f39c00;">',
                       result.data)
 
+    def test_mybrews_color(self):
+        self.app.get("/addbrew/Nate's%20Citrus%20Bomb%20IPA")
+        result = self.app.get("/mybrews")
+        self.assertIn('<td rowspan="5" style="width: 5px; background-color: #f39c00;"></td>', result.data)
 
     # TODO: Add test for ajax call trying color calculation display.
 
