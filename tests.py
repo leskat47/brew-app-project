@@ -1,7 +1,7 @@
 
 from server import app
 from model import db
-from model import User
+from model import User, Brew
 
 from seed import seed_db
 
@@ -33,6 +33,16 @@ class MyAppIntegrationTestCase(unittest.TestCase):
         db.create_all()
         seed_db()
 
+        u = User(first_name='Jane', last_name='Smith', email='jsmith@example.com', username='jsmith', password='test')
+        db.session.add(u)
+        db.session.commit()
+
+    def login(self, username, password):
+        return self.app.post('/login', data=dict(
+            username=username,
+            password=password
+        ), follow_redirects=True)
+
     def tearDown(self):
         """
         Delete our testing database
@@ -46,12 +56,24 @@ class MyAppIntegrationTestCase(unittest.TestCase):
     def test_recipe(self):
         result = self.app.get("/recipe/Nate's%20Citrus%20Bomb%20IPA")
         self.assertIn("Citrus Bomb IPA</h3>", result.data)
-        
+        self.assertIn('<div style="display: inline; width: 50px; height: 20px; background-color: #f39c00">&nbsp; &nbsp;</div>',
+                      result.data)
         # TODO: Add tests for color calc on Explore page
 
     def test_myrecipes(self):
         result = self.app.get('/myrecipes')
         self.assertIn('Beer Styles', result.data)
+
+    def test_brew(self):
+        self.login('jsmith', 'test')
+        result = self.app.get("/addbrew/Nate's%20Citrus%20Bomb%20IPA", follow_redirects=True)
+        # Does the correct color display for Nate's Citrus Bomb?
+        self.assertIn('<div style="width: 25px; height: 25px; background-color: #f39c00;">',
+                      result.data)
+                      
+        result = self.app.get("/brew/1")
+        self.assertIn('<div style="width: 25px; height: 25px; background-color: #f39c00;">',
+                      result.data)
 
 
     # TODO: Add test for ajax call trying color calculation display.
