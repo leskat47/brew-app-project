@@ -53,6 +53,8 @@ class Recipe(db.Model):
     batch_units = db.Column(db.String, nullable=False)
     srm = db.Column(db.Integer, nullable=True)
 
+    # TODO: remove srm from model, create method to get srm for recipe.
+    
     def __repr__(self):
         return "Recipe_id: %s, recipe_name: %s" % (self.recipe_id, self.name)
 

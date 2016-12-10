@@ -38,7 +38,7 @@ def load_recipes(filepath, user=999, share="yes"):
 
     return "success", name
 
-
+# TODO: Make this funciton a method in the recipe class.
 def calc_color(recipe_id, batch_size, batch_units):
     fermins = FermIns.query.filter_by(recipe_id=recipe_id).all()
     extins = ExtIns.query.filter_by(recipe_id=recipe_id).all()
