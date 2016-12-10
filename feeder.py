@@ -35,7 +35,7 @@ def load_recipes(filepath, user=999, share="yes"):
     load_yeast_ins(filepath)
 
     recipe_id = Recipe.query.filter_by(name=name).one().recipe_id
-    calc_color(recipe_id, batch_size, batch_units)
+    # calc_color(recipe_id, batch_size, batch_units)
 
     return "success", name
 

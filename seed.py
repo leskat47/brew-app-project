@@ -1,5 +1,5 @@
 from model import Hop, Fermentable, Yeast, Recipe, Style, User, Misc, Extract, YeastIns, HopIns, ExtIns, FermIns, MiscIns, connect_to_db, db
-from feeder import calc_color, load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
+from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
 from server import app
 import xml.etree.ElementTree as ET
 import re
