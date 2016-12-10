@@ -1,5 +1,4 @@
 from model import Hop, Fermentable, Yeast, Recipe, Style, User, Misc, Extract, ExtIns, YeastIns, HopIns, FermIns, MiscIns, connect_to_db, db
-from builder import calc_srm_color
 import xml.etree.ElementTree as ET
 
 
@@ -21,10 +20,12 @@ def load_recipes(filepath, user=999, share="yes"):
         notes = el_find_text(recipe, 'NOTES', "")
         batch_size = el_find_text(recipe, 'BATCH_SIZE', "L")
         batch_units = "L"
-        srm = 0
+        # srm = 0
         new_recipe = Recipe(name=name, source=source, user_id=user_id, public=public,
                             notes=notes, batch_size=batch_size, batch_units=batch_units,
-                            style_name=style_name, srm=srm)
+                            style_name=style_name,
+                            # srm=srm
+                            )
         db.session.add(new_recipe)
     db.session.commit()
     load_hops_ins(filepath)
@@ -37,27 +38,6 @@ def load_recipes(filepath, user=999, share="yes"):
     calc_color(recipe_id, batch_size, batch_units)
 
     return "success", name
-
-# TODO: Make this funciton a method in the recipe class.
-def calc_color(recipe_id, batch_size, batch_units):
-    fermins = FermIns.query.filter_by(recipe_id=recipe_id).all()
-    extins = ExtIns.query.filter_by(recipe_id=recipe_id).all()
-    srm_color = 0
-    if batch_units not in ["gallons", "Gallons", "g"]:
-        batch_size = float(batch_size) * 0.26417
-    else:
-        batch_size = float(batch_size)
-
-    srm_color = 0.0
-    for ins in fermins:
-        srm_color += calc_srm_color(Fermentable, ins.fermentable.name, ins.amount, ins.units, batch_size)
-    for ins in extins:
-        srm_color += calc_srm_color(Extract, ins.extract.name, ins.amount, ins.units, batch_size)
-
-    srm_color = int(round(srm_color))
-
-    Recipe.query.filter_by(recipe_id=recipe_id).one().srm = srm_color
-    db.session.commit()
 
 
 ###########################################################################

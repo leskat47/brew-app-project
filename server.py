@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
 from flask import Flask, render_template, redirect, request, flash, session, url_for, send_from_directory
-from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
-from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins, calc_color
-from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist, show_brew_recipe, color_conversion, calc_srm_color, normalize_batch_size
+from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db, calc_srm_color
+from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
+# , calc_color
+from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist, show_brew_recipe, color_conversion, normalize_batch_size
 import xml.etree.ElementTree as ET
 import os
 from werkzeug import secure_filename
@@ -82,8 +83,8 @@ def show_explore():
             name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
             print "SERVER SRM ", srm_color
             if not srm_color:
-                calc_color(display_recipe.recipe_id, batch_size, batch_units)
-                srm_color = display_recipe.srm
+                # calc_color(display_recipe.recipe_id, batch_size, batch_units)
+                srm_color = display_recipe.calc_color
             color = color_conversion(srm_color)
             deleteable = False
             if "user_id" in session and Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
@@ -396,7 +397,7 @@ def enter_recipe():
             db.session.add(new_yeastins)
             db.session.commit
 
-        calc_color(recipe_id, batch_size, batch_units)
+        # calc_color(recipe_id, batch_size, batch_units)
         print "recipe added"
 
         message = "Your recipe has been added."

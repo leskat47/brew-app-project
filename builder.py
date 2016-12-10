@@ -1,21 +1,21 @@
 from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
 
-def calc_srm_color(ingredient, name, amount, units, batch_size):
-    """
-    Calculate the color contribution of various ingredients
-    """
-    color = ingredient.query.filter_by(name=name)[0].color
-
-    # Convert amount to pounds
-    if units in ["oz", "ounces"]:
-        amount = amount * 0.062500
-    elif units in ["g", "grams"]:
-        amount = amount * 0.0022046
-    else:
-        amount = amount * 2.20462
-    mcu = (color * amount) / float(batch_size)
-    srm_color = 1.4922 * (mcu ** .6859)
-    return srm_color
+# def calc_srm_color(ingredient, name, amount, units, batch_size):
+#     """
+#     Calculate the color contribution of various ingredients
+#     """
+#     color = ingredient.query.filter_by(name=name)[0].color
+#
+#     # Convert amount to pounds
+#     if units in ["oz", "ounces"]:
+#         amount = amount * 0.062500
+#     elif units in ["g", "grams"]:
+#         amount = amount * 0.0022046
+#     else:
+#         amount = amount * 2.20462
+#     mcu = (color * amount) / float(batch_size)
+#     srm_color = 1.4922 * (mcu ** .6859)
+#     return srm_color
 
 
 def normalize_batch_size(batch_size, batch_units):
@@ -95,7 +95,7 @@ def get_brewlist(all_brews):
         newbrew["id"] = brew.id
         recipe_obj = Recipe.query.filter_by(recipe_id=brew.recipe_id).one()
         newbrew["name"] = recipe_obj.name
-        color = recipe_obj.srm
+        color = recipe_obj.calc_color()
         newbrew["color"] = color_conversion(color)
         newbrew["date"] = brew.date
         newbrew["notes"] = brew.notes
@@ -146,7 +146,7 @@ def get_recipe_info(recipe):
     name = display_recipe.name
     source = display_recipe.source
     style = display_recipe.style_name
-    srm_color = display_recipe.srm
+    srm_color = display_recipe.calc_color()
     print "SRM", srm_color
 
     batch_size, batch_units = normalize_batch_size(display_recipe.batch_size, display_recipe.batch_units)
@@ -241,7 +241,7 @@ def show_brew_recipe(recipe):
     else:
         notes = record.notes
 
-    srm_color = record.srm
+    srm_color = record.calc_color
 
     style_name = record.style_name
     style_record = Style.query.filter_by(style_name=style_name).one()

@@ -51,13 +51,45 @@ class Recipe(db.Model):
     notes = db.Column(db.String, nullable=True)
     batch_size = db.Column(db.Float, nullable=False)
     batch_units = db.Column(db.String, nullable=False)
-    srm = db.Column(db.Integer, nullable=True)
+    # srm = db.Column(db.Integer, nullable=True)
 
     # TODO: remove srm from model, create method to get srm for recipe.
-    
+    def calc_color(self):
+        fermins = FermIns.query.filter_by(recipe_id=self.recipe_id).all()
+        extins = ExtIns.query.filter_by(recipe_id=self.recipe_id).all()
+        srm_color = 0
+        if self.batch_units not in ["gallons", "Gallons", "g"]:
+            batch_size = float(self.batch_size) * 0.26417
+        else:
+            batch_size = float(self.batch_size)
+
+        srm_color = 0.0
+        for ins in fermins:
+            srm_color += calc_srm_color(Fermentable, ins.fermentable.name, ins.amount, ins.units, batch_size)
+        for ins in extins:
+            srm_color += calc_srm_color(Extract, ins.extract.name, ins.amount, ins.units, batch_size)
+
+        return(int(round(srm_color)))
+
     def __repr__(self):
         return "Recipe_id: %s, recipe_name: %s" % (self.recipe_id, self.name)
 
+def calc_srm_color(ingredient, name, amount, units, batch_size):
+    """
+    Calculate the color contribution of various ingredients
+    """
+    color = ingredient.query.filter_by(name=name)[0].color
+
+    # Convert amount to pounds
+    if units in ["oz", "ounces"]:
+        amount = amount * 0.062500
+    elif units in ["g", "grams"]:
+        amount = amount * 0.0022046
+    else:
+        amount = amount * 2.20462
+    mcu = (color * amount) / float(batch_size)
+    srm_color = 1.4922 * (mcu ** .6859)
+    return srm_color
 
 class Brew(db.Model):
 
