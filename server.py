@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from flask import Flask, render_template, redirect, request, flash, session, url_for, send_from_directory
-from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db, calc_srm_color
+from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
 from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
 # , calc_color
 from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist, show_brew_recipe, color_conversion, normalize_batch_size
@@ -482,15 +482,7 @@ def calculate_color():
     # print data
     batch_size, batch_units = normalize_batch_size(data["batch_size"], data["units"])
 
-    srm = 0
-    for ingredient_idx, fermentable in [('grains', Fermentable), ('extracts', Extract)]:
-        ingredient_list = data[ingredient_idx]
-        for i in range(0, len(ingredient_list), 3):
-            name = ingredient_list[i]["value"]
-            amount = float(ingredient_list[i+1]["value"])
-            units = ingredient_list[i+2]["value"]
-            srm += calc_srm_color(fermentable, name, amount, units, batch_size)
-
+    srm = Fermentable.get_srm_from_ingredient_list(data["grains"], batch_size, batch_units) + Extract.get_srm_from_ingredient_list(data["extracts"], batch_size, batch_units)
     print srm
     color = color_conversion(srm)
     return color
