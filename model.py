@@ -196,6 +196,37 @@ class YeastIns(db.Model):
 ###########################################################
 # INGREDIENTS
 
+class CalcSRMColorMixin(object):
+    @classmethod
+    def calc_srm_color(cls, name, amount, units, batch_size):
+        """
+        Calculate the color contribution of various ingredients
+        """
+        color = cls.query.filter_by(name=name)[0].color
+
+        # Convert amount to pounds
+        if units in ["oz", "ounces"]:
+            amount = amount * 0.062500
+        elif units in ["g", "grams"]:
+            amount = amount * 0.0022046
+        else:
+            amount = amount * 2.20462
+        mcu = (color * amount) / float(batch_size)
+        srm_color = 1.4922 * (mcu ** .6859)
+        return srm_color
+
+
+    @classmethod
+    def get_srm_from_ingredient_list(cls, ingredient_list, batch_size, batch_units):
+        srm_value = 0
+        for i in range(0, len(ingredient_list), 3):
+            name = ingredient_list[i]["value"]
+            amount = float(ingredient_list[i+1]["value"])
+            units = ingredient_list[i+2]["value"]
+            srm_value += cls.calc_srm_color(name, amount, units, batch_size)
+
+        return srm_value
+
 
 class Hop(db.Model):
 
@@ -283,37 +314,6 @@ class Yeast(db.Model):
     attenuation = db.Column(db.Float, nullable=True)
     notes = db.Column(db.String, nullable=True)
 
-
-class CalcSRMColorMixin(object):
-    @classmethod
-    def calc_srm_color(cls, name, amount, units, batch_size):
-        """
-        Calculate the color contribution of various ingredients
-        """
-        color = cls.query.filter_by(name=name)[0].color
-
-        # Convert amount to pounds
-        if units in ["oz", "ounces"]:
-            amount = amount * 0.062500
-        elif units in ["g", "grams"]:
-            amount = amount * 0.0022046
-        else:
-            amount = amount * 2.20462
-        mcu = (color * amount) / float(batch_size)
-        srm_color = 1.4922 * (mcu ** .6859)
-        return srm_color
-
-
-    @classmethod
-    def get_srm_from_ingredient_list(cls, ingredient_list, batch_size, batch_units):
-        srm_value = 0
-        for i in range(0, len(ingredient_list), 3):
-            name = ingredient_list[i]["value"]
-            amount = float(ingredient_list[i+1]["value"])
-            units = ingredient_list[i+2]["value"]
-            srm_value += cls.calc_srm_color(name, amount, units, batch_size)
-
-        return srm_value
 
 ####################################################################
 
