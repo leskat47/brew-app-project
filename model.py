@@ -64,32 +64,53 @@ class Recipe(db.Model):
             batch_size = float(self.batch_size)
 
         srm_color = 0.0
+        # for ins in fermins:
+        #     srm_color += calc_srm_color(Fermentable, ins.fermentable.name, ins.amount, ins.units, batch_size)
+        # for ins in extins:
+        #     srm_color += calc_srm_color(Extract, ins.extract.name, ins.amount, ins.units, batch_size)
+
+        # Try class method
         for ins in fermins:
-            srm_color += calc_srm_color(Fermentable, ins.fermentable.name, ins.amount, ins.units, batch_size)
+            srm_color += Fermentable.calc_srm_color(ins.fermentable.name, ins.amount, ins.units, batch_size)
         for ins in extins:
-            srm_color += calc_srm_color(Extract, ins.extract.name, ins.amount, ins.units, batch_size)
+            srm_color += Extract.calc_srm_color(ins.extract.name, ins.amount, ins.units, batch_size)
 
         return(int(round(srm_color)))
 
     def __repr__(self):
         return "Recipe_id: %s, recipe_name: %s" % (self.recipe_id, self.name)
 
-def calc_srm_color(ingredient, name, amount, units, batch_size):
-    """
-    Calculate the color contribution of various ingredients
-    """
-    color = ingredient.query.filter_by(name=name)[0].color
 
-    # Convert amount to pounds
-    if units in ["oz", "ounces"]:
-        amount = amount * 0.062500
-    elif units in ["g", "grams"]:
-        amount = amount * 0.0022046
-    else:
-        amount = amount * 2.20462
-    mcu = (color * amount) / float(batch_size)
-    srm_color = 1.4922 * (mcu ** .6859)
-    return srm_color
+class CalcSRMColorMixin(object):
+    @classmethod
+    def calc_srm_color(cls, name, amount, units, batch_size):
+        """
+        Calculate the color contribution of various ingredients
+        """
+        color = cls.query.filter_by(name=name)[0].color
+
+        # Convert amount to pounds
+        if units in ["oz", "ounces"]:
+            amount = amount * 0.062500
+        elif units in ["g", "grams"]:
+            amount = amount * 0.0022046
+        else:
+            amount = amount * 2.20462
+        mcu = (color * amount) / float(batch_size)
+        srm_color = 1.4922 * (mcu ** .6859)
+        return srm_color
+
+    @classmethod
+    def get_srm_from_ingredient_list(cls, ingredient_list, batch_size, batch_units):
+        srm_value = 0
+        for i in range(0, len(ingredient_list), 3):
+            name = ingredient_list[i]["value"]
+            amount = float(ingredient_list[i+1]["value"])
+            units = ingredient_list[i+2]["value"]
+            srm_value += cls.calc_srm_color(name, amount, units, batch_size)
+
+        return srm_value
+
 
 class Brew(db.Model):
 
@@ -230,7 +251,7 @@ class Hop(db.Model):
         return "Hop_id: %s, hop_name: %s" % (self.hop_id, self.name)
 
 
-class Extract(db.Model):
+class Extract(db.Model, CalcSRMColorMixin):
 
     __tablename__ = "extracts"
 
@@ -246,7 +267,7 @@ class Extract(db.Model):
     color = db.Column(db.Float)
 
 
-class Fermentable(db.Model):
+class Fermentable(db.Model, CalcSRMColorMixin):
 
     __tablename__ = "ferms"
 
