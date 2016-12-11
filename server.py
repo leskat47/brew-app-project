@@ -381,7 +381,8 @@ def enter_recipe():
                 misc_units = miscs[i+2]["value"]
                 misc_phase = miscs[i+3]["value"]
                 misc_time = miscs[i+4]["value"]
-                new_miscins = MiscIns(recipe_id=recipe_id, misc_id=misc_id, phase=misc_phase, amount=misc_amount,
+                new_miscins = MiscIns(recipe_id=recipe_id, misc_id=misc_id,
+                                      phase=misc_phase, amount=misc_amount,
                                       time=misc_time, units=misc_units)
                 db.session.add(new_miscins)
                 db.session.commit()
@@ -393,7 +394,9 @@ def enter_recipe():
             yeast_amount = yeasts[i+1]["value"]
             yeast_units = yeasts[i+2]["value"]
             yeast_phase = yeasts[i+3]["value"]
-            new_yeastins = YeastIns(recipe_id=recipe_id, yeast_id=yeast_id, amount=yeast_amount, units=yeast_units, phase=yeast_phase)
+            new_yeastins = YeastIns(recipe_id=recipe_id, yeast_id=yeast_id,
+                                    amount=yeast_amount, units=yeast_units,
+                                    phase=yeast_phase)
             db.session.add(new_yeastins)
             db.session.commit
 
@@ -405,8 +408,10 @@ def enter_recipe():
 
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
 
-    return render_template("recipeform.html", selectlist_styles=selectlist_styles, grain_choice=grain_choice, hop_choice=hop_choice,
-                           extract_choice=extract_choice, misc_choice=misc_choice, yeast_choice=yeast_choice)
+    return render_template("recipeform.html", selectlist_styles=selectlist_styles,
+                           grain_choice=grain_choice, hop_choice=hop_choice,
+                           extract_choice=extract_choice, misc_choice=misc_choice,
+                           yeast_choice=yeast_choice)
 
 
 # Display edit recipe page
@@ -416,10 +421,13 @@ def editrecipe(recipe):
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
 
     public = Recipe.query.filter_by(name=recipe).one().public
-    return render_template("editrecipe.html", name=name, source=source, style=style, batch_size=batch_size, batch_units=batch_units,
-                           public=public, notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
-                           misc_steps=misc_steps, yeast_steps=yeast_steps, grain_choice=grain_choice,
-                           extract_choice=extract_choice, hop_choice=hop_choice, misc_choice=misc_choice,
+    return render_template("editrecipe.html", name=name, source=source, style=style,
+                           batch_size=batch_size, batch_units=batch_units,
+                           public=public, notes=notes, hop_steps=hop_steps,
+                           ext_steps=ext_steps, ferm_steps=ferm_steps,
+                           misc_steps=misc_steps, yeast_steps=yeast_steps,
+                           grain_choice=grain_choice, extract_choice=extract_choice,
+                           hop_choice=hop_choice, misc_choice=misc_choice,
                            yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
 
 
@@ -460,7 +468,8 @@ def upload_file():
             return render_template("uploaderror.html")
         else:
             notice = "Recipe(s) successfully added!"
-            return render_template("uploadrecipe.html", notice=notice, recipes=recipes)
+            return render_template("uploadrecipe.html", notice=notice,
+                                   recipes=recipes)
 
     return render_template("uploadrecipe.html")
 
@@ -482,7 +491,8 @@ def calculate_color():
     # print data
     batch_size, batch_units = normalize_batch_size(data["batch_size"], data["units"])
 
-    srm = Fermentable.get_srm_from_ingredient_list(data["grains"], batch_size, batch_units) + Extract.get_srm_from_ingredient_list(data["extracts"], batch_size, batch_units)
+    srm = Fermentable.get_srm_from_ingredient_list(data["grains"], batch_size, batch_units) \
+          + Extract.get_srm_from_ingredient_list(data["extracts"], batch_size, batch_units)
     print srm
     color = color_conversion(srm)
     return color
@@ -509,7 +519,8 @@ def register():
             return redirect('/register')
         else:
             # Creating instance of User class with associated info
-            current_person = User(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
+            current_person = User(first_name=first_name, last_name=last_name, email=email,
+                                  username=username, password=password)
 
             # adding the user's info to the DB
             db.session.add(current_person)
