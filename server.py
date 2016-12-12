@@ -50,6 +50,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
+    """ Display home page """
     return render_template("homepage.html")
 
 
@@ -58,7 +59,7 @@ def index():
 
 @app.route('/explore', methods=['GET', 'POST'])
 def show_explore():
-
+    """ Display explore page """
     if session:
         selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
         new = True
@@ -102,9 +103,11 @@ def show_explore():
 # ***************************************************************************************
 # Explore Recipes right panel displays
 
-# List user's recipes
+
 @app.route('/myrecipes')
 def get_my_recipes():
+    """ List user's recipes """
+
     selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session.get("user_id"))
     recipe_list = Recipe.query.filter_by(user_id=session.get("user_id")).all()
     recipes = []
@@ -116,9 +119,10 @@ def get_my_recipes():
                            sel_user_styles=sel_user_styles)
 
 
-#  Show details of a single recipe
 @app.route('/recipe/<string:recipe>')
 def get_recipes(recipe):
+    """Show details of a single recipe """
+
     selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session.get("user_id"))
     deleteable = False
     if Recipe.query.filter_by(name=recipe).one().user_id == session.get("user_id"):
@@ -131,9 +135,10 @@ def get_recipes(recipe):
                            misc_steps=misc_steps, yeast_steps=yeast_steps, deleteable=deleteable)
 
 
-# Ajax called - Check for duplicate brew
 @app.route('/check_brew', methods=['GET', 'POST'])
 def check_brew():
+    """ Ajax called - Check for duplicate brew """
+
     recipe = request.form.get("name")
     user_id = session["user_id"]
     date = datetime.date.today()
@@ -145,9 +150,11 @@ def check_brew():
         return "not duplicate"
 
 
-# Add new brew with today's date and route to brew page
+
 @app.route('/addbrew/<string:recipe>')
 def add_brew(recipe):
+    """ Add new brew with today's date and route to brew page """
+
     user_id = session["user_id"]
     date = datetime.date.today()
     recipe_id = Recipe.query.filter_by(name=recipe).one().recipe_id
@@ -160,9 +167,10 @@ def add_brew(recipe):
     return redirect('/brew/' + brew_id)
 
 
-# Delete recipe from database and delete associated instructions
 @app.route("/deleterecipe/<string:recipe>")
 def delete_recipe(recipe):
+    """ Delete recipe from database and delete associated instructions """
+
     recipe_obj = Recipe.query.filter_by(name=recipe).one()
     HopIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
     FermIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
@@ -221,9 +229,9 @@ def show_mybrews():
                                selectlist_user=selectlist_user, sel_user_styles=sel_user_styles)
 
 
-# Delete brew from database
 @app.route('/delete_brew/<int:brew_id>')
 def delete_brew(brew_id):
+    """ Delete brew from database """
     Brew.query.filter_by(id=brew_id).delete()
     db.session.commit()
     flash("Your brew was deleted")
@@ -253,9 +261,10 @@ def brew_process(brew_id):
                                notes=notes, color=color, rating=rating)
 
 
-# Ajax called -Store boil start time on change
 @app.route('/boil', methods=["POST"])
 def note_boil_time():
+    """ Ajax call -Store boil start time on change """
+
     boil_start = request.form.get("boil_start")
     brew_id = request.form.get("brew_id")
     startformat = '%H:%M'
@@ -265,8 +274,9 @@ def note_boil_time():
     db.session.commit()
 
 
-# Save brew data to database
 def update_brew(brew):
+    """ Save brew data to database """
+
     brew.user_id = session["user_id"]
     date_get = request.form.get('brew_date')
     brew.date = datetime.datetime.strptime(date_get, "%Y-%m-%d").date()
@@ -301,9 +311,12 @@ def update_brew(brew):
 # ***************************************************************************************
 # Add new recipes
 
-# Get  - display add recipe. Post - Add recipe and edit recipe pages info routed here for processing and uploading to db
 @app.route('/addrecipe', methods=['GET', 'POST'])
 def enter_recipe():
+    """ Get  - display add recipe.
+        Post - Add recipe and edit recipe pages info routed here for processing and uploading to db
+    """
+
     if request.method == "POST":
         data = request.get_json()
         # print "*****************************************************", data
@@ -400,8 +413,6 @@ def enter_recipe():
             db.session.add(new_yeastins)
             db.session.commit
 
-        # calc_color(recipe_id, batch_size, batch_units)
-        print "recipe added"
 
         message = "Your recipe has been added."
         return message
@@ -414,9 +425,10 @@ def enter_recipe():
                            yeast_choice=yeast_choice)
 
 
-# Display edit recipe page
 @app.route('/editrecipe/<string:recipe>')
 def editrecipe(recipe):
+    """ Display edit recipe page """
+
     name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
 
@@ -431,9 +443,10 @@ def editrecipe(recipe):
                            yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
 
 
-# Display page for recipe upload and process uploaded recipe. Return either error page or recipe page.
 @app.route('/uploadrecipe', methods=['GET', 'POST'])
 def upload_file():
+    """ Display page for recipe upload and process uploaded recipe. Return either error page or recipe page. """
+
     if request.method == 'POST':
         share = request.form.get('share')
         files = []
@@ -474,9 +487,11 @@ def upload_file():
     return render_template("uploadrecipe.html")
 
 
-# Ajax called - Check for duplicate recipe names
+
 @app.route('/check_recipe_name', methods=["POST"])
 def check_name():
+    """ Ajax call - Check for duplicate recipe names """
+
     test_name = request.form.get("name")
     if Recipe.query.filter_by(name=test_name).all() == []:
         return "okay"
@@ -484,11 +499,11 @@ def check_name():
         return "nope"
 
 
-# Ajax called -Calculate color for recipe
 @app.route('/colorcalc', methods=['GET', 'POST'])
 def calculate_color():
+    """ Ajax call -Calculate color for recipe """
+
     data = request.get_json()
-    # print data
     batch_size, batch_units = normalize_batch_size(data["batch_size"], data["units"])
 
     srm = Fermentable.get_srm_from_ingredient_list(data["grains"], batch_size, batch_units) \
@@ -503,6 +518,8 @@ def calculate_color():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    """ Register a new user. """
+
     if request.method == "POST":
         email = request.form.get("email")
         password = request.form.get("password")
@@ -534,6 +551,8 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """ Check and login new user """
+
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
@@ -561,7 +580,7 @@ def login():
 
 @app.route('/logout', methods=["GET"])
 def logout():
-    print "LOGGED OUT"
+    """ Log Out User """
     session["username"] = None
     session["password"] = None
     session["user_id"] = None

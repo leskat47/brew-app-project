@@ -51,9 +51,7 @@ class Recipe(db.Model):
     notes = db.Column(db.String, nullable=True)
     batch_size = db.Column(db.Float, nullable=False)
     batch_units = db.Column(db.String, nullable=False)
-    # srm = db.Column(db.Integer, nullable=True)
 
-    # TODO: remove srm from model, create method to get srm for recipe.
     def calc_color(self):
         fermins = FermIns.query.filter_by(recipe_id=self.recipe_id).all()
         extins = ExtIns.query.filter_by(recipe_id=self.recipe_id).all()
@@ -194,7 +192,8 @@ class YeastIns(db.Model):
 
 
 ###########################################################
-# INGREDIENTS
+# MIXINS
+
 
 class CalcSRMColorMixin(object):
     @classmethod
@@ -213,6 +212,7 @@ class CalcSRMColorMixin(object):
             amount = amount * 2.20462
         mcu = (color * amount) / float(batch_size)
         srm_color = 1.4922 * (mcu ** .6859)
+
         return srm_color
 
 
@@ -226,6 +226,9 @@ class CalcSRMColorMixin(object):
             srm_value += cls.calc_srm_color(name, amount, units, batch_size)
 
         return srm_value
+
+###########################################################
+# INGREDIENTS
 
 
 class Hop(db.Model):
