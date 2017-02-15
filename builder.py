@@ -1,22 +1,5 @@
 from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
 
-# def calc_srm_color(ingredient, name, amount, units, batch_size):
-#     """
-#     Calculate the color contribution of various ingredients
-#     """
-#     color = ingredient.query.filter_by(name=name)[0].color
-#
-#     # Convert amount to pounds
-#     if units in ["oz", "ounces"]:
-#         amount = amount * 0.062500
-#     elif units in ["g", "grams"]:
-#         amount = amount * 0.0022046
-#     else:
-#         amount = amount * 2.20462
-#     mcu = (color * amount) / float(batch_size)
-#     srm_color = 1.4922 * (mcu ** .6859)
-#     return srm_color
-
 
 def normalize_batch_size(batch_size, batch_units):
     """
@@ -156,6 +139,7 @@ def get_recipe_info(recipe):
     else:
         notes = display_recipe.notes
 
+    # FIXME: All of these could just pass the objects. Check all affected routes and eliminate this code.
     hops = display_recipe.hins
     hop_dict = {}
     hop_steps = []
@@ -227,7 +211,7 @@ def get_recipe_info(recipe):
         yeast_dict["kind"] = ingredient.yeast.kind
         yeast_dict["form"] = ingredient.yeast.form
         yeast_dict["units"] = ingredient.units
-        yeast_steps.append(yeast_dict.copy())
+        yeast_steps.append(yeast_dict.copy()
 
     return (name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color)
 

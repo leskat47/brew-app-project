@@ -319,7 +319,6 @@ def enter_recipe():
 
     if request.method == "POST":
         data = request.get_json()
-        # print "*****************************************************", data
         grains = data['grains']
         extracts = data['extracts']
         hops = data['hops']
@@ -387,7 +386,6 @@ def enter_recipe():
         # Misc Instructions
         if miscs != []:
             for i in range(0, len(data['miscs']), 5):
-                print miscs[i]["value"]
                 misc_name = miscs[i]["value"]
                 misc_id = Misc.query.filter_by(name=misc_name)[0].misc_id
                 misc_amount = miscs[i+1]["value"]

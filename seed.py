@@ -109,7 +109,6 @@ def load_adjuncts(datafile):
         ex_yield = child.find('YIELD').text
         notes = child.find('NOTES').text
         phase = "boil"
-        print "Extract: ", name
         new_ext = Extract(name=name, supplier=supplier, origin=origin, kind=kind,
                           ex_yield=ex_yield, notes=notes, phase=phase)
         db.session.add(new_ext)
