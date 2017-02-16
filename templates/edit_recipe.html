@@ -1,0 +1,364 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="hidden">
+    <div id="moregrains1" class="repeat-grain" name="graindiv">
+        <br>
+            <select id="grain" name="grain" class="form-control" style="width: 40%; display: inline" required>
+                <option selected disabled>Grain</option>
+                {% for grain in grain_choice %}
+                <option value="{{ grain }}">{{ grain }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" id="grain_amount" name="grain_amount" class="form-control" placeholder="amount" style="width: 25%; display: inline" required>
+            <select id="grain_units" name="grain_units" class="form-control" style="width: 10%; display: inline" required>
+                <option selected disabled>units</option>
+                <option value="grams">g</option>
+                <option value="ounces">oz</option>
+            </select>
+            <input type="button" id="del-grain" class="btn btn-del del-grain" value="Remove grain">
+        </div>
+        <div id="moreextract1" class="repeat-extract" name="extractdiv">
+            <br>
+            <select id="extract" name="extract" class="form-control" style="width: 40%; display: inline" required>
+                <option selected disabled>Extract</option>
+                {% for extract in extract_choice %}
+                <option value="{{ extract }}">{{ extract }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" id="extract_amount" name="extract_amount" class="form-control" placeholder="amount" style="width: 25%; display: inline" required>
+            <select id="extract_units" name="extract_units" class="form-control" style="width: 10%; display: inline">
+                <option selected disabled>units</option>
+                <option value="grams">g</option>
+                <option value="ounces">oz</option>
+            </select>
+                <input type="button" id="del-extract" class="btn btn-del del-extract" value="Remove extract">
+        </div>
+        <div id="morehops1" class="repeat-hops">
+            <br>
+            <select id="hop" name="hop" class="form-control" style="width: 40%; display: inline" required>
+                <option selected disabled>Hops</option>
+                {% for hop in hop_choice %}
+                <option value="{{ hop }}">{{ hop }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" id="hop_amount" name="hop_amount" class="form-control" placeholder="amount"  style="width: 20%; display: inline" required>
+            <select id= "hop_units" name="hop-units" class="form-control" style="width: 10%; display: inline" required>
+                <option selected disabled>units</option>
+                <option value="grams">g</option>
+                <option value="ounces">oz</option>
+            </select><br>
+            <select id ="hop_phase" name="hop_phase" class="form-control" style="width: 40%; display: inline" required>
+                <option selected disabled>phase</option>
+                <option value="boil">boil</option>
+                <option value="dry_hop">dry_hop</option>
+            </select>
+            <input type="number" id="hop_time" name="hop_time" class="form-control" placeholder="time in boil" style="width: 20%; display: inline">
+            <select id="hop_kind" name="hop_kind" class="form-control" style="width: 20%; display: inline" required>
+                <option selected disabled>purpose</option>
+                <option value="aroma">aroma</option>
+                <option value="bittering">bittering</option>
+                <option value="both">both</option>
+            </select>
+                <input type="button" id= "del-hop" name="1" value="Remove hop" class="btn btn-del del-hop">
+        </div>
+        <div id="moremisc1" class="repeat-misc">
+            <br>
+            <select id="misc" name="misc" class="form-control" style="width: 40%; display: inline" required>
+                <option selected disabled>Special item</option>
+                {% for misc in misc_choice %}
+                <option value="{{ misc }}">{{ misc }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" id="misc_amount" name="misc_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
+            <select id=="misc-units" name="misc-units" class="form-control" style="width: 10%; display: inline" required>
+                <option selected disabled>units</option>
+                <option value="grams">g</option>
+                <option value="ounces">oz</option>
+            </select><br>
+            <select id="misc_phase" name="misc_phase" class="form-control" style="width: 20%; display: inline" required>
+                <option selected disabled>phase</option>
+                <option value="boil">boil</option>
+                <option value="primary">primary</option>
+                <option value="secondary">secondary</option>
+            </select>
+            <input type="number" id="misc_time" name="misc_time" class="form-control" placeholder="time in boil" style="width: 19%; display: inline">
+                <input type="button" id= "del-misc" name="1" value="Remove special" class="btn btn-del del-misc">
+        </div>
+        <div id="moreyeast1" class="repeat-yeast">
+        <br>
+            <select id="yeast" name="yeast" class="form-control" style="width: 40%; display: inline" required>
+                <option selected disabled>Yeast/Bacteria</option>
+                {% for yeast in yeast_choice %}
+                <option value="{{ yeast }}">{{ yeast }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" name="yeast_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" style="width: 20%; display: inline" required>
+            <select name="yeast-units" class="form-control" style="width: 10%; display: inline" >
+                <option selected disabled>units</option>
+                <option value="grams">g</option>
+                <option value="ounces">oz</option>
+            </select>
+            <br>
+            <select id="yeast_phase" name="yeast_phase" class="form-control" style="width: 20%; display: inline" required>
+                <option selected disabled>phase</option>
+                <option value="primary">primary</option>
+                <option value="secondary">secondary</option>
+            </select>
+                <input type="button" id= "del-yeast" name="1" value="Remove yeast" class="btn btn-del del-yeast">
+        </div>
+    </div>
+<div class="row beercolor">
+    <div class="col-sm-1 col-md-2">
+    </div>
+    <div class="col-sm-10 col-md-8 maincontent">
+        <h2>Edit Recipe</h2>
+        <br>
+        <div class="form-group">
+            <form role="form" id="recipeform" name="recipeform">
+            <table cellspacing="10px">
+                <tr>
+                    <td colspan="2">
+                        <label for="name">Recipe name</label> - Change to your own fresh recipe name!
+                        <input type="text" id="name" name="name" class="name form-control" placeholder="{{ recipe.name }}" required>
+                        <span id="nameWarning"></span><br>
+                    </td>
+                    <td colspan="2">
+                        <label for="source">Source</label>
+                        <input id="source" type="text" name="source" class="source form-control" value="{{ recipe.name }}" required>
+                        <br>
+                    </td>
+                <tr>
+                    <td colspan="3">
+                        <p>
+                            <label for="style">Style</label>
+                            <select id="style" name="style" class="form-control" required>
+                                    <option value="{{ recipe.style_name }}"selected="selected">{{ recipe.style_name }}</option>
+                                    {% for item in selectlist_styles %}
+                                    <option value="{{ item }}">{{ item }}</option>
+                                    {% endfor %}
+                            </select>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <label for="share">Share this recipe?</label>
+                            <select id="share" name="share" class="form-control" required>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                </select>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="batchsize">Batch Size: </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="number" id="batch_size" name="batch_size" class="form-control" value="{{ batch_size }}" required>
+                        </td>
+                        <td>
+                            <select id="units" name="units" class="form-control" required>
+                            {% if recipe.batch_units == L %}
+                                    <option value="gallons">gal</option>
+                                    <option value="Liters" selected="selected">L</option>
+                            {% else %}
+                                    <option value="gallons" selected="selected">gal</option>
+                                    <option value="Liters">L</option>
+                            {% endif %}
+                            </select>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <br><strong>Grains: </strong> <span class="error" id="grainerror"></span>
+                        {% for ferm in recipe.fins %}<br>
+                        <div id="moregrains1" class="repeat-grain">
+                            <select id="grain" name="grain" class="form-control grain_data" style="width: 40%; display: inline" required>
+                                <option value="{{ ferm.fermentable.name }}">{{ ferm.fermentable.name }}</option>
+                                {% for grain in grain_choice %}
+                                <option value="{{ grain }}">{{ grain }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="number" id="grain_amount" name="grain_amount" class="form-control grain_data" placeholder="amount" style="width: 25%; display: inline" value="{{ ferm.amount }}" required>
+                            <select id="grain_units" name="grain_units" class="form-control grain_data" style="width: 10%; display: inline" required>
+                            {% if ferm.units == g %}
+                                    <option value="grams" selected="selected">g</option>
+                                    <option value="ounces">L</option>
+                            {% else %}
+                                    <option value="grams">g</option>
+                                    <option value="kg">kg</option>
+                                    <option value="ounces" selected="selected">oz</option>
+                            {% endif %}
+                            </select>
+                            <input type="button" id="del-grain" class="btn btn-del del-grain" value="Remove grain">
+                        </div>
+                        {% endfor %}
+                        <button type="button" id="add-grain" value="Add a grain" class="btn btn-add btn btn-add">Add a grain</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <br><strong>Extracts: </strong> <span class="error" id="extracterror"></span>
+                        {% for ext in recipe.eins %}<br>
+                        <div id="moreextract1" class="repeat-extract">
+                            <select id="extract" name="extract" class="form-control" style="width: 40%; display: inline" required>
+                                <option value="{{ ext.extract.name }}">{{ ext.extract.name }}</option>
+                                {% for extract in extract_choice %}
+                                <option value="{{ extract }}">{{ extract }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="number" name="extract_amount" class="form-control" placeholder="amount" style="width: 25%; display: inline" value="{{ ext.amount }}" required>
+                            <select name="extract-units" class="form-control" style="width: 10%; display: inline" required>
+                                {% if ext.units == g %}
+                                    <option value="grams" selected="selected">g</option>
+                                    <option value="ounces">L</option>
+                                {% else %}
+                                    <option value="grams">g</option>
+                                    <option value="ounces" selected="selected">oz</option>
+                                {% endif %}
+                            </select>
+                            <input type="button" id="del-extract" value="Remove extract" class="btn btn-del del-extract" required>
+                        </div>
+                        {% endfor %}
+                        <button type="button" id="add-extract" value="Add extract" class="btn btn-add add-extract">Add extract</button>
+                        <br>
+                        <div>
+                            <button type="button" id="colorcalc" class="btn btn-warning">Estimate color</button><div id="color" style="width: 100%; height: 25px">&nbsp;
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <br><strong>Hops: </strong> <span class="error" id="hoperror"></span>
+                        {% for h in recipe.hins %}<br>
+                        <div id="morehops1" class="repeat-hops">
+                            <select id="hop" name="hop" class="form-control" style="width: 40%; display: inline" required>
+                                <option value="{{ h.hop.name }}">{{ h.hop.name }}</option>
+                                {% for hop in hop_choice %}
+                                <option value="{{ hop }}">{{ hop }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="number" name="hop_amount" class="form-control" placeholder="amount"  style="width: 20%; display: inline" value="{{ h.amount }}" required>
+                            <select name="hop-units" class="form-control" style="width: 10%; display: inline" required>
+                                <option value={{ h.units }}>{{ h.units }}</option>
+                                <option value="grams">g</option>
+                                <option value="ounces">oz</option>
+                            </select><br>
+                            <select name="hop_phase" class="form-control" style="width: 40%; display: inline" required>
+                                <option value={{ h.phase }}>{{ h.phase }}</option>
+                                <option value="boil">boil</option>
+                                <option value="dry_hop">dry_hop</option>
+                            </select>
+                            <input type="number" name="hop_time" class="form-control" placeholder="time in boil" style="width: 20%; display: inline" value="{{ h.time }}" required>
+                            <select name="hop_kind" class="form-control" style="width: 20%; display: inline" required>
+                                <option value={{ h.kind }}>{{ h.kind }}</option>
+                                <option value="aroma">aroma</option>
+                                <option value="bittering">bittering</option>
+                                <option value="both">both</option>
+                            </select>
+                            <input type="button" id= "del-hop" name="1" value="Remove hop" class="btn btn-del del-hop">
+                        </div>
+                        {% endfor %}
+                        <button type="button" id="add-hop" value="Add a hop" class="btn btn-add add-hop">Add hops</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <br><strong>Special Additions: </strong> <span class="error" id="miscerror"></span>
+                        {% if misc_steps %}
+                        {% for m in recipe.mins %}<br>
+                            <div id="morespecial1" class="repeat-special">
+                                <select id="misc" name="misc" class="form-control" style="width: 40%; display: inline" required>
+                                    <option value="{{ m.misc.name }}">{{ m.misc.name }}</option>
+                                    {% for misc in misc_choice %}
+                                    <option value="{{ misc }}">{{ misc }}</option>
+                                    {% endfor %}
+                                </select>
+                                <input type="number" name="misc_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" value="{{ m.amount}}" required>
+                                <select id=="misc-units" name="misc-units" class="form-control" style="width: 10%; display: inline" required>
+                                    <option value="{{ m.units }}">{{ m.units }}</option>
+                                    <option value="grams">g</option>
+                                    <option value="ounces" selected="selected">oz</option>
+                                </select><br>
+                                <select name="misc_phase" class="form-control" style="width: 20%; display: inline" required>
+                                    <option value="{{ m.phase }}">phase</option>
+                                    <option value="boil">boil</option>
+                                    <option value="primary">primary</option>
+                                    <option value="secondary">secondary</option>
+                                </select>
+                                <input type="number" name="misc_time" class="form-control" placeholder="time in boil" style="width: 19%; display: inline" value="{{ m.time }}"required>
+                                <input type="button" id= "del-misc" name="1" value="Remove special" class="btn btn-del del-misc">
+                            </div>
+                        {% endfor %}
+                        {% endif %}
+                            <button type="button" id="add-misc" value="Add misc" class="add-misc btn btn-add">Add special</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+
+                    <br><strong>Yeasts/Bacteria: </strong> <span class="error" id="yeasterror"></span>
+                    {% for y in recipe.yins %}<br>
+                        <div id="moreyeast1" class="repeat-yeast">
+                            <select id="yeast" name="yeast" class="form-control" style="width: 40%; display: inline" required>
+                                <option value="{{ y.yeast.name }}">{{ y.yeast.name }}</option>
+                                {% for yeast in yeast_choice %}
+                                <option value="{{ yeast }}">{{ yeast }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="number" name="yeast_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" style="width: 20%; display: inline" value="{{ y.amount }}" required>
+                            <select name="yeast-units" class="form-control" style="width: 10%; display: inline" required>
+
+                                {% if y.units == g %}
+                                        <option value="grams" selected="selected">g</option>
+                                        <option value="ounces">L</option>
+                                {% else %}
+                                        <option value="grams">g</option>
+                                        <option value="ounces" selected="selected">oz</option>
+                                {% endif %}
+                            </select>
+
+                            <select id="yeast_phase" name="yeast_phase" class="form-control" style="width: 30%; display: inline" required>
+                            {% if y.phase == primary %}
+                                <option value="primary" selected="selected">primary</option>
+                                <option value="secondary">secondary</option>
+                            {% else %}
+                                <option value="primary">primary</option>
+                                <option value="secondary" selected="selected">secondary</option>
+                            {% endif %}
+                            </select>
+                            <input type="button" id= "del-yeast" name="1" value="Remove yeast" class="del-yeast btn btn-del">
+                        </div>
+                    {% endfor %}
+                        <button type="button" id="add-yeast" value="Add a yeast" class="add-yeast btn btn-add">Add yeast</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4"><br>
+                        <label for="notes">Notes/Instructions:</label><br>
+                        <p><textarea id="notes" name="textarea" rows="10" cols="50" value="{{ notes }}"></textarea></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <p>
+                            <button type="submit" id="submit" class="btn btn-warning" style="width: 50%">Submit</button>
+                        </p>
+                    </td>
+                </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+{% block extra_scripts %}
+    <script src="/static/js/recipeform.js"></script>
+{% endblock %}

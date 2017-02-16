@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect, request, flash, session, url
 from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
 from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
 # , calc_color
-from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist, show_brew_recipe, color_conversion, normalize_batch_size
+from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist, show_brew_recipe, color_conversion, normalize_batch_size, get_recipe_instructions
 import xml.etree.ElementTree as ET
 import os
 from werkzeug import secure_filename
@@ -426,18 +426,22 @@ def enter_recipe():
 @app.route('/editrecipe/<string:recipe>')
 def editrecipe(recipe):
     """ Display edit recipe page """
+    recipe, color = get_recipe_instructions(recipe)
 
-    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
+    # name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
 
-    public = Recipe.query.filter_by(name=recipe).one().public
-    return render_template("editrecipe.html", name=name, source=source, style=style,
-                           batch_size=batch_size, batch_units=batch_units,
-                           public=public, notes=notes, hop_steps=hop_steps,
-                           ext_steps=ext_steps, ferm_steps=ferm_steps,
-                           misc_steps=misc_steps, yeast_steps=yeast_steps,
-                           grain_choice=grain_choice, extract_choice=extract_choice,
-                           hop_choice=hop_choice, misc_choice=misc_choice,
+    # public = Recipe.query.filter_by(name=recipe).one().public
+    # return render_template("editrecipe.html", name=name, source=source, style=style,
+    #                        batch_size=batch_size, batch_units=batch_units,
+    #                        public=public, notes=notes, hop_steps=hop_steps,
+    #                        ext_steps=ext_steps, ferm_steps=ferm_steps,
+    #                        misc_steps=misc_steps, yeast_steps=yeast_steps,
+    #                        grain_choice=grain_choice, extract_choice=extract_choice,
+    #                        hop_choice=hop_choice, misc_choice=misc_choice,
+    #                        yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
+    return render_template("edit_recipe.html", recipe=recipe, public=True, grain_choice=grain_choice, 
+                           extract_choice=extract_choice, hop_choice=hop_choice, misc_choice=misc_choice,
                            yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
 
 
