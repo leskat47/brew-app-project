@@ -122,6 +122,37 @@ def color_conversion(srm):
         color = "#200406"
     return color
 
+def get_recipe_instructions(recipe):
+    """ Get all instructions for a given recipe with conversions where necessary """
+
+    recipe = Recipe.query.filter_by(name=recipe).one()
+    srm_color = recipe.calc_color()
+    recipe.batch_size, recipe.batch_units = normalize_batch_size(recipe.batch_size, recipe.batch_units)
+
+    if not recipe.notes:
+        recipe.notes = "There are no notes for this recipe."
+    hop_steps = recipe.hins
+    ext_steps = recipe.eins
+    ferm_steps = recipe.fins
+    yeast_steps = recipe.yins
+
+    for misc_ins in recipe.mins:
+        if not misc_ins.time:
+            misc_ins.time = 0
+
+    convert_amounts(recipe.hins)
+    convert_amounts(recipe.eins)
+    convert_amounts(recipe.fins)
+
+    return (recipe, srm_color)
+
+
+def convert_amounts(ingredients):
+    for ingredient in ingredients:
+        if ingredient.units == "kg" or ingredient.units is None:
+            ingredient.amount = round((ingredient.amount * 35.274), 2)
+    return
+
 
 # Collect data values for a single recipe name
 def get_recipe_info(recipe):
@@ -154,6 +185,8 @@ def get_recipe_info(recipe):
         hop_dict["time"] = ingredient.time
         hop_dict["kind"] = ingredient.kind
         hop_steps.append(hop_dict.copy())
+
+    print hop_steps[0]
 
     extracts = display_recipe.eins
 
@@ -211,7 +244,7 @@ def get_recipe_info(recipe):
         yeast_dict["kind"] = ingredient.yeast.kind
         yeast_dict["form"] = ingredient.yeast.form
         yeast_dict["units"] = ingredient.units
-        yeast_steps.append(yeast_dict.copy()
+        yeast_steps.append(yeast_dict.copy())
 
     return (name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color)
 
