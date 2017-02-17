@@ -427,9 +427,9 @@ def editrecipe(recipe):
     recipe, color = get_recipe_instructions(recipe)
 
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
-    # FIXME:
-    # public = Recipe.query.filter_by(name=recipe).one().public
-    return render_template("edit_recipe.html", recipe=recipe, public=True, grain_choice=grain_choice, 
+
+    public = Recipe.query.filter_by(name=recipe).one().public
+    return render_template("edit_recipe.html", recipe=recipe, public=public, grain_choice=grain_choice, 
                            extract_choice=extract_choice, hop_choice=hop_choice, misc_choice=misc_choice,
                            yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
 
