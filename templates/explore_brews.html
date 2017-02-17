@@ -2,159 +2,159 @@
 {% block content %}
 <div class="hop">
 <div class="row">
-	<div class="col-sm-1 col-md-2">
-	</div>
-	<div class="col-sm-10 col-md-8" style="background-color: white;">
-		<div>
-			    {% with messages = get_flashed_messages() %}
-		            {% if messages %}
-		                <div class="flashes">
-		                {% for message in messages %}
-		                    {{ message }} <br>
-		                {% endfor %}
-		                </div>
+    <div class="col-sm-1 col-md-2">
+    </div>
+    <div class="col-sm-10 col-md-8" style="background-color: white;">
+        <div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="flashes">
+                        {% for message in messages %}
+                            {{ message }} <br>
+                        {% endfor %}
+                        </div>
 
-		            {% endif %}
-	        	{% endwith %}
-	    </div>
-	<h2>Explore</h2>
-	<hr>
-	</div>
-	<div class="col-sm-1 col-md-2">
-	</div>
+                    {% endif %}
+                {% endwith %}
+        </div>
+    <h2>Explore</h2>
+    <hr>
+    </div>
+    <div class="col-sm-1 col-md-2">
+    </div>
 
 </div>
 <div class="row">
-		<div class="col-sm-1 col-md-2">
-		</div>
-		<div class="col-sm-10 col-md-8 maincontent">
-			<div class="row">
-				<div class="col-sm-12 col-md-6">
-				<form action="/explore" method="POST">
-					<p>Search by:</p>
-					<div>
-						<label for="beerstyles">Beer Styles:</label> <select id="style" name="style" class="form-control">
-							<option selected disabled>Select a style</option>
-							{% for style in selectlist_styles %}
-							<option value="{{ style }}">{{ style }}</option>
-							{% endfor %}
-						</select>
-					</div>
-				</form>
-				<form action="/explore" method="POST">
+        <div class="col-sm-1 col-md-2">
+        </div>
+        <div class="col-sm-10 col-md-8 maincontent">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                <form action="/explore" method="POST">
+                    <p>Search by:</p>
+                    <div>
+                        <label for="beerstyles">Beer Styles:</label> <select id="style" name="style" class="form-control">
+                            <option selected disabled>Select a style</option>
+                            {% for style in selectlist_styles %}
+                            <option value="{{ style }}">{{ style }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </form>
+                <form action="/explore" method="POST">
 
-					<div>
-						<label for="recipename">Recipe Name:</label> <select id="recipe" name="recipe" class="form-control">
-							<option selected disabled>Select a recipe</option>
-							{% for recipe in selectlist_recipes %}
-							<option value="{{ recipe }}">{{ recipe }}</option>
-							{% endfor %}
-						</select>
-					</div>
-				</form>
-				{% if session["user_id"] %}<a href="/myrecipes"><button type="button" id="myrecipes" class="form-control">Show my recipes</button></a>{% endif %}
-				<br>
-				</div>
-				<div class="col-sm-12 col-md-6">
-					{% if new %}
+                    <div>
+                        <label for="recipename">Recipe Name:</label> <select id="recipe" name="recipe" class="form-control">
+                            <option selected disabled>Select a recipe</option>
+                            {% for recipe in selectlist_recipes %}
+                            <option value="{{ recipe }}">{{ recipe }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </form>
+                {% if session["user_id"] %}<a href="/myrecipes"><button type="button" id="myrecipes" class="form-control">Show my recipes</button></a>{% endif %}
+                <br>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    {% if new %}
 
-						<p>Select a recipe or a style of beer. </p>
-					{% endif %}
+                        <p>Select a recipe or a style of beer. </p>
+                    {% endif %}
 
 
 
-					{% if list_recipes == [] %}
+                    {% if list_recipes == [] %}
 
-						<p>Sorry, we don't have any recipes in that style yet.</p>
-					{% else %}
+                        <p>Sorry, we don't have any recipes in that style yet.</p>
+                    {% else %}
 
-							{% if recipes  or list_recipes %}
-							<h3>Recipes</h3>
+                            {% if recipes  or list_recipes %}
+                            <h3>Recipes</h3>
 
-								<ul>
-								{% for myrecipe in recipes %}
-									<li><a href="/recipe/{{ myrecipe }}">{{ myrecipe }}</a></li><br>
-								{% endfor %}
-								</ul>
-							{% endif %}
-								<ul>
-								{% for recipe in list_recipes %}
-									<li><a href="/recipe/{{ recipe }}">{{ recipe }}</a></li>
-								{% endfor %}
-								</ul>
-					{% endif %}
-							{% if name %}
-								<h3>{{ name }}</h3>
-									{% if session["user_id"] %}
-										<input type="button" id="makerecipe" name="{{ name }}" value="Brew this now!">
-										<form action="/editrecipe/{{ name }}">
-										<input type="submit" name="editrecipe" value="Make a Version">
-										</form>
-									{% endif %}
-									{% if deleteable %}<a href="/deleterecipe/{{ name }}"><input type="button" id="deleterecipe" value="Delete this Recipe"></a>{% endif %}
-								<p><div style="width: 100%; height: 10px; background-color: {{ color }}"></div></p>
-								<h4>Style:</h4> {{ style }}<br>
-								{% if source %}
-									<h4>Source:</h4> {{ source }}<br>
-								{% endif %}
-								<h4 style="display: inline">Color: </h4><div style="display: inline; width: 50px; height: 20px; background-color: {{ color }}">&nbsp; &nbsp;</div>
-								<h4>Batch size:</h4> {{ batch_size }} gallons<br>
-								<h4>Steep:</h4>
-								{% for ferm in ferm_steps %}
-										<strong>{{ ferm.name }}</strong>
-										Amount: {{ ferm.amount }} oz<br>
-								{% endfor %}
+                                <ul>
+                                {% for myrecipe in recipes %}
+                                    <li><a href="/recipe/{{ myrecipe }}">{{ myrecipe }}</a></li><br>
+                                {% endfor %}
+                                </ul>
+                            {% endif %}
+                                <ul>
+                                {% for recipe in list_recipes %}
+                                    <li><a href="/recipe/{{ recipe }}">{{ recipe }}</a></li>
+                                {% endfor %}
+                                </ul>
+                    {% endif %}
+                            {% if recipe %}
+                                <h3>{{ recipe.name }}</h3>
+                                    {% if session["user_id"] %}
+                                        <input type="button" id="makerecipe" name="{{ name }}" value="Brew this now!">
+                                        <form action="/editrecipe/{{ name }}">
+                                        <input type="submit" name="editrecipe" value="Make a Version">
+                                        </form>
+                                    {% endif %}
+                                    {% if deleteable %}<a href="/deleterecipe/{{ name }}"><input type="button" id="deleterecipe" value="Delete this Recipe"></a>{% endif %}
+                                <p><div style="width: 100%; height: 10px; background-color: {{ color }}"></div></p>
+                                <h4>Style:</h4> {{ style }}<br>
+                                {% if source %}
+                                    <h4>Source:</h4> {{ source }}<br>
+                                {% endif %}
+                                <h4 style="display: inline">Color: </h4><div style="display: inline; width: 50px; height: 20px; background-color: {{ color }}">&nbsp; &nbsp;</div>
+                                <h4>Batch size:</h4> {{ batch_size }} gallons<br>
+                                <h4>Steep:</h4>
+                                {% for ferm in recipe.fins %}
+                                        <strong>{{ ferm.fermentable.name }}</strong>
+                                        Amount: {{ ferm.fermentable.amount }} oz<br>
+                                {% endfor %}
 
-								<h4>Boil:</h4>
-								<p><strong>Sugars:</strong><br>
-								{% for ext in ext_steps %}
-										{{ ext.name }}
-										Amount: {{ ext.amount }}<br>
-								{% endfor %}</p>
+                                <h4>Boil:</h4>
+                                <p><strong>Sugars:</strong><br>
+                                {% for ext in recipe.eins %}
+                                        {{ ext.extract.name }}
+                                        Amount: {{ ext.extract.amount }}<br>
+                                {% endfor %}</p>
 
-								{% for hop in hop_steps %}
-									{% if hop.phase == "Boil" %}
-									<p>
-										<strong>{{ hop.name }}</strong><br>
-										Form: {{ hop.form }}<br>
-										Amount: {{ hop.amount }} oz<br>
-										Type: {{ hop.kind }}<br>
-										Time: {{ hop.time }}<br>
-									</p>
-									{% endif %}
-								{% endfor %}
-								<p>{% if misc_steps%}
-									{% for misc in misc_steps %}
-										{% if misc.phase == "Boil" %}
-										<strong>{{ misc.name }}</strong><br>
-										Amount: {{misc.amount }}<br>
-										Type: {{ misc.kind }}<br>
-										Time: {{ misc.time }}<br>
-										{% endif %}
-									{% endfor %}
-									{% endif %}
-								</p>
-								<h4>Yeast:</h4>
-								{% for yeast in yeast_steps %}
-									<strong>{{ yeast.name }}</strong><br>
-									Amount: {{ yeast.amount }}<br>
-									{{ yeast.form }}<br>
-									{{ yeast.kind }}<br>
-								{% endfor %}
-								<h4>Notes</h4>
-								{{ notes }}
-								<hr>
-								<br><br>
-							{% endif %}
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-1 col-md-2">
-		</div>
+                                {% for hop in recipe.hins %}
+                                    {% if hop.phase == "Boil" %}
+                                    <p>
+                                        <strong>{{ hop.hop.name }}</strong><br>
+                                        Form: {{ hop.hop.form }}<br>
+                                        Amount: {{ hop.amount }} oz<br>
+                                        Type: {{ hop.kind }}<br>
+                                        Time: {{ hop.time }}<br>
+                                    </p>
+                                    {% endif %}
+                                {% endfor %}
+                                <p>{% if recipe.mins %}
+                                    {% for misc in recipe.mins %}
+                                        {% if misc.phase == "Boil" %}
+                                        <strong>{{ misc.misc.name }}</strong><br>
+                                        Amount: {{misc.amount }}<br>
+                                        Type: {{ misc.misc.kind }}<br>
+                                        Time: {{ misc.misc.time }}<br>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                </p>
+                                <h4>Yeast:</h4>
+                                {% for yeast in recipe.yins %}
+                                    <strong>{{ yeast.yeast.name }}</strong><br>
+                                    Amount: {{ yeast.amount }}<br>
+                                    {{ yeast.yeast.form }}<br>
+                                    {{ yeast.yeast.kind }}<br>
+                                {% endfor %}
+                                <h4>Notes</h4>
+                                {{ notes }}
+                                <hr>
+                                <br><br>
+                            {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 col-md-2">
+        </div>
 </div>
 </div>
 {% endblock %}
 
 {% block extra_scripts %}
-	<script src="/static/js/recipe.js"></script>
+    <script src="/static/js/recipe.js"></script>
 {% endblock %}

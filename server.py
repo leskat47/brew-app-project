@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect, request, flash, session, url
 from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
 from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
 # , calc_color
-from builder import feed_recipe_form, get_recipe_info, get_selectlists, get_brewlist, show_brew_recipe, color_conversion, normalize_batch_size, get_recipe_instructions
+from builder import feed_recipe_form, get_selectlists, get_brewlist, show_brew_recipe, color_conversion, normalize_batch_size, get_recipe_instructions
 import xml.etree.ElementTree as ET
 import os
 from werkzeug import secure_filename
@@ -79,21 +79,19 @@ def show_explore():
                                    selectlist_recipes=selectlist_recipes,
                                    selectlist_styles=selectlist_styles)
         elif request.form.get("recipe"):
-            recipe = request.form.get("recipe")
-            display_recipe = Recipe.query.filter_by(name=recipe).one()
-            name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
-            print "SERVER SRM ", srm_color
-            if not srm_color:
-                # calc_color(display_recipe.recipe_id, batch_size, batch_units)
-                srm_color = display_recipe.calc_color
-            color = color_conversion(srm_color)
+            recipe_name = request.form.get("recipe")
+            recipe, color = get_recipe_instructions(recipe_name)
+
+            print "SERVER SRM ", color
+            if not color:
+                color = recipe.calc_color
+            color = color_conversion(color)
             deleteable = False
-            if "user_id" in session and Recipe.query.filter_by(name=recipe).one().user_id == session["user_id"]:
+            if "user_id" in session and Recipe.query.filter_by(name=recipe_name).one().user_id == session["user_id"]:
                 deleteable = True
-            return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, batch_size=batch_size,
-                                   selectlist_styles=selectlist_styles, name=name, source=source, color=color, style=style,
-                                   notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
-                                   misc_steps=misc_steps, yeast_steps=yeast_steps, deleteable=deleteable)
+            return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes,
+                       selectlist_styles=selectlist_styles, recipe=recipe,
+                       color=color, deleteable=deleteable)
 
     return render_template("explore_brews.html", new=new, selectlist_recipes=selectlist_recipes,
                            selectlist_styles=selectlist_styles, selectlisrt_user=selectlist_user,
@@ -127,17 +125,17 @@ def get_recipes(recipe):
     deleteable = False
     if Recipe.query.filter_by(name=recipe).one().user_id == session.get("user_id"):
         deleteable = True
-    name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
-    color = color_conversion(srm_color)
-    return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes, batch_size=batch_size,
-                           selectlist_styles=selectlist_styles, name=name, source=source, color=color, style=style,
-                           notes=notes, hop_steps=hop_steps, ext_steps=ext_steps, ferm_steps=ferm_steps,
-                           misc_steps=misc_steps, yeast_steps=yeast_steps, deleteable=deleteable)
+    recipe, color = get_recipe_instructions(recipe)
+    color = color_conversion(color)
+    return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes,
+                           selectlist_styles=selectlist_styles, recipe=recipe,
+                           color=color, deleteable=deleteable)
+
 
 
 @app.route('/check_brew', methods=['GET', 'POST'])
 def check_brew():
-    """ Ajax called - Check for duplicate brew """
+    """ Ajax call - Check for duplicate brew """
 
     recipe = request.form.get("name")
     user_id = session["user_id"]
@@ -428,18 +426,9 @@ def editrecipe(recipe):
     """ Display edit recipe page """
     recipe, color = get_recipe_instructions(recipe)
 
-    # name, source, style, batch_size, batch_units, notes, hop_steps, ext_steps, ferm_steps, misc_steps, yeast_steps, srm_color = get_recipe_info(recipe)
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
-
+    # FIXME:
     # public = Recipe.query.filter_by(name=recipe).one().public
-    # return render_template("editrecipe.html", name=name, source=source, style=style,
-    #                        batch_size=batch_size, batch_units=batch_units,
-    #                        public=public, notes=notes, hop_steps=hop_steps,
-    #                        ext_steps=ext_steps, ferm_steps=ferm_steps,
-    #                        misc_steps=misc_steps, yeast_steps=yeast_steps,
-    #                        grain_choice=grain_choice, extract_choice=extract_choice,
-    #                        hop_choice=hop_choice, misc_choice=misc_choice,
-    #                        yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
     return render_template("edit_recipe.html", recipe=recipe, public=True, grain_choice=grain_choice, 
                            extract_choice=extract_choice, hop_choice=hop_choice, misc_choice=misc_choice,
                            yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
