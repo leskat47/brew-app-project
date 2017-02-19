@@ -70,34 +70,6 @@ def get_selectlists(user_id):
     return (selectlist_recipes, selectlist_styles, selectlist_user, selectlist_user_styles)
 
 
-# Get list of brew dictionaries based on brew objects provided
-def get_brewlist(all_brews):
-    brewlist = []
-    for brew in all_brews:
-        newbrew = {}
-        newbrew["id"] = brew.id
-        recipe_obj = Recipe.query.filter_by(recipe_id=brew.recipe_id).one()
-        newbrew["name"] = recipe_obj.name
-        color = recipe_obj.calc_color()
-        newbrew["color"] = color_conversion(color)
-        newbrew["date"] = brew.date
-        newbrew["notes"] = brew.notes
-        if brew.end_date:
-            newbrew["finished"] = brew.end_date
-            newbrew["open_brew"] = True
-        else:
-            newbrew["finished"] = ""
-            newbrew["open_brew"] = False
-        newbrew["results_notes"] = brew.results_notes
-        newbrew["rating"] = brew.rating
-        newbrew["og"] = brew.og
-        newbrew["fg"] = brew.fg
-        newbrew["abv"] = brew.abv
-        brewlist.append(newbrew)
-
-    return brewlist
-
-
 # Convert srm color to a hexidecimal value
 def color_conversion(srm):
 

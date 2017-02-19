@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect, request, flash, session, url
 from model import User, Recipe, Brew, Style, Extract, Hop, Misc, Yeast, Fermentable, YeastIns, HopIns, FermIns, MiscIns, ExtIns, connect_to_db, db
 from feeder import load_recipes, load_hops_ins, load_ferm_ins, load_ext_ins, load_misc_ins, load_yeast_ins
 # , calc_color
-from builder import feed_recipe_form, get_selectlists, get_brewlist, show_brew_recipe, color_conversion, normalize_batch_size, get_recipe_instructions
+from builder import feed_recipe_form, get_selectlists, show_brew_recipe, color_conversion, normalize_batch_size, get_recipe_instructions
 import xml.etree.ElementTree as ET
 import os
 from werkzeug import secure_filename
@@ -191,22 +191,18 @@ def show_mybrews():
     # Get a list of all brew objects for our user
     all_brews = Brew.query.filter_by(user_id=session["user_id"]).all()
 
-    brewlist = []
     if request.method == "POST":
         filtered_brews = []
         # Recipe search:
         if request.form.get("recipe"):
-
-            recipe = request.form.get("recipe")
-            recipe_id = Recipe.query.filter_by(name=recipe).one().recipe_id
+            recipe_name = request.form.get("recipe")
+            recipe_id = Recipe.query.filter_by(name=recipe_name).one().recipe_id
             for obj in all_brews:
                 if obj.recipe_id == recipe_id:
+                    obj.color = color_conversion(obj.recipe.calc_color())
                     filtered_brews.append(obj)
-            brewlist = get_brewlist(filtered_brews)
-            filtered = "Brews of " + recipe + ":"
+            filtered = "Brews of " + recipe_name + ":"
 
-            return render_template("mybrews.html", filtered=filtered, brewlist=brewlist, selectlist_user=selectlist_user,
-                                   sel_user_styles=sel_user_styles)
         # Style search:
         if request.form.get("style"):
             style = request.form.get("style")
@@ -215,16 +211,18 @@ def show_mybrews():
             for obj in all_brews:
                 for recipe in recipes:
                     if obj.recipe_id == recipe.recipe_id:
+                        obj.color = color_conversion(recipe.calc_color())
                         filtered_brews.append(obj)
-            brewlist = get_brewlist(filtered_brews)
             filtered = style + " Style Brews:"
 
-            return render_template("mybrews.html", filtered=filtered, brewlist=brewlist, selectlist_user=selectlist_user,
+        return render_template("mybrews.html", filtered=filtered, brewlist=filtered_brews, selectlist_user=selectlist_user,
                                    sel_user_styles=sel_user_styles)
     else:
-        brewlist = get_brewlist(all_brews)
-        return render_template("mybrews.html", brewlist=brewlist,
-                               selectlist_user=selectlist_user, sel_user_styles=sel_user_styles)
+        for brew in all_brews:
+            brew.color = color_conversion(brew.recipe.calc_color())
+        return render_template("mybrews.html", brewlist=all_brews,
+                               selectlist_user=selectlist_user,
+                               sel_user_styles=sel_user_styles)
 
 
 @app.route('/delete_brew/<int:brew_id>')
