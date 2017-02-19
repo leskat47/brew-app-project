@@ -188,8 +188,7 @@ def delete_recipe(recipe):
 @app.route('/mybrews', methods=['GET', 'POST'])
 def show_mybrews():
     selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
-    # Get a list of all brew objects for our user
-    all_brews = Brew.query.filter_by(user_id=session["user_id"]).all()
+    filtered = False
 
     if request.method == "POST":
         filtered_brews = []
@@ -197,32 +196,27 @@ def show_mybrews():
         if request.form.get("recipe"):
             recipe_name = request.form.get("recipe")
             recipe_id = Recipe.query.filter_by(name=recipe_name).one().recipe_id
-            for obj in all_brews:
-                if obj.recipe_id == recipe_id:
-                    obj.color = color_conversion(obj.recipe.calc_color())
-                    filtered_brews.append(obj)
+            all_brews = Brew.query.filter_by(user_id=session["user_id"], recipe_id=recipe_id).all()
             filtered = "Brews of " + recipe_name + ":"
 
         # Style search:
         if request.form.get("style"):
             style = request.form.get("style")
-            recipes = Recipe.query.filter_by(style_name=style).all()
-            # Get brews from all brews where the recipe is in recipes
-            for obj in all_brews:
-                for recipe in recipes:
-                    if obj.recipe_id == recipe.recipe_id:
-                        obj.color = color_conversion(recipe.calc_color())
-                        filtered_brews.append(obj)
+            all_brews = db.session.query(Brew).join(Brew.recipe).filter_by(style_name=style, user_id=session["user_id"]).all()
             filtered = style + " Style Brews:"
 
-        return render_template("mybrews.html", filtered=filtered, brewlist=filtered_brews, selectlist_user=selectlist_user,
-                                   sel_user_styles=sel_user_styles)
     else:
-        for brew in all_brews:
-            brew.color = color_conversion(brew.recipe.calc_color())
-        return render_template("mybrews.html", brewlist=all_brews,
-                               selectlist_user=selectlist_user,
-                               sel_user_styles=sel_user_styles)
+        # Get a list of all brew objects for our user
+        all_brews = Brew.query.filter_by(user_id=session["user_id"]).all()
+
+    # Add hex color attribute for view
+    for brew in all_brews:
+        brew.color = color_conversion(brew.recipe.calc_color())
+
+    return render_template("mybrews.html", brewlist=all_brews,
+                           filtered=filtered,
+                           selectlist_user=selectlist_user,
+                           sel_user_styles=sel_user_styles)
 
 
 @app.route('/delete_brew/<int:brew_id>')
