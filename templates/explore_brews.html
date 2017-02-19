@@ -86,12 +86,12 @@
                             {% if recipe %}
                                 <h3>{{ recipe.name }}</h3>
                                     {% if session["user_id"] %}
-                                        <input type="button" id="makerecipe" name="{{ name }}" value="Brew this now!">
-                                        <form action="/editrecipe/{{ name }}">
+                                        <input type="button" id="makerecipe" name="{{ recipe.name }}" value="Brew this now!">
+                                        <form action="/editrecipe/{{ recipe.name }}">
                                         <input type="submit" name="editrecipe" value="Make a Version">
                                         </form>
                                     {% endif %}
-                                    {% if deleteable %}<a href="/deleterecipe/{{ name }}"><input type="button" id="deleterecipe" value="Delete this Recipe"></a>{% endif %}
+                                    {% if deleteable %}<a href="/deleterecipe/{{ recipe.name }}"><input type="button" id="deleterecipe" value="Delete this Recipe"></a>{% endif %}
                                 <p><div style="width: 100%; height: 10px; background-color: {{ color }}"></div></p>
                                 <h4>Style:</h4> {{ style }}<br>
                                 {% if source %}

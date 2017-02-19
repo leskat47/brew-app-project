@@ -169,12 +169,12 @@ def add_brew(recipe):
 def delete_recipe(recipe):
     """ Delete recipe from database and delete associated instructions """
 
-    recipe_obj = Recipe.query.filter_by(name=recipe).one()
-    HopIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
-    FermIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
-    ExtIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
-    MiscIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
-    YeastIns.query.filter_by(recipe_id=recipe_obj.recipe_id).delete()
+    recipe_id = Recipe.query.filter_by(name=recipe).one().recipe_id
+    HopIns.query.filter_by(recipe_id=recipe_id).delete()
+    FermIns.query.filter_by(recipe_id=recipe_id).delete()
+    ExtIns.query.filter_by(recipe_id=recipe_id).delete()
+    MiscIns.query.filter_by(recipe_id=recipe_id).delete()
+    YeastIns.query.filter_by(recipe_id=recipe_id).delete()
     Recipe.query.filter_by(name=recipe).delete()
     db.session.commit()
 
@@ -192,6 +192,7 @@ def show_mybrews():
     selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
     filtered = False
 
+    # Filtered lists
     if request.method == "POST":
         filtered_brews = []
         # Recipe search:
@@ -207,8 +208,8 @@ def show_mybrews():
             all_brews = db.session.query(Brew).join(Brew.recipe).filter_by(style_name=style, user_id=session["user_id"]).all()
             filtered = style + " Style Brews:"
 
+    # Unfiltered list of all brews
     else:
-        # Get a list of all brew objects for our user
         all_brews = Brew.query.filter_by(user_id=session["user_id"]).all()
 
     # Add hex color attribute for view
@@ -224,7 +225,7 @@ def show_mybrews():
 @app.route('/delete_brew/<int:brew_id>')
 def delete_brew(brew_id):
     """ Delete brew from database """
-    
+
     Brew.query.filter_by(id=brew_id).delete()
     db.session.commit()
     flash("Your brew was deleted")
@@ -404,7 +405,6 @@ def enter_recipe():
             db.session.add(new_yeastins)
             db.session.commit
 
-
         message = "Your recipe has been added."
         return message
 
@@ -423,7 +423,7 @@ def editrecipe(recipe):
 
     grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles = feed_recipe_form()
 
-    public = Recipe.query.filter_by(name=recipe).one().public
+    public = Recipe.query.filter_by(name=recipe.name).one().public
     return render_template("edit_recipe.html", recipe=recipe, public=public, grain_choice=grain_choice, 
                            extract_choice=extract_choice, hop_choice=hop_choice, misc_choice=misc_choice,
                            yeast_choice=yeast_choice, selectlist_styles=selectlist_styles)
