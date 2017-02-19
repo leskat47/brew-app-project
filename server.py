@@ -187,6 +187,8 @@ def delete_recipe(recipe):
 
 @app.route('/mybrews', methods=['GET', 'POST'])
 def show_mybrews():
+    """ Display users brewed recipes, all or by filter. """
+
     selectlist_recipes, selectlist_styles, selectlist_user, sel_user_styles = get_selectlists(session["user_id"])
     filtered = False
 
@@ -222,6 +224,7 @@ def show_mybrews():
 @app.route('/delete_brew/<int:brew_id>')
 def delete_brew(brew_id):
     """ Delete brew from database """
+    
     Brew.query.filter_by(id=brew_id).delete()
     db.session.commit()
     flash("Your brew was deleted")
