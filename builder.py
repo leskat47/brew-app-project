@@ -21,10 +21,9 @@ def normalize_batch_size(batch_size, batch_units):
 
 # Build lists for recipe form drop downs
 def feed_recipe_form():
-    selectlist_styles = []
-    for style_obj in Style.query.all():
-        if style_obj.style_name not in selectlist_styles:
-            selectlist_styles.append(style_obj.style_name)
+    """ Create lists for dropdown choices on recipe form """
+
+    selectlist_styles = sorted({style_obj.style_name for style_obj in Style.query.all()})
 
     def make_alpha_lists(query_list):
         choices = set()
