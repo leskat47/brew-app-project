@@ -7,10 +7,10 @@
 		<div class="col-sm-1 col-md-1">
 		</div>
 		<div class="col-sm-11 col-md-11" style="background-color: white">
-			<h2>{{ recipe }}</h2>
+			<h2>{{ recipe.name }}</h2>
 			<button type="submit" value="Save and Return Later" class="btn btn-default">Save and Return Later</button>
 				<p>
-					<div style="width: 90%; height: 10px; background-color: {{ color }}"> </div>
+					<div style="width: 90%; height: 10px; background-color: {{ recipe.color }}"> </div>
 				</p>
 		</div>
 	</div>
@@ -40,7 +40,7 @@
 			<h2 style="display: inline">1. Steep</h2>
 				<blockquote>
 					<div class="collapse in" id="steep-instructions">
-						<p>Bring {{ batch_size }} {{ batch_units }} to 165&deg; F. </p>
+						<p>Bring {{ recipe.batch_size }} {{ recipe.batch_units }} to 165&deg; F. </p>
 						<p>Prepare the following grains for steeping:
 							<ul>
 							{% for grain in steep %}
@@ -108,7 +108,7 @@
 						<p><label for="orig_gravity">Original gravity:</label>
 							<input type="number" step="0.01" name="orig_gravity" id="orig_gravity" class="form-control" style="width: 100px; display: inline" value="{% if brew.og %}{{ brew.og }}{% endif %}">
 						</p>
-						<p>Original gravity range for this style: {{ og_min }} - {{ og_max }}</p>
+						<p>Original gravity range for this style: {{ recipe.min }} - {{ recipe.og_max }}</p>
 						<div>
 							<p><label for="curr_gravity">Current gravity measurement:</label>
 								<input type="number" name="curr_gravity" id="curr_gravity" class="form-control" style="width: 100px; display: inline" value="{% if c_gravity %}{{ c_gravity }} {% else %} {% endif %}">
@@ -181,7 +181,7 @@
 			<div class="col-sm-11 col-md-4 mainContent">
 				<br>
 				<h2>Recipe Notes:</h2>
-				{% if notes %}{{ notes }}{% else %}There are no notes for this recipe.{% endif %}<br>
+				{% if recipe.notes %}{{ recipe.notes }}{% else %}There are no notes for this recipe.{% endif %}<br>
 				<h2>My notes:</h2>
 					<textarea wrap="hard" name="brew_notes" id="brew_notes" style="width: 300px; height: 200px">{% if brew.notes %}{{ brew.notes }}{% endif %}</textarea>
 				<h2>Results</h2>

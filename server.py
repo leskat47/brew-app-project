@@ -243,16 +243,16 @@ def brew_process(brew_id):
         brew_update = update_brew(brew)
         return redirect("/mybrews")
     else:
-        recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary, extracts, og_min, og_max, notes, srm_color = show_brew_recipe(recipe)
+        recipe, times, timerset, boiltime, steep, yeast, secondary, extracts = show_brew_recipe(recipe)
         rating = brew.rating
         c_gravity = brew.cg
         c_gravity_date = brew.cg_date
-        color = color_conversion(srm_color)
+        color = color_conversion(recipe.srm_color)
 
-        return render_template("brew.html", brew=brew, recipe=recipe, batch_size=batch_size, batch_units=batch_units,
-                               times=times, timerset=timerset, boiltime=boiltime, steep=steep, yeast=yeast, secondary=secondary,
-                               extracts=extracts, og_min=og_min, og_max=og_max, c_gravity=c_gravity, c_gravity_date=c_gravity_date,
-                               notes=notes, color=color, rating=rating)
+    return render_template("brew.html", brew=brew, recipe=recipe, 
+                   times=times, timerset=timerset, boiltime=boiltime, steep=steep, yeast=yeast, secondary=secondary,
+                   extracts=extracts, c_gravity=c_gravity, c_gravity_date=c_gravity_date,
+                   rating=rating)
 
 
 @app.route('/boil', methods=["POST"])

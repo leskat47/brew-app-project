@@ -127,21 +127,14 @@ def convert_amounts(ingredients):
 
 def show_brew_recipe(recipe):
     """ Collect recipe information to display as a brew """
+
     record = Recipe.query.filter_by(name=recipe).one()
-    recipe_id = record.recipe_id
-    if record.notes == "":
-        notes = "No notes for this recipe"
-    else:
-        notes = record.notes
+    
+    record.notes == record.notes or "No notes for this recipe"
+    record.srm_color = record.calc_color()
 
-    srm_color = record.calc_color()
-
-    style_name = record.style_name
-    style_record = Style.query.filter_by(style_name=style_name).one()
-    og_min = style_record.og_min
-    og_max = style_record.og_max
-
-    batch_size, batch_units = normalize_batch_size(record.batch_size, record.batch_units)
+    style_record = Style.query.filter_by(style_name=record.style_name).one()
+    record.batch_size, record.batch_units =  normalize_batch_size(record.batch_size, record.batch_units)
 
     # Boil list -> Hops and special ingredients that go in the boil.
     boil = []
@@ -154,7 +147,7 @@ def show_brew_recipe(recipe):
     # timerset -> Dictionary of time event and delta to next event
     timerset = {}
 
-    boil = HopIns.query.filter_by(phase="Boil", recipe_id=recipe_id).all() + MiscIns.query.filter_by(phase="Boil", recipe_id=recipe_id).all()
+    boil = HopIns.query.filter_by(phase="Boil", recipe_id=record.recipe_id).all() + MiscIns.query.filter_by(phase="Boil", recipe_id=record.recipe_id).all()
 
     # Make a list of times in instructions. Prevent duplicates and sort descending.
     for add in boil:
@@ -195,7 +188,7 @@ def show_brew_recipe(recipe):
             boiltime[time].append(new_ing)
 
     # Make a list of dicts for grain info
-    instructions = FermIns.query.filter_by(recipe_id=recipe_id).all()
+    instructions = FermIns.query.filter_by(recipe_id=record.recipe_id).all()
     steep = []
 
     for add in instructions:
@@ -211,7 +204,7 @@ def show_brew_recipe(recipe):
 
     # Make a list of dicts for extract info
     # extracts = collect_instructions("extract", Extract, ExtIns, "extract_id")
-    extracts = ExtIns.query.filter_by(recipe_id=recipe_id).all()
+    extracts = ExtIns.query.filter_by(recipe_id=record.recipe_id).all()
     extract = []
 
     for add in extracts:
@@ -227,7 +220,7 @@ def show_brew_recipe(recipe):
         extract.append(add_dict)
 
     # Make a list of dicts for yeast info sorted by stage: primary or secondary
-    yeasts = YeastIns.query.filter_by(recipe_id=recipe_id).all()
+    yeasts = YeastIns.query.filter_by(recipe_id=record.recipe_id).all()
     yeast = []
     secondary = []
     for add in yeasts:
@@ -252,6 +245,4 @@ def show_brew_recipe(recipe):
 
             secondary.append(add_dict)
 
-
-    return (recipe, batch_size, batch_units, times, timerset, boiltime, steep, yeast, secondary,
-            extract, og_min, og_max, notes, srm_color)
+    return(record, times, timerset, boiltime, steep, yeast, secondary, extract)
