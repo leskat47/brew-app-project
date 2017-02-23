@@ -248,6 +248,8 @@ def brew_process(brew_id):
         c_gravity = brew.cg
         c_gravity_date = brew.cg_date
         color = color_conversion(recipe.srm_color)
+    print yeast
+    print secondary
 
     return render_template("brew.html", brew=brew, recipe=recipe, 
                    times=times, timerset=timerset, boiltime=boiltime, steep=steep, yeast=yeast, secondary=secondary,

@@ -44,7 +44,7 @@
 						<p>Prepare the following grains for steeping:
 							<ul>
 							{% for grain in steep %}
-								<li>{{ grain.name }} - {{ grain.amount }} oz</li>
+								<li>{{ grain.amount }} ounces {{ grain.fermentable.name }}</li>
 							{% endfor %}
 							</ul>
 							</p>
@@ -61,7 +61,7 @@
 						<p>Bring water to a boil. Turn off flame and add sugars:</p>
 						{% if extracts %}<ul>
 						{% for extract in extracts %}
-							<li>{{ extract.amount }} {{ extract.units }} {{ extract.name }}</li>
+							<li>{{ extract.amount }} {{ extract.units }} {{ extract.extract.name }}</li>
 						{% endfor %}
 						</ul>
 						{% else %}
@@ -102,7 +102,7 @@
 
 						<p>Add yeast:
 						{% for item in yeast %}
-							{{ item.name }} {{ item.amount }} {{ item.units }}
+							{{ item.yeast.name }} {{ item.amount }} {{ item.units }}
 						{% endfor %}
 						</p>
 						<p><label for="orig_gravity">Original gravity:</label>

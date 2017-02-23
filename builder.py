@@ -187,62 +187,23 @@ def show_brew_recipe(recipe):
                 new_ing["units"] = add.units
             boiltime[time].append(new_ing)
 
-    # Make a list of dicts for grain info
-    instructions = FermIns.query.filter_by(recipe_id=record.recipe_id).all()
-    steep = []
+    # Get instructions per ingredient type
+    steep_instructions = FermIns.query.filter_by(recipe_id=record.recipe_id).all()
+    convert_amounts(steep_instructions)
 
-    for add in instructions:
-        add_dict = {}
-        add_dict["name"] = Fermentable.query.filter_by(id=add.ferm_id).one().name
-        add_dict["amount"] = add.amount
-        if add.units == 'kg' or add.units is None:
-            add_dict["amount"] = round((add_dict['amount'] * 35.274), 2)
-            add_dict['units'] = "oz"
-        else:
-            add_dict["units"] = add.units
-        steep.append(add_dict)
+    extract_instructions = ExtIns.query.filter_by(recipe_id=record.recipe_id).all()
+    convert_amounts(extract_instructions)
 
-    # Make a list of dicts for extract info
-    # extracts = collect_instructions("extract", Extract, ExtIns, "extract_id")
-    extracts = ExtIns.query.filter_by(recipe_id=record.recipe_id).all()
-    extract = []
+    yeast_primary_instructions = YeastIns.query.filter_by(recipe_id=record.recipe_id, phase="primary").all()
+    yeast_secondary_instructions = YeastIns.query.filter_by(recipe_id=record.recipe_id, phase="secondary").all()
 
-    for add in extracts:
-        add_dict = {}
-        add_dict["name"] = Extract.query.filter_by(id=add.extract_id).one().name
-        add_dict["amount"] = add.amount
-        if add.units == 'kg' or add.units is None:
-            add_dict["amount"] = round((add_dict['amount'] * 35.274), 2)
-            add_dict['units'] = "oz"
-        else:
-            add_dict["units"] = add.units
+    # Add ounces as unit if missing for yeasts
+    for yeast in yeast_primary_instructions:
+        if not yeast.units:
+            yeast.units = "ounces"
 
-        extract.append(add_dict)
+    for yeast in yeast_secondary_instructions:
+        if not yeast.units:
+            yeast.units = "ounces"
 
-    # Make a list of dicts for yeast info sorted by stage: primary or secondary
-    yeasts = YeastIns.query.filter_by(recipe_id=record.recipe_id).all()
-    yeast = []
-    secondary = []
-    for add in yeasts:
-        if add.phase == "primary":
-            add_dict = {}
-            add_dict["name"] = Yeast.query.filter_by(yeast_id=add.yeast_id).one().name
-            add_dict["amount"] = add.amount
-            if add.units is not None:
-                add_dict["units"] = add.units
-            else:
-                add_dict["units"] = "ounces"
-            yeast.append(add_dict)
-
-        elif add.phase == "secondary":
-            add_dict = {}
-            add_dict["name"] = Yeast.query.filter_by(yeast_id=add.yeast_id).one().name
-            add_dict["amount"] = add.amount
-            if add.units is not None:
-                add_dict["units"] = add.units
-            else:
-                add_dict["units"] = "ounces"
-
-            secondary.append(add_dict)
-
-    return(record, times, timerset, boiltime, steep, yeast, secondary, extract)
+    return(record, times, timerset, boiltime, steep_instructions, yeast_primary_instructions, yeast_secondary_instructions, extract_instructions)
