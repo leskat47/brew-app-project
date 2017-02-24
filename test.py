@@ -4,7 +4,8 @@ import unittest
 
 from server import app
 from model import db
-from model import User
+from model import User, Brew
+import datetime
 
 from seed import seed_db
 
@@ -119,6 +120,23 @@ class TestCase(unittest.TestCase):
 
         self.assertEqual(ingredient_lists[0][0], "2-Row Black Malt")
 
+     # ==============================================================================
+    # Test Brew Page
+    # ==============================================================================   
+    def test_brew_day_page(self):
+        new_user = User(first_name='Jane', last_name='Smith', email='jsmith@example.com', username='jsmith', password='test')
+        db.session.add(new_user)
+        db.session.commit()
+
+        new_brew = Brew(user_id=new_user.user_id, recipe_id=1, date=datetime.date.today())
+        db.session.add(new_brew)
+        db.session.commit()
+        rv = self.app.get('/brew/1')
+        self.assertTrue("12.0 ounces" in rv.data)
+        self.assertTrue("Crystal 15" in rv.data)
+        self.assertTrue("144.0 kg" in rv.data)
+        self.assertTrue("Ultralight Extract (MoreBeer)" in rv.data)
+        self.assertTrue("Safale US-05 1.0 ounces" in rv.data)
 
 if __name__ == '__main__':
     unittest.main()
