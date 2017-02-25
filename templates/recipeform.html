@@ -5,7 +5,7 @@
 			<select id="grain" name="grain" class="form-control" style="width: 40%; display: inline" required>
 				<option selected disabled>Grain</option>
 				{% for grain in grain_choice %}
-				<option value="{{ grain }}">{{ grain }}</option>
+				<option value="{{ grain.name }}">{{ grain.name }}</option>
 				{% endfor %}
 			</select>
 			<input type="number" id = "grain_amount" name="grain_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
@@ -20,7 +20,7 @@
 			<select id="extract" name="extract" class="form-control" style="width: 40%; display: inline" required>
 				<option selected disabled>Extract</option>
 				{% for extract in extract_choice %}
-				<option value="{{ extract }}">{{ extract }}</option>
+				<option value="{{ extract.name }}">{{ extract.name }}</option>
 				{% endfor %}
 			</select>
 			<input type="number" id="extract_amount" name="extract_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
@@ -35,7 +35,7 @@
 			<select id="hop" name="hop" class="form-control" style="width: 40%; display: inline" required>
 				<option selected disabled>Hops</option>
 				{% for hop in hop_choice %}
-				<option value="{{ hop }}">{{ hop }}</option>
+				<option value="{{ hop.name }}">{{ hop.name }}</option>
 				{% endfor %}
 			</select>
 			<input type="number" id="hop_amount" name="hop_amount" class="form-control" placeholder="amount"  style="width: 20%; display: inline" required>
@@ -62,7 +62,7 @@
 			<select id="misc" name="misc" class="form-control" style="width: 40%; display: inline" required>
 				<option selected disabled>Special item</option>
 				{% for misc in misc_choice %}
-				<option value="{{ misc }}">{{ misc }}</option>
+				<option value="{{ misc.name }}">{{ misc.name }}</option>
 				{% endfor %}
 			</select>
 			<input type="number" id="misc_amount" name="misc_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
@@ -85,7 +85,7 @@
 			<select id="yeast" name="yeast" class="form-control" style="width: 40%; display: inline" required>
 				<option selected disabled>Yeast/Bacteria</option>
 				{% for yeast in yeast_choice %}
-				<option value="{{ yeast }}">{{ yeast }}</option>
+				<option value="{{ yeast.name }}">{{ yeast.name }}</option>
 				{% endfor %}
 			</select>
 			<input type="number" name="yeast_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" style="width: 20%; display: inline" required>
@@ -183,7 +183,7 @@
 						<select id="grain" name="grain" class="form-control" style="width: 40%; display: inline" required>
 							<option selected disabled>Grain</option>
 							{% for grain in grain_choice %}
-							<option value="{{ grain }}">{{ grain }}</option>
+							<option value="{{ grain.name }}">{{ grain.name }}</option>
 							{% endfor %}
 						</select>
 						<input type="number" id = "grain_amount" name="grain_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
@@ -204,7 +204,7 @@
 						<select id="extract" name="extract" class="form-control" style="width: 40%; display: inline" required>
 							<option selected disabled>Extract</option>
 							{% for extract in extract_choice %}
-							<option value="{{ extract }}">{{ extract }}</option>
+							<option value="{{ extract.name }}">{{ extract.name }}</option>
 							{% endfor %}
 						</select>
 						<input type="number" id="extract_amount" name="extract_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
@@ -230,7 +230,7 @@
 						<select id="hop" name="hop" class="form-control" style="width: 40%; display: inline" required>
 							<option selected disabled>Hops</option>
 							{% for hop in hop_choice %}
-							<option value="{{ hop }}">{{ hop }}</option>
+							<option value="{{ hop.name }}">{{ hop.name }}</option>
 							{% endfor %}
 						</select>
 						<input type="number" id="hop_amount" name="hop_amount" class="form-control" placeholder="amount"  style="width: 20%; display: inline" required>
@@ -262,7 +262,7 @@
 						<select id="misc" name="misc" class="form-control" style="width: 40%; display: inline" required>
 							<option selected disabled>Special item</option>
 							{% for misc in misc_choice %}
-							<option value="{{ misc }}">{{ misc }}</option>
+							<option value="{{ misc.name }}">{{ misc.name }}</option>
 							{% endfor %}
 						</select>
 			  			<input type="number" id="misc_amount" name="misc_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" required>
@@ -289,7 +289,7 @@
 						<select id="yeast" name="yeast" class="form-control" style="width: 40%; display: inline" required>
 							<option selected disabled>Yeast/Bacteria</option>
 							{% for yeast in yeast_choice %}
-							<option value="{{ yeast }}">{{ yeast }}</option>
+							<option value="{{ yeast.name }}">{{ yeast.name }}</option>
 							{% endfor %}
 						</select>
 						<input type="number" name="yeast_amount" class="form-control" placeholder="amount" style="width: 20%; display: inline" style="width: 20%; display: inline" required>

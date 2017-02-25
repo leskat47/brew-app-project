@@ -27,11 +27,11 @@ def feed_recipe_form():
     def make_alpha_lists(query_list):
         return [obj.name for obj in query_list]
 
-    grain_choice = make_alpha_lists(Fermentable.query.order_by(Fermentable.name).all())
-    extract_choice = make_alpha_lists(Extract.query.order_by(Extract.name).all())
-    hop_choice = make_alpha_lists(Hop.query.order_by(Hop.name).all())
-    misc_choice = make_alpha_lists(Misc.query.order_by(Misc.name).all())
-    yeast_choice = make_alpha_lists(Yeast.query.order_by(Yeast.name).all())
+    grain_choice = Fermentable.query.order_by(Fermentable.name).all()
+    extract_choice = Extract.query.order_by(Extract.name).all()
+    hop_choice = Hop.query.order_by(Hop.name).all()
+    misc_choice = Misc.query.order_by(Misc.name).all()
+    yeast_choice = Yeast.query.order_by(Yeast.name).all()
 
     print "feed recipe form ran"
 
