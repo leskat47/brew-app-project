@@ -19,7 +19,6 @@ def normalize_batch_size(batch_size, batch_units):
     return (normalized_size, normalized_units)
 
 
-# Build lists for recipe form drop downs
 def feed_recipe_form():
     """ Create lists for dropdown choices on recipe form """
 
@@ -42,9 +41,9 @@ def feed_recipe_form():
     return grain_choice, extract_choice, hop_choice, misc_choice, yeast_choice, selectlist_styles
 
 
-# Create lists of recipes and styles which will show in the dropdown selections. list_recipes will
-# hold a list of recipes within a style when style type is selected.
 def get_selectlists(user_id):
+    """ Create lists for dropdown displays for recipes and styles, or the user's 
+    recipes and styles."""
 
     selectlist_recipes = Recipe.query.filter_by(public="yes").order_by(Recipe.name).all()
     selectlist_styles = Style.query.order_by(Style.style_name).all()
@@ -56,8 +55,8 @@ def get_selectlists(user_id):
     return (selectlist_recipes, selectlist_styles, selectlist_user, selectlist_user_styles)
 
 
-# Convert srm color to a hexidecimal value
 def color_conversion(srm):
+    """ Convert srm color to a hexidecimal value """
 
     color_ref = {1: "#ffe699", 2: "#ffd878", 3: "#ffca5a", 4: "#ffbf42", 5: "#fbb123",
                  6: "#f8a600", 7: "#f39c00", 8: "#ea8f00", 9: "#e58500", 10: "#de7c00",
