@@ -36,7 +36,7 @@
                         <label for="beerstyles">Beer Styles:</label> <select id="style" name="style" class="form-control">
                             <option selected disabled>Select a style</option>
                             {% for style in selectlist_styles %}
-                            <option value="{{ style }}">{{ style }}</option>
+                            <option value="{{ style }}">{{ style.style_name }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -47,7 +47,7 @@
                         <label for="recipename">Recipe Name:</label> <select id="recipe" name="recipe" class="form-control">
                             <option selected disabled>Select a recipe</option>
                             {% for recipe in selectlist_recipes %}
-                            <option value="{{ recipe }}">{{ recipe }}</option>
+                            <option value="{{ recipe }}">{{ recipe.name }}</option>
                             {% endfor %}
                         </select>
                     </div>

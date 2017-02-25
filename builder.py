@@ -46,14 +46,19 @@ def feed_recipe_form():
 # hold a list of recipes within a style when style type is selected.
 def get_selectlists(user_id):
 
-    selectlist_recipes = []
-    selectlist_styles = []
+    selectlist_recipes = Recipe.query.filter_by(public="yes").order_by(Recipe.name).all()
+    selectlist_styles = Style.query.order_by(Style.style_name).all()
     selectlist_user = []
     selectlist_user_styles = []
-    for recipe_obj in Recipe.query.filter_by(public="yes").all():
-        selectlist_recipes.append(recipe_obj.name)
-    for style_obj in Style.query.all():
-        selectlist_styles.append(style_obj.style_name)
+
+
+
+    selectlist_user = []
+    selectlist_user_styles = []
+    # for recipe_obj in Recipe.query.filter_by(public="yes").all():
+    #     selectlist_recipes.append(recipe_obj.name)
+    # for style_obj in Style.query.all():
+    #     selectlist_styles.append(style_obj.style_name)
     for brew_obj in Brew.query.filter_by(user_id=user_id).all():
         recipe = Recipe.query.filter_by(recipe_id=brew_obj.recipe_id).one()
         if recipe.name not in selectlist_user:
@@ -61,8 +66,8 @@ def get_selectlists(user_id):
         if recipe.style_name not in selectlist_user_styles:
             selectlist_user_styles.append(recipe.style_name)
 
-    selectlist_recipes = sorted(selectlist_recipes)
-    selectlist_styles = sorted(selectlist_styles)
+    # selectlist_recipes = sorted(selectlist_recipes)
+    # selectlist_styles = sorted(selectlist_styles)
     selectlist_user = sorted(selectlist_user)
     selectlist_user_styles = sorted(selectlist_user_styles)
 
