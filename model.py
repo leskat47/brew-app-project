@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import load_only
 # from SQLAlchemy import UniqueConstraint
 
 db = SQLAlchemy()
