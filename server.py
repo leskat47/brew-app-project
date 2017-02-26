@@ -114,7 +114,6 @@ def get_recipes(recipe):
                            color=color, deleteable=deleteable)
 
 
-
 @app.route('/check_brew', methods=['GET', 'POST'])
 def check_brew():
     """ Ajax call - Check for duplicate brew """
@@ -128,7 +127,6 @@ def check_brew():
         return "duplicate"
     else:
         return "not duplicate"
-
 
 
 @app.route('/addbrew/<string:recipe>')
@@ -147,7 +145,7 @@ def add_brew(recipe):
     return redirect('/brew/' + brew_id)
 
 
-@app.route("/deleterecipe/<string:recipe>")
+@app.route('/deleterecipe/<string:recipe>')
 def delete_recipe(recipe):
     """ Delete recipe from database and delete associated instructions """
 
@@ -161,7 +159,7 @@ def delete_recipe(recipe):
     db.session.commit()
 
     flash("Recipe deleted")
-    return redirect("/explore")
+    return redirect('/explore')
 
 
 # ***************************************************************************************
@@ -455,7 +453,6 @@ def upload_file():
                                    recipes=recipes)
 
     return render_template("uploadrecipe.html")
-
 
 
 @app.route('/check_recipe_name', methods=["POST"])
