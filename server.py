@@ -24,26 +24,6 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
 
-# ROUTES:
-# /explore      -> populate dropdown searches. On post, return recipe names
-# /myrecipes    -> populate list of user recipes
-# /recipe/recipename -> display recipe
-# /check_brew   -> Check for duplicate brew
-# /addbrew      -> Passthrough route from recipe page that adds a brew and produces new brew_id
-# /delete_recipe-> Delete recipe and connected instructions
-
-# /mybrews      -> collect brews for user, show table of selected brew info, build dropdowns, return search results
-# /deletebrew/brewid -> Ajax accessed to remove a brew from user's list
-# /boil         -> add boil (on change) to brew table in db
-
-# /brew/brewid  -> populate brew page with associated brew data, display page. On post, route to update
-
-# /addrecipe    -> populate menus and display form. On post, prep inputs for database and commit to database.
-# /editrecipe   -> Get data for given recipe. Populate menus. Display form.
-# /uploadrecipe -> Uploaded file saved to uploads folder, parsed and committed through feeder.py function
-# /check_recipename -> Ajax accessed to check whether recipe name entered in form is duplicated in db.
-# /colorcalc    -> Ajax accessed to calculate beer color
-
 
 # ***************************************************************************************
 # Home page
@@ -89,9 +69,11 @@ def show_explore():
             deleteable = False
             if "user_id" in session and Recipe.query.filter_by(name=recipe_name).one().user_id == session["user_id"]:
                 deleteable = True
-            return render_template("explore_brews.html", selectlist_recipes=selectlist_recipes,
-                       selectlist_styles=selectlist_styles, recipe=recipe,
-                       color=color, deleteable=deleteable)
+            return render_template("explore_brews.html", 
+                                   selectlist_recipes=selectlist_recipes,
+                                   selectlist_styles=selectlist_styles,
+                                   recipe=recipe, color=color,
+                                   deleteable=deleteable)
 
     return render_template("explore_brews.html", new=new, selectlist_recipes=selectlist_recipes,
                            selectlist_styles=selectlist_styles, selectlisrt_user=selectlist_user,
@@ -496,7 +478,7 @@ def calculate_color():
 
     srm = Fermentable.get_srm_from_ingredient_list(data["grains"], batch_size, batch_units) \
           + Extract.get_srm_from_ingredient_list(data["extracts"], batch_size, batch_units)
-    print srm
+
     color = color_conversion(srm)
     return color
 

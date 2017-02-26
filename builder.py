@@ -24,9 +24,6 @@ def feed_recipe_form():
 
     selectlist_styles = sorted({style_obj.style_name for style_obj in Style.query.all()})
 
-    def make_alpha_lists(query_list):
-        return [obj.name for obj in query_list]
-
     grain_choice = Fermentable.query.order_by(Fermentable.name).all()
     extract_choice = Extract.query.order_by(Extract.name).all()
     hop_choice = Hop.query.order_by(Hop.name).all()
