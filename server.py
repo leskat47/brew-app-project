@@ -52,9 +52,7 @@ def show_explore():
         # Render either recipe list for style selection or recipe
         if request.form.get("style"):
             style = request.form.get("style")
-            list_recipes = []
-            for recipe in Recipe.query.filter_by(style_name=style).all():
-                list_recipes.append(recipe.name)
+            list_recipes = [recipe.name for recipe in Recipe.query.filter_by(style_name=style).all()]
             return render_template("explore_brews.html", list_recipes=list_recipes,
                                    selectlist_recipes=selectlist_recipes,
                                    selectlist_styles=selectlist_styles)

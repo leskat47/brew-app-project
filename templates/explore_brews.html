@@ -47,7 +47,7 @@
                         <label for="recipename">Recipe Name:</label> <select id="recipe" name="recipe" class="form-control">
                             <option selected disabled>Select a recipe</option>
                             {% for recipe in selectlist_recipes %}
-                            <option value="{{ recipe }}">{{ recipe.name }}</option>
+                            <option value="{{ recipe.name }}">{{ recipe.name }}</option>
                             {% endfor %}
                         </select>
                     </div>
