@@ -93,23 +93,23 @@
                                     {% endif %}
                                     {% if deleteable %}<a href="/deleterecipe/{{ recipe.name }}"><input type="button" id="deleterecipe" value="Delete this Recipe"></a>{% endif %}
                                 <p><div style="width: 100%; height: 10px; background-color: {{ color }}"></div></p>
-                                <h4>Style:</h4> {{ style }}<br>
+                                <h4>Style:</h4> <p>{{ recipe.style_name }}</p>
                                 {% if source %}
                                     <h4>Source:</h4> {{ source }}<br>
                                 {% endif %}
                                 <h4 style="display: inline">Color: </h4><div style="display: inline; width: 50px; height: 20px; background-color: {{ color }}">&nbsp; &nbsp;</div>
-                                <h4>Batch size:</h4> {{ batch_size }} gallons<br>
+                                <h4>Batch size:</h4> {{ recipe.batch_size }} gallons<br>
                                 <h4>Steep:</h4>
                                 {% for ferm in recipe.fins %}
                                         <strong>{{ ferm.fermentable.name }}</strong>
-                                        Amount: {{ ferm.fermentable.amount }} oz<br>
+                                        Amount: {{ ferm.amount }} oz<br>
                                 {% endfor %}
 
                                 <h4>Boil:</h4>
                                 <p><strong>Sugars:</strong><br>
                                 {% for ext in recipe.eins %}
                                         {{ ext.extract.name }}
-                                        Amount: {{ ext.extract.amount }}<br>
+                                        Amount: {{ ext.amount }} oz<br>
                                 {% endfor %}</p>
 
                                 {% for hop in recipe.hins %}

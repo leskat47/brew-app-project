@@ -61,8 +61,7 @@ def show_explore():
             recipe, color = get_recipe_instructions(recipe_name)
 
             print "SERVER SRM ", color
-            if not color:
-                color = recipe.calc_color
+            color = color or recipe.calc_color
             color = color_conversion(color)
             deleteable = False
             if "user_id" in session and Recipe.query.filter_by(name=recipe_name).one().user_id == session["user_id"]:
@@ -458,10 +457,9 @@ def check_name():
     """ Ajax call - Check for duplicate recipe names """
 
     test_name = request.form.get("name")
-    if Recipe.query.filter_by(name=test_name).all() == []:
-        return "okay"
-    else:
+    if Recipe.query.filter_by(name=test_name).all():
         return "nope"
+    return "okay"
 
 
 @app.route('/colorcalc', methods=['GET', 'POST'])
